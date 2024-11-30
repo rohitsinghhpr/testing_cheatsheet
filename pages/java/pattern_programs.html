@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern - Programs</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>1. Print a right-angled triangle of numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a right-angled triangle of numbers
+            public class RightAngledTriangle {
+                public static void printRightAngledTriangle(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print(j + " "); // Print numbers in increasing order
+                        }
+                        System.out.println(); // Move to the next line after each row
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>2. Print a pyramid pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a pyramid pattern of stars
+            public class PyramidPattern {
+                public static void printPyramid(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" "); // Print spaces for alignment
+                        }
+                        for (int k = 1; k <= 2 * i - 1; k++) {
+                            System.out.print("*"); // Print stars to form pyramid
+                        }
+                        System.out.println(); // Move to the next line after each row
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>3. Print a diamond pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a diamond pattern of stars
+            public class DiamondPattern {
+                public static void printDiamond(int n) {
+                    // Upper part of diamond
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int k = 1; k <= 2 * i - 1; k++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                    // Lower part of diamond
+                    for (int i = n - 1; i >= 1; i--) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int k = 1; k <= 2 * i - 1; k++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>4. Print a hollow square pattern</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a hollow square pattern
+            public class HollowSquare {
+                public static void printHollowSquare(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n; j++) {
+                            if (i == 1 || i == n || j == 1 || j == n) {
+                                System.out.print("*"); // Print stars on borders
+                            } else {
+                                System.out.print(" "); // Print spaces inside the square
+                            }
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>5. Print a number pyramid pattern</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a pyramid pattern of numbers
+            public class NumberPyramid {
+                public static void printNumberPyramid(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" "); // Print spaces for alignment
+                        }
+                        for (int k = 1; k <= i; k++) {
+                            System.out.print(i + " "); // Print current row number
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>6. Print an inverted right-angled triangle of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print an inverted right-angled triangle of stars
+            public class InvertedRightAngledTriangle {
+                public static void printInvertedTriangle(int n) {
+                    for (int i = n; i >= 1; i--) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("* "); // Print stars for each row
+                        }
+                        System.out.println(); // Move to the next line after each row
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>7. Print a Floyd's Triangle of numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print Floyd's Triangle
+            public class FloydsTriangle {
+                public static void printFloydsTriangle(int n) {
+                    int number = 1;
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print(number++ + " "); // Print and increment the number
+                        }
+                        System.out.println(); // Move to the next line after each row
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>8. Print a Pascal's Triangle pattern</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print Pascal's Triangle
+            public class PascalsTriangle {
+                public static void printPascalsTriangle(int n) {
+                    for (int i = 0; i < n; i++) {
+                        int number = 1;
+                        for (int j = 0; j < n - i; j++) {
+                            System.out.print(" "); // Print leading spaces
+                        }
+                        for (int k = 0; k <= i; k++) {
+                            System.out.print(number + " "); // Print the number in Pascal's Triangle
+                            number = number * (i - k) / (k + 1); // Calculate next number
+                        }
+                        System.out.println(); // Move to the next line after each row
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>9. Print an hourglass pattern</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print an hourglass pattern
+            public class HourglassPattern {
+                public static void printHourglass(int n) {
+                    // Upper part of hourglass
+                    for (int i = n; i >= 1; i--) {
+                        for (int j = 0; j < n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int k = 1; k <= 2 * i - 1; k++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                    // Lower part of hourglass
+                    for (int i = 2; i <= n; i++) {
+                        for (int j = 0; j < n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int k = 1; k <= 2 * i - 1; k++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>10. Print a zig-zag pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a zig-zag pattern of stars
+            public class ZigZagPattern {
+                public static void printZigZag(int n) {
+                    for (int i = 1; i <= 3; i++) {
+                        for (int j = 1; j <= n; j++) {
+                            if ((i + j) % 4 == 0 || (i == 2 && j % 4 == 0)) {
+                                System.out.print("*"); // Print star based on pattern conditions
+                            } else {
+                                System.out.print(" ");
+                            }
+                        }
+                        System.out.println(); // Move to the next line after each row
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+        </div>
+        <div class="content">
+            <details>
+                <summary>11. Print a half diamond pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a half diamond pattern of stars
+            public class HalfDiamondPattern {
+                public static void printHalfDiamond(int n) {
+                    // Upper half including middle row
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("* ");
+                        }
+                        System.out.println();
+                    }
+                    // Lower half
+                    for (int i = n - 1; i >= 1; i--) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("* ");
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>12. Print a binary triangle pattern</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a binary triangle pattern
+            public class BinaryTriangle {
+                public static void printBinaryTriangle(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print((i + j) % 2 + " "); // Alternates between 0 and 1
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>13. Print a butterfly pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a butterfly pattern of stars
+            public class ButterflyPattern {
+                public static void printButterfly(int n) {
+                    // Upper half
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("*");
+                        }
+                        for (int j = 1; j <= 2 * (n - i); j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                    // Lower half
+                    for (int i = n; i >= 1; i--) {
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("*");
+                        }
+                        for (int j = 1; j <= 2 * (n - i); j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= i; j++) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>14. Print a hollow diamond pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a hollow diamond pattern of stars
+            public class HollowDiamond {
+                public static void printHollowDiamond(int n) {
+                    // Upper part
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= 2 * i - 1; j++) {
+                            if (j == 1 || j == 2 * i - 1) {
+                                System.out.print("*"); // Print stars on edges
+                            } else {
+                                System.out.print(" "); // Leave inner part hollow
+                            }
+                        }
+                        System.out.println();
+                    }
+                    // Lower part
+                    for (int i = n - 1; i >= 1; i--) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= 2 * i - 1; j++) {
+                            if (j == 1 || j == 2 * i - 1) {
+                                System.out.print("*");
+                            } else {
+                                System.out.print(" ");
+                            }
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>15. Print an X pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print an X pattern of stars
+            public class XPattern {
+                public static void printXPattern(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n; j++) {
+                            if (j == i || j == n - i + 1) {
+                                System.out.print("*"); // Print stars along both diagonals
+                            } else {
+                                System.out.print(" ");
+                            }
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>16. Print a hollow pyramid pattern of stars</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a hollow pyramid pattern of stars
+            public class HollowPyramid {
+                public static void printHollowPyramid(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int k = 1; k <= 2 * i - 1; k++) {
+                            if (k == 1 || k == 2 * i - 1 || i == n) {
+                                System.out.print("*"); // Print stars on edges and base
+                            } else {
+                                System.out.print(" ");
+                            }
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>17. Print a diamond of numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a diamond pattern of numbers
+            public class DiamondNumbers {
+                public static void printDiamondNumbers(int n) {
+                    // Upper part of the diamond
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= 2 * i - 1; j++) {
+                            System.out.print(i); // Print current row number
+                        }
+                        System.out.println();
+                    }
+                    // Lower part of the diamond
+                    for (int i = n - 1; i >= 1; i--) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= 2 * i - 1; j++) {
+                            System.out.print(i);
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>18. Print a mirrored right-angled triangle of numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a mirrored right-angled triangle of numbers
+            public class MirroredRightTriangle {
+                public static void printMirroredTriangle(int n) {
+                    for (int i = 1; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" "); // Print spaces for mirroring
+                        }
+                        for (int k = 1; k <= i; k++) {
+                            System.out.print(k + " "); // Print numbers increasing in each row
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>19. Print an hourglass pattern of numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print an hourglass pattern of numbers
+            public class NumberHourglass {
+                public static void printHourglass(int n) {
+                    // Upper part of hourglass
+                    for (int i = n; i >= 1; i--) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= 2 * i - 1; j++) {
+                            System.out.print(i); // Print current row number
+                        }
+                        System.out.println();
+                    }
+                    // Lower part of hourglass
+                    for (int i = 2; i <= n; i++) {
+                        for (int j = 1; j <= n - i; j++) {
+                            System.out.print(" ");
+                        }
+                        for (int j = 1; j <= 2 * i - 1; j++) {
+                            System.out.print(i);
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>20. Print a square spiral pattern of numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to print a square spiral pattern of numbers
+            public class SpiralPattern {
+                public static void printSpiralPattern(int n) {
+                    int[][] arr = new int[n][n];
+                    int value = 1;
+                    int top = 0, bottom = n - 1, left = 0, right = n - 1;
+                    
+                    while (value <= n * n) {
+                        for (int i = left; i <= right; i++) arr[top][i] = value++;
+                        top++;
+                        for (int i = top; i <= bottom; i++) arr[i][right] = value++;
+                        right--;
+                        for (int i = right; i >= left; i--) arr[bottom][i] = value++;
+                        bottom--;
+                        for (int i = bottom; i >= top; i--) arr[i][left] = value++;
+                        left++;
+                    }
+                    // Print the spiral pattern
+                    for (int[] row : arr) {
+                        for (int num : row) {
+                            System.out.print(num + "\t");
+                        }
+                        System.out.println();
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+        </div>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

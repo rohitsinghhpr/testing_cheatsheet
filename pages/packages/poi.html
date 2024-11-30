@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POI</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+<body>
+    <div class="details-container">
+        <pre><code class="language-java">
+            //Working with Excel Files
+            // Creating a Workbook
+            Workbook workbook = new XSSFWorkbook(); // For .xlsx files
+            // Workbook workbook = new HSSFWorkbook(); // For .xls files
+            
+            // Creating a Sheet
+            Sheet sheet = workbook.createSheet("Sheet Name"); // Creates a new sheet
+            
+            // Creating Rows and Cells
+            int rowIndex = 0, cellIndex = 0;
+            Row row = sheet.createRow(rowIndex); // Creates a new row
+            Cell cell = row.createCell(cellIndex); // Creates a new cell
+            cell.setCellValue("Value"); // Sets cell value
+            
+            // Reading from an Excel File
+            try (FileInputStream fis = new FileInputStream("file.xlsx")) {
+              Workbook workbook = WorkbookFactory.create(fis);
+              Sheet sheet = workbook.getSheetAt(0); // Access first sheet
+              Row row = sheet.getRow(rowIndex); // Access specific row
+              Cell cell = row.getCell(cellIndex); // Access specific cell
+              String value = cell.getStringCellValue(); // Get cell value as string
+            } catch (IOException | InvalidFormatException e) {
+              e.printStackTrace();
+            }
+            
+            // Writing to an Excel File
+            try (FileOutputStream fos = new FileOutputStream("file.xlsx")) {
+              workbook.write(fos);
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+            
+            // Closing the Workbook
+            try {
+              workbook.close();
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+            
+            // Formatting Cells in Excel
+            CellStyle style = workbook.createCellStyle(); // Create cell style
+            Font font = workbook.createFont();
+            font.setBold(true); // Set bold font
+            style.setFont(font);
+            style.setDataFormat(workbook.createDataFormat().getFormat("0.00")); // Set number format
+            
+            cell.setCellStyle(style); // Apply style to cell
+            
+            // Formulas in Excel
+            cell.setCellFormula("SUM(A1:A10)"); // Set cell formula
+        </code></pre>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+</html>

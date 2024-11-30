@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String - Programs</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>1. Reverse a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to reverse a string
+            public class ReverseString {
+                public static String reverse(String str) {
+                    StringBuilder reversed = new StringBuilder(str);
+                    return reversed.reverse().toString(); // Reverse and return the string
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>2. Check if a string is a palindrome</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a string is a palindrome
+            public class PalindromeCheck {
+                public static boolean isPalindrome(String str) {
+                    int start = 0, end = str.length() - 1;
+                    while (start < end) {
+                        if (str.charAt(start) != str.charAt(end)) {
+                            return false; // Not a palindrome if characters don't match
+                        }
+                        start++;
+                        end--;
+                    }
+                    return true; // String is a palindrome if we reach here
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>3. Count vowels and consonants in a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to count vowels and consonants in a string
+            public class VowelConsonantCount {
+                public static int[] countVowelsAndConsonants(String str) {
+                    int vowels = 0, consonants = 0;
+                    str = str.toLowerCase(); // Convert to lowercase for easy checking
+                    for (char c : str.toCharArray()) {
+                        if ("aeiou".indexOf(c) != -1) {
+                            vowels++; // Increment vowels if character is a vowel
+                        } else if (c >= 'a' && c <= 'z') {
+                            consonants++; // Increment consonants for other letters
+                        }
+                    }
+                    return new int[]{vowels, consonants}; // Return count of vowels and consonants
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>4. Find the frequency of characters in a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the frequency of characters in a string
+            import java.util.HashMap;
+            public class CharacterFrequency {
+                public static HashMap<Character, Integer> charFrequency(String str) {
+                    HashMap<Character, Integer> frequencyMap = new HashMap<>();
+                    for (char c : str.toCharArray()) {
+                        frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1); // Update frequency
+                    }
+                    return frequencyMap; // Return character frequency map
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>5. Check if two strings are anagrams</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if two strings are anagrams
+            import java.util.Arrays;
+            public class AnagramCheck {
+                public static boolean areAnagrams(String str1, String str2) {
+                    if (str1.length() != str2.length()) return false; // Not anagrams if lengths differ
+                    char[] arr1 = str1.toCharArray();
+                    char[] arr2 = str2.toCharArray();
+                    Arrays.sort(arr1);
+                    Arrays.sort(arr2);
+                    return Arrays.equals(arr1, arr2); // True if sorted arrays match
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>6. Find all permutations of a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find all permutations of a string
+            public class StringPermutations {
+                public static void permute(String str, String prefix) {
+                    if (str.length() == 0) {
+                        System.out.println(prefix); // Print permutation when no characters are left
+                    } else {
+                        for (int i = 0; i < str.length(); i++) {
+                            String rem = str.substring(0, i) + str.substring(i + 1);
+                            permute(rem, prefix + str.charAt(i)); // Recursive call for permutation
+                        }
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>7. Remove duplicate characters from a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to remove duplicate characters from a string
+            import java.util.HashSet;
+            public class RemoveDuplicates {
+                public static String removeDuplicates(String str) {
+                    HashSet<Character> seen = new HashSet<>();
+                    StringBuilder result = new StringBuilder();
+                    for (char c : str.toCharArray()) {
+                        if (!seen.contains(c)) {
+                            seen.add(c);
+                            result.append(c); // Append character if not seen before
+                        }
+                    }
+                    return result.toString(); // Return string without duplicates
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>8. Find the longest word in a sentence</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the longest word in a sentence
+            public class LongestWord {
+                public static String longestWord(String sentence) {
+                    String[] words = sentence.split(" ");
+                    String longest = "";
+                    for (String word : words) {
+                        if (word.length() > longest.length()) {
+                            longest = word; // Update longest if current word is longer
+                        }
+                    }
+                    return longest; // Return the longest word
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>9. Count the occurrence of each word in a sentence</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to count the occurrence of each word in a sentence
+            import java.util.HashMap;
+            public class WordFrequency {
+                public static HashMap<String, Integer> wordFrequency(String sentence) {
+                    HashMap<String, Integer> wordMap = new HashMap<>();
+                    String[] words = sentence.toLowerCase().split("\\s+"); // Split by whitespace
+                    for (String word : words) {
+                        wordMap.put(word, wordMap.getOrDefault(word, 0) + 1); // Update count
+                    }
+                    return wordMap; // Return word frequency map
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>10. Check if a string contains only digits</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a string contains only digits
+            public class OnlyDigitsCheck {
+                public static boolean containsOnlyDigits(String str) {
+                    for (char c : str.toCharArray()) {
+                        if (!Character.isDigit(c)) {
+                            return false; // Return false if non-digit character is found
+                        }
+                    }
+                    return true; // Return true if all characters are digits
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>11. Convert a string to title case</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to convert a string to title case
+            public class TitleCase {
+                public static String toTitleCase(String str) {
+                    String[] words = str.toLowerCase().split("\\s+");
+                    StringBuilder titleCase = new StringBuilder();
+                    for (String word : words) {
+                        if (word.length() > 0) {
+                            titleCase.append(Character.toUpperCase(word.charAt(0))) // Capitalize first letter
+                                     .append(word.substring(1)) // Append remaining letters
+                                     .append(" ");
+                        }
+                    }
+                    return titleCase.toString().trim(); // Return title-cased string
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>12. Remove all whitespace from a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to remove all whitespace from a string
+            public class RemoveWhitespace {
+                public static String removeWhitespace(String str) {
+                    return str.replaceAll("\\s", ""); // Replace all whitespace with empty string
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>13. Count the number of words in a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to count the number of words in a string
+            public class WordCount {
+                public static int countWords(String str) {
+                    if (str == null || str.isEmpty()) return 0;
+                    String[] words = str.trim().split("\\s+"); // Split by whitespace
+                    return words.length; // Return number of words
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>14. Find all substrings of a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find all substrings of a string
+            public class AllSubstrings {
+                public static void printAllSubstrings(String str) {
+                    for (int i = 0; i < str.length(); i++) {
+                        for (int j = i + 1; j <= str.length(); j++) {
+                            System.out.println(str.substring(i, j)); // Print each substring
+                        }
+                    }
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>15. Replace a character in a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to replace a character in a string
+            public class ReplaceCharacter {
+                public static String replaceChar(String str, char oldChar, char newChar) {
+                    return str.replace(oldChar, newChar); // Replace old character with new character
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+        </div>
+        <div class="content">
+            <details>
+                <summary>16. Check if a string is a valid palindrome ignoring case and non-alphanumeric characters</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a string is a palindrome, ignoring case and non-alphanumeric characters
+            public class ValidPalindrome {
+                public static boolean isValidPalindrome(String str) {
+                    str = str.replaceAll("[^A-Za-z0-9]", "").toLowerCase(); // Remove non-alphanumeric and lowercase
+                    int start = 0, end = str.length() - 1;
+                    while (start < end) {
+                        if (str.charAt(start) != str.charAt(end)) {
+                            return false; // Not a palindrome if characters don't match
+                        }
+                        start++;
+                        end--;
+                    }
+                    return true; // Return true if all characters match
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>17. Reverse each word in a sentence</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to reverse each word in a sentence
+            public class ReverseWordsInSentence {
+                public static String reverseWords(String sentence) {
+                    String[] words = sentence.split(" ");
+                    StringBuilder reversedSentence = new StringBuilder();
+                    for (String word : words) {
+                        reversedSentence.append(new StringBuilder(word).reverse()).append(" "); // Reverse each word
+                    }
+                    return reversedSentence.toString().trim(); // Return the modified sentence
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>18. Find the first non-repeating character in a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the first non-repeating character in a string
+            import java.util.LinkedHashMap;
+            
+            public class FirstNonRepeatingCharacter {
+                public static Character firstNonRepeating(String str) {
+                    LinkedHashMap<Character, Integer> charCount = new LinkedHashMap<>();
+                    for (char c : str.toCharArray()) {
+                        charCount.put(c, charCount.getOrDefault(c, 0) + 1); // Count each character
+                    }
+                    for (char c : charCount.keySet()) {
+                        if (charCount.get(c) == 1) return c; // Return first character with count 1
+                    }
+                    return null; // Return null if no unique character found
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>19. Remove a given character from a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to remove a given character from a string
+            public class RemoveCharacter {
+                public static String removeCharacter(String str, char ch) {
+                    return str.replace(Character.toString(ch), ""); // Remove all instances of the character
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>20. Replace all spaces in a string with a given character</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to replace all spaces in a string with a given character
+            public class ReplaceSpaces {
+                public static String replaceSpaces(String str, char ch) {
+                    return str.replace(" ", Character.toString(ch)); // Replace spaces with specified character
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>21. Find the longest substring without repeating characters</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the longest substring without repeating characters
+            import java.util.HashSet;
+            
+            public class LongestUniqueSubstring {
+                public static String longestUniqueSubstring(String str) {
+                    String longestSubstring = "";
+                    for (int i = 0; i < str.length(); i++) {
+                        HashSet<Character> seenChars = new HashSet<>();
+                        StringBuilder currentSubstring = new StringBuilder();
+                        for (int j = i; j < str.length(); j++) {
+                            char ch = str.charAt(j);
+                            if (seenChars.contains(ch)) break; // Stop if character is repeated
+                            seenChars.add(ch);
+                            currentSubstring.append(ch);
+                        }
+                        if (currentSubstring.length() > longestSubstring.length()) {
+                            longestSubstring = currentSubstring.toString(); // Update longest substring
+                        }
+                    }
+                    return longestSubstring;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>22. Count the occurrence of a given character in a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to count the occurrence of a specific character in a string
+            public class CharacterOccurrenceCount {
+                public static int countCharacter(String str, char ch) {
+                    int count = 0;
+                    for (char c : str.toCharArray()) {
+                        if (c == ch) count++; // Increment count if character matches
+                    }
+                    return count; // Return the count of the character
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>23. Find the most frequent character in a string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the most frequent character in a string
+            import java.util.HashMap;
+            
+            public class MostFrequentCharacter {
+                public static char mostFrequentCharacter(String str) {
+                    HashMap<Character, Integer> charCount = new HashMap<>();
+                    for (char c : str.toCharArray()) {
+                        charCount.put(c, charCount.getOrDefault(c, 0) + 1); // Count each character
+                    }
+                    char mostFrequent = str.charAt(0);
+                    int maxCount = 0;
+                    for (char c : charCount.keySet()) {
+                        if (charCount.get(c) > maxCount) {
+                            maxCount = charCount.get(c);
+                            mostFrequent = c; // Update most frequent character
+                        }
+                    }
+                    return mostFrequent;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>24. Check if a string is a rotation of another string</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if one string is a rotation of another
+            public class StringRotationCheck {
+                public static boolean isRotation(String str1, String str2) {
+                    if (str1.length() != str2.length()) return false; // Lengths must be the same
+                    String combined = str1 + str1;
+                    return combined.contains(str2); // Check if str2 is a substring of combined
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>25. Capitalize the first letter of each word in a sentence</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to capitalize the first letter of each word in a sentence
+            public class CapitalizeWords {
+                public static String capitalizeWords(String sentence) {
+                    String[] words = sentence.toLowerCase().split("\\s+");
+                    StringBuilder capitalized = new StringBuilder();
+                    for (String word : words) {
+                        capitalized.append(Character.toUpperCase(word.charAt(0))) // Capitalize first letter
+                                   .append(word.substring(1)).append(" ");
+                    }
+                    return capitalized.toString().trim(); // Return sentence with each word capitalized
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>26. Find the length of the longest palindromic substring</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the length of the longest palindromic substring
+            public class LongestPalindromicSubstring {
+                public static String longestPalindrome(String str) {
+                    String longest = "";
+                    for (int i = 0; i < str.length(); i++) {
+                        String oddPalindrome = expandAroundCenter(str, i, i); // Odd length palindromes
+                        String evenPalindrome = expandAroundCenter(str, i, i + 1); // Even length palindromes
+                        if (oddPalindrome.length() > longest.length()) longest = oddPalindrome;
+                        if (evenPalindrome.length() > longest.length()) longest = evenPalindrome;
+                    }
+                    return longest;
+                }
+            
+                private static String expandAroundCenter(String str, int left, int right) {
+                    while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+                        left--;
+                        right++;
+                    }
+                    return str.substring(left + 1, right);
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>27. Check if a string has all unique characters</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a string has all unique characters
+            import java.util.HashSet;
+            
+            public class UniqueCharactersCheck {
+                public static boolean hasUniqueCharacters(String str) {
+                    HashSet<Character> charSet = new HashSet<>();
+                    for (char c : str.toCharArray()) {
+                        if (charSet.contains(c)) return false; // If character is repeated
+                        charSet.add(c); // Add character to the set
+                    }
+                    return true; // Return true if all characters are unique
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

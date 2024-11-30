@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postman Questions</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+<body>
+    
+    <div class="details-container">
+        <details>
+            <summary>What is POSTMAN, and how does it facilitate API testing?</summary>
+            <div class="content">
+                <p><strong>Postman</strong> is a powerful API testing tool that simplifies the process of developing, testing, and managing APIs. It provides a user-friendly interface for sending HTTP requests and receiving responses. It facilitates API testing by allowing users to easily create, share, and execute API requests and validate the responses, all within a single tool.</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Can you explain the key features of POSTMAN that make it suitable for API testing?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Request Building</strong>: Easily create and configure HTTP requests with various methods, headers, and body types.</li>
+                    <li><strong>Collections</strong>: Organize requests into collections for better management and reusability.</li>
+                    <li><strong>Environment Variables</strong>: Manage variables to handle different environments (development, staging, production).</li>
+                    <li><strong>Testing and Automation</strong>: Write tests using JavaScript and automate testing with collection runs.</li>
+                    <li><strong>Collaboration</strong>: Share collections, environments, and documentation with team members.</li>
+                    <li><strong>Mock Servers</strong>: Create mock servers to simulate APIs for testing without actual implementation.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How do you create and execute API requests in POSTMAN?</summary>
+            <div class="content">
+                <ol>
+                    <li><strong>Open Postman.</strong></li>
+                    <li><strong>Create a New Request:</strong> Click on "New" and select "Request". Enter a name and save it to a collection.</li>
+                    <li><strong>Configure the Request:</strong> 
+                        <ul>
+                            <li>Choose the HTTP method (GET, POST, PUT, DELETE, etc.).</li>
+                            <li>Enter the API endpoint URL.</li>
+                            <li>Set headers and parameters as needed.</li>
+                            <li>Add a request body if required (for POST, PUT, etc.).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Send the Request:</strong> Click the "Send" button.</li>
+                    <li><strong>Analyze the Response:</strong> View the status code, headers, and body of the response.</li>
+                </ol>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What are environments in POSTMAN, and how do they aid in API testing?</summary>
+            <div class="content">
+                <p><strong>Environments</strong> in Postman allow you to define a set of variables that can be used to manage different configurations for your requests. This is particularly useful for testing APIs in various environments (development, staging, production) without changing the request details.</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How do you handle authentication in POSTMAN for testing APIs that require it?</summary>
+            <div class="content">
+                <p>Postman supports various authentication methods, such as:</p>
+                <ul>
+                    <li><strong>Basic Auth</strong>: Enter username and password.</li>
+                    <li><strong>Bearer Token</strong>: Provide a token in the Authorization header.</li>
+                    <li><strong>OAuth 1.0/2.0</strong>: Configure OAuth settings.</li>
+                    <li><strong>API Key</strong>: Add the key as a query parameter or header.</li>
+                </ul>
+                <p><strong>To set up authentication:</strong></p>
+                <ol>
+                    <li>Go to the "Authorization" tab in the request.</li>
+                    <li>Select the type of authentication.</li>
+                    <li>Enter the required credentials or tokens.</li>
+                </ol>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Explain the difference between global and local variables in POSTMAN. When would you use each?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Global Variables</strong>: Accessible across all collections and requests in Postman. Use them for values that remain constant across different tests and collections.</li>
+                    <li><strong>Local Variables</strong>: Defined within a specific environment or request. Use them for values specific to a particular test case or environment.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is a collection in POSTMAN, and how do you organize your API tests using collections?</summary>
+            <div class="content">
+                <p>A <strong>collection</strong> in Postman is a group of related API requests organized together. Collections help manage and execute requests systematically, allowing you to:</p>
+                <ul>
+                    <li>Group requests by functionality or API endpoint.</li>
+                    <li>Share the entire collection with team members.</li>
+                    <li>Run all requests in the collection as part of a test suite.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How do you parameterize requests in POSTMAN? Why is it important in API testing?</summary>
+            <div class="content">
+                <p><strong>Parameterizing requests</strong> in Postman involves using variables in place of static values. This is important for:</p>
+                <ul>
+                    <li><strong>Reusability</strong>: Run the same request with different data.</li>
+                    <li><strong>Flexibility</strong>: Easily switch between different environments and configurations.</li>
+                    <li><strong>Efficiency</strong>: Automate tests without manually changing request details.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Can you describe the process of setting up and running automated tests in POSTMAN?</summary>
+            <div class="content">
+                <ol>
+                    <li>Create a Collection and add requests to it.</li>
+                    <li><strong>Write Tests</strong>: Use the "Tests" tab in each request to write JavaScript code for validation.</li>
+                    <li><strong>Run Collection</strong>: Use the Collection Runner to execute the entire collection or specific requests.</li>
+                    <li><strong>Set Up Iterations</strong>: Define data files for running tests with different data sets.</li>
+                    <li><strong>Analyze Results</strong>: Review the test results, logs, and reports generated by Postman.</li>
+                </ol>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What are some common assertions you use in POSTMAN tests, and how do you implement them?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Status Code:</strong> 
+                        <pre>pm.test("Status code is 200", function () { pm.response.to.have.status(200); });</pre>
+                    </li>
+                    <li><strong>Response Time:</strong> 
+                        <pre>pm.test("Response time is less than 200ms", function () { pm.expect(pm.response.responseTime).to.be.below(200); });</pre>
+                    </li>
+                    <li><strong>Response Body:</strong> 
+                        <pre>pm.test("Body contains key", function () { pm.expect(pm.response.json()).to.have.property("key"); });</pre>
+                    </li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How do you handle dynamic data in POSTMAN tests, such as timestamps or unique identifiers?</summary>
+            <div class="content">
+                <p>Use pre-request scripts or dynamic variables in Postman to handle dynamic data. For example, to generate a unique identifier:</p>
+                <pre>pm.variables.set("uniqueId", Math.random().toString(36).substring(2));</pre>
+                <p>Use the variable in the request as <code>{{uniqueId}}</code>.</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Explain the concept of pre-request scripts and post-request scripts in POSTMAN. When would you use them?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Pre-request Scripts</strong>: Run before the request is sent. Use them to set up variables, generate tokens, or modify request details.</li>
+                    <li><strong>Post-request Scripts</strong>: Run after the request is sent. Use them to validate the response, store data for subsequent requests, or trigger additional requests.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What are some best practices for writing maintainable and scalable API tests in POSTMAN?</summary>
+            <div class="content">
+                <ul>
+                    <li>Use variables for dynamic values.</li>
+                    <li>Organize requests into collections and folders.</li>
+                    <li>Write reusable functions in pre-request and test scripts.</li>
+                    <li>Maintain clear and concise documentation.</li>
+                    <li>Use environment and global variables appropriately.</li>
+                    <li>Regularly update and review tests and scripts.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How do you handle response validation in POSTMAN tests?</summary>
+            <div class="content">
+                <p>Write assertions in the "Tests" tab to validate the response. Examples include checking status codes, response times, and specific data within the response body. Use JavaScript and the Postman API to implement these checks.</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Can you integrate POSTMAN tests with Continuous Integration (CI) systems? If so, how?</summary>
+            <div class="content">
+                <p>Yes, you can integrate Postman tests with CI systems using <strong>Newman</strong>, the command-line runner for Postman collections. Steps:</p>
+                <ol>
+                    <li>Export your Postman collection.</li>
+                    <li>Install Newman via npm.</li>
+                    <li>Write a script to run the collection using Newman.</li>
+                    <li>Integrate this script into your CI pipeline (Jenkins, Travis CI, CircleCI, etc.).</li>
+                </ol>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How do you share workspace?</summary>
+            <div class="content">
+                <ol>
+                    <li>Create a Workspace: Go to the workspace section and create a new workspace.</li>
+                    <li>Inviting Members: Invite team members by email or by sharing a link.</li>
+                    <li>Collaborating: Share collections, environments, and other resources within the workspace.</li>
+                </ol>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the difference between workspace and collection?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Workspace:</strong> A collaborative space where multiple collections, environments, and other resources are shared and managed among team members.</li>
+                    <li><strong>Collection:</strong> A group of related API requests organized together for better management and testing.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How can you automate testing in POSTMAN?</summary>
+            <div class="content">
+                <ol>
+                    <li>Writing Tests: In the "Tests" tab of each request.</li>
+                    <li>Using Collection Runner: To run collections automatically.</li>
+                    <li>Newman: Use the command-line tool to run collections in CI/CD pipelines.</li>
+                </ol>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Write code to read header value from response.</summary>
+            <div class="content">
+                <pre><code class="language-javascript">
+        pm.test("Read header value", function () {
+            var headerValue = pm.response.headers.get("Content-Type");
+            pm.expect(headerValue).to.equal("application/json");
+        });
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How can you define environment variables?</summary>
+            <div class="content">
+                <ol>
+                    <li>Go to the Environments tab.</li>
+                    <li>Create a new environment.</li>
+                    <li>Define key-value pairs for variables.</li>
+                    <li>Use the variables in requests as <code>{{variableName}}</code>.</li>
+                </ol>
+            </div>
+        </details>
+        
+        <details>
+            <summary>How can you upload the file through a POST request in POSTMAN?</summary>
+            <div class="content">
+                <ol>
+                    <li>Select the POST method.</li>
+                    <li>Go to the Body tab.</li>
+                    <li>Select form-data.</li>
+                    <li>Add a key with the type file.</li>
+                    <li>Choose the file to upload.</li>
+                    <li>Set other keys/values as needed.</li>
+                    <li>Send the request.</li>
+                </ol>
+            </div>
+        </details>
+        
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+</html>
