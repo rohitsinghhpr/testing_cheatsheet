@@ -1,17 +1,3 @@
-// Home link shortcut function
-// function homePageShortCut() {
-//     const homeLink = document.querySelector('.home-link a');
-//     if (!homeLink) {
-//         return;
-//     }
-//     document.addEventListener('keydown', (event) => {
-//         if (event.altKey && event.key.toLowerCase() === 'h') {
-//             event.preventDefault();
-//             homeLink.click();
-//         }
-//     });
-// }
-// homePageShortCut();
 function homePageShortCut() {
     const homeLink = document.querySelector('.home-link a');
     if (!homeLink) {
@@ -30,7 +16,6 @@ function homePageShortCut() {
         }
     });
 }
-homePageShortCut();
 
 // Right Sidebar 
 function initRightSideBarNavigation() {
@@ -116,7 +101,6 @@ function initRightSideBarNavigation() {
         }
     });
 }
-initRightSideBarNavigation();
 
 // Details navigation with arrow keys
 function initDetailsNavigation() {
@@ -183,7 +167,6 @@ function initDetailsNavigation() {
         }
     });
 }
-initDetailsNavigation();
 
 // Offcanvas navigation for focus management and arrow keys
 function initOffcanvasNavigation() {
@@ -208,7 +191,7 @@ function initOffcanvasNavigation() {
 
         function handleKeyDown(event) {
             // Stop key event from propagating to parent handlers (like right sidebar)
-            event.stopPropagation(); 
+            event.stopPropagation();
 
             if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
                 event.preventDefault();
@@ -240,22 +223,43 @@ function initOffcanvasNavigation() {
         });
     });
 }
-initOffcanvasNavigation();
 
-// Offcanvas dismiss button shortcut function
-function offcanvasDismissShortcut() {
-    const offcanvasButtons = document.querySelectorAll('[data-bs-dismiss="offcanvas"]');
-    if (offcanvasButtons.length === 0) {
-        return; 
-    }
-    function handleKeyDown(event) {
-        if (event.altKey && event.key.toLowerCase() === 'o') {
-            event.preventDefault();
-            offcanvasButtons.forEach(button => {
-                button.click();
-            });
+// Offcanvas last open canvas
+function initializeOffcanvasMemory() {
+    const offcanvasButtons = document.querySelectorAll('[data-bs-toggle="offcanvas"]');
+    const linkButtons = document.querySelectorAll('a.btn-dark');
+
+    // Attach click event to offcanvas buttons
+    offcanvasButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-bs-target').substring(1);
+            sessionStorage.setItem('lastOpenedOffcanvas', targetId);
+        });
+    });
+
+    // Clear session storage on link button click
+    linkButtons.forEach(link => {
+        link.addEventListener('click', () => {
+            sessionStorage.removeItem('lastOpenedOffcanvas');
+        });
+    });
+
+    // Restore the last opened offcanvas
+    const lastOpenedOffcanvasId = sessionStorage.getItem('lastOpenedOffcanvas');
+    if (lastOpenedOffcanvasId) {
+        const offcanvasElement = document.getElementById(lastOpenedOffcanvasId);
+        if (offcanvasElement) {
+            const bootstrapOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+            bootstrapOffcanvas.show();
         }
     }
-    document.addEventListener('keydown', handleKeyDown);
 }
-offcanvasDismissShortcut();
+
+// Run the function after DOM content is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    homePageShortCut();
+    initRightSideBarNavigation();
+    initDetailsNavigation();
+    initOffcanvasNavigation();
+    initializeOffcanvasMemory();
+});
