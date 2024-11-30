@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>Introduction to Java JDBC</summary>
+            <div class="content">
+                <p>Java Database Connectivity (JDBC) is an API provided by Java to connect and execute queries on a
+                    database. It acts as a bridge between Java applications and various databases.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Database independence: Works with any database that has a JDBC driver.</li>
+                    <li>Standardized API: Provides a uniform interface for database access.</li>
+                    <li>Supports SQL commands: Execute queries, updates, and manage database metadata.</li>
+                </ul>
+                <h3>Typical Workflow:</h3>
+                <ol>
+                    <li>Load the JDBC driver.</li>
+                    <li>Establish a connection to the database.</li>
+                    <li>Create a statement to execute SQL commands.</li>
+                    <li>Process the results.</li>
+                    <li>Close the connection.</li>
+                </ol>
+            </div>
+        </details>
+
+        <details>
+            <summary>JDBC Driver</summary>
+            <div class="content">
+                <p>The JDBC Driver is a software component that enables Java applications to interact with a database.
+                    It translates Java commands into database-specific calls.</p>
+                <h3>Types of JDBC Drivers:</h3>
+                <ol>
+                    <li><strong>Type-1:</strong> JDBC-ODBC Bridge Driver</li>
+                    <li><strong>Type-2:</strong> Native-API Driver</li>
+                    <li><strong>Type-3:</strong> Network Protocol Driver</li>
+                    <li><strong>Type-4:</strong> Thin Driver (most commonly used)</li>
+                </ol>
+                <h3>Example:</h3>
+                <pre><code class="language-java">try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); // Loading the MySQL driver
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }</code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>JDBC Connection</summary>
+            <div class="content">
+                <p>The JDBC Connection object is used to establish a link between a Java application and the database.
+                    It provides methods to create statements and manage transactions.</p>
+                <h3>Steps to Establish a Connection:</h3>
+                <ol>
+                    <li>Load the driver class.</li>
+                    <li>Use the <code>DriverManager.getConnection()</code> method to connect.</li>
+                </ol>
+                <h3>Example:</h3>
+                <pre><code class="language-java">import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.SQLException;
+        
+        public class JDBCConnectionExample {
+            public static void main(String[] args) {
+                String url = "jdbc:mysql://localhost:3306/mydatabase";
+                String user = "root";
+                String password = "password";
+        
+                try (Connection connection = DriverManager.getConnection(url, user, password)) {
+                    System.out.println("Connection established successfully!");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }</code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>Types of Statements in JDBC</summary>
+            <div class="content">
+                <p>JDBC provides three types of statements for executing SQL queries:</p>
+                <h3>1. Statement:</h3>
+                <p>Used for executing simple SQL queries without parameters.</p>
+                <pre><code class="language-java">Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM users");</code></pre>
+
+                <h3>2. PreparedStatement:</h3>
+                <p>Used for executing precompiled SQL queries with parameters. Provides better performance and security.
+                </p>
+                <pre><code class="language-java">PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE id = ?");
+        pstmt.setInt(1, 1);
+        ResultSet rs = pstmt.executeQuery();</code></pre>
+
+                <h3>3. CallableStatement:</h3>
+                <p>Used to execute stored procedures in the database.</p>
+                <pre><code class="language-java">CallableStatement cstmt = connection.prepareCall("{CALL getUser(?)}");
+        cstmt.setInt(1, 1);
+        ResultSet rs = cstmt.executeQuery();</code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>How to Execute Queries in JDBC</summary>
+            <div class="content">
+                <p>In JDBC, executing queries involves creating statements and calling the appropriate methods to interact with the database. Queries can be categorized as <strong>SELECT</strong> (to retrieve data) and <strong>UPDATE</strong>, <strong>INSERT</strong>, or <strong>DELETE</strong> (to modify data).</p>
+        
+                <h3>Steps to Execute Queries:</h3>
+                <ol>
+                    <li>Establish a connection using the <code>DriverManager</code>.</li>
+                    <li>Create a statement (<code>Statement</code>, <code>PreparedStatement</code>, or <code>CallableStatement</code>).</li>
+                    <li>Execute the query using appropriate methods:</li>
+                    <ul>
+                        <li><code>executeQuery()</code>: For SELECT queries (returns a <code>ResultSet</code>).</li>
+                        <li><code>executeUpdate()</code>: For INSERT, UPDATE, DELETE (returns number of affected rows).</li>
+                        <li><code>execute()</code>: For executing generic SQL commands or retrieving multiple results.</li>
+                    </ul>
+                    <li>Process the result if applicable.</li>
+                    <li>Close the resources (e.g., <code>ResultSet</code>, <code>Statement</code>, and <code>Connection</code>).</li>
+                </ol>
+        
+                <h3>Examples:</h3>
+        
+                <h4>1. Executing a SELECT Query</h4>
+                <pre><code class="language-java">import java.sql.*;
+        
+        public class SelectExample {
+            public static void main(String[] args) {
+                String url = "jdbc:mysql://localhost:3306/mydatabase";
+                String user = "root";
+                String password = "password";
+        
+                try (Connection connection = DriverManager.getConnection(url, user, password);
+                     Statement statement = connection.createStatement()) {
+        
+                    String sql = "SELECT * FROM users";
+                    ResultSet resultSet = statement.executeQuery(sql);
+        
+                    while (resultSet.next()) {
+                        System.out.println("ID: " + resultSet.getInt("id"));
+                        System.out.println("Name: " + resultSet.getString("name"));
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }</code></pre>
+        
+                <h4>2. Executing an INSERT Query</h4>
+                <pre><code class="language-java">import java.sql.*;
+        
+        public class InsertExample {
+            public static void main(String[] args) {
+                String url = "jdbc:mysql://localhost:3306/mydatabase";
+                String user = "root";
+                String password = "password";
+        
+                try (Connection connection = DriverManager.getConnection(url, user, password);
+                     PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users (name, email) VALUES (?, ?)")) {
+        
+                    preparedStatement.setString(1, "John Doe");
+                    preparedStatement.setString(2, "john.doe@example.com");
+        
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    System.out.println("Rows inserted: " + rowsAffected);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }</code></pre>
+        
+                <h4>3. Executing an UPDATE Query</h4>
+                <pre><code class="language-java">import java.sql.*;
+        
+        public class UpdateExample {
+            public static void main(String[] args) {
+                String url = "jdbc:mysql://localhost:3306/mydatabase";
+                String user = "root";
+                String password = "password";
+        
+                try (Connection connection = DriverManager.getConnection(url, user, password);
+                     PreparedStatement preparedStatement = connection.prepareStatement("UPDATE users SET email = ? WHERE id = ?")) {
+        
+                    preparedStatement.setString(1, "new.email@example.com");
+                    preparedStatement.setInt(2, 1);
+        
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    System.out.println("Rows updated: " + rowsAffected);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }</code></pre>
+        
+                <h4>4. Executing a DELETE Query</h4>
+                <pre><code class="language-java">import java.sql.*;
+        
+        public class DeleteExample {
+            public static void main(String[] args) {
+                String url = "jdbc:mysql://localhost:3306/mydatabase";
+                String user = "root";
+                String password = "password";
+        
+                try (Connection connection = DriverManager.getConnection(url, user, password);
+                     PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM users WHERE id = ?")) {
+        
+                    preparedStatement.setInt(1, 1);
+        
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    System.out.println("Rows deleted: " + rowsAffected);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }</code></pre>
+        
+                <h4>5. Executing a Generic Query with <code>execute()</code></h4>
+                <pre><code class="language-java">import java.sql.*;
+        
+        public class ExecuteExample {
+            public static void main(String[] args) {
+                String url = "jdbc:mysql://localhost:3306/mydatabase";
+                String user = "root";
+                String password = "password";
+        
+                try (Connection connection = DriverManager.getConnection(url, user, password);
+                     Statement statement = connection.createStatement()) {
+        
+                    boolean isResultSet = statement.execute("SELECT * FROM users");
+        
+                    if (isResultSet) {
+                        ResultSet rs = statement.getResultSet();
+                        while (rs.next()) {
+                            System.out.println("ID: " + rs.getInt("id"));
+                        }
+                    } else {
+                        int updateCount = statement.getUpdateCount();
+                        System.out.println("Rows affected: " + updateCount);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }</code></pre>
+            </div>
+        </details>
+        
+
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
