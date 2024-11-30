@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Concepts</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>What is API testing?</summary>
+            <div class="content">
+                API testing involves verifying the functionality, reliability, performance, and security of Application
+                Programming Interfaces (APIs). It focuses on ensuring that APIs work as expected and meet business and
+                technical requirements.
+            </div>
+        </details>
+
+        <details>
+            <summary>What are the key components of API testing?</summary>
+            <div class="content">
+                Key components of API testing include:
+                <ul>
+                    <li><strong>Validation:</strong> Checking response data, HTTP status codes, and headers.</li>
+                    <li><strong>Functionality:</strong> Ensuring the API performs as intended.</li>
+                    <li><strong>Performance:</strong> Assessing response times and scalability under various loads.</li>
+                    <li><strong>Security:</strong> Verifying authentication, authorization, and protection against
+                        vulnerabilities.</li>
+                    <li><strong>Error handling:</strong> Ensuring appropriate responses for invalid inputs or system
+                        failures.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What are common HTTP methods used in API testing?</summary>
+            <div class="content">
+                Common HTTP methods include:
+                <ul>
+                    <li><strong>GET:</strong> Retrieves data from the server.</li>
+                    <li><strong>POST:</strong> Sends data to the server to create a resource.</li>
+                    <li><strong>PUT:</strong> Updates an existing resource or creates one if it doesn’t exist.</li>
+                    <li><strong>DELETE:</strong> Removes a resource from the server.</li>
+                    <li><strong>PATCH:</strong> Partially updates an existing resource.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                GET /api/v1/employees HTTP/1.1
+                Host: example.com
+                Authorization: Bearer <token>
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between SOAP and REST APIs?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>SOAP (Simple Object Access Protocol):</strong> A protocol that uses XML for request and
+                        response messages. It is more rigid and requires strict standards.</li>
+                    <li><strong>REST (Representational State Transfer):</strong> An architectural style that uses
+                        standard HTTP methods and supports multiple formats like JSON, XML, etc.</li>
+                </ul>
+                Example of a REST request:
+                <pre><code class="language-http">
+                POST /api/v1/employees HTTP/1.1
+                Host: example.com
+                Content-Type: application/json
+        
+                {
+                    "name": "John Doe",
+                    "role": "Developer"
+                }
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What are the key validation steps in API testing?</summary>
+            <div class="content">
+                Key validation steps include:
+                <ul>
+                    <li><strong>Response Code:</strong> Verify that the HTTP status code matches the expected result
+                        (e.g., 200 for success).</li>
+                    <li><strong>Response Body:</strong> Check the data returned in the response payload.</li>
+                    <li><strong>Headers:</strong> Validate important headers like Content-Type and Authorization.</li>
+                    <li><strong>Performance:</strong> Measure response time and latency.</li>
+                </ul>
+                Example:
+                <pre><code class="language-json">
+                {
+                    "status": 200,
+                    "message": "Success",
+                    "data": {
+                        "id": 1,
+                        "name": "John Doe"
+                    }
+                }
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What tools are commonly used for API testing?</summary>
+            <div class="content">
+                Common tools include:
+                <ul>
+                    <li><strong>Postman:</strong> A widely used tool for manual and automated API testing.</li>
+                    <li><strong>SoapUI:</strong> Primarily used for SOAP and REST API testing.</li>
+                    <li><strong>JMeter:</strong> For performance and load testing of APIs.</li>
+                    <li><strong>Swagger:</strong> For API documentation and testing.</li>
+                    <li><strong>Karate:</strong> A framework for API testing and automation.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is meant by API authentication?</summary>
+            <div class="content">
+                API authentication is the process of verifying the identity of a user or system interacting with an API.
+                Common methods include:
+                <ul>
+                    <li><strong>API Key:</strong> A unique key provided to authenticate API requests.</li>
+                    <li><strong>OAuth:</strong> An open standard for access delegation, often used for token-based
+                        authentication.</li>
+                    <li><strong>JWT (JSON Web Tokens):</strong> A compact, self-contained token for secure
+                        communication.</li>
+                </ul>
+                Example of an authenticated request:
+                <pre><code class="language-http">
+                GET /api/v1/resources HTTP/1.1
+                Host: example.com
+                Authorization: Bearer <your_access_token>
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between functional and non-functional API testing?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Functional Testing:</strong> Validates that the API performs as expected according to
+                        requirements (e.g., correct responses for valid inputs).</li>
+                    <li><strong>Non-Functional Testing:</strong> Tests the performance, reliability, scalability, and
+                        security of the API.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What are API test cases?</summary>
+            <div class="content">
+                API test cases define scenarios to validate the API’s functionality, reliability, and performance.
+                Examples include:
+                <ul>
+                    <li>Verify API response status codes (e.g., 200, 404, 500).</li>
+                    <li>Validate the structure and data types in the response body.</li>
+                    <li>Check API response time is within acceptable limits.</li>
+                    <li>Ensure proper error messages for invalid requests.</li>
+                    <li>Test API endpoints with various authentication scenarios.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What are API rate limits?</summary>
+            <div class="content">
+                API rate limits control the number of API requests a client can make in a specific period. This ensures
+                fair usage and protects against abuse. Limits can be implemented per user, per application, or per IP
+                address.
+                Example of a response when rate-limited:
+                <pre><code class="language-http">
+                HTTP/1.1 429 Too Many Requests
+                Content-Type: application/json
+        
+                {
+                    "message": "Rate limit exceeded. Try again in 60 seconds."
+                }
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is API versioning?</summary>
+            <div class="content">
+                API versioning involves managing changes to an API without breaking existing clients. It allows the
+                introduction of new features or updates while maintaining compatibility. Versioning can be done using:
+                <ul>
+                    <li>URL paths (e.g., /v1/resource).</li>
+                    <li>Request headers (e.g., Accept: application/vnd.example.v1+json).</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                GET /api/v1/employees HTTP/1.1
+                Host: example.com
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the importance of response time in API testing?</summary>
+            <div class="content">
+                Response time is crucial in API testing as it indicates how quickly an API can respond to requests. Slow
+                response times can lead to poor user experience and performance issues, especially under high load. APIs
+                should ideally respond in under 1 second for most use cases.
+                Example:
+                <pre><code class="language-sql">
+                -- Measure the time it takes for the API to respond
+                SELECT response_time, request_url
+                FROM api_logs
+                WHERE response_time > 1; -- Filter for slow responses
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the role of data-driven testing in API testing?</summary>
+            <div class="content">
+                Data-driven testing involves using a variety of input data to test an API’s functionality. This allows
+                testing of multiple scenarios, ensuring that the API performs correctly with different data sets. It can
+                be automated to run tests with different combinations of inputs.
+                Example:
+                <pre><code class="language-sql">
+                -- Example: Testing multiple inputs
+                SELECT * FROM test_data;
+                
+                -- Loop over inputs and send API requests for each one
+                FOR each input in test_data:
+                    -- Execute API request with input data
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the purpose of mocking in API testing?</summary>
+            <div class="content">
+                Mocking in API testing is used to simulate the behavior of external systems or components. It allows
+                testing the API in isolation without needing the actual system to be present or functioning. It can be
+                especially useful when third-party services are unavailable or too expensive to call repeatedly.
+                Example:
+                <pre><code class="language-json">
+                {
+                    "status": 200,
+                    "data": {
+                        "user_id": 1,
+                        "name": "Mock User"
+                    }
+                }
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between positive and negative API testing?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Positive Testing:</strong> Validates that the API works as expected with valid input and
+                        requests.</li>
+                    <li><strong>Negative Testing:</strong> Tests how the API handles invalid input or unexpected
+                        scenarios, ensuring proper error handling and responses.</li>
+                </ul>
+                Example of positive test case:
+                <pre><code class="language-json">
+                {
+                    "username": "valid_user",
+                    "password": "valid_pass"
+                }
+                </code></pre>
+                Example of negative test case:
+                <pre><code class="language-json">
+                {
+                    "username": "invalid_user",
+                    "password": "wrong_pass"
+                }
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What are assertions in API testing?</summary>
+            <div class="content">
+                Assertions are conditions or expressions used in API testing to verify that the API response meets the
+                expected criteria. They can check status codes, response bodies, headers, or other aspects of the API
+                response.
+                Example:
+                <pre><code class="language-js">
+                // Example of a simple assertion in Postman test script
+                pm.test("Status code is 200", function() {
+                    pm.response.to.have.status(200);
+                });
+        
+                pm.test("Response time is under 500ms", function() {
+                    pm.response.to.have.responseTime.below(500);
+                });
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the role of API documentation?</summary>
+            <div class="content">
+                API documentation provides developers with detailed information about how to interact with an API. It
+                includes endpoints, request/response formats, parameters, authentication methods, and examples. Good API
+                documentation ensures that developers can easily understand and use the API.
+                Example:
+                <pre><code class="language-http">
+                GET /api/v1/users HTTP/1.1
+                Host: example.com
+                Authorization: Bearer <your_access_token>
+        
+                Response:
+                200 OK
+                {
+                    "id": 1,
+                    "name": "John Doe",
+                    "email": "john.doe@example.com"
+                }
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the significance of testing API endpoints?</summary>
+            <div class="content">
+                Testing API endpoints is crucial because each endpoint represents a unique resource or functionality
+                within the API. Ensuring each endpoint works as expected helps confirm that the API can fulfill all
+                required operations, such as CRUD operations (Create, Read, Update, Delete).
+                Example of testing an endpoint:
+                <pre><code class="language-http">
+                GET /api/v1/products HTTP/1.1
+                Host: example.com
+                Authorization: Bearer <your_access_token>
+        
+                Response:
+                200 OK
+                [
+                    { "id": 1, "name": "Product A" },
+                    { "id": 2, "name": "Product B" }
+                ]
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What are the common challenges in API testing?</summary>
+            <div class="content">
+                Common challenges include:
+                <ul>
+                    <li><strong>Authentication and Authorization:</strong> Dealing with complex security mechanisms like
+                        OAuth, JWT tokens, etc.</li>
+                    <li><strong>Handling External Dependencies:</strong> Mocking or simulating third-party services when
+                        they are unavailable.</li>
+                    <li><strong>Versioning:</strong> Ensuring compatibility across different versions of an API.</li>
+                    <li><strong>Complexity in API Responses:</strong> Managing and testing APIs with large or nested
+                        response data.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is load testing in API testing?</summary>
+            <div class="content">
+                Load testing in API testing is the process of testing how an API performs under various levels of load
+                (e.g., multiple requests per second). It helps determine the API's capacity to handle high traffic and
+                identify performance bottlenecks.
+                Example using JMeter for load testing:
+                <pre><code class="language-http">
+                GET /api/v1/items HTTP/1.1
+                Host: example.com
+                -- Test API with simulated 1000 concurrent users
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the purpose of API response validation?</summary>
+            <div class="content">
+                API response validation is essential to verify that the API returns correct and expected results. It
+                involves checking the response code, headers, body content, and any other elements specified in the
+                API's documentation. Validation ensures that the API works as intended.
+                Example of response validation:
+                <pre><code class="language-js">
+                pm.test("Response should contain 'user_id'", function() {
+                    pm.response.to.have.jsonBody("user_id");
+                });
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between API testing and UI testing?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>API Testing:</strong> Focuses on testing the business logic and functionality of APIs.
+                        It deals with backend processes without involving user interfaces.</li>
+                    <li><strong>UI Testing:</strong> Focuses on testing the user interface and ensures the front-end
+                        interacts correctly with the API. It involves manual or automated testing of web and mobile
+                        interfaces.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the purpose of stress testing in API testing?</summary>
+            <div class="content">
+                Stress testing is used to evaluate how an API performs under extreme load conditions. The goal is to determine the breaking point of the API, identify potential failures, and assess how it recovers from high traffic or unexpected input.
+                Example:
+                <pre><code class="language-http">
+                GET /api/v1/login HTTP/1.1
+                Host: example.com
+                -- Simulate 10,000 concurrent users trying to log in
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the difference between API testing and integration testing?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>API Testing:</strong> Focuses on testing individual API endpoints to ensure they function as expected, independent of other components.</li>
+                    <li><strong>Integration Testing:</strong> Verifies that different components or systems work together as expected. It involves testing the interactions between APIs and other services or databases.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What are the key types of testing in API testing?</summary>
+            <div class="content">
+                The key types of API testing include:
+                <ul>
+                    <li><strong>Functional Testing:</strong> Validates that the API functions according to the specifications.</li>
+                    <li><strong>Performance Testing:</strong> Assesses the API's response times, throughput, and scalability.</li>
+                    <li><strong>Security Testing:</strong> Ensures the API is secure from threats such as unauthorized access, data leakage, and injection attacks.</li>
+                    <li><strong>Usability Testing:</strong> Ensures that the API is easy to understand and use for developers.</li>
+                    <li><strong>Compatibility Testing:</strong> Verifies the API works across different environments, platforms, and browsers.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the role of API security testing?</summary>
+            <div class="content">
+                API security testing is designed to ensure that an API is protected from threats such as unauthorized access, data breaches, and malicious attacks. It includes verifying authentication mechanisms, authorization processes, input validation, and encryption standards.
+                Example of testing for security flaws:
+                <pre><code class="language-http">
+                GET /api/v1/users HTTP/1.1
+                Host: example.com
+                Authorization: Bearer <invalid_token>
+                -- Test if the API rejects invalid authorization tokens
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What are the best practices for API testing?</summary>
+            <div class="content">
+                Best practices for API testing include:
+                <ul>
+                    <li><strong>Clear and Comprehensive Documentation:</strong> Ensure that the API is well-documented with accurate information about endpoints, authentication, and error handling.</li>
+                    <li><strong>Test all Possible Scenarios:</strong> Cover both valid and invalid inputs, edge cases, and error handling scenarios.</li>
+                    <li><strong>Automate Testing:</strong> Automate API tests to ensure consistency, efficiency, and ease of re-testing.</li>
+                    <li><strong>Use Mocking and Stubbing:</strong> Simulate the behavior of external dependencies during testing.</li>
+                    <li><strong>Monitor API Performance:</strong> Continuously monitor the API's performance to identify potential bottlenecks or issues.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the role of testing frameworks in API testing?</summary>
+            <div class="content">
+                Testing frameworks simplify the process of writing and running automated tests. They provide structure, reusable code, and built-in methods to handle common testing tasks. Popular frameworks for API testing include:
+                <ul>
+                    <li><strong>Postman:</strong> Allows for manual and automated testing with an easy-to-use interface.</li>
+                    <li><strong>JUnit:</strong> A popular framework for writing automated tests in Java, often used for API testing.</li>
+                    <li><strong>RestAssured:</strong> A Java library for testing REST APIs.</li>
+                    <li><strong>Chai/Mocha:</strong> JavaScript-based testing frameworks often used for API testing in Node.js environments.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is endpoint testing?</summary>
+            <div class="content">
+                Endpoint testing focuses on validating individual API endpoints to ensure they perform as expected. It includes checking:
+                <ul>
+                    <li>Correct HTTP method (GET, POST, etc.)</li>
+                    <li>Correct endpoint URL</li>
+                    <li>Valid input parameters</li>
+                    <li>Correct response code</li>
+                    <li>Expected response body and headers</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                POST /api/v1/login HTTP/1.1
+                Host: example.com
+                Content-Type: application/json
+        
+                {
+                    "username": "user1",
+                    "password": "password123"
+                }
+        
+                Response:
+                200 OK
+                {
+                    "status": "success",
+                    "token": "<generated_token>"
+                }
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is API lifecycle management in testing?</summary>
+            <div class="content">
+                API lifecycle management refers to the process of managing the various stages of an API's life, from development and testing to deployment and maintenance. It includes tasks such as:
+                <ul>
+                    <li>Defining and documenting API specifications</li>
+                    <li>Testing the API during development</li>
+                    <li>Deploying the API to production</li>
+                    <li>Monitoring and maintaining the API after release</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                -- After testing, deploy the API to a staging environment
+                POST /deploy API HTTP/1.1
+                Host: example.com
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the role of load testing in API performance?</summary>
+            <div class="content">
+                Load testing evaluates how an API behaves under expected or anticipated user loads. It is designed to identify the maximum capacity the API can handle without performance degradation. This type of testing helps uncover bottlenecks and ensures scalability.
+                Example:
+                <pre><code class="language-http">
+                GET /api/v1/orders HTTP/1.1
+                Host: example.com
+                -- Simulate multiple requests to measure how the API scales
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the difference between API testing and unit testing?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>API Testing:</strong> Focuses on validating the functionality and performance of APIs, ensuring they meet requirements and respond as expected with real-world inputs.</li>
+                    <li><strong>Unit Testing:</strong> Involves testing individual components or functions of a program to ensure they work as expected in isolation. Unit tests are often written by developers during the development process.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the role of automated testing in API testing?</summary>
+            <div class="content">
+                Automated testing is crucial for efficient and consistent API testing. It allows for running tests quickly and repeatedly without manual intervention. It helps detect issues early and provides faster feedback during development cycles.
+                Tools for automated API testing include:
+                <ul>
+                    <li><strong>Postman:</strong> Supports automation via scripting and integration with CI/CD pipelines.</li>
+                    <li><strong>JMeter:</strong> Primarily used for performance and load testing but can also automate functional tests.</li>
+                    <li><strong>RestAssured:</strong> A Java-based library for automated testing of REST APIs.</li>
+                </ul>
+            </div>
+        </details>        
+
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

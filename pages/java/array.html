@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <h2>1. What is an Array?</h2>
+            <p>An array is a container object that holds a fixed number of values of a single type. In Java, arrays are
+                objects that can store multiple elements of the same data type.</p>
+
+            <h2>2. Declaration of Arrays</h2>
+            <p>To declare an array in Java:</p>
+            <pre><code class="language-java">
+        int[] myArray;  // Recommended
+        // or
+        int myArray[];
+            </code></pre>
+
+            <h2>3. Initialization of Arrays</h2>
+            <p>Once declared, arrays can be initialized as follows:</p>
+            <pre><code class="language-java">
+        int[] myArray = new int[5]; // Array with 5 elements, default values are 0.
+        myArray[0] = 10;           // Assign values to elements
+        int[] anotherArray = {1, 2, 3, 4, 5}; // Inline initialization
+            </code></pre>
+
+            <h2>4. 2D Arrays</h2>
+            <p>A 2D array in Java is an array of arrays, useful for representing tables or matrices:</p>
+            <pre><code class="language-java">
+        int[][] matrix = new int[2][3]; // 2 rows, 3 columns
+        matrix[0][0] = 1;
+        matrix[0][1] = 2;
+        matrix[0][2] = 3;
+        int[][] anotherMatrix = {{1, 2}, {3, 4}, {5, 6}}; // Inline initialization
+            </code></pre>
+
+            <h2>5. Annotations with Arrays</h2>
+            <p>Annotations in Java can work with arrays. For example:</p>
+            <pre><code class="language-java">
+        @interface MyAnnotation {
+            String[] value();
+        }
+        
+        @MyAnnotation(value = {"Option1", "Option2"})
+        public class MyClass {
+        }
+            </code></pre>
+
+            <h2>6. Methods and Arrays</h2>
+            <p>Methods can accept arrays as parameters and return arrays:</p>
+            <pre><code class="language-java">
+        public static int[] reverseArray(int[] array) {
+            int[] reversed = new int[array.length];
+            for (int i = 0; i < array.length; i++) {
+                reversed[i] = array[array.length - 1 - i];
+            }
+            return reversed;
+        }
+            </code></pre>
+
+            <h2>7. Reversing an Array</h2>
+            <p>Example of reversing an array:</p>
+            <pre><code class="language-java">
+        int[] array = {1, 2, 3, 4, 5};
+        int[] reversed = reverseArray(array);
+        System.out.println(Arrays.toString(reversed)); // Output: [5, 4, 3, 2, 1]
+            </code></pre>
+
+            <h2>8. Sorting an Array</h2>
+            <p>Java provides utilities to sort arrays:</p>
+            <pre><code class="language-java">
+        import java.util.Arrays;
+        
+        int[] array = {5, 3, 2, 4, 1};
+        Arrays.sort(array); // Sorts in ascending order
+        System.out.println(Arrays.toString(array)); // Output: [1, 2, 3, 4, 5]
+            </code></pre>
+
+            <h2>Conclusion</h2>
+            <p>Arrays are powerful and versatile structures in Java, allowing efficient storage and manipulation of
+                data. Mastery of arrays is essential for working with Java effectively.</p>
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Code</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>What are the HTTP methods used in API requests?</summary>
+            <div class="content">
+                HTTP methods define the actions that can be performed on resources in an API. The primary methods are:
+                <ul>
+                    <li><strong>GET:</strong> Retrieves data from the server. It is a safe and idempotent method, meaning it does not alter data.</li>
+                    <li><strong>POST:</strong> Sends data to the server to create or update a resource. It is not idempotent, as calling it multiple times can result in different outcomes.</li>
+                    <li><strong>PUT:</strong> Replaces a resource with new data. It is idempotent, meaning that calling it multiple times with the same data will have the same effect.</li>
+                    <li><strong>PATCH:</strong> Partially updates a resource. Like PUT, it modifies an existing resource but only updates the specified fields.</li>
+                    <li><strong>DELETE:</strong> Deletes a resource from the server.</li>
+                    <li><strong>OPTIONS:</strong> Returns the HTTP methods that are allowed for a specific resource.</li>
+                    <li><strong>HEAD:</strong> Similar to GET, but it only retrieves the headers, not the body of the response. It's often used to check for the presence of a resource.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the GET method in HTTP?</summary>
+            <div class="content">
+                The GET method is used to request data from a specified resource. It is the most common HTTP method used in APIs to retrieve information. 
+                <ul>
+                    <li><strong>Characteristics:</strong> It is a safe and idempotent method, meaning it does not modify the resource and can be safely repeated without causing side effects.</li>
+                    <li><strong>Usage:</strong> Commonly used to retrieve data such as user profiles, product details, and search results.</li>
+                    <li><strong>Example:</strong> <code>GET /api/v1/users/123</code> retrieves information about user with ID 123.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                GET /api/v1/products HTTP/1.1
+                Host: example.com
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the POST method in HTTP?</summary>
+            <div class="content">
+                The POST method is used to send data to the server to create or update a resource. Unlike GET, POST is not idempotent, meaning that multiple identical requests can result in different outcomes.
+                <ul>
+                    <li><strong>Characteristics:</strong> It is typically used to create resources or submit forms.</li>
+                    <li><strong>Usage:</strong> Commonly used for actions like user login, creating a new product, or submitting an order.</li>
+                    <li><strong>Example:</strong> <code>POST /api/v1/users</code> creates a new user.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                POST /api/v1/orders HTTP/1.1
+                Host: example.com
+                Content-Type: application/json
+        
+                {
+                    "product_id": 1,
+                    "quantity": 2
+                }
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the PUT method in HTTP?</summary>
+            <div class="content">
+                The PUT method is used to update a resource or create a new resource if it doesn't exist. It replaces the entire resource with the new data sent in the request body.
+                <ul>
+                    <li><strong>Characteristics:</strong> PUT is idempotent, meaning that making the same request multiple times will always produce the same result.</li>
+                    <li><strong>Usage:</strong> It is used when the client wants to completely replace a resource with new data.</li>
+                    <li><strong>Example:</strong> <code>PUT /api/v1/users/123</code> replaces the data of user 123 with new data provided in the request body.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                PUT /api/v1/products/1 HTTP/1.1
+                Host: example.com
+                Content-Type: application/json
+        
+                {
+                    "name": "Updated Product",
+                    "price": 20.99
+                }
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the PATCH method in HTTP?</summary>
+            <div class="content">
+                The PATCH method is used to partially update a resource. Unlike PUT, which replaces the entire resource, PATCH only updates the fields provided in the request.
+                <ul>
+                    <li><strong>Characteristics:</strong> PATCH is not idempotent by default, meaning repeated requests with the same data may have different results if the data is not handled correctly.</li>
+                    <li><strong>Usage:</strong> It is commonly used when updating a single field of a resource, such as changing a user's email address or updating the status of an order.</li>
+                    <li><strong>Example:</strong> <code>PATCH /api/v1/users/123</code> updates the user with ID 123 with new data in the request body.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                PATCH /api/v1/users/123 HTTP/1.1
+                Host: example.com
+                Content-Type: application/json
+        
+                {
+                    "email": "newemail@example.com"
+                }
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the DELETE method in HTTP?</summary>
+            <div class="content">
+                The DELETE method is used to delete a resource on the server. It removes the specified resource, and if successful, it generally returns a status code indicating that the resource was deleted.
+                <ul>
+                    <li><strong>Characteristics:</strong> It is idempotent, meaning that calling DELETE multiple times on the same resource will have the same effect (the resource will remain deleted).</li>
+                    <li><strong>Usage:</strong> Commonly used to delete a user, product, or any other resource from a system.</li>
+                    <li><strong>Example:</strong> <code>DELETE /api/v1/users/123</code> deletes the user with ID 123.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                DELETE /api/v1/products/1 HTTP/1.1
+                Host: example.com
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the OPTIONS method in HTTP?</summary>
+            <div class="content">
+                The OPTIONS method is used to describe the communication options for the target resource. It allows the client to determine which HTTP methods are supported by a specific resource.
+                <ul>
+                    <li><strong>Characteristics:</strong> It does not require a request body and typically returns an HTTP response header listing supported methods (e.g., GET, POST, PUT, DELETE).</li>
+                    <li><strong>Usage:</strong> Often used for CORS (Cross-Origin Resource Sharing) requests and to discover allowed methods for a specific endpoint.</li>
+                    <li><strong>Example:</strong> <code>OPTIONS /api/v1/products</code> returns the allowed HTTP methods for the products resource.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                OPTIONS /api/v1/products HTTP/1.1
+                Host: example.com
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What is the HEAD method in HTTP?</summary>
+            <div class="content">
+                The HEAD method is used to retrieve the headers of a resource, but it does not return the body. It is often used to check for the existence of a resource or get metadata (such as the length of the content or last-modified date).
+                <ul>
+                    <li><strong>Characteristics:</strong> It is similar to GET, but it only retrieves the headers of the response, not the resource data.</li>
+                    <li><strong>Usage:</strong> Commonly used to check if a resource exists without downloading it or to obtain metadata about a resource.</li>
+                    <li><strong>Example:</strong> <code>HEAD /api/v1/products/123</code> retrieves only the headers of the product with ID 123.</li>
+                </ul>
+                Example:
+                <pre><code class="language-http">
+                HEAD /api/v1/products/123 HTTP/1.1
+                Host: example.com
+                </code></pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>What are idempotent and safe HTTP methods?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Idempotent Methods:</strong> An HTTP method is idempotent if making multiple identical requests has the same effect as making a single request. For example, PUT and DELETE methods are idempotent because repeating the same request will not have additional effects.</li>
+                    <li><strong>Safe Methods:</strong> A safe method is one that does not alter the resource. GET, HEAD, OPTIONS, and TRACE are considered safe because they only retrieve data without changing it.</li>
+                </ul>
+            </div>
+        </details>
+        
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">        
+            <details>
+                <summary>ArrayList</summary> 
+                <div class="content">
+                    <h3>Overview</h3>
+                    <p>An <code>ArrayList</code> is a resizable array, part of the <code>java.util</code> package. It is best suited for dynamic arrays where frequent additions or removals occur.</p>
+                    
+                    <h4>Declaration and Initialization</h4>
+                    <pre><code class="language-java">
+        import java.util.ArrayList;
+        
+        ArrayList<String> list = new ArrayList<>(); // Default capacity
+        ArrayList<Integer> numbers = new ArrayList<>(10); // Initial capacity
+                    </code></pre>
+        
+                    <h4>Common Methods</h4>
+                    <ul>
+                        <li><code>add(element)</code> - Adds an element to the list.</li>
+                        <li><code>get(index)</code> - Retrieves the element at the specified index.</li>
+                        <li><code>remove(index)</code> - Removes the element at the specified index.</li>
+                        <li><code>size()</code> - Returns the number of elements in the list.</li>
+                    </ul>
+        
+                    <h4>Example Usage</h4>
+                    <pre><code class="language-java">
+        import java.util.ArrayList;
+        
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        
+        System.out.println(fruits.get(1)); // Output: Banana
+        fruits.remove(0);
+        System.out.println(fruits.size()); // Output: 2
+                    </code></pre>
+                </div> 
+            </details>
+        
+            <details>
+                <summary>LinkedList</summary> 
+                <div class="content">
+                    <h3>Overview</h3>
+                    <p>A <code>LinkedList</code> is a doubly-linked list implementation. It is optimal for scenarios involving frequent insertions and deletions.</p>
+        
+                    <h4>Declaration and Initialization</h4>
+                    <pre><code class="language-java">
+        import java.util.LinkedList;
+        
+        LinkedList<String> list = new LinkedList<>();
+                    </code></pre>
+        
+                    <h4>Common Methods</h4>
+                    <ul>
+                        <li><code>addFirst(element)</code> - Adds an element at the beginning of the list.</li>
+                        <li><code>addLast(element)</code> - Adds an element at the end of the list.</li>
+                        <li><code>removeFirst()</code> - Removes the first element.</li>
+                        <li><code>getLast()</code> - Retrieves the last element.</li>
+                    </ul>
+        
+                    <h4>Example Usage</h4>
+                    <pre><code class="language-java">
+        import java.util.LinkedList;
+        
+        LinkedList<String> colors = new LinkedList<>();
+        colors.add("Red");
+        colors.addFirst("Blue");
+        colors.addLast("Green");
+        
+        System.out.println(colors.getLast()); // Output: Green
+        colors.removeFirst();
+        System.out.println(colors); // Output: [Red, Green]
+                    </code></pre>
+                </div> 
+            </details>
+        
+            <details>
+                <summary>HashSet</summary> 
+                <div class="content">
+                    <h3>Overview</h3>
+                    <p>A <code>HashSet</code> is a collection that does not allow duplicate elements. It is implemented using a hash table and offers constant time performance for basic operations.</p>
+        
+                    <h4>Declaration and Initialization</h4>
+                    <pre><code class="language-java">
+        import java.util.HashSet;
+        
+        HashSet<String> set = new HashSet<>();
+                    </code></pre>
+        
+                    <h4>Common Methods</h4>
+                    <ul>
+                        <li><code>add(element)</code> - Adds an element to the set.</li>
+                        <li><code>contains(element)</code> - Checks if the set contains the specified element.</li>
+                        <li><code>remove(element)</code> - Removes the specified element from the set.</li>
+                        <li><code>size()</code> - Returns the number of elements in the set.</li>
+                    </ul>
+        
+                    <h4>Example Usage</h4>
+                    <pre><code class="language-java">
+        import java.util.HashSet;
+        
+        HashSet<String> animals = new HashSet<>();
+        animals.add("Dog");
+        animals.add("Cat");
+        animals.add("Dog"); // Duplicate will be ignored
+        
+        System.out.println(animals.contains("Cat")); // Output: true
+        animals.remove("Dog");
+        System.out.println(animals.size()); // Output: 1
+                    </code></pre>
+                </div> 
+            </details>
+        
+            <details>
+                <summary>HashMap</summary> 
+                <div class="content">
+                    <h3>Overview</h3>
+                    <p>A <code>HashMap</code> is a key-value pair collection. It does not allow duplicate keys but allows multiple null values.</p>
+        
+                    <h4>Declaration and Initialization</h4>
+                    <pre><code class="language-java">
+        import java.util.HashMap;
+        
+        HashMap<String, Integer> map = new HashMap<>();
+                    </code></pre>
+        
+                    <h4>Common Methods</h4>
+                    <ul>
+                        <li><code>put(key, value)</code> - Adds a key-value pair to the map.</li>
+                        <li><code>get(key)</code> - Retrieves the value associated with the specified key.</li>
+                        <li><code>remove(key)</code> - Removes the key-value pair associated with the specified key.</li>
+                        <li><code>containsKey(key)</code> - Checks if the map contains the specified key.</li>
+                    </ul>
+        
+                    <h4>Example Usage</h4>
+                    <pre><code class="language-java">
+        import java.util.HashMap;
+        
+        HashMap<String, Integer> scores = new HashMap<>();
+        scores.put("Alice", 90);
+        scores.put("Bob", 85);
+        
+        System.out.println(scores.get("Alice")); // Output: 90
+        scores.remove("Bob");
+        System.out.println(scores.containsKey("Bob")); // Output: false
+                    </code></pre>
+                </div> 
+            </details>
+        </div>
+    </div>
+    
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
