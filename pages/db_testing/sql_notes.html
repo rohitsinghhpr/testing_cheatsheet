@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Notes</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+
+        <!-- <details>
+            <summary></summary>
+            <div class="content"></div>
+        </details> -->
+
+        <details>
+            <summary>SQL Intro</summary>
+            <div class="content">
+                SQL (Structured Query Language) is a standard language used for interacting with databases. It allows
+                users to perform various operations like querying, updating, and managing data in a database. SQL is
+                widely used in relational database systems such as MySQL, PostgreSQL, Oracle, and SQL Server.
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Syntax</summary>
+            <div class="content">
+                SQL syntax refers to the set of rules for writing SQL statements. A typical SQL query includes clauses
+                like SELECT, FROM, WHERE, GROUP BY, HAVING, and ORDER BY.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT column1, column2
+                FROM table_name
+                WHERE condition;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Select</summary>
+            <div class="content">
+                The SELECT statement is used to retrieve data from a database. It can specify columns to retrieve or use
+                "*" to fetch all columns.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Select Distinct</summary>
+            <div class="content">
+                SELECT DISTINCT is used to return only unique values in a result set, eliminating duplicate rows.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT DISTINCT department 
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Where</summary>
+            <div class="content">
+                The WHERE clause is used to filter records that meet a specific condition.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees
+                WHERE age > 30;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Order By</summary>
+            <div class="content">
+                The ORDER BY clause is used to sort the result set in ascending (ASC) or descending (DESC) order.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees
+                ORDER BY age DESC;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL And</summary>
+            <div class="content">
+                The AND operator combines multiple conditions in the WHERE clause, and all conditions must be true.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees
+                WHERE age > 30 AND department = 'Sales';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Or</summary>
+            <div class="content">
+                The OR operator combines multiple conditions, and at least one of them must be true.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees
+                WHERE age > 30 OR department = 'HR';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Not</summary>
+            <div class="content">
+                The NOT operator is used to negate a condition in the WHERE clause.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees
+                WHERE NOT department = 'HR';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Insert Into</summary>
+            <div class="content">
+                The INSERT INTO statement is used to insert new rows into a table. You can specify columns or insert
+                values into all columns.
+
+                Example:
+                <pre><code class="language-sql">
+                INSERT INTO employees (name, age, department)
+                VALUES ('John Doe', 25, 'Engineering');
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Null Values</summary>
+            <div class="content">
+                NULL values represent missing or unknown data in a database. SQL provides the IS NULL and IS NOT NULL
+                operators to check for NULL values.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees
+                WHERE age IS NULL;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Update</summary>
+            <div class="content">
+                The UPDATE statement is used to modify existing records in a table. It allows you to update specific
+                columns based on a condition.
+
+                Example:
+                <pre><code class="language-sql">
+                UPDATE employees
+                SET age = 35
+                WHERE name = 'John Doe';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Delete</summary>
+            <div class="content">
+                The DELETE statement is used to remove rows from a table based on a condition. Be cautious, as it can
+                delete all rows if no condition is provided.
+
+                Example:
+                <pre><code class="language-sql">
+                DELETE FROM employees
+                WHERE department = 'HR';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Select Top</summary>
+            <div class="content">
+                The SELECT TOP clause is used to fetch a specified number or percentage of records from the result set.
+                Different databases may use LIMIT or FETCH for similar functionality.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT TOP 5 name, age 
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Aggregate Functions</summary>
+            <div class="content">
+                SQL aggregate functions perform calculations on a set of values and return a single value. Common
+                aggregate functions include COUNT, SUM, AVG, MIN, and MAX.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT COUNT(*) AS TotalEmployees
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Min and Max</summary>
+            <div class="content">
+                The MIN function returns the smallest value in a column, while the MAX function returns the largest
+                value.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT MIN(salary) AS LowestSalary, MAX(salary) AS HighestSalary
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Count</summary>
+            <div class="content">
+                The COUNT function is used to count the number of rows that match a condition. It is often used to
+                determine the total number of records.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT COUNT(*) AS TotalEmployees
+                FROM employees
+                WHERE department = 'Sales';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Sum</summary>
+            <div class="content">
+                The SUM function calculates the total sum of a numeric column.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT SUM(salary) AS TotalSalaries
+                FROM employees
+                WHERE department = 'Engineering';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Avg</summary>
+            <div class="content">
+                The AVG function calculates the average value of a numeric column.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT AVG(salary) AS AverageSalary
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Like</summary>
+            <div class="content">
+                The LIKE operator is used to search for a specified pattern in a column. Wildcards like `%` (any number
+                of characters) and `_` (single character) are often used with LIKE.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name 
+                FROM employees
+                WHERE name LIKE 'J%';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Wildcards</summary>
+            <div class="content">
+                SQL wildcards are used with the LIKE operator to search for patterns. Common wildcards include `%` (zero
+                or more characters) and `_` (a single character).
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name 
+                FROM employees
+                WHERE name LIKE '_a%';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL In</summary>
+            <div class="content">
+                The IN operator allows you to specify multiple values in a WHERE clause. It is a shorthand for multiple
+                OR conditions.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, department 
+                FROM employees
+                WHERE department IN ('Sales', 'HR', 'Engineering');
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Between</summary>
+            <div class="content">
+                The BETWEEN operator is used to filter records within a range of values, including the boundary values.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, age 
+                FROM employees
+                WHERE age BETWEEN 30 AND 40;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Aliases</summary>
+            <div class="content">
+                SQL aliases provide a temporary name to a table or column for better readability and convenience.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name AS EmployeeName, salary AS MonthlySalary
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Joins</summary>
+            <div class="content">
+                SQL joins are used to combine rows from two or more tables based on a related column. Common types
+                include INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, and SELF JOIN.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT employees.name, departments.department_name
+                FROM employees
+                INNER JOIN departments ON employees.department_id = departments.id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Inner Join</summary>
+            <div class="content">
+                The INNER JOIN returns rows that have matching values in both tables.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT employees.name, departments.department_name
+                FROM employees
+                INNER JOIN departments ON employees.department_id = departments.id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Left Join</summary>
+            <div class="content">
+                The LEFT JOIN returns all rows from the left table and the matched rows from the right table. Unmatched
+                rows in the right table will have NULL values.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT employees.name, departments.department_name
+                FROM employees
+                LEFT JOIN departments ON employees.department_id = departments.id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Right Join</summary>
+            <div class="content">
+                The RIGHT JOIN returns all rows from the right table and the matched rows from the left table. Unmatched
+                rows in the left table will have NULL values.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT employees.name, departments.department_name
+                FROM employees
+                RIGHT JOIN departments ON employees.department_id = departments.id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Full Join</summary>
+            <div class="content">
+                The FULL JOIN returns all rows from both tables, with NULL values in unmatched rows.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT employees.name, departments.department_name
+                FROM employees
+                FULL JOIN departments ON employees.department_id = departments.id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Self Join</summary>
+            <div class="content">
+                A SELF JOIN is a regular join where a table is joined with itself. This is useful for hierarchical or
+                relationship data.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT a.name AS Employee, b.name AS Manager
+                FROM employees a
+                INNER JOIN employees b ON a.manager_id = b.id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Union</summary>
+            <div class="content">
+                The SQL UNION operator combines the results of two or more SELECT statements into a single result set.
+                Duplicate rows are removed by default unless UNION ALL is used.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name FROM employees
+                UNION
+                SELECT name FROM contractors;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Group By</summary>
+            <div class="content">
+                The GROUP BY statement groups rows that have the same values into summary rows. It is often used with
+                aggregate functions like COUNT, SUM, AVG, etc.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT department, COUNT(*) AS TotalEmployees
+                FROM employees
+                GROUP BY department;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Having</summary>
+            <div class="content">
+                The HAVING clause is used to filter grouped records after the GROUP BY clause, similar to WHERE but for
+                aggregated data.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT department, COUNT(*) AS TotalEmployees
+                FROM employees
+                GROUP BY department
+                HAVING COUNT(*) > 10;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Exists</summary>
+            <div class="content">
+                The EXISTS operator checks for the existence of rows in a subquery and returns true if the subquery
+                returns one or more rows.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name FROM employees
+                WHERE EXISTS (
+                    SELECT 1 FROM departments
+                    WHERE departments.id = employees.department_id
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Any, All</summary>
+            <div class="content">
+                - The ANY operator compares a value to any value in a list or subquery and returns true if any match is
+                found.
+                - The ALL operator compares a value to all values in a list or subquery and returns true if all
+                conditions are met.
+
+                Example for ANY:
+                <pre><code class="language-sql">
+                SELECT name FROM employees
+                WHERE salary > ANY (SELECT salary FROM managers);
+                </code></pre>
+
+                Example for ALL:
+                <pre><code class="language-sql">
+                SELECT name FROM employees
+                WHERE salary > ALL (SELECT salary FROM interns);
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Select Into</summary>
+            <div class="content">
+                The SELECT INTO statement copies data from one table into a new table.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT * INTO employees_backup
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Insert Into Select</summary>
+            <div class="content">
+                The INSERT INTO SELECT statement copies data from one table and inserts it into another existing table.
+
+                Example:
+                <pre><code class="language-sql">
+                INSERT INTO archived_employees (name, age, department)
+                SELECT name, age, department
+                FROM employees
+                WHERE status = 'inactive';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Case</summary>
+            <div class="content">
+                The CASE statement allows you to perform conditional logic in SQL, similar to an if-else structure.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name,
+                    CASE
+                        WHEN salary > 50000 THEN 'High'
+                        WHEN salary BETWEEN 30000 AND 50000 THEN 'Medium'
+                        ELSE 'Low'
+                    END AS SalaryCategory
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Null Functions</summary>
+            <div class="content">
+                SQL provides functions to handle NULL values, such as ISNULL(), COALESCE(), and NVL() (depending on the
+                database).
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, ISNULL(salary, 0) AS Salary
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Stored Procedures</summary>
+            <div class="content">
+                Stored procedures are precompiled SQL code that can be executed repeatedly. They accept parameters and
+                improve performance and code reusability.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE PROCEDURE GetEmployeesByDepartment (@deptName NVARCHAR(50))
+                AS
+                BEGIN
+                    SELECT * FROM employees WHERE department = @deptName;
+                END;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Comments</summary>
+            <div class="content">
+                SQL comments are used to explain or document the code. Comments are ignored during execution.
+
+                Example:
+                Single-line comment:
+                <pre><code class="language-sql">
+                -- This is a single-line comment
+                SELECT * FROM employees;
+                </code></pre>
+
+                Multi-line comment:
+                <pre><code class="language-sql">
+                /* This is
+                   a multi-line comment */
+                SELECT * FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Operators</summary>
+            <div class="content">
+                SQL operators are used in conditions to compare values. Examples include arithmetic operators (+, -, *,
+                /), comparison operators (=, !=, <>, >, <), and logical operators (AND, OR, NOT). Example: <pre><code
+                            class="language-sql">
+                SELECT name FROM employees
+                WHERE salary > 30000 AND department = 'Engineering';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Database</summary>
+            <div class="content">
+                A SQL database is a structured collection of data stored in tables. It allows for easy data management
+                using SQL commands to query, update, and manage the data.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT * FROM information_schema.tables;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Create DB</summary>
+            <div class="content">
+                The CREATE DATABASE statement is used to create a new database.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE DATABASE CompanyDB;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Drop DB</summary>
+            <div class="content">
+                The DROP DATABASE statement is used to delete an existing database. Use this command carefully as all
+                data will be permanently removed.
+
+                Example:
+                <pre><code class="language-sql">
+                DROP DATABASE CompanyDB;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Backup DB</summary>
+            <div class="content">
+                Database backup involves creating a copy of the database to prevent data loss. The syntax for backup
+                depends on the database system (e.g., MySQL, SQL Server).
+
+                Example (SQL Server):
+                <pre><code class="language-sql">
+                BACKUP DATABASE CompanyDB 
+                TO DISK = 'C:\\Backups\\CompanyDB.bak';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Create Table</summary>
+            <div class="content">
+                The CREATE TABLE statement is used to create a new table in the database.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100),
+                    age INT,
+                    department NVARCHAR(50)
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Drop Table</summary>
+            <div class="content">
+                The DROP TABLE statement is used to delete an existing table along with all its data.
+
+                Example:
+                <pre><code class="language-sql">
+                DROP TABLE employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Alter Table</summary>
+            <div class="content">
+                The ALTER TABLE statement is used to modify the structure of an existing table. You can add, drop, or
+                modify columns.
+
+                Example (Add a column):
+                <pre><code class="language-sql">
+                ALTER TABLE employees
+                ADD salary DECIMAL(10, 2);
+                </code></pre>
+
+                Example (Drop a column):
+                <pre><code class="language-sql">
+                ALTER TABLE employees
+                DROP COLUMN salary;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Constraints</summary>
+            <div class="content">
+                SQL constraints are rules enforced on table columns to ensure data integrity. Examples include PRIMARY
+                KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, and DEFAULT.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100) NOT NULL,
+                    email NVARCHAR(100) UNIQUE
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Not Null</summary>
+            <div class="content">
+                The NOT NULL constraint ensures that a column cannot have a NULL value.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100) NOT NULL
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Unique</summary>
+            <div class="content">
+                The UNIQUE constraint ensures that all values in a column are distinct, preventing duplicate entries.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    email NVARCHAR(100) UNIQUE
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Primary Key</summary>
+            <div class="content">
+                The PRIMARY KEY constraint uniquely identifies each record in a table. A table can have only one primary
+                key, which can consist of single or multiple columns.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100) NOT NULL
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Foreign Key</summary>
+            <div class="content">
+                The FOREIGN KEY constraint is used to establish a relationship between two tables. It ensures that the
+                value in a column corresponds to a value in another table.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE departments (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100)
+                );
+        
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100),
+                    department_id INT,
+                    FOREIGN KEY (department_id) REFERENCES departments(id)
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Check</summary>
+            <div class="content">
+                The CHECK constraint ensures that all values in a column satisfy a specific condition.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100),
+                    age INT CHECK (age >= 18)
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Default</summary>
+            <div class="content">
+                The DEFAULT constraint sets a default value for a column when no value is specified during insertion.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100),
+                    status NVARCHAR(20) DEFAULT 'Active'
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Index</summary>
+            <div class="content">
+                An INDEX improves the speed of data retrieval operations on a table. It can be created on one or more
+                columns.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE INDEX idx_department ON employees(department_id);
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Auto Increment</summary>
+            <div class="content">
+                The AUTO_INCREMENT attribute automatically generates a unique number for each new record in a column.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    name NVARCHAR(100)
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Dates</summary>
+            <div class="content">
+                SQL provides date and time data types such as DATE, TIME, and DATETIME to handle date and time values.
+
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, hire_date
+                FROM employees
+                WHERE hire_date > '2023-01-01';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Views</summary>
+            <div class="content">
+                A VIEW is a virtual table based on a SQL query. It simplifies complex queries and enhances security by
+                exposing only specific data.
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE VIEW EmployeeView AS
+                SELECT name, department
+                FROM employees
+                WHERE status = 'Active';
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Injection</summary>
+            <div class="content">
+                SQL Injection is a security vulnerability where an attacker injects malicious SQL statements to
+                manipulate a database. Using prepared statements or parameterized queries can prevent SQL Injection.
+
+                Example of safe query (using parameters):
+                <pre><code class="language-sql">
+                SELECT * FROM users
+                WHERE username = ? AND password = ?;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Hosting</summary>
+            <div class="content">
+                SQL hosting refers to hosting databases on servers to enable remote access and management. Popular
+                providers include AWS, Azure, and Google Cloud SQL.
+
+                Example of connecting to a hosted database:
+                <pre><code class="language-sql">
+                mysql -u username -p -h hosted-db-instance.amazonaws.com
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>SQL Data Types</summary>
+            <div class="content">
+                SQL data types define the type of data that a column can hold. Common types include:
+                - INT: Integer
+                - NVARCHAR/VARCHAR: Variable-length string
+                - DATE/DATETIME: Date and time values
+                - DECIMAL/NUMERIC: Fixed-point numbers
+
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY,
+                    name NVARCHAR(100),
+                    salary DECIMAL(10, 2),
+                    hire_date DATE
+                );
+                </code></pre>
+            </div>
+        </details>
+
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-sql.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

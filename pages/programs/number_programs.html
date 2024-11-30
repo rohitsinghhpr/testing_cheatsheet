@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number - Programs</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>1. Check if a number is prime</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to check if a number is prime
+        public class PrimeCheck {
+            public static boolean isPrime(int num) {
+                // Edge cases: numbers less than 2 are not prime
+                if (num < 2) return false;
+                for (int i = 2; i <= Math.sqrt(num); i++) {
+                    // If num is divisible by any number other than 1 and itself, it's not prime
+                    if (num % i == 0) return false;
+                }
+                return true; // Number is prime if we reach here
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>2. Find the factorial of a number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to find the factorial of a number
+        public class Factorial {
+            public static int factorial(int n) {
+                int result = 1;
+                for (int i = 1; i <= n; i++) {
+                    result *= i; // Multiply result by i in each iteration
+                }
+                return result; // Return the computed factorial
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>3. Check if a number is an Armstrong number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to check if a number is an Armstrong number
+        public class ArmstrongNumber {
+            public static boolean isArmstrong(int num) {
+                int original = num, sum = 0;
+                int digits = String.valueOf(num).length(); // Calculate the number of digits
+                while (num > 0) {
+                    int digit = num % 10;
+                    sum += Math.pow(digit, digits); // Add the power of the digit to the sum
+                    num /= 10; // Remove the last digit
+                }
+                return sum == original; // True if sum equals original number
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>4. Generate Fibonacci sequence up to N terms</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to generate Fibonacci sequence up to N terms
+        public class Fibonacci {
+            public static void generateFibonacci(int n) {
+                int a = 0, b = 1;
+                for (int i = 0; i < n; i++) {
+                    System.out.print(a + " "); // Print the current term
+                    int next = a + b;
+                    a = b; // Update the previous term
+                    b = next; // Update the next term
+                }
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>5. Reverse a number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to reverse a number
+        public class ReverseNumber {
+            public static int reverse(int num) {
+                int reversed = 0;
+                while (num != 0) {
+                    int digit = num % 10; // Extract the last digit
+                    reversed = reversed * 10 + digit; // Shift and add the digit
+                    num /= 10; // Remove the last digit
+                }
+                return reversed; // Return the reversed number
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>6. Check if a number is palindrome</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to check if a number is palindrome
+        public class PalindromeCheck {
+            public static boolean isPalindrome(int num) {
+                int reversed = 0, original = num;
+                while (num != 0) {
+                    int digit = num % 10; // Extract the last digit
+                    reversed = reversed * 10 + digit; // Construct the reversed number
+                    num /= 10; // Remove the last digit
+                }
+                return original == reversed; // True if original equals reversed
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>7. Find the greatest common divisor (GCD) of two numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to find the GCD of two numbers
+        public class GCD {
+            public static int findGCD(int a, int b) {
+                while (b != 0) {
+                    int temp = b;
+                    b = a % b; // Find remainder
+                    a = temp; // Update a to be b
+                }
+                return a; // Return the GCD
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>8. Count the number of digits in an integer</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to count the number of digits in an integer
+        public class DigitCount {
+            public static int countDigits(int num) {
+                int count = 0;
+                while (num != 0) {
+                    num /= 10; // Remove the last digit
+                    count++; // Increment digit count
+                }
+                return count; // Return the digit count
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>9. Check if a number is a perfect number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to check if a number is a perfect number
+        public class PerfectNumber {
+            public static boolean isPerfect(int num) {
+                int sum = 0;
+                for (int i = 1; i <= num / 2; i++) {
+                    if (num % i == 0) {
+                        sum += i; // Sum divisors
+                    }
+                }
+                return sum == num; // True if sum of divisors equals the number
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>10. Find the sum of digits of an integer</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+        // Java program to find the sum of digits of an integer
+        public class SumOfDigits {
+            public static int sumDigits(int num) {
+                int sum = 0;
+                while (num != 0) {
+                    sum += num % 10; // Add the last digit to sum
+                    num /= 10; // Remove the last digit
+                }
+                return sum; // Return the sum of digits
+            }
+        }
+        </code></pre>
+                </div>
+            </details>
+
+        </div>
+        <div class="content">
+            <details>
+                <summary>11. Find the LCM of two numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the LCM of two numbers
+            public class LCM {
+                public static int findLCM(int a, int b) {
+                    return (a * b) / findGCD(a, b); // Use formula: LCM(a, b) = (a * b) / GCD(a, b)
+                }
+            
+                private static int findGCD(int a, int b) {
+                    while (b != 0) {
+                        int temp = b;
+                        b = a % b;
+                        a = temp;
+                    }
+                    return a;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>12. Check if a number is a strong number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a number is a strong number
+            // A strong number is a number where the sum of the factorial of each digit is equal to the number itself.
+            public class StrongNumber {
+                public static boolean isStrong(int num) {
+                    int original = num, sum = 0;
+                    while (num > 0) {
+                        int digit = num % 10;
+                        sum += factorial(digit); // Sum of factorial of each digit
+                        num /= 10;
+                    }
+                    return sum == original; // True if sum equals original number
+                }
+            
+                private static int factorial(int n) {
+                    int fact = 1;
+                    for (int i = 1; i <= n; i++) {
+                        fact *= i;
+                    }
+                    return fact;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>13. Check if a number is a perfect square</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a number is a perfect square
+            public class PerfectSquare {
+                public static boolean isPerfectSquare(int num) {
+                    int sqrt = (int) Math.sqrt(num);
+                    return (sqrt * sqrt) == num; // True if square of sqrt equals the number
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>14. Sum of all prime numbers up to N</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to calculate the sum of all prime numbers up to N
+            public class SumOfPrimes {
+                public static int sumOfPrimes(int n) {
+                    int sum = 0;
+                    for (int i = 2; i <= n; i++) {
+                        if (isPrime(i)) sum += i; // Add prime numbers to sum
+                    }
+                    return sum;
+                }
+            
+                private static boolean isPrime(int num) {
+                    if (num < 2) return false;
+                    for (int i = 2; i <= Math.sqrt(num); i++) {
+                        if (num % i == 0) return false;
+                    }
+                    return true;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>15. Find the nth Fibonacci number (recursive)</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the nth Fibonacci number using recursion
+            public class FibonacciRecursive {
+                public static int fibonacci(int n) {
+                    if (n <= 1) return n; // Base cases for 0 and 1
+                    return fibonacci(n - 1) + fibonacci(n - 2); // Recursive calculation
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>16. Find the power of a number (x^y)</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the power of a number
+            public class Power {
+                public static double power(double base, int exponent) {
+                    double result = 1;
+                    for (int i = 0; i < exponent; i++) {
+                        result *= base; // Multiply base by itself exponent times
+                    }
+                    return result;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>17. Check if a number is a palindrome using recursion</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a number is palindrome using recursion
+            public class PalindromeRecursive {
+                public static boolean isPalindrome(int num) {
+                    return num == reverse(num, 0);
+                }
+            
+                private static int reverse(int num, int rev) {
+                    if (num == 0) return rev;
+                    rev = (rev * 10) + (num % 10); // Construct reversed number
+                    return reverse(num / 10, rev); // Recursive call with remaining digits
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>18. Find the sum of squares of first N natural numbers</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the sum of squares of first N natural numbers
+            public class SumOfSquares {
+                public static int sumOfSquares(int n) {
+                    int sum = 0;
+                    for (int i = 1; i <= n; i++) {
+                        sum += i * i; // Add square of each number to sum
+                    }
+                    return sum;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>19. Find the product of digits of a number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the product of digits of a number
+            public class ProductOfDigits {
+                public static int productOfDigits(int num) {
+                    int product = 1;
+                    while (num != 0) {
+                        product *= num % 10; // Multiply each digit to product
+                        num /= 10; // Remove the last digit
+                    }
+                    return product;
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>20. Find the largest digit in a number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to find the largest digit in a number
+            public class LargestDigit {
+                public static int largestDigit(int num) {
+                    int maxDigit = 0;
+                    while (num != 0) {
+                        int digit = num % 10; // Get last digit
+                        if (digit > maxDigit) maxDigit = digit; // Update max if found a larger digit
+                        num /= 10; // Remove the last digit
+                    }
+                    return maxDigit; // Return the largest digit found
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>21. Check if a number is a Harshad number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to check if a number is a Harshad number
+            // A Harshad number (or Niven number) is an integer that is divisible by the sum of its digits.
+            public class HarshadNumber {
+                public static boolean isHarshad(int num) {
+                    int sum = 0, original = num;
+                    while (num != 0) {
+                        sum += num % 10; // Sum the digits
+                        num /= 10; // Remove the last digit
+                    }
+                    return original % sum == 0; // True if original is divisible by sum of digits
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>22. Calculate the digital root of a number</summary>
+                <div class="content">
+                    <pre><code class="language-java">
+            // Java program to calculate the digital root of a number
+            // The digital root of a number is the sum of its digits until a single-digit number is obtained.
+            public class DigitalRoot {
+                public static int digitalRoot(int num) {
+                    while (num >= 10) {
+                        int sum = 0;
+                        while (num != 0) {
+                            sum += num % 10; // Sum the digits
+                            num /= 10; // Remove the last digit
+                        }
+                        num = sum; // Update num with the sum of digits
+                    }
+                    return num; // Return the single-digit result
+                }
+            }
+            </code></pre>
+                </div>
+            </details>
+            
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS Usecase - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <p>In a Selenium automation framework, various data structures in Java (or other languages) can help organize, manage, and handle data efficiently. Each data structure has specific use cases, depending on the type of data it needs to handle or the functionality required. Here are some common data structures used in Selenium-based frameworks and their use cases:</p>
+<hr>
+<h3 id="1-list">1. <strong>List</strong></h3>
+<p>A <code>List</code> in Java is an ordered collection, allowing duplicates and providing indexed access to elements. The most common implementation of <code>List</code> is <code>ArrayList</code>.</p>
+<h4 id="use-cases">Use Cases</h4>
+<ul>
+<li><strong>Store Web Elements</strong>: A <code>List</code> of <code>WebElement</code> objects can hold multiple elements found by a locator (e.g., storing a list of buttons or links).</li>
+<li><strong>Handling Dropdown Options</strong>: A <code>List&lt;String&gt;</code> can store the options of a dropdown, which can be compared to expected values in test assertions.</li>
+<li><strong>Store Test Data</strong>: A <code>List</code> can hold a set of test data inputs or expected outputs in scenarios where data is sequentially used.</li>
+</ul>
+<h4 id="example">Example</h4>
+<pre><code class="language-java">List&lt;WebElement&gt; links = driver.findElements(By.tagName(&quot;a&quot;));
+for (WebElement link : links) {
+    System.out.println(link.getText());
+}
+</code></pre>
+<hr>
+<h3 id="2-set">2. <strong>Set</strong></h3>
+<p>A <code>Set</code> in Java is an unordered collection that does not allow duplicate elements. The most common implementations are <code>HashSet</code> and <code>LinkedHashSet</code>.</p>
+<h4 id="use-cases-1">Use Cases</h4>
+<ul>
+<li><strong>Eliminate Duplicate Data</strong>: Useful when you need to collect unique values, such as unique links or texts from elements on a page.</li>
+<li><strong>Verification of Unique Options</strong>: For dropdowns or checkboxes, a <code>Set</code> can be used to verify that each option is unique.</li>
+</ul>
+<h4 id="example-1">Example</h4>
+<pre><code class="language-java">Set&lt;String&gt; uniqueLinks = new HashSet&lt;&gt;();
+List&lt;WebElement&gt; links = driver.findElements(By.tagName(&quot;a&quot;));
+for (WebElement link : links) {
+    uniqueLinks.add(link.getText()); // Adds only unique link texts
+}
+</code></pre>
+<hr>
+<h3 id="3-map">3. <strong>Map</strong></h3>
+<p>A <code>Map</code> in Java is a collection of key-value pairs, allowing efficient retrieval of values based on keys. Common implementations include <code>HashMap</code>, <code>LinkedHashMap</code>, and <code>TreeMap</code>.</p>
+<h4 id="use-cases-2">Use Cases</h4>
+<ul>
+<li><strong>Store Configuration or Test Data</strong>: Store configuration details like URL, browser settings, or test data mapped to specific test cases.</li>
+<li><strong>Track Element States</strong>: A <code>Map</code> can store the state of elements (e.g., enabled/disabled, displayed/not displayed) with their locators as keys.</li>
+<li><strong>Dynamic Test Data Management</strong>: Using test case IDs or names as keys, a <code>Map</code> can hold test data, allowing flexible retrieval of data for parameterized tests.</li>
+</ul>
+<h4 id="example-2">Example</h4>
+<pre><code class="language-java">Map&lt;String, String&gt; config = new HashMap&lt;&gt;();
+config.put(&quot;baseURL&quot;, &quot;http://example.com&quot;);
+config.put(&quot;browser&quot;, &quot;Chrome&quot;);
+
+String url = config.get(&quot;baseURL&quot;);
+</code></pre>
+<hr>
+<h3 id="4-queue">4. <strong>Queue</strong></h3>
+<p>A <code>Queue</code> in Java is a collection designed for holding elements prior to processing, often in FIFO (first-in-first-out) order. Common implementations are <code>LinkedList</code> and <code>PriorityQueue</code>.</p>
+<h4 id="use-cases-3">Use Cases</h4>
+<ul>
+<li><strong>Task Scheduling</strong>: If there’s a sequence of tasks (e.g., loading multiple pages or performing actions in order), a <code>Queue</code> can manage them efficiently.</li>
+<li><strong>Parallel Test Execution</strong>: In concurrent test execution setups, a <code>Queue</code> can handle and track test cases, ensuring that tests are processed in the correct order.</li>
+</ul>
+<h4 id="example-3">Example</h4>
+<pre><code class="language-java">Queue&lt;String&gt; pagesToVisit = new LinkedList&lt;&gt;();
+pagesToVisit.add(&quot;HomePage&quot;);
+pagesToVisit.add(&quot;LoginPage&quot;);
+pagesToVisit.add(&quot;Dashboard&quot;);
+
+while (!pagesToVisit.isEmpty()) {
+    String page = pagesToVisit.poll(); // Retrieves and removes the head
+    System.out.println(&quot;Navigating to: &quot; + page);
+}
+</code></pre>
+<hr>
+<h3 id="5-stack">5. <strong>Stack</strong></h3>
+<p>A <code>Stack</code> in Java is a LIFO (last-in-first-out) data structure, where the last element added is the first one to be removed. </p>
+<h4 id="use-cases-4">Use Cases</h4>
+<ul>
+<li><strong>Handling Navigation</strong>: A <code>Stack</code> can help track the navigation path on a website. For example, as users move through pages, their paths can be pushed onto a <code>Stack</code> and popped to backtrack.</li>
+<li><strong>Error Recovery</strong>: If an error occurs, a <code>Stack</code> can backtrack actions to a known state.</li>
+</ul>
+<h4 id="example-4">Example</h4>
+<pre><code class="language-java">Stack&lt;String&gt; navigationStack = new Stack&lt;&gt;();
+navigationStack.push(&quot;HomePage&quot;);
+navigationStack.push(&quot;LoginPage&quot;);
+
+System.out.println(&quot;Current page: &quot; + navigationStack.pop()); // Goes back to previous page
+</code></pre>
+<hr>
+<h3 id="6-array">6. <strong>Array</strong></h3>
+<p>An <code>Array</code> is a fixed-size data structure that holds elements of the same type. It’s faster for index-based access and is often used in scenarios with predictable sizes.</p>
+<h4 id="use-cases-5">Use Cases</h4>
+<ul>
+<li><strong>Storing Expected Values</strong>: Store predefined sets of expected values for assertions, like expected texts, colors, or button labels.</li>
+<li><strong>Parallel Data Management</strong>: Useful for managing pairs of data, such as matching usernames and passwords.</li>
+</ul>
+<h4 id="example-5">Example</h4>
+<pre><code class="language-java">String[] expectedTitles = {&quot;Home&quot;, &quot;About Us&quot;, &quot;Contact&quot;};
+for (String title : expectedTitles) {
+    System.out.println(&quot;Expected title: &quot; + title);
+}
+</code></pre>
+<hr>
+<h3 id="7-properties">7. <strong>Properties</strong></h3>
+<p><code>Properties</code> is a special subclass of <code>HashMap</code> used to manage configuration properties in key-value pairs (usually strings).</p>
+<h4 id="use-cases-6">Use Cases</h4>
+<ul>
+<li><strong>Load Configuration Data</strong>: Load and manage environment-specific configurations (e.g., URLs, credentials) in a <code>.properties</code> file.</li>
+<li><strong>Language Localization</strong>: Store and retrieve localized text for multilingual testing.</li>
+</ul>
+<h4 id="example-6">Example</h4>
+<pre><code class="language-java">import java.io.FileInputStream;
+import java.util.Properties;
+
+Properties props = new Properties();
+props.load(new FileInputStream(&quot;config.properties&quot;));
+
+String baseURL = props.getProperty(&quot;baseURL&quot;);
+System.out.println(&quot;Base URL: &quot; + baseURL);
+</code></pre>
+<hr>
+<h3 id="8-datatable-custom-or-external-library">8. <strong>DataTable (Custom or External Library)</strong></h3>
+<p>In Selenium, test frameworks often use data structures resembling tables to manage data in rows and columns (e.g., a two-dimensional list).</p>
+<h4 id="use-cases-7">Use Cases</h4>
+<ul>
+<li><strong>Data-Driven Testing</strong>: Organize test data where each row represents a test case, and columns represent input fields and expected outputs.</li>
+<li><strong>Managing Tabular Data</strong>: Useful when verifying contents of a table on a webpage, as data can be stored and validated in a <code>DataTable</code>.</li>
+</ul>
+<h4 id="example-7">Example</h4>
+<pre><code class="language-java">// Using a 2D List to simulate a DataTable
+List&lt;List&lt;String&gt;&gt; dataTable = new ArrayList&lt;&gt;();
+dataTable.add(Arrays.asList(&quot;Test Case 1&quot;, &quot;Passed&quot;));
+dataTable.add(Arrays.asList(&quot;Test Case 2&quot;, &quot;Failed&quot;));
+
+for (List&lt;String&gt; row : dataTable) {
+    System.out.println(&quot;Case: &quot; + row.get(0) + &quot;, Result: &quot; + row.get(1));
+}
+</code></pre>
+<hr>
+<p>These data structures are essential to organizing, processing, and managing test data in a structured way, making test code more maintainable, efficient, and adaptable to complex scenarios in a Selenium framework.</p>
+
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

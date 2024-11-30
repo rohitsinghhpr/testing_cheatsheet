@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestAssured</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>Setting up Rest Assured</summary>
+                <div class="content">
+                    To use Rest Assured for testing REST APIs, add the Rest Assured dependency in your project’s <code>pom.xml</code> if you're using Maven:
+                    <pre><code class="language-java">
+            &lt;dependency&gt;
+                &lt;groupId&gt;io.rest-assured&lt;/groupId&gt;
+                &lt;artifactId&gt;rest-assured&lt;/artifactId&gt;
+                &lt;version&gt;5.0.0&lt;/version&gt;
+            &lt;/dependency&gt;
+                    </code></pre>
+                </div>
+            </details>
+            
+            <details>
+                <summary>Basic GET Request</summary>
+                <div class="content">
+                    A simple GET request example:
+                    <pre><code class="language-java">
+            import io.restassured.RestAssured;
+            import io.restassured.response.Response;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    Response response = RestAssured.get("https://jsonplaceholder.typicode.com/posts/1");
+                    System.out.println("Status Code: " + response.getStatusCode());
+                    System.out.println("Response Body: " + response.getBody().asString());
+                }
+            }
+                    </code></pre>
+                    This sends a GET request to the specified URL and prints the response's status code and body.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Validating Status Codes</summary>
+                <div class="content">
+                    Use Rest Assured assertions to verify expected status codes:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This verifies that the response status code is 200.
+                </div>
+            </details>
+            
+            <details>
+                <summary>POST Request with JSON Payload</summary>
+                <div class="content">
+                    Sending a POST request with a JSON payload:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.http.ContentType;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .contentType(ContentType.JSON)
+                        .body("{ \"title\": \"foo\", \"body\": \"bar\", \"userId\": 1 }")
+                        .when()
+                        .post("https://jsonplaceholder.typicode.com/posts")
+                        .then()
+                        .statusCode(201);
+                }
+            }
+                    </code></pre>
+                    This sends a POST request to create a new post, and verifies that the response status code is 201.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Validating Response Content</summary>
+                <div class="content">
+                    Verifying specific content within the response body:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .body("title", equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
+                }
+            }
+                    </code></pre>
+                    This example checks if the <code>title</code> field in the response matches the expected value.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Setting Headers and Query Parameters</summary>
+                <div class="content">
+                    Adding headers and query parameters in a request:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.http.Header;
+            import io.restassured.http.Headers;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .header("Authorization", "Bearer token_value")
+                        .queryParam("userId", 1)
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This example includes an authorization header and a query parameter in the request.
+                </div>
+            </details>
+            
+        </div>
+        <hr>
+        <h1></h1>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

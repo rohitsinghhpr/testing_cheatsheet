@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+<details>
+    <summary>What is a String in Java?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Definition:</strong> A <code>String</code> in Java is a sequence of characters, represented as an object of the <code>String</code> class.</li>
+            <li><strong>Immutable:</strong> Strings are immutable, meaning that once a <code>String</code> object is created, its value cannot be changed.</li>
+            <li><strong>Storage:</strong> Strings are stored in a special memory area known as the "string pool."</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What is the difference between String, StringBuilder, and StringBuffer?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>String:</strong> Immutable and stored in the string pool.</li>
+            <li><strong>StringBuilder:</strong> Mutable, not synchronized, and faster than <code>StringBuffer</code>.</li>
+            <li><strong>StringBuffer:</strong> Mutable and synchronized, making it thread-safe but slightly slower than <code>StringBuilder</code>.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What is string immutability in Java and why is it important?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Immutability:</strong> Once created, a <code>String</code> object’s value cannot be changed.</li>
+            <li><strong>Importance:</strong> Provides security, thread-safety, efficient memory usage, and helps in optimizing the string pool usage.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How does the Java string pool work?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>String Pool:</strong> A special memory region in the Java heap that stores string literals.</li>
+            <li><strong>Purpose:</strong> Reduces memory usage by storing only one instance of each literal.</li>
+            <li><strong>Working:</strong> When a new string literal is created, Java checks the pool first; if it exists, the reference is returned, else a new string is added to the pool.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What is the difference between == and .equals() in Java for comparing strings?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>== Operator:</strong> Compares references, i.e., checks if both references point to the same object in memory.</li>
+            <li><strong><code>equals()</code> Method:</strong> Compares the content of two strings to see if they have the same sequence of characters.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How are strings handled in memory when concatenation occurs?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Concatenation:</strong> When using <code>+</code> for concatenation, Java creates a new string because strings are immutable.</li>
+            <li><strong>StringBuilder:</strong> For efficiency, the compiler often uses <code>StringBuilder</code> behind the scenes for repeated concatenation in loops.</li>
+            <li><strong>Performance:</strong> Using <code>StringBuilder</code> or <code>StringBuffer</code> for concatenation is more memory-efficient.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>Explain the intern() method in the String class.</summary>
+    <div class="content">
+        <ul>
+            <li><strong><code>intern()</code> Method:</strong> Places a string in the string pool if it isn’t already there and returns the reference from the pool.</li>
+            <li><strong>Usage:</strong> Can be used to save memory and increase performance by reusing strings from the pool.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What is the difference between length() and length in Java?</summary>
+    <div class="content">
+        <ul>
+            <li><strong><code>length()</code>:</strong> Method used for finding the length of a <code>String</code> object.</li>
+            <li><strong><code>length</code>:</strong> Field used for finding the size of an array.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How do you convert a String to a primitive data type (e.g., int, double) in Java?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Using Wrapper Classes:</strong> Each primitive type has a wrapper class with <code>parse</code> methods (e.g., <code>Integer.parseInt()</code> for <code>int</code>, <code>Double.parseDouble()</code> for <code>double</code>).</li>
+            <li><strong>Example:</strong> <code>int num = Integer.parseInt("123");</code></li>
+        </ul>
+    </div>
+</details>
+
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

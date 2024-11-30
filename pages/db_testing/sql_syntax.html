@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+<body>
+    <div class="details-container">
+        <pre><code class="language-sql">
+            SELECT column1, column2, FROM table_name;
+SELECT CustomerName, City FROM Customers;
+SELECT * FROM Customers;
+SELECT * FROM Customers LIMIT 3; // Select the first 3 records of the Customers table:
+---------------------------------------------------------------------------------------------------------------------
+SELECT DISTINCT Country FROM Customers;
+SELECT COUNT(DISTINCT Country) FROM Customers;
+---------------------------------------------------------------------------------------------------------------------
+// Operator:- =,>,<,>=,<=,between,in,like,AND,OR, NOT
+SELECT column1, column2, FROM table_name WHERE condition; 
+
+// used to filter records
+SELECT * FROM Customers WHERE Country='Mexico'; 
+SELECT column1, column2, FROM table_name WHERE condition1 AND condition2 AND condition3;
+SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+SELECT column1, column2, FROM table_name WHERE NOT condition;
+
+// Select only the customers that are NOT from Spain:
+SELECT * FROM Customers WHERE NOT Country = 'Spain'; 
+
+// Select customers that does not start with the letter 'A':
+SELECT * FROM Customers WHERE CustomerName NOT LIKE 'A%';
+
+// Select customers with a CustomerId not greater than 50: 
+SELECT * FROM Customers WHERE NOT CustomerID > 50; 
+
+// Select customers with a CustomerID not less than 50:
+SELECT * FROM Customers WHERE NOT CustomerId < 50; 
+
+// used to test for empty values
+SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL; 
+
+// used to test for non-empty
+SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NOT NULL;  
+
+//Return all customers from 'Germany', 'France', or 'UK'
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK'); 
+
+// Select customers that are not from Paris or London:
+SELECT * FROM Customers WHERE City NOT IN ('Paris', 'London'); 
+
+//Selects all products with a price between 10 and 20:
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20; 
+
+// Select customers with a customerID not between 10 and 60:
+SELECT * FROM Customers WHERE CustomerID NOT BETWEEN 10 AND 60; 
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20 AND CategoryID IN (1,2,3);
+--------------------------------------------------------------------------------------------------------------------
+// The LIKE operator is used in a WHERE clause to search for a specified pattern in a column. % represents zero, one, or    multiple characters  and  _ represents one, single character.
+
+//Return all customers from Spain:
+SELECT * FROM Customers WHERE Country LIKE 'Spain'; 
+
+//Select all customers that starts with the letter "a":
+SELECT * FROM Customers WHERE CustomerName LIKE 'a%';
+
+//Return all customers that ends with 'a': 
+SELECT * FROM Customers WHERE CustomerName LIKE '%a'; 
+
+//Return all customers that starts with "b" and ends with "s":
+SELECT * FROM Customers WHERE CustomerName LIKE 'b%s'; 
+
+//Return all customers from a city that contains the letter 'L':
+SELECT * FROM Customers WHERE city LIKE '%L%'; 
+--------------------------------------------------------------------------------------------------------------------
+
+// used to sort records 
+SELECT column1, column2, FROM table_name ORDER BY column1, column2, ... ASC|DESC; 
+---------------------------------------------------------------------------------------------------------------------
+INSERT INTO table_name (column1, column2, column3, ...)VALUES (value1, value2, value3, ...);
+
+// Insert Multiple Rows
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway'),
+       ('Greasy Burger', 'Per Olsen', 'Gateveien 15', 'Sandnes', '4306', 'Norway');
+---------------------------------------------------------------------------------------------------------------------
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+---------------------------------------------------------------------------------------------------------------------
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+DELETE FROM Customers; // Delete All Records
+DROP TABLE Customers; // Delete a Table
+---------------------------------------------------------------------------------------------------------------------
+// SQL Aggregate Functions - An aggregate function is a function that performs a calculation on a set of values, and returns a single value.
+// Aggregate functions ignore null values (except for COUNT()).
+SELECT MIN(column_name) FROM table_name WHERE condition.
+MAX() - returns the largest value within the selected column
+MIN() - returns the smallest value within the selected column
+COUNT() - returns the number of rows in a set
+SUM() - returns the total sum of a numerical column
+AVG() - returns the average value of a numerical column
+SQL aliases are used to give a table, or a column in a table, a temporary name.
+SELECT CustomerID AS ID FROM Customers; //When alias is used on column:
+SELECT column_name(s)FROM table_name AS alias_name; //When alias is used on table:
+---------------------------------------------------------------------------------------------------------------------
+-- JOIN Clause:
+-- Used to combine rows from two or more tables based on a related column.
+-- Types of JOINS: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN.
+
+-- INNER JOIN: Returns only matching rows from both tables
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+-- LEFT JOIN (or LEFT OUTER JOIN): Returns all rows from the left table, and matched rows from the right table.
+-- If there is no match, NULL values are returned for columns from the right table.
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+-- RIGHT JOIN (or RIGHT OUTER JOIN): Returns all rows from the right table, and matched rows from the left table.
+-- If there is no match, NULL values are returned for columns from the left table.
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+-- FULL OUTER JOIN: Returns rows when there is a match in either left or right table.
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+-- GROUP BY Clause:
+-- Groups rows that have the same values into summary rows, like "Total Count" or "Average".
+-- Often used with aggregate functions like COUNT(), SUM(), AVG(), etc.
+
+-- Example: Get the number of orders for each customer
+SELECT CustomerID, COUNT(OrderID) AS OrderCount
+FROM Orders
+GROUP BY CustomerID;
+
+-- Example: Get the total order amount for each customer (assuming a 'TotalAmount' column in Orders table)
+SELECT CustomerID, SUM(TotalAmount) AS TotalSpent
+FROM Orders
+GROUP BY CustomerID;
+
+-- HAVING Clause:
+-- Used to filter records after the GROUP BY operation. The HAVING clause is similar to WHERE, but WHERE cannot be used with aggregate functions.
+-- HAVING filters rows after the aggregation, whereas WHERE filters rows before aggregation.
+
+-- Example: Get customers who have placed more than 5 orders.
+SELECT CustomerID, COUNT(OrderID) AS OrderCount
+FROM Orders
+GROUP BY CustomerID
+HAVING COUNT(OrderID) > 5;
+
+-- Example: Get customers who spent more than $500 (assuming a 'TotalAmount' column in Orders table)
+SELECT CustomerID, SUM(TotalAmount) AS TotalSpent
+FROM Orders
+GROUP BY CustomerID
+HAVING SUM(TotalAmount) > 500;
+        </code>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-sql.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+</html>

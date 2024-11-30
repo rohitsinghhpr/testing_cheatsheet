@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+<body>
+    
+    <div class="details-container">
+        <details>
+            <summary>Classes and Objects</summary>
+            <div class="content">
+                <h3>Definition:</h3>
+                <p>A class in Java is a blueprint for creating objects, containing fields (attributes) and methods to define
+                    behavior. An object is an instance of a class that holds real values of the fields defined in the class.
+                </p>
+    
+                <h3>Components of a Class:</h3>
+                <ul>
+                    <li><strong>Fields (Attributes):</strong> Variables that hold the data or properties of an object.</li>
+                    <li><strong>Methods:</strong> Functions that define the behavior or actions of the object.</li>
+                    <li><strong>Constructors:</strong> Special methods to initialize new objects of a class.</li>
+                </ul>
+    
+                <h3>Advantages of Using Classes and Objects:</h3>
+                <ul>
+                    <li><strong>Encapsulation:</strong> Combines data and methods in a single unit.</li>
+                    <li><strong>Reusability:</strong> Classes can be reused across programs to create multiple objects with
+                        shared structure and behavior.</li>
+                </ul>
+    
+                <h3>Example:</h3>
+                <pre><code class="language-java">
+    class Car {
+        String color;
+        String model;
+    
+        void drive() {
+            System.out.println("Driving " + model);
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Car myCar = new Car();
+            myCar.color = "Red";
+            myCar.model = "Tesla Model S";
+            myCar.drive();
+        }
+    }
+            </code></pre>
+                <p>The Car class is used as a blueprint to create an object, myCar, with specific properties and behavior.
+                </p>
+            </div>
+        </details>
+    
+        <details>
+            <summary>Encapsulation</summary>
+            <div class="content">
+                <h3>Definition:</h3>
+                <p>Encapsulation is the process of bundling data (fields) and methods that operate on the data into a single
+                    unit or class. In Java, encapsulation is primarily achieved through access modifiers and the use of
+                    getter and setter methods.</p>
+    
+                <h3>Advantages of Encapsulation:</h3>
+                <ul>
+                    <li><strong>Data Hiding:</strong> It restricts direct access to certain components, enhancing security
+                        and control over data access.</li>
+                    <li><strong>Improved Code Maintenance:</strong> By using getter and setter methods, we can modify fields
+                        without affecting other parts of the code.</li>
+                    <li><strong>Increased Flexibility:</strong> Changes in encapsulated code do not require other classes to
+                        modify their implementation.</li>
+                </ul>
+    
+                <h3>Example:</h3>
+                <pre><code class="language-java">
+    class BankAccount {
+        private double balance;
+    
+        public double getBalance() {
+            return balance;
+        }
+    
+        public void deposit(double amount) {
+            if (amount > 0) {
+                balance += amount;
+            }
+        }
+    
+        public void withdraw(double amount) {
+            if (amount > 0 && balance >= amount) {
+                balance -= amount;
+            }
+        }
+    }
+            </code></pre>
+                <p>Here, the balance field is private, and access to it is provided only through getter and setter methods,
+                    ensuring controlled access.</p>
+            </div>
+        </details>
+    
+        <details>
+            <summary>Abstraction</summary>
+            <div class="content">
+                <h3>Definition:</h3>
+                <p>Abstraction is the process of hiding complex implementation details and exposing only essential features
+                    of an object. In Java, abstraction can be achieved using abstract classes and interfaces.</p>
+    
+                <h3>Benefits of Abstraction:</h3>
+                <ul>
+                    <li><strong>Reduces Complexity:</strong> By focusing only on relevant aspects, abstraction makes it
+                        easier to understand the system.</li>
+                    <li><strong>Improves Code Maintainability:</strong> Separating interface from implementation allows
+                        changes without affecting other code parts.</li>
+                    <li><strong>Encourages Reusability:</strong> Abstracted code can be reused in different contexts and by
+                        various classes.</li>
+                </ul>
+    
+                <h3>Example:</h3>
+                <pre><code class="language-java">
+    abstract class Shape {
+        abstract void draw();
+    }
+    
+    class Circle extends Shape {
+        void draw() {
+            System.out.println("Drawing a Circle");
+        }
+    }
+    
+    class Square extends Shape {
+        void draw() {
+            System.out.println("Drawing a Square");
+        }
+    }
+            </code></pre>
+                <p>The Shape class is abstract, meaning it defines the <code>draw</code> method but leaves its
+                    implementation to derived classes.</p>
+            </div>
+        </details>
+    
+        <details>
+            <summary>Inheritance</summary>
+            <div class="content">
+                <h3>Definition:</h3>
+                <p>Inheritance allows a class (subclass) to inherit properties and methods from another class (superclass),
+                    promoting code reuse and establishing a hierarchical relationship.</p>
+    
+                <h3>Types of Inheritance in Java:</h3>
+                <ul>
+                    <li><strong>Single Inheritance:</strong> A subclass inherits from one superclass.</li>
+                    <li><strong>Multilevel Inheritance:</strong> A class is derived from a subclass, which is derived from
+                        another superclass.</li>
+                </ul>
+    
+                <h3>Advantages:</h3>
+                <ul>
+                    <li><strong>Code Reusability:</strong> Common functionality in the superclass can be reused in multiple
+                        subclasses.</li>
+                    <li><strong>Polymorphism:</strong> Allows subclasses to provide specific implementations of inherited
+                        methods.</li>
+                </ul>
+    
+                <h3>Example:</h3>
+                <pre><code class="language-java">
+    class Animal {
+        void eat() {
+            System.out.println("Eating...");
+        }
+    }
+    
+    class Dog extends Animal {
+        void bark() {
+            System.out.println("Barking...");
+        }
+    }
+            </code></pre>
+                <p>Here, Dog inherits the <code>eat</code> method from Animal, enabling code reuse.</p>
+            </div>
+        </details>
+    
+        <details>
+            <summary>Polymorphism</summary>
+            <div class="content">
+                <h3>Definition:</h3>
+                <p>Polymorphism is the ability of an object to take many forms. It allows methods to perform differently
+                    based on the object calling them. In Java, polymorphism is primarily achieved through method overriding
+                    and overloading.</p>
+    
+                <h3>Types of Polymorphism:</h3>
+                <ul>
+                    <li><strong>Compile-Time Polymorphism (Method Overloading):</strong> Multiple methods have the same name
+                        but differ in parameters.</li>
+                    <li><strong>Run-Time Polymorphism (Method Overriding):</strong> A subclass provides a specific
+                        implementation of a method that is already defined in its superclass.</li>
+                </ul>
+    
+                <h3>Benefits:</h3>
+                <ul>
+                    <li><strong>Increased Flexibility:</strong> Allows different behavior for derived classes without
+                        altering the superclass.</li>
+                    <li><strong>Code Simplification:</strong> Overloading and overriding reduce code duplication by using
+                        common method names.</li>
+                </ul>
+    
+                <h3>Example of Method Overloading:</h3>
+                <pre><code class="language-java">
+    class Printer {
+        void print(int number) {
+            System.out.println(number);
+        }
+    
+        void print(String text) {
+            System.out.println(text);
+        }
+    }
+            </code></pre>
+    
+                <h3>Example of Method Overriding:</h3>
+                <pre><code class="language-java">
+    class Animal {
+        void sound() {
+            System.out.println("Animal sound");
+        }
+    }
+    
+    class Dog extends Animal {
+        void sound() {
+            System.out.println("Bark");
+        }
+    }
+            </code></pre>
+                <p>The <code>sound</code> method is overridden in the Dog class, demonstrating runtime polymorphism.</p>
+            </div>
+        </details>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+</html>

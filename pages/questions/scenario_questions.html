@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenario</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+<body>
+    <div class="details-container">
+       <div class="content">
+<details>
+    <summary>How will you test a customer registration web page?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Functional Testing:</strong> Verify all fields (username, password, email, etc.) accept correct input and reject invalid data.</li>
+            <li><strong>Validation Testing:</strong> Check client-side and server-side validations.</li>
+            <li><strong>Boundary Testing:</strong> Test input fields for minimum and maximum length.</li>
+            <li><strong>Usability Testing:</strong> Assess user experience aspects like layout, field labels, error messages.</li>
+            <li><strong>Security Testing:</strong> Ensure sensitive data security, testing for vulnerabilities like SQL injection, XSS.</li>
+            <li><strong>Performance Testing:</strong> Check page load and response times.</li>
+            <li><strong>Compatibility Testing:</strong> Test across browsers, devices, screen sizes.</li>
+            <li><strong>Accessibility Testing:</strong> Ensure accessibility for users with disabilities.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How will you approach testing for any requirement or user story?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Understand the Requirement:</strong> Clarify doubts with stakeholders.</li>
+            <li><strong>Identify Test Scenarios:</strong> Break down the requirement into high-level scenarios.</li>
+            <li><strong>Create Test Cases:</strong> Write detailed test cases covering positive and negative cases.</li>
+            <li><strong>Prioritize:</strong> Prioritize test cases based on critical functionality and business impact.</li>
+            <li><strong>Review:</strong> Have test cases reviewed by peers or stakeholders.</li>
+            <li><strong>Execute and Report:</strong> Execute test cases and report issues found.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How will you overcome the challenge of having limited/inaccurate documentation for testing?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Engage with Stakeholders:</strong> Regularly communicate with business analysts, developers, or product owners to clarify requirements.</li>
+            <li><strong>Explore the Application:</strong> Perform exploratory testing to understand application functionality.</li>
+            <li><strong>Use User Stories:</strong> Leverage user stories and acceptance criteria in Agile as informal documentation.</li>
+            <li><strong>Mind Maps:</strong> Use mind maps or flowcharts to visualize functionality and dependencies.</li>
+            <li><strong>Document Findings:</strong> Create personal documentation and note assumptions made during testing.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>Why is regression testing in Agile Development challenging and how will you handle it?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Challenges:</strong>
+                <ul>
+                    <li>Frequent Changes: Agile development involves frequent changes, complicating regression testing.</li>
+                    <li>Time Constraints: Limited time between sprints reduces time for regression testing.</li>
+                </ul>
+            </li>
+            <li><strong>Handling:</strong>
+                <ul>
+                    <li>Automation: Automate critical, frequently changing test cases to reduce manual effort.</li>
+                    <li>Prioritize: Focus on high-risk areas and critical functionality for manual regression testing.</li>
+                    <li>Incremental Approach: Run regression tests incrementally as changes are introduced.</li>
+                    <li>Continuous Integration: Integrate regression tests into CI/CD pipelines for faster feedback.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>If the software is in production and a code module is modified, will you re-test the whole application or just the modified functionality?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Retesting:</strong> Retest the modified functionality to ensure it works as expected.</li>
+            <li><strong>Regression Testing:</strong> Perform targeted regression testing on related areas to confirm no impact on other parts of the application.</li>
+            <li><strong>Full Regression:</strong> If the change is substantial or affects critical functionality, a full regression test might be necessary.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>Do you agree that the tester should study Design Documents for writing test cases?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Yes:</strong> Design documents provide insights into system architecture, data flow, and component interactions. This helps in creating comprehensive test cases and identifying potential edge cases and integration points.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What are some of the testing tools that you have used in past projects?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Test Management Tools:</strong> JIRA, TestRail, Zephyr.</li>
+            <li><strong>Automation Tools:</strong> Selenium, Cypress, TestNG, JUnit.</li>
+            <li><strong>Performance Testing Tools:</strong> JMeter, LoadRunner.</li>
+            <li><strong>Security Testing Tools:</strong> OWASP ZAP, Burp Suite.</li>
+            <li><strong>API Testing Tools:</strong> Postman, SoapUI.</li>
+            <li><strong>CI/CD Tools:</strong> Jenkins, CircleCI.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What will be your approach to create a Test Case?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Identify Requirements:</strong> Understand the requirement or user story.</li>
+            <li><strong>Define Test Objective:</strong> Determine what needs to be validated.</li>
+            <li><strong>Outline Test Steps:</strong> Create clear and concise steps for execution.</li>
+            <li><strong>Include Test Data:</strong> Specify the data required for testing.</li>
+            <li><strong>Define Expected Results:</strong> Clearly define the expected outcome of the test.</li>
+            <li><strong>Prioritize:</strong> Assign priority based on business impact and risk.</li>
+            <li><strong>Review:</strong> Get the test case reviewed by peers or stakeholders.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How do you ensure that all requirements are covered by testing?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Traceability Matrix:</strong> Map test cases to requirements to ensure coverage.</li>
+            <li><strong>Review Sessions:</strong> Regularly review test coverage with stakeholders.</li>
+            <li><strong>Test Case Reviews:</strong> Conduct peer reviews to ensure comprehensive coverage.</li>
+            <li><strong>Use Checklists:</strong> Maintain checklists for common
+
+ requirements to avoid missing them.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How will you test an application requiring integration with unavailable third-party systems/APIs?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Mocking/Stubbing:</strong> Use mocks or stubs to simulate third-party systems' behavior.</li>
+            <li><strong>Service Virtualization:</strong> Employ service virtualization tools to create a virtual version of the API.</li>
+            <li><strong>Testing with Limited Access:</strong> If possible, test using a sandbox environment provided by the third party.</li>
+            <li><strong>Contract Testing:</strong> Validate the integration contract even without the actual system.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What will be your approach to test a responsive web-based application?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Cross-Device Testing:</strong> Test on various devices (mobile, tablet, desktop).</li>
+            <li><strong>Cross-Browser Testing:</strong> Ensure functionality across supported browsers.</li>
+            <li><strong>Viewport Testing:</strong> Test at various screen resolutions for layout adjustments.</li>
+            <li><strong>Touch/Mouse Events:</strong> Verify touch events work as expected on mobile devices.</li>
+            <li><strong>Performance:</strong> Ensure load times are acceptable across devices.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>You have a large number of test cases to execute but a limited timeframe to complete testing. What will be your approach to ensure proper test coverage?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Prioritization:</strong> Focus on high-priority test cases covering critical functionality.</li>
+            <li><strong>Risk-Based Testing:</strong> Identify and test high-risk areas first.</li>
+            <li><strong>Parallel Execution:</strong> Distribute test cases among team members for parallel execution.</li>
+            <li><strong>Automation:</strong> Use automation for repetitive test cases where applicable.</li>
+            <li><strong>Progressive Testing:</strong> Test incrementally as new features are developed.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>You are managing a team of 5 testers who are not co-located. How will you ensure team productivity?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Regular Communication:</strong> Hold daily stand-ups and regular sync-up meetings.</li>
+            <li><strong>Clear Documentation:</strong> Ensure tasks, expectations, and timelines are documented.</li>
+            <li><strong>Use Collaboration Tools:</strong> Leverage tools like Slack, JIRA, Confluence for communication and task management.</li>
+            <li><strong>Time Zone Awareness:</strong> Schedule meetings accommodating different time zones.</li>
+            <li><strong>Monitor Progress:</strong> Use metrics and dashboards to track progress and productivity.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How to handle production issues in testing?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Reproduce the Issue:</strong> Try to reproduce in a lower environment (QA/UAT).</li>
+            <li><strong>Root Cause Analysis:</strong> Conduct a root cause analysis to understand the issue.</li>
+            <li><strong>Hotfix Testing:</strong> Test hotfixes in non-production environments before deployment.</li>
+            <li><strong>Regression Testing:</strong> Perform regression testing around the affected area.</li>
+            <li><strong>Monitor Post-Deployment:</strong> After deploying the fix, monitor the production environment closely.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What is your approach if the developer says the issue which was raised is not a bug?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Clarify the Requirement:</strong> Revisit the requirement or user story to ensure the issue aligns with what was requested.</li>
+            <li><strong>Reproduce the Issue:</strong> Demonstrate the issue to the developer, providing detailed steps to reproduce.</li>
+            <li><strong>Discuss and Escalate:</strong> If the disagreement persists, involve a business analyst or product owner for clarification.</li>
+            <li><strong>Document Findings:</strong> Document the discussion and conclusion for future reference.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What are the steps you will consider for building an automation framework from scratch?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Requirements Gathering:</strong> Understand the application’s architecture, technology stack, and testing needs.</li>
+            <li><strong>Tool Selection:</strong> Choose appropriate automation tools based on application technology and team skill set.</li>
+            <li><strong>Framework Design:</strong> Decide on a framework structure (e.g., Data-driven, Keyword-driven, BDD).</li>
+            <li><strong>Coding Standards:</strong> Establish coding standards and best practices for the automation scripts.</li>
+            <li><strong>Reusable Components:</strong> Develop reusable functions and modules to avoid code duplication.</li>
+            <li><strong>Integration with CI/CD:</strong> Integrate the automation suite with CI/CD pipelines for continuous testing.</li>
+            <li><strong>Reporting:</strong> Implement detailed and clear reporting mechanisms for test results.</li>
+        </ul>
+    </div>
+</details>
+
+
+<details>
+    <summary>What is the approach when UI is not loading/not working?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Check Server Status:</strong> Verify that the server hosting the UI is up and running.</li>
+            <li><strong>Browser Issues:</strong> Clear browser cache and cookies, or try loading in a different browser.</li>
+            <li><strong>Check for Errors:</strong> Look at the browser’s developer console for errors and logs.</li>
+            <li><strong>Backend Issues:</strong> Check if the issue is related to backend services or APIs that the UI relies on.</li>
+            <li><strong>Rollback:</strong> If a recent deployment caused the issue, consider rolling back to a previous version.</li>
+            <li><strong>Log Analysis:</strong> Analyze server and application logs to identify any errors or warnings.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How will you check whether the build is old or not?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Version Number:</strong> Check the application version number against the latest version in the release notes.</li>
+            <li><strong>Build Metadata:</strong> Look at the build metadata or manifest files for timestamps or build IDs.</li>
+            <li><strong>Change Log:</strong> Review the change log to see if the features/fixes expected in the latest build are present.</li>
+            <li><strong>CI/CD Pipeline:</strong> Check the CI/CD pipeline to see the last successful deployment.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What is your approach to start the project if you don't have any single requirement docs or data?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Stakeholder Interviews:</strong> Speak with stakeholders, business analysts, and developers to gather requirements.</li>
+            <li><strong>Reverse Engineering:</strong> Analyze the existing system (if any) to derive functional and non-functional requirements.</li>
+            <li><strong>Exploratory Testing:</strong> Conduct exploratory testing to understand the application’s behavior and document findings.</li>
+            <li><strong>Mind Mapping:</strong> Use mind mapping to visualize possible features, workflows, and interactions.</li>
+            <li><strong>Incremental Documentation:</strong> As you learn more about the project, incrementally document requirements and assumptions.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What kind of testing will be done in Production?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Smoke Testing:</strong> Perform a quick sanity check to ensure that the critical functionalities are working.</li>
+            <li><strong>User Acceptance Testing (UAT):</strong> Users might perform UAT in the production environment for final acceptance.</li>
+            <li><strong>Monitoring:</strong> Set up monitoring for performance, error rates, and user activity.</li>
+            <li><strong>Security Testing:</strong> Periodically perform security checks like penetration testing.</li>
+            <li><strong>A/B Testing:</strong> Deploy different versions of a feature to see which performs better in a real-world environment.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How to do failure analysis in automation?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Analyze Logs:</strong> Review automation logs to pinpoint where the failure occurred.</li>
+            <li><strong>Reproduce Manually:</strong> Try to reproduce the issue manually to determine if it's a script issue or an application issue.</li>
+            <li><strong>Debugging:</strong> Use breakpoints and step-through debugging to understand the script's behavior.</li>
+            <li><strong>Root Cause Analysis:</strong> Identify whether the failure is due to script issues, environment problems, or application bugs.</li>
+            <li><strong>Fix and Retest:</strong> Correct the script and rerun the test to ensure the issue is resolved.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What will you do if the build is deployed in production and is not working?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Rollback:</strong> If possible, roll back to the previous stable version of the build.</li>
+            <li><strong>Hotfix:</strong> If the issue is small and identifiable, deploy a hotfix after testing.</li>
+            <li><strong>Communicate:</strong> Notify stakeholders and users about the issue and expected resolution time.</li>
+            <li><strong>Analyze Impact:</strong> Assess the impact of the issue on the business and prioritize accordingly.</li>
+            <li><strong>Monitor:</strong> After deploying a fix, monitor the system closely for any further issues.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>In the Sign-in page, even after providing correct credentials, it shows a popup with an error message. What might be the reason, but it’s working fine in manual?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Case Sensitivity:</strong> Check if the credentials are case-sensitive and ensure they match exactly.</li>
+            <li><strong>Environment Issues:</strong> Ensure the test environment matches the production environment.</li>
+            <li><strong>Timing Issues:</strong> There might be a timing issue in the automation script where input fields are not fully loaded before entering the credentials.</li>
+            <li><strong>Script Errors:</strong> There might be a bug in the automation script that isn’t accurately replicating the manual steps.</li>
+            <li><strong>Cache/Cookies:</strong> Clear cache and cookies as they might be causing issues.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>When some people are not available and we need to finish that task immediately, how did you handle it?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Task Reallocation:</strong> Reassign tasks to available team members based on their skill sets.</li>
+            <li><strong>Cross-Training:</strong> Ensure team members are cross-trained to handle tasks outside their usual responsibilities.</li>
+            <li><strong>Prioritize:</strong> Focus on the most critical tasks that must be completed immediately.</li>
+            <li><strong>Communication:</strong> Keep stakeholders informed about the situation and set realistic expectations for deliverables.</li>
+            <li><strong>Work Extra Hours:</strong> If necessary, ask team members to work extra hours or split shifts to meet the deadline.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>How to write manual test cases from an SRS document without the actual product/software?</summary>
+    <div class="content">
+      Start by thoroughly reviewing the <strong>SRS (Software Requirements Specification)</strong> to understand functional and non-functional requirements. Break down each requirement into smaller, testable components, considering both positive and negative scenarios. Define clear <strong>preconditions</strong>, <strong>steps</strong>, and <strong>expected results</strong> for each test case based on the specified behavior in the SRS.
+    </div>
+  </details>
+  
+  <details>
+    <summary>How to write test scripts from the test cases without the actual product/software?</summary>
+    <div class="content">
+      Use the test cases derived from the SRS as a blueprint to create the structure for test scripts. Write detailed <strong>test steps</strong>, <strong>expected outcomes</strong>, and <strong>assertions</strong>. Plan for possible functions and libraries to use in automation (e.g., setup, teardown, input validation). This is essentially <strong>pseudocode</strong> that will later be converted into executable scripts once the product is available.
+    </div>
+  </details>
+
+  <details>
+    <summary>How are you assigned manual and automation testing work?</summary>
+    <div class="content">
+      Typically, assignments are based on <strong>sprint planning</strong>, where tasks are divided according to skillset, project requirements, and team capacity. My tasks are outlined in <strong>JIRA</strong>, with manual and automation priorities specified by the QA lead.
+    </div>
+  </details>
+  
+  <details>
+    <summary>Whom do you submit your work to?</summary>
+    <div class="content">
+      I submit my work to the <strong>QA lead</strong> or the <strong>Scrum Master</strong>, depending on the team structure. Additionally, all test results and defect reports are logged in our management tools, like <strong>JIRA</strong> and <strong>TestRail</strong>.
+    </div>
+  </details>
+  
+  <details>
+    <summary>How many test cases do you automate per day?</summary>
+    <div class="content">
+      On average, I can automate around <strong>3-5 test cases</strong> per day, depending on complexity. Simpler cases take less time, while complex ones may require additional scripting and debugging.
+    </div>
+  </details>
+  
+  <details>
+    <summary>How to make Selenium test cases run faster?</summary>
+    <div class="content">
+      Optimize test scripts by using <strong>implicit/explicit waits</strong> effectively, avoiding hard waits, running tests in parallel, using <strong>headless mode</strong> for browser tests, and minimizing interactions with the browser whenever possible.
+    </div>
+  </details>
+  
+  <details>
+    <summary>How do you raise a bug?</summary>
+    <div class="content">
+      I raise a bug in <strong>JIRA</strong>, providing a detailed description, steps to reproduce, environment details, severity, screenshots, and expected vs. actual behavior to help developers understand and resolve the issue.
+    </div>
+  </details>
+
+  <details>
+    <summary>How did you handle a mistake that was made?</summary>
+    <div class="content">
+      When I make a mistake, I first assess the impact, then address and correct it quickly. I inform the team, learn from it, and update any relevant documentation or processes to prevent future occurrences.
+    </div>
+  </details>
+  
+  <details>
+    <summary>What would you do if a team member is unable to complete a task for a sprint?</summary>
+    <div class="content">
+      I would assess if I or someone else on the team could assist to ensure task completion. Additionally, I’d communicate with the <strong>Scrum Master</strong> about possible adjustments to the sprint’s scope.
+    </div>
+  </details>
+
+  <details>
+    <summary>Describe a time when an automated process you implemented failed. How did you identify the issue and what steps did you take to resolve it?</summary>
+    <div class="content">
+      During a test run, an automation script failed due to a recent UI update that changed element locators. I identified the issue by reviewing the logs and debugging the failing test. I updated the locators in the Page Object Model and added more flexible locators to handle similar UI changes in the future, reducing the chances of similar failures.
+    </div>
+  </details>
+  
+  <details>
+    <summary>How would you handle conflict within the team?</summary>
+    <div class="content">
+      I’d approach it constructively, listening to both sides, focusing on facts, and working towards a solution that benefits the project and maintains team harmony.
+    </div>
+  </details>
+  
+  <details>
+    <summary>How would you deal with a difficult stakeholder?</summary>
+    <div class="content">
+      I’d maintain clear, respectful communication, provide regular updates, listen to their concerns, and manage expectations effectively. Ensuring transparency often helps build trust.
+    </div>
+  </details>
+
+<hr/>
+
+<details>
+    <summary>Can you explain a few scenarios for testing Pagination?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Basic Navigation:</strong> Test moving between pages (next, previous, first, last).</li>
+            <li><strong>Boundary Testing:</strong> Verify behavior when navigating to the first and last pages.</li>
+            <li><strong>Page Size Change:</strong> Test changing the number of items per page.</li>
+            <li><strong>URL Parameters:</strong> Check if pagination parameters are correctly reflected in the URL.</li>
+            <li><strong>Edge Cases:</strong> Test pagination with only one page and no data.</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>Can you write some Test Scenarios for Radio Button?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Selection:</strong> Verify that only one radio button can be selected at a time.</li>
+            <li><strong>Default Selection:</strong> Check if the default option is selected as per the requirement.</li>
+            <li><strong>Deselection:</strong> Ensure that selecting another option deselects the current one.</li>
+            <li><strong>Form Submission:</strong> Verify form behavior when no radio button is selected (if mandatory).</li>
+            <li><strong>Keyboard Navigation:</strong> Test selection using keyboard (tab and spacebar).</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>What are cookies and how to test cookies?</summary>
+    <div class="content">
+        <ul>
+            <li><strong>Cookies:</strong> Small pieces of data stored on the user's browser by websites for sessions, preferences, and tracking information.</li>
+            <li><strong>Testing Cookies:</strong>
+                <ul>
+                    <li>Content Testing: Verify correct data is stored and encrypted if necessary.</li>
+                    <li>Expiration Testing: Ensure cookies expire at expected times.</li>
+                    <li>Domain and Path Testing: Check cookies' access restrictions to the correct domain and paths.</li>
+                    <li>Security Testing: Verify secure cookies are sent over HTTPS, and HttpOnly cookies are inaccessible by JavaScript.</li>
+                    <li>Deletion: Test that cookies are deleted correctly upon logout or manual deletion.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</details>
+
+       </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+</html>

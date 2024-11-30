@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handing Data - RestAssured</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>Sending JSON Data in the Request Body</summary>
+                <div class="content">
+                    To send JSON data in the body of a POST request, use the <code>body</code> method along with <code>contentType(ContentType.JSON)</code>:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.http.ContentType;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .contentType(ContentType.JSON)
+                        .body("{ \"title\": \"foo\", \"body\": \"bar\", \"userId\": 1 }")
+                        .when()
+                        .post("https://jsonplaceholder.typicode.com/posts")
+                        .then()
+                        .statusCode(201);
+                }
+            }
+                    </code></pre>
+                    This sends JSON data to create a new resource. The <code>ContentType.JSON</code> ensures that the server interprets the request correctly.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Sending Form Data</summary>
+                <div class="content">
+                    To send form data (as in <code>application/x-www-form-urlencoded</code> format), use the <code>formParam</code> method:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.http.ContentType;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .contentType(ContentType.URLENC)
+                        .formParam("name", "John Doe")
+                        .formParam("age", 30)
+                        .when()
+                        .post("https://example.com/api/formData")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This sends form data in a POST request, setting the <code>Content-Type</code> to <code>application/x-www-form-urlencoded</code>.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Reading JSON Response Data</summary>
+                <div class="content">
+                    Use Rest Assured's JSONPath to read and parse JSON response data:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.response.Response;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    Response response = given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/1");
+            
+                    int userId = response.jsonPath().getInt("userId");
+                    String title = response.jsonPath().getString("title");
+                    
+                    System.out.println("User ID: " + userId);
+                    System.out.println("Title: " + title);
+                }
+            }
+                    </code></pre>
+                    This example reads specific fields from the JSON response using JSONPath and prints them to the console.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Reading List Data from JSON Array</summary>
+                <div class="content">
+                    To retrieve a list of values from a JSON array in the response, use JSONPath's list methods:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import java.util.List;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    List<Integer> userIds = given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts")
+                        .jsonPath()
+                        .getList("userId");
+            
+                    System.out.println("User IDs: " + userIds);
+                }
+            }
+                    </code></pre>
+                    This retrieves all <code>userId</code> values from the JSON array and prints them as a list.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Sending an Image File</summary>
+                <div class="content">
+                    To send an image file in a POST request, use <code>multiPart</code> to attach the file:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import java.io.File;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    File imageFile = new File("path/to/image.jpg");
+            
+                    given()
+                        .multiPart("file", imageFile)
+                        .when()
+                        .post("https://example.com/upload")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This sends an image file as a <code>multipart/form-data</code> request, commonly used for file uploads.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Reading Binary Data (Images) from the Response</summary>
+                <div class="content">
+                    To read binary data such as images from a response, use <code>asByteArray()</code>:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import java.io.FileOutputStream;
+            import java.io.IOException;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    byte[] imageBytes = given()
+                        .when()
+                        .get("https://example.com/image.jpg")
+                        .asByteArray();
+            
+                    try (FileOutputStream fos = new FileOutputStream("downloaded_image.jpg")) {
+                        fos.write(imageBytes);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+                    </code></pre>
+                    This downloads an image and saves it as <code>downloaded_image.jpg</code>.
+                </div>
+            </details>
+            
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

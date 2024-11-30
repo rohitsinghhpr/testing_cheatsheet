@@ -1,0 +1,3680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS App</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>Banking</summary>
+            <div class="content">
+                <h3 id="basic-functionality">Basic Functionality</h3>
+                <ol>
+                    <li>
+                        <p>TC01: Verify Banking App Loads Correctly</p>
+                    </li>
+                    <li>
+                        <p>TC02: Verify User Login Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC03: Verify User Logout Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC04: Verify Password Recovery Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC05: Verify User Registration Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC06: Verify User Profile Update Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC07: Verify App Navigation and Menu Options</p>
+                    </li>
+                    <li>
+                        <p>TC08: Verify App Responsiveness on Different Devices</p>
+                    </li>
+                    <li>
+                        <p>TC09: Verify Error Handling for Invalid Login Attempts</p>
+                    </li>
+                    <li>
+                        <p>TC10: Verify App Load Time</p>
+                    </li>
+                </ol>
+                <h3 id="account-management">Account Management</h3>
+                <ol>
+                    <li>
+                        <p>TC11: Verify Viewing Account Balances</p>
+                    </li>
+                    <li>
+                        <p>TC12: Verify Viewing Account Statements</p>
+                    </li>
+                    <li>
+                        <p>TC13: Verify Viewing Transaction History</p>
+                    </li>
+                    <li>
+                        <p>TC14: Verify Account Transfer Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC15: Verify Account Details Update (e.g., address, phone number)</p>
+                    </li>
+                    <li>
+                        <p>TC16: Verify Adding New Bank Accounts</p>
+                    </li>
+                    <li>
+                        <p>TC17: Verify Removing Bank Accounts</p>
+                    </li>
+                    <li>
+                        <p>TC18: Verify Setting Up and Managing Alerts</p>
+                    </li>
+                    <li>
+                        <p>TC19: Verify Viewing and Managing Beneficiaries</p>
+                    </li>
+                    <li>
+                        <p>TC20: Verify Setting Up and Managing Standing Orders</p>
+                    </li>
+                </ol>
+                <h3 id="transaction-management">Transaction Management</h3>
+                <ol>
+                    <li>
+                        <p>TC21: Verify Performing Fund Transfers Between Own Accounts</p>
+                    </li>
+                    <li>
+                        <p>TC22: Verify Performing Fund Transfers to External Accounts</p>
+                    </li>
+                    <li>
+                        <p>TC23: Verify Bill Payment Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC24: Verify Schedule and Recurring Payments Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC25: Verify Viewing and Downloading Transaction Receipts</p>
+                    </li>
+                    <li>
+                        <p>TC26: Verify Transaction Cancellation Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC27: Verify Transaction Limits and Notifications</p>
+                    </li>
+                    <li>
+                        <p>TC28: Verify Currency Conversion for International Transfers</p>
+                    </li>
+                    <li>
+                        <p>TC29: Verify Adding and Managing Payees</p>
+                    </li>
+                    <li>
+                        <p>TC30: Verify Transaction Search Functionality</p>
+                    </li>
+                </ol>
+                <h3 id="security-and-privacy">Security and Privacy</h3>
+                <ol>
+                    <li>
+                        <p>TC31: Verify Two-Factor Authentication (2FA) Setup</p>
+                    </li>
+                    <li>
+                        <p>TC32: Verify Secure Handling of User Data</p>
+                    </li>
+                    <li>
+                        <p>TC33: Verify Session Timeout and Auto-Logout Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC34: Verify Data Encryption for Transactions</p>
+                    </li>
+                    <li>
+                        <p>TC35: Verify Secure Storage of Personal Information</p>
+                    </li>
+                    <li>
+                        <p>TC36: Verify Handling of Suspicious Activities and Alerts</p>
+                    </li>
+                    <li>
+                        <p>TC37: Verify Secure Login with Biometric Authentication (if applicable)</p>
+                    </li>
+                    <li>
+                        <p>TC38: Verify Compliance with Data Protection Regulations</p>
+                    </li>
+                    <li>
+                        <p>TC39: Verify Regular Security Updates and Patches</p>
+                    </li>
+                    <li>
+                        <p>TC40: Verify Secure Handling of Push Notifications</p>
+                    </li>
+                </ol>
+                <h3 id="customer-service-and-support">Customer Service and Support</h3>
+                <ol>
+                    <li>
+                        <p>TC41: Verify Accessing Customer Support via the App</p>
+                    </li>
+                    <li>
+                        <p>TC42: Verify Submitting Support Tickets or Queries</p>
+                    </li>
+                    <li>
+                        <p>TC43: Verify Live Chat Functionality with Support Representatives</p>
+                    </li>
+                    <li>
+                        <p>TC44: Verify Viewing and Tracking Support Requests</p>
+                    </li>
+                    <li>
+                        <p>TC45: Verify Accessing FAQs and Help Articles</p>
+                    </li>
+                    <li>
+                        <p>TC46: Verify Requesting and Tracking Callbacks</p>
+                    </li>
+                    <li>
+                        <p>TC47: Verify Receiving and Managing Notifications from Support</p>
+                    </li>
+                    <li>
+                        <p>TC48: Verify Feedback Submission for Support Interactions</p>
+                    </li>
+                    <li>
+                        <p>TC49: Verify Access to Branch and ATM Locator</p>
+                    </li>
+                    <li>
+                        <p>TC50: Verify Access to Contact Information for Customer Support</p>
+                    </li>
+                </ol>
+                <h3 id="advanced-features">Advanced Features</h3>
+                <ol>
+                    <li>
+                        <p>TC51: Verify Integration with Financial Tools and Apps</p>
+                    </li>
+                    <li>
+                        <p>TC52: Verify Viewing Investment and Savings Account Information</p>
+                    </li>
+                    <li>
+                        <p>TC53: Verify Setting Up and Managing Budgeting Tools</p>
+                    </li>
+                    <li>
+                        <p>TC54: Verify Viewing and Managing Credit Card Information</p>
+                    </li>
+                    <li>
+                        <p>TC55: Verify Loan Application and Management Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC56: Verify Viewing and Managing Insurance Products</p>
+                    </li>
+                    <li>
+                        <p>TC57: Verify Financial Goal Tracking Features</p>
+                    </li>
+                    <li>
+                        <p>TC58: Verify Integration with External Payment Platforms</p>
+                    </li>
+                    <li>
+                        <p>TC59: Verify Access to Financial Insights and Recommendations</p>
+                    </li>
+                    <li>
+                        <p>TC60: Verify Customizable Dashboard Widgets</p>
+                    </li>
+                </ol>
+                <h3 id="usability-and-interface">Usability and Interface</h3>
+                <ol>
+                    <li>
+                        <p>TC61: Verify User Interface Consistency</p>
+                    </li>
+                    <li>
+                        <p>TC62: Verify Ease of Navigation and Accessibility</p>
+                    </li>
+                    <li>
+                        <p>TC63: Verify App&#39;s Visual Consistency Across Devices</p>
+                    </li>
+                    <li>
+                        <p>TC64: Verify High-Contrast and Dark Mode Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC65: Verify Font Size and Readability</p>
+                    </li>
+                    <li>
+                        <p>TC66: Verify Proper Layout and Alignment of Elements</p>
+                    </li>
+                    <li>
+                        <p>TC67: Verify Error Messaging and User Feedback</p>
+                    </li>
+                    <li>
+                        <p>TC68: Verify Use of Icons and Graphics</p>
+                    </li>
+                    <li>
+                        <p>TC69: Verify Interactive Elements (e.g., buttons, links) Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC70: Verify Onboarding and Tutorial Features for New Users</p>
+                    </li>
+                </ol>
+                <h3 id="performance-and-reliability">Performance and Reliability</h3>
+                <ol>
+                    <li>
+                        <p>TC71: Verify App Performance Under High Traffic</p>
+                    </li>
+                    <li>
+                        <p>TC72: Verify App Performance in Low Network Conditions</p>
+                    </li>
+                    <li>
+                        <p>TC73: Verify Speed of Transaction Processing</p>
+                    </li>
+                    <li>
+                        <p>TC74: Verify Data Refresh and Update Frequency</p>
+                    </li>
+                    <li>
+                        <p>TC75: Verify App Stability During High-Load Scenarios</p>
+                    </li>
+                    <li>
+                        <p>TC76: Verify Accuracy of Transaction Data</p>
+                    </li>
+                    <li>
+                        <p>TC77: Verify App Recovery from Crashes</p>
+                    </li>
+                    <li>
+                        <p>TC78: Verify Battery Consumption During Extended Use</p>
+                    </li>
+                    <li>
+                        <p>TC79: Verify Load Time for Account Information</p>
+                    </li>
+                    <li>
+                        <p>TC80: Verify Performance of Background Processes (e.g., notifications)</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Ecommerce</summary>
+            <div class="content">
+                <h3 id="general-test-cases-for-online-shopping-website">General Test Cases for Online Shopping Website
+                </h3>
+                <ol>
+                    <li>
+                        <p>Verify that the company logo and name are clearly visible.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user is able to navigate through all the products across different
+                            categories.</p>
+                    </li>
+                    <li>
+                        <p>Verify that all the links and banners are redirecting to the correct product/category pages
+                            and none of the links are broken.</p>
+                    </li>
+                    <li>
+                        <p>Verify that all the information displayed – product name, category name, price, and product
+                            description is clearly visible.</p>
+                    </li>
+                    <li>
+                        <p>Verify that all the images – product and banner are clearly visible.</p>
+                    </li>
+                    <li>
+                        <p>Verify that category pages have a relevant product listed, specific to the category.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the correct count of total products is displayed on the category pages.</p>
+                    </li>
+                    <li>
+                        <p>Search – Verify that on searching, all the products satisfying the search criteria are
+                            visible on the search result page.</p>
+                    </li>
+                    <li>
+                        <p>Search – Verify that on searching, products get displayed on the basis of their relevancy.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Search – Verify that the count of products is correctly displayed on the search result page
+                            for a particular search term.</p>
+                    </li>
+                    <li>
+                        <p>Filtering – Verify that filtering functionality correctly filters products based on the
+                            filter applied.</p>
+                    </li>
+                    <li>
+                        <p>Filtering – Verify that filtering works correctly on category pages.</p>
+                    </li>
+                    <li>
+                        <p>Filtering – Verify that filtering works correctly on the search result page.</p>
+                    </li>
+                    <li>
+                        <p>Filtering – Verify that the correct count of total products is displayed after a filter is
+                            applied.</p>
+                    </li>
+                    <li>
+                        <p>Filtering – Verify that the correct count and products get displayed on applying multiple
+                            filters.</p>
+                    </li>
+                    <li>
+                        <p>Sorting – Verify that all the sort options work correctly. On sorting the products based on
+                            the sort option chosen.</p>
+                    </li>
+                    <li>
+                        <p>Sorting – Verify that sorting works correctly on the category pages.</p>
+                    </li>
+                    <li>
+                        <p>Sorting – Verify that sorting works correctly on the search result page.</p>
+                    </li>
+                    <li>
+                        <p>Sorting – Verify that sorting works correctly on the pages containing the filtered result,
+                            after applying filters.</p>
+                    </li>
+                    <li>
+                        <p>Sorting – Verify that the product count remains the same irrespective of the sorting option
+                            applied.</p>
+                    </li>
+                </ol>
+                <h3 id="product-buy-flow--test-cases-for-ecommerce-website">Product Buy Flow – Test cases for Ecommerce
+                    Website</h3>
+                <ol>
+                    <li>
+                        <p>Verify that on the product page, the user can select the desired attribute of the product
+                            e.g. size, color, etc.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user can add to the cart one or more products.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can add products to the wishlist.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user can see the previously added products on the cart page, after signing in
+                            to the application.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user can successfully buy more than one products that were added to his/her
+                            cart.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user cannot add more than the available inventory of the product.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the limit to the number of products a user can buy is working correctly. Also, an
+                            error message gets displayed, preventing the user from buying more than the limit.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the delivery can be declined during checkout for the places where shipping is not
+                            available.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the Cash on Delivery option of payment is working fine.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the different prepaid methods of payments are working fine.</p>
+                    </li>
+                    <li>
+                        <p>Verify that product return functionality works correctly.</p>
+                    </li>
+                </ol>
+                <h3 id="user-registration-test-cases">User Registration Test cases</h3>
+                <ol>
+                    <li>
+                        <p>Verify that all the required fields – username, email, password, confirm password, etc are
+                            present on the registration page.</p>
+                    </li>
+                    <li>
+                        <p>Verify that on passing valid values, a user should get registered and the same should be
+                            allowed to log in to the application.</p>
+                    </li>
+                    <li>
+                        <p>Verify that if a user tries to register an existing username then an error message should get
+                            displayed.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the required/mandatory fields are marked with the ‘*’ symbol.</p>
+                    </li>
+                    <li>
+                        <p>Verify that for a better user interface – dropdowns, radio buttons, checkboxes, etc fields
+                            are displayed wherever possible instead of just text boxes.</p>
+                    </li>
+                    <li>
+                        <p>Verify the page has both submit and cancel/reset buttons at the end.</p>
+                    </li>
+                    <li>
+                        <p>Verify that clicking submits button after entering all the required fields, submits the data
+                            to the server.</p>
+                    </li>
+                    <li>
+                        <p>Verify that clicking the cancel/reset button after entering all the required fields, cancels
+                            the submit request, and reset all the fields.</p>
+                    </li>
+                    <li>
+                        <p>Verify that if no value is passed to the mandatory fields and submit button is clicked then
+                            it leads to a validation error.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user can leave the optional fields blank and on clicking the submit button no
+                            validation error appears.</p>
+                    </li>
+                    <li>
+                        <p>Verify that whenever possible validation should take place on the client side. For example,
+                            if a user presses submit button without entering a username, and password then this
+                            validation should take place on the client side instead of sending blank entries to the
+                            server.</p>
+                    </li>
+                    <li>
+                        <p>Check the upper limit of the different textbox fields.</p>
+                    </li>
+                    <li>
+                        <p>Verify validation on the date and email fields. Only valid dates and valid email Ids should
+                            be allowed.</p>
+                    </li>
+                    <li>
+                        <p>Check validation on numeric fields by entering alphabets and special characters.</p>
+                    </li>
+                    <li>
+                        <p>Check that leading and trailing spaces are trimmed i.e. in case, the user appends space
+                            before and after a field, then the same should get trimmed before getting stored on the
+                            server.</p>
+                    </li>
+                </ol>
+                <h3 id="product-creation-test-cases-for-seller">Product Creation Test cases (For seller)</h3>
+                <ol>
+                    <li>
+                        <p>Verify that only authorized sellers get access to product creation panels specific to the
+                            authorized categories.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the product creation panel is working fine for single product creation.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the product creation panel is working fine for multiple product creations.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the maximum product creation limit for the seller is working fine, limiting the
+                            seller to creating more than the desired number of products.</p>
+                    </li>
+                    <li>
+                        <p>Verify panel validation for checking mandatory fields.</p>
+                    </li>
+                    <li>
+                        <p>Verify that duplicate product creation is restricted through the panel.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the seller can update the information and price of existing products.</p>
+                    </li>
+                    <li>
+                        <p>Verify that products created by sellers get visible on the website after a certain period of
+                            time.</p>
+                    </li>
+                    <li>
+                        <p>Verify that updates made by the seller get visible on the website after a certain period of
+                            time.</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Education App</summary>
+            <div class="content">
+                <h3 id="basic-functionality">Basic Functionality</h3>
+                <ol>
+                    <li>
+                        <p>TC01: Verify Education App Loads Correctly</p>
+                    </li>
+                    <li>
+                        <p>TC02: Verify User Login Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC03: Verify User Logout Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC04: Verify Password Recovery Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC05: Verify User Registration Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC06: Verify User Profile Update Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC07: Verify App Navigation and Menu Options</p>
+                    </li>
+                    <li>
+                        <p>TC08: Verify App Responsiveness on Different Devices</p>
+                    </li>
+                    <li>
+                        <p>TC09: Verify Error Handling for Invalid Login Attempts</p>
+                    </li>
+                    <li>
+                        <p>TC10: Verify App Load Time</p>
+                    </li>
+                </ol>
+                <h3 id="course-management">Course Management</h3>
+                <ol>
+                    <li>
+                        <p>TC11: Verify Viewing Available Courses</p>
+                    </li>
+                    <li>
+                        <p>TC12: Verify Course Enrollment Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC13: Verify Course Completion Tracking</p>
+                    </li>
+                    <li>
+                        <p>TC14: Verify Course Progress Updates</p>
+                    </li>
+                    <li>
+                        <p>TC15: Verify Viewing Course Details (e.g., syllabus, schedule)</p>
+                    </li>
+                    <li>
+                        <p>TC16: Verify Dropping or Unenrolling from Courses</p>
+                    </li>
+                    <li>
+                        <p>TC17: Verify Course Search Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC18: Verify Filtering and Sorting Courses</p>
+                    </li>
+                    <li>
+                        <p>TC19: Verify Adding Courses to Wishlist</p>
+                    </li>
+                    <li>
+                        <p>TC20: Verify Viewing and Managing Wishlist</p>
+                    </li>
+                </ol>
+                <h3 id="content-delivery">Content Delivery</h3>
+                <ol>
+                    <li>
+                        <p>TC21: Verify Accessing Course Materials (e.g., PDFs, videos)</p>
+                    </li>
+                    <li>
+                        <p>TC22: Verify Downloading Course Materials</p>
+                    </li>
+                    <li>
+                        <p>TC23: Verify Streaming Course Videos</p>
+                    </li>
+                    <li>
+                        <p>TC24: Verify Interactive Content (e.g., quizzes, assignments)</p>
+                    </li>
+                    <li>
+                        <p>TC25: Verify Viewing and Submitting Assignments</p>
+                    </li>
+                    <li>
+                        <p>TC26: Verify Viewing Assignment Grades and Feedback</p>
+                    </li>
+                    <li>
+                        <p>TC27: Verify Attending Live Classes or Webinars</p>
+                    </li>
+                    <li>
+                        <p>TC28: Verify Viewing Recorded Sessions</p>
+                    </li>
+                    <li>
+                        <p>TC29: Verify Access to Supplementary Resources (e.g., e-books, articles)</p>
+                    </li>
+                    <li>
+                        <p>TC30: Verify Content Search Functionality</p>
+                    </li>
+                </ol>
+                <h3 id="user-interaction-and-engagement">User Interaction and Engagement</h3>
+                <ol>
+                    <li>
+                        <p>TC31: Verify Participation in Discussion Forums</p>
+                    </li>
+                    <li>
+                        <p>TC32: Verify Posting and Commenting on Forums</p>
+                    </li>
+                    <li>
+                        <p>TC33: Verify Liking and Sharing Content</p>
+                    </li>
+                    <li>
+                        <p>TC34: Verify Messaging and Chat Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC35: Verify Receiving Notifications for Course Updates</p>
+                    </li>
+                    <li>
+                        <p>TC36: Verify Setting and Managing Notifications Preferences</p>
+                    </li>
+                    <li>
+                        <p>TC37: Verify Rating and Reviewing Courses</p>
+                    </li>
+                    <li>
+                        <p>TC38: Verify Interaction with Instructors</p>
+                    </li>
+                    <li>
+                        <p>TC39: Verify Access to Study Groups or Peer Interaction</p>
+                    </li>
+                    <li>
+                        <p>TC40: Verify Personalized Learning Path Recommendations</p>
+                    </li>
+                </ol>
+                <h3 id="assessments-and-progress">Assessments and Progress</h3>
+                <ol>
+                    <li>
+                        <p>TC41: Verify Taking Quizzes and Tests</p>
+                    </li>
+                    <li>
+                        <p>TC42: Verify Viewing Quiz and Test Results</p>
+                    </li>
+                    <li>
+                        <p>TC43: Verify Tracking Progress and Achievements</p>
+                    </li>
+                    <li>
+                        <p>TC44: Verify Viewing and Managing Certificates</p>
+                    </li>
+                    <li>
+                        <p>TC45: Verify Completing and Submitting Projects</p>
+                    </li>
+                    <li>
+                        <p>TC46: Verify Progress Reports and Analytics</p>
+                    </li>
+                    <li>
+                        <p>TC47: Verify Access to Feedback from Instructors</p>
+                    </li>
+                    <li>
+                        <p>TC48: Verify Access to Historical Performance Data</p>
+                    </li>
+                    <li>
+                        <p>TC49: Verify Setting and Tracking Learning Goals</p>
+                    </li>
+                    <li>
+                        <p>TC50: Verify Exam Scheduling and Notifications</p>
+                    </li>
+                </ol>
+                <h3 id="user-management-and-customization">User Management and Customization</h3>
+                <ol>
+                    <li>
+                        <p>TC51: Verify Updating Personal Information (e.g., contact details)</p>
+                    </li>
+                    <li>
+                        <p>TC52: Verify Changing Password Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC53: Verify Managing Account Privacy Settings</p>
+                    </li>
+                    <li>
+                        <p>TC54: Verify Customizing Dashboard Layout</p>
+                    </li>
+                    <li>
+                        <p>TC55: Verify Setting Preferences for Content Delivery</p>
+                    </li>
+                    <li>
+                        <p>TC56: Verify Viewing and Managing Subscription Plans</p>
+                    </li>
+                    <li>
+                        <p>TC57: Verify Access to Billing and Payment History</p>
+                    </li>
+                    <li>
+                        <p>TC58: Verify Managing Notification Settings</p>
+                    </li>
+                    <li>
+                        <p>TC59: Verify Configuring Language and Localization Settings</p>
+                    </li>
+                    <li>
+                        <p>TC60: Verify Linking and Managing Social Media Accounts</p>
+                    </li>
+                </ol>
+                <h3 id="accessibility-and-usability">Accessibility and Usability</h3>
+                <ol>
+                    <li>
+                        <p>TC61: Verify Accessibility Features (e.g., screen reader compatibility)</p>
+                    </li>
+                    <li>
+                        <p>TC62: Verify Keyboard Shortcuts Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC63: Verify Responsive Design on Different Devices</p>
+                    </li>
+                    <li>
+                        <p>TC64: Verify High-Contrast and Dark Mode Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC65: Verify Font Size and Readability</p>
+                    </li>
+                    <li>
+                        <p>TC66: Verify Proper Layout and Alignment of Elements</p>
+                    </li>
+                    <li>
+                        <p>TC67: Verify Error Messaging and User Feedback</p>
+                    </li>
+                    <li>
+                        <p>TC68: Verify Use of Icons and Graphics</p>
+                    </li>
+                    <li>
+                        <p>TC69: Verify Interactive Elements (e.g., buttons, links) Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC70: Verify Onboarding and Tutorial Features for New Users</p>
+                    </li>
+                </ol>
+                <h3 id="performance-and-reliability">Performance and Reliability</h3>
+                <ol>
+                    <li>
+                        <p>TC71: Verify App Performance Under High Traffic</p>
+                    </li>
+                    <li>
+                        <p>TC72: Verify App Performance in Low Network Conditions</p>
+                    </li>
+                    <li>
+                        <p>TC73: Verify Speed of Content Loading</p>
+                    </li>
+                    <li>
+                        <p>TC74: Verify Data Refresh and Update Frequency</p>
+                    </li>
+                    <li>
+                        <p>TC75: Verify App Stability During High-Load Scenarios</p>
+                    </li>
+                    <li>
+                        <p>TC76: Verify Accuracy of Course and Progress Data</p>
+                    </li>
+                    <li>
+                        <p>TC77: Verify App Recovery from Crashes</p>
+                    </li>
+                    <li>
+                        <p>TC78: Verify Battery Consumption During Extended Use</p>
+                    </li>
+                    <li>
+                        <p>TC79: Verify Load Time for Course Materials</p>
+                    </li>
+                    <li>
+                        <p>TC80: Verify Performance of Background Processes (e.g., notifications)</p>
+                    </li>
+                </ol>
+                <h3 id="security-and-privacy">Security and Privacy</h3>
+                <ol>
+                    <li>
+                        <p>TC81: Verify Secure Handling of Personal Data</p>
+                    </li>
+                    <li>
+                        <p>TC82: Verify Two-Factor Authentication (2FA) Setup</p>
+                    </li>
+                    <li>
+                        <p>TC83: Verify Data Encryption for User Information</p>
+                    </li>
+                    <li>
+                        <p>TC84: Verify Session Timeout and Auto-Logout Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC85: Verify Handling of Unauthorized Access Attempts</p>
+                    </li>
+                    <li>
+                        <p>TC86: Verify Compliance with Data Protection Regulations</p>
+                    </li>
+                    <li>
+                        <p>TC87: Verify Secure Storage of Payment Information</p>
+                    </li>
+                    <li>
+                        <p>TC88: Verify Regular Security Updates and Patches</p>
+                    </li>
+                    <li>
+                        <p>TC89: Verify Secure Handling of Push Notifications</p>
+                    </li>
+                    <li>
+                        <p>TC90: Verify Access Control for Sensitive Information</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Docs</summary>
+            <div class="content">
+                <h3 id="basic-functionality">Basic Functionality</h3>
+                <ol>
+                    <li> Verify Google Docs Loads Correctly</li>
+                    <li> Verify Document Creation</li>
+                    <li> Verify Document Opening</li>
+                    <li> Verify Document Saving</li>
+                    <li> Verify Document Closing</li>
+                    <li> Verify Document Deletion</li>
+                    <li> Verify Document Renaming</li>
+                    <li> Verify Document Download in Various Formats (e.g., PDF, DOCX)</li>
+                    <li> Verify Document Printing</li>
+                    <li> Verify Document Version History</li>
+                </ol>
+                <h3 id="editing-and-formatting">Editing and Formatting</h3>
+                <ol>
+                    <li> Verify Text Input Functionality</li>
+                    <li> Verify Text Formatting (e.g., bold, italic, underline)</li>
+                    <li> Verify Text Alignment Options (e.g., left, center, right)</li>
+                    <li> Verify Font Style and Size Options</li>
+                    <li> Verify Font Color and Highlighting</li>
+                    <li> Verify Bullet and Numbered Lists</li>
+                    <li> Verify Indentation and Margins</li>
+                    <li> Verify Adding and Editing Hyperlinks</li>
+                    <li> Verify Inserting and Editing Images</li>
+                    <li> Verify Adding and Formatting Tables</li>
+                </ol>
+                <h3 id="collaboration-and-sharing">Collaboration and Sharing</h3>
+                <ol>
+                    <li> Verify Document Sharing with Specific Users</li>
+                    <li> Verify Document Sharing with Public Link</li>
+                    <li> Verify Document Permission Settings (view, comment, edit)</li>
+                    <li> Verify Collaborator Notifications</li>
+                    <li> Verify Real-Time Collaboration and Editing</li>
+                    <li> Verify Commenting on Document</li>
+                    <li> Verify Replying to Comments</li>
+                    <li> Verify Resolving Comments</li>
+                    <li> Verify Viewing Comment History</li>
+                    <li> Verify Document Access Control</li>
+                </ol>
+                <h3 id="document-organization">Document Organization</h3>
+                <ol start="31">
+                    <li> Verify Moving Documents to Folders</li>
+                    <li> Verify Creating and Managing Document Folders</li>
+                    <li> Verify Searching for Documents</li>
+                    <li> Verify Sorting Documents by Name, Date, or Other Criteria</li>
+                    <li> Verify Viewing Document Thumbnails</li>
+                    <li> Verify Tagging and Labeling Documents</li>
+                    <li> Verify Document Sorting Options</li>
+                    <li> Verify Archiving and Restoring Documents</li>
+                    <li> Verify Bulk Actions on Documents (e.g., delete, move)</li>
+                    <li> Verify Recent Document Access</li>
+                </ol>
+                <h3 id="advanced-features">Advanced Features</h3>
+                <ol start="41">
+                    <li> Verify Document Offline Access</li>
+                    <li> Verify Document Offline Editing</li>
+                    <li> Verify Using Google Docs Add-ons</li>
+                    <li> Verify Integration with Google Drive</li>
+                    <li> Verify Importing Documents from Other Formats (e.g., .docx, .txt)</li>
+                    <li> Verify Exporting Documents to Other Formats (e.g., .docx, .pdf)</li>
+                    <li> Verify Document Templates Availability</li>
+                    <li> Verify Document Customization with Templates</li>
+                    <li> Verify Using Voice Typing Feature</li>
+                    <li> Verify Using Spell Check and Grammar Suggestions</li>
+                </ol>
+                <h3 id="accessibility-and-usability">Accessibility and Usability</h3>
+                <ol start="51">
+                    <li> Verify Accessibility Features (e.g., screen reader compatibility)</li>
+                    <li> Verify Keyboard Shortcuts Functionality</li>
+                    <li> Verify Responsive Design on Different Devices</li>
+                    <li> Verify Document Load Time</li>
+                    <li> Verify Error Handling for Document Actions</li>
+                    <li> Verify Help and Support Access</li>
+                    <li> Verify User Interface Consistency Across Browsers</li>
+                    <li> Verify Document Zoom Functionality</li>
+                    <li> Verify Undo and Redo Actions</li>
+                    <li> Verify Copy and Paste Functionality</li>
+                </ol>
+                <h3 id="security-and-privacy">Security and Privacy</h3>
+                <ol start="61">
+                    <li>
+                        TC61: Verify Document Encryption
+
+                    </li>
+                    <li>
+                        TC62: Verify Document Access Logs
+
+                    </li>
+                    <li>
+                        TC63: Verify Two-Factor Authentication for Document Access
+
+                    </li>
+                    <li>
+                        TC64: Verify Managing Document Access Rights
+
+                    </li>
+                    <li>
+                        TC65: Verify Handling of Suspicious Activity Alerts
+
+                    </li>
+                    <li>
+                        TC66: Verify Document Recovery Options
+
+                    </li>
+                    <li>
+                        TC67: Verify Data Loss Prevention (DLP) Settings
+
+                    </li>
+                    <li>
+                        TC68: Verify Secure Document Sharing Settings
+
+                    </li>
+                    <li>
+                        TC69: Verify Managing Document Ownership Transfers
+
+                    </li>
+                    <li>
+                        TC70: Verify Privacy Settings for Personal Documents
+
+                    </li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>Drive</summary>
+            <div class="content">
+                <h3 id="basic-functionality-1">Basic Functionality</h3>
+                <ol>
+                    <li>
+                        TC01: Verify Google Drive Loads Correctly
+
+                    </li>
+                    <li>
+                        TC02: Verify File Upload Functionality
+
+                    </li>
+                    <li>
+                        TC03: Verify Folder Creation
+
+                    </li>
+                    <li>
+                        TC04: Verify File Download Functionality
+
+                    </li>
+                    <li>
+                        TC05: Verify File Deletion Functionality
+
+                    </li>
+                    <li>
+                        TC06: Verify Folder Deletion Functionality
+
+                    </li>
+                    <li>
+                        TC07: Verify File Moving Between Folders
+
+                    </li>
+                    <li>
+                        TC08: Verify Folder Moving
+
+                    </li>
+                    <li>
+                        TC09: Verify File Renaming
+
+                    </li>
+                    <li>
+                        TC10: Verify Folder Renaming
+
+                    </li>
+                </ol>
+                <h3 id="file-and-folder-management">File and Folder Management</h3>
+                <ol start="11">
+                    <li>
+                        TC11: Verify File Copying Functionality
+
+                    </li>
+                    <li>
+                        TC12: Verify Folder Sharing with Specific Users
+
+                    </li>
+                    <li>
+                        TC13: Verify Folder Sharing with Public Link
+
+                    </li>
+                    <li>
+                        TC14: Verify File Sharing with Specific Users
+
+                    </li>
+                    <li>
+                        TC15: Verify File Sharing with Public Link
+
+                    </li>
+                    <li>
+                        TC16: Verify File Permission Settings (view, comment, edit)
+
+                    </li>
+                    <li>
+                        TC17: Verify Folder Permission Settings (view, comment, edit)
+
+                    </li>
+                    <li>
+                        TC18: Verify Changing File Permissions
+
+                    </li>
+                    <li>
+                        TC19: Verify Changing Folder Permissions
+
+                    </li>
+                    <li>
+                        TC20: Verify File and Folder Search Functionality
+
+                    </li>
+                </ol>
+                <h3 id="collaboration-and-sharing-1">Collaboration and Sharing</h3>
+                <ol start="21">
+                    <li>
+                        TC21: Verify Commenting on Files
+
+                    </li>
+                    <li>
+                        TC22: Verify File Version History
+
+                    </li>
+                    <li>
+                        TC23: Verify Restoring Previous File Versions
+
+                    </li>
+                    <li>
+                        TC24: Verify Downloading Shared Files
+
+                    </li>
+                    <li>
+                        TC25: Verify Uploading Files to Shared Folders
+
+                    </li>
+                    <li>
+                        TC26: Verify Real-Time Collaboration on Documents
+
+                    </li>
+                    <li>
+                        TC27: Verify Notifying Users About File Changes
+
+                    </li>
+                    <li>
+                        TC28: Verify Viewing Activity and History of Files
+
+                    </li>
+                    <li>
+                        TC29: Verify Managing File and Folder Collaborators
+
+                    </li>
+                    <li>
+                        TC30: Verify Receiving Notifications for Shared Files
+
+                    </li>
+                </ol>
+                <h3 id="file-types-and-formats">File Types and Formats</h3>
+                <ol start="31">
+                    <li>
+                        TC31: Verify Viewing PDF Files
+
+                    </li>
+                    <li>
+                        TC32: Verify Viewing Google Docs Files
+
+                    </li>
+                    <li>
+                        TC33: Verify Viewing Google Sheets Files
+
+                    </li>
+                    <li>
+                        TC34: Verify Viewing Google Slides Files
+
+                    </li>
+                    <li>
+                        TC35: Verify Uploading and Viewing Images
+
+                    </li>
+                    <li>
+                        TC36: Verify Uploading and Viewing Videos
+
+                    </li>
+                    <li>
+                        TC37: Verify Uploading and Viewing Audio Files
+
+                    </li>
+                    <li>
+                        TC38: Verify Uploading and Viewing Documents in Various Formats (e.g., .docx, .xlsx)
+
+                    </li>
+                    <li>
+                        TC39: Verify Converting Files to Google Format
+
+                    </li>
+                    <li>
+                        TC40: Verify Downloading Files in Original Formats
+
+                    </li>
+                </ol>
+                <h3 id="synchronization-and-offline-access">Synchronization and Offline Access</h3>
+                <ol start="41">
+                    <li>
+                        TC41: Verify Syncing Files Across Devices
+
+                    </li>
+                    <li>
+                        TC42: Verify Offline Access to Files
+
+                    </li>
+                    <li>
+                        TC43: Verify Offline Editing of Google Docs
+
+                    </li>
+                    <li>
+                        TC44: Verify Sync Status Indicator
+
+                    </li>
+                    <li>
+                        TC45: Verify Accessing Recently Opened Files Offline
+
+                    </li>
+                    <li>
+                        TC46: Verify Error Handling for Sync Failures
+
+                    </li>
+                    <li>
+                        TC47: Verify Synchronization of File Updates
+
+                    </li>
+                    <li>
+                        TC48: Verify Offline Access to Shared Files
+
+                    </li>
+                    <li>
+                        TC49: Verify Sync of Deleted Files Across Devices
+
+                    </li>
+                    <li>
+                        TC50: Verify Sync of Newly Uploaded Files Across Devices
+
+                    </li>
+                </ol>
+                <h3 id="security-and-privacy-1">Security and Privacy</h3>
+                <ol start="51">
+                    <li>
+                        TC51: Verify Two-Factor Authentication Setup
+
+                    </li>
+                    <li>
+                        TC52: Verify Secure File Sharing Settings
+
+                    </li>
+                    <li>
+                        TC53: Verify Activity Log for File Access
+
+                    </li>
+                    <li>
+                        TC54: Verify Encrypted File Uploads and Downloads
+
+                    </li>
+                    <li>
+                        TC55: Verify Managing File and Folder Access Rights
+
+                    </li>
+                    <li>
+                        TC56: Verify Handling of Suspicious Activity Alerts
+
+                    </li>
+                    <li>
+                        TC57: Verify Data Loss Prevention (DLP) Settings
+
+                    </li>
+                    <li>
+                        TC58: Verify Access to Trash and Recovery
+
+                    </li>
+                    <li>
+                        TC59: Verify Deleting Files Permanently
+
+                    </li>
+                    <li>
+                        TC60: Verify Privacy Settings for Personal Files
+
+                    </li>
+                </ol>
+                <h3 id="integration-and-interoperability">Integration and Interoperability</h3>
+                <ol start="61">
+                    <li>
+                        TC61: Verify Integration with Gmail
+
+                    </li>
+                    <li>
+                        TC62: Verify Integration with Google Calendar
+
+                    </li>
+                    <li>
+                        TC63: Verify Integration with Google Meet
+
+                    </li>
+                    <li>
+                        TC64: Verify Integration with Third-Party Apps
+
+                    </li>
+                    <li>
+                        TC65: Verify Importing Files from Other Cloud Services
+
+                    </li>
+                    <li>
+                        TC66: Verify Exporting Files to Other Cloud Services
+
+                    </li>
+                    <li>
+                        TC67: Verify Linking Google Drive with Other Google Services
+
+                    </li>
+                    <li>
+                        TC68: Verify Importing Files from Local Storage
+
+                    </li>
+                    <li>
+                        TC69: Verify Exporting Files to Local Storage
+
+                    </li>
+                    <li>
+                        TC70: Verify Printing Files Directly from Google Drive
+
+                    </li>
+                </ol>
+                <h3 id="user-experience-and-interface">User Experience and Interface</h3>
+                <ol start="71">
+                    <li>
+                        TC71: Verify User Interface Responsiveness
+
+                    </li>
+                    <li>
+                        TC72: Verify File and Folder Sorting Options
+
+                    </li>
+                    <li>
+                        TC73: Verify Viewing Files in List and Grid View
+
+                    </li>
+                    <li>
+                        TC74: Verify Customizing View Settings
+
+                    </li>
+                    <li>
+                        TC75: Verify Using Keyboard Shortcuts
+
+                    </li>
+                    <li>
+                        TC76: Verify Accessibility Features (e.g., screen reader compatibility)
+
+                    </li>
+                    <li>
+                        TC77: Verify Help and Support Access
+
+                    </li>
+                    <li>
+                        TC78: Verify Search Autocomplete Suggestions
+
+                    </li>
+                    <li>
+                        TC79: Verify File and Folder Organization Features
+
+                    </li>
+                    <li>
+                        TC80: Verify Error Handling and Messages
+
+                    </li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>Facebook</summary>
+            <div class="content">
+                <h2 id="user-timeline-test-cases-for-facebook">User Timeline Test Cases for Facebook</h2>
+                <ol>
+                    <li>
+                        <p>Verify that user can set profile pic uploaded from his or her computer.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can set profile pic uploaded from mobile.</p>
+                    </li>
+                    <li>
+                        <p>Verify that uer can set profile pic from photos present on his facbook account’s photo
+                            section.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can set profile from webcam or mobile camera.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can set cover pic uploaded from his or her computer.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can set cover pic uploaded from mobile.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can set cover pic from photos present on his facbook account’s photo
+                            section.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can set cover from webcam or mobile camera.</p>
+                    </li>
+                    <li>
+                        <p>Verify that uploading image of unsupported type should lead to error message.</p>
+                    </li>
+                    <li>
+                        <p>Verify that uploading image of size exceeding maximum allowed size should lead to error
+                            message.</p>
+                    </li>
+                    <li>
+                        <p>Verify that uploading image of size less than the allowed minimum size should lead to error
+                            message.</p>
+                    </li>
+                    <li>
+                        <p>Verify that uploading image of larger dimension than permitted should lead to error message.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify that uploading image of smaller dimension than permitted should lead to error message.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify that change in profile pic should get reflected in each post/comment of the user’s
+                            timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can add/edit their account information displayed to other users.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post text in their timeline and the same gets displyed to their
+                            friends.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post images in their timeline and the same gets displyed to their
+                            friends.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post links with or without preview in their timeline and the same gets
+                            displayed to their friends.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can tag friends in their posts.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can see the all the post in their timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can see comments, likes and reactions in the posts present in their
+                            timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post comments, like and react to the posts present in their timeline.
+                        </p>
+                    </li>
+                </ol>
+                <h2 id="friends-and-their-timelines-test-cases-for-facebook">Friends and their Timelines Test Cases for
+                    Facebook</h2>
+                <ol>
+                    <li>
+                        <p>Verify that the user can search for friends in facebook’s ‘Find friends’ search
+                            functionality.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can send a friend requests to any user by visiting their page.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user can navigate through their Friend’s friend and send a friend requests to
+                            them.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user can approve or decline received friend request.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the user can unfriend any existing friend.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can see the timeline of their friends.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post text in their friend’s timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post images in their timeline and the same gets displayed to their
+                            friends.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post links with or without preview in their friend’s timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can tag friends in their posts on a friend’s timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can see all the posts in their friend’s timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can see comments, likes, and reactions in the posts present in their
+                            friend’s timeline.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can post comments, like and react to the posts present in their friend’s
+                            timeline.</p>
+                    </li>
+                </ol>
+                <h2 id="facebook-notification-test-scenarios">Facebook Notification Test Scenarios</h2>
+                <ol>
+                    <li>
+                        <p>Verify that users receive different notifications on facebook ‘Notifications’ icon.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive different notifications on email or cell phone based on the
+                            settings chosen when not logged in to Facebook.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive a notification when their friend request gets approved.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive a notification when they get a friend request.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive a notification when they get tagged by someone on posts or
+                            comments.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive a notification when they get comments, like or reactions on their
+                            posts.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive notification when someone posts on their timeline.</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Gmail</summary>
+            <div class="content">
+                <h3 id="gmail-sign-up-test-cases">Gmail Sign-Up Test Cases</h3>
+                <ul>
+                    <li>Verify a user can successfully create a new Gmail account.</li>
+                    <li>Ensure the system rejects duplicate email addresses during sign-up.</li>
+                    <li>Validate that Gmail enforces password strength requirements.</li>
+                    <li>Confirm that usernames are unique across the Gmail platform.</li>
+                    <li>Verify a valid mobile number can be associated with a Gmail account.</li>
+                    <li>Ensure users must pass a CAPTCHA test during the sign-up process.</li>
+                    <li>Verify that a valid birthdate is required during sign-up.</li>
+                    <li>Ensure users can upload a profile picture during sign-up.</li>
+                    <li>Verify users must accept Gmail’s Terms of Service and Privacy Policy during sign-up.</li>
+                    <li>Ensure users can customize their Gmail email address.</li>
+                    <li>Verify users receive a verification code on their mobile number.</li>
+                    <li>Confirm that two-factor authentication can be enabled during sign-up.</li>
+                    <li>Ensure users can set up security questions for account recovery.</li>
+                    <li>Verify users can provide optional profile information during sign-up.</li>
+                    <li>Ensure users can select their preferred language during sign-up.</li>
+                    <li>Verify the sign-up process complies with accessibility standards for users with disabilities.
+                    </li>
+                    <li>Verify that the sign-up process provides clear error messages for incomplete or incorrect
+                        information.
+                    </li>
+                    <li>Ensure the system enforces email address uniqueness even for variations like capitalization
+                        (e.g.,
+                        “<a
+                            href="mailto:&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#101;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>”
+                        and
+                        “<a
+                            href="mailto:&#x45;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#x45;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a>”).
+                    </li>
+                    <li>Verify that the Gmail sign-up process supports multiple international phone number formats,
+                        ensuring
+                        users can register with different
+                        country codes seamlessly.</li>
+                </ul>
+                <h3 id="test-case-for-gmail--inbox-functionality">Test Case for Gmail – Inbox Functionality</h3>
+                <ul>
+                    <li>Confirm emails sent to the Gmail address appear in the inbox.</li>
+                    <li>Verify the Gmail inbox correctly organizes and displays received emails.</li>
+                    <li>Ensure that unread emails are highlighted in the inbox.</li>
+                    <li>Verify that the Gmail inbox updates in real time to display new emails.</li>
+                    <li>Confirm the inbox allows the user to search for specific emails using keywords.</li>
+                    <li>Ensure that the inbox supports advanced search filters and operators.</li>
+                    <li>Verify that the user can move emails to different folders or labels.</li>
+                    <li>Confirm that emails with attachments display attachment icons in the inbox.</li>
+                    <li>Verify that starred or flagged emails are visually marked in the inbox.</li>
+                    <li>Ensure that archived emails are moved out of the inbox.</li>
+                    <li>Verify the inbox’s functionality to mark emails as read or unread.</li>
+                    <li>Ensure the inbox supports bulk actions like deleting, archiving, or moving multiple emails.</li>
+                    <li>Verify the functionality of the “Primary,” “Social,” “Promotions,” and other categorized tabs.
+                    </li>
+                    <li>Confirm that the inbox supports a conversation view for email threads.</li>
+                    <li>Ensure that the “Important” label highlights critical emails in the inbox.</li>
+                    <li>Verify that users can customize inbox display settings.</li>
+                    <li>Confirm the functionality of the “Snooze” feature for emails.</li>
+                    <li>Ensure that the “Mark as Spam” option effectively moves unwanted emails to the spam folder.</li>
+                    <li>Verify the inbox’s responsiveness to various screen sizes and devices.</li>
+                    <li>Check if the user can delete the email from the inbox, which is then moved to the Spam folder.
+                    </li>
+                    <li>Verify that the correct pagination option exists.</li>
+                </ul>
+                <h3 id="test-cases-for-gmail--compose-mail-functionality">Test Cases for Gmail – Compose Mail
+                    Functionality
+                </h3>
+                <ul>
+                    <li>Check if the Compose button is available and clickable.</li>
+                    <li>Ensure users can create and send a new email successfully.</li>
+                    <li>Verify that the email’s subject, body, and recipient fields function as expected.</li>
+                    <li>Confirm that users can add multiple recipients to an email.</li>
+                    <li>Verify that Gmail supports CC (carbon copy) and BCC (blind carbon copy) functionality.</li>
+                    <li>Ensure that attachments can be added to an email and are received correctly.</li>
+                    <li>Confirm that Gmail provides a rich text editor for email formatting.</li>
+                    <li>Verify the functionality of inserting hyperlinks in the email’s body.</li>
+                    <li>Ensure that users can add and format bullet points and numbered lists in emails.</li>
+                    <li>Verify the email’s draft-saving functionality for unfinished emails.</li>
+                    <li>Confirm that users can schedule email delivery at a specific time.</li>
+                    <li>Ensure that the “Undo” feature works for recent email actions.</li>
+                    <li>Verify the ability to customize the sender’s email address and name.</li>
+                    <li>Confirm that Gmail accurately counts characters and words in the email.</li>
+                    <li>Ensure that the email’s “Send” button functions reliably.</li>
+                    <li>Verify the compatibility of the email composer across different web browsers.</li>
+                    <li>Confirm that Gmail’s “Formatting Options” provide various text formatting features.</li>
+                    <li>Ensure that the “Drafts” folder correctly stores unfinished email compositions.</li>
+                </ul>
+                <h3 id="negative-test-cases-for-gmail">Negative Test Cases For Gmail</h3>
+                <ul>
+                    <li>Attempt to log in with an empty email address field.</li>
+                    <li>Try logging in with an empty password field.</li>
+                    <li>Use an email address that does not have the “@” symbol.</li>
+                    <li>Enter a password with fewer than the required characters.</li>
+                    <li>Provide an incorrect email format, such as “username@domain.”</li>
+                    <li>Use an email address that does not exist.</li>
+                    <li>Enter an incorrect password for a valid email address.</li>
+                    <li>Try to log in with a deactivated or suspended account.</li>
+                    <li>Use special characters in the email address or password.</li>
+                    <li>Exceed the maximum character limit for the email address or password.</li>
+                    <li>Enter spaces before or after the email address or password.</li>
+                    <li>Use different capitalization in the email address (e.g., “<a
+                            href="mailto:&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>”
+                        and “<a
+                            href="mailto:&#69;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#64;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#69;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#64;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>”).
+                    </li>
+                    <li>Attempt to send an email without any recipient.</li>
+                    <li>Attach a file with an unsupported format for emails.</li>
+                    <li>Attempt to schedule an email for delivery in the past.</li>
+                </ul>
+            </div>
+        </details>
+        <details>
+            <summary>Google Search</summary>
+            <div class="content">
+                <ol>
+                    <li>
+                        <p>Verify that the response fetched for a particular keyword is correct and related to the
+                            keyword, containing links to the particular webpage</p>
+                    </li>
+                    <li>
+                        <p>Verify that the response are sorted by relevancy in descending order i.e. most relevant
+                            result for the keyword are displayed on top</p>
+                    </li>
+                    <li>
+                        <p>Verify that response for multi word keyword is correct</p>
+                    </li>
+                    <li>
+                        <p>Verify that response for keywords containing alphanumeric and special characters is correct
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify that the link title, URL and description have the keyword highlighted in the response
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify auto-suggestion in Google e.g. providing input as ‘fac’ should give suggestions like
+                            ‘facebook’, ‘facebook massenger’, ‘facebook chat’ etc</p>
+                    </li>
+                    <li>
+                        <p>Verify that response fetched on selecting the suggested keyword and on providing the keyword
+                            directly should be same</p>
+                    </li>
+                    <li>
+                        <p>Verify that the suggestion provided by Google are sorted by most popular/relevant suggestions
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify that user can make search corresponding to different categories – web, images, videos,
+                            news, books etc and response should correspond to the keyword in that category only</p>
+                    </li>
+                    <li>
+                        <p>Verify that misspelled keyword should get corrected and response corresponding to the correct
+                            keyword should get displayed</p>
+                    </li>
+                    <li>
+                        <p>Verify that multi word misspelled keywords also get corrected</p>
+                    </li>
+                    <li>
+                        <p>Verify the performance of search- check if the time taken to fetch the response is within the
+                            ballpark</p>
+                    </li>
+                    <li>
+                        <p>Verify that total number of results fetched for a keyword</p>
+                    </li>
+                    <li>
+                        <p>Verify that the search response should be localised that is response should be more relevant
+                            to the country/area from which the search request is initiated</p>
+                    </li>
+                    <li>
+                        <p>Verify Google calculator service- make any arithmetic request, calculator should get
+                            displayed with correct result</p>
+                    </li>
+                    <li>
+                        <p>Verify Google converter service- make request like- 10USD in INR and check if the result is
+                            correct</p>
+                    </li>
+                    <li>
+                        <p>Verify search response for a large but valid strings</p>
+                    </li>
+                    <li>
+                        <p>Verify that incorrect keywords – keywords not having related result should lead to “did not
+                            match any documents” response</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can make search using different languages</p>
+                    </li>
+                    <li>
+                        <p>Verify that for a keywords, some related search terms are also displayed to aid user’s search
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify that for number of results more than the limit on a single page, pagination should be
+                            present, clicking on which user can navigate to subsequent page’s result</p>
+                    </li>
+                    <li>
+                        <p>Verify Google’s advanced search options like- searching within a website, searching for files
+                            of specific extension</p>
+                    </li>
+                    <li>
+                        <p>Verify if the search is case-insensitive or not</p>
+                    </li>
+                    <li>
+                        <p>Verify the functionality of “I’m feeling Lucky” search- the top most search result should get
+                            directly returned (but as of now google doodle page link is displayed)</p>
+                    </li>
+                </ol>
+                <h3 id="ui-test-cases-for-google-search">UI Test Cases for Google Search</h3>
+                <ol>
+                    <li>
+                        <p>Verify that Google Logo is present and centre aligned</p>
+                    </li>
+                    <li>
+                        <p>Verify that the search textbox is centre aligned and editable</p>
+                    </li>
+                    <li>
+                        <p>Verify that search request should get hit by clicking on search button or hitting enter after
+                            writing the search term</p>
+                    </li>
+                    <li>
+                        <p>Verify that in the search result- webpage’s title, URL and description are present</p>
+                    </li>
+                    <li>
+                        <p>Verify that clicking the search result will lead to the corresponding web page</p>
+                    </li>
+                    <li>
+                        <p>Verify that pagination is present in case number of results are greater than the maximum
+                            results allowed in a page</p>
+                    </li>
+                    <li>
+                        <p>Verify that user can navigate to a page number directly or move to previous or next page
+                            using the links present</p>
+                    </li>
+                    <li>
+                        <p>Verify that different languages links are present and gets applied on clicking the same</p>
+                    </li>
+                    <li>
+                        <p>Verify that the total number of results for the keyword is displayed</p>
+                    </li>
+                    <li>
+                        <p>Verify that the time taken to fetch the result is displayed</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Instagram</summary>
+            <div class="content">
+                <h2 id="chat-functionality-test-cases">Chat Functionality Test Cases</h2>
+                <ol>
+                    <li>
+                        <p>Verify that users can compose and send messages to other users or groups seamlessly without
+                            errors.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that users receive messages promptly upon being sent by others, confirming the
+                            real-time communication aspect.</p>
+                    </li>
+                    <li>
+                        <p>Check if users can apply formatting options such as bold, italic, and underline to their
+                            messages and verify their proper display on both sender and recipient ends.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that users can send emoticons and stickers within messages.</p>
+                    </li>
+                    <li>
+                        <p>Validate the functionality to attach and send multimedia files (images, videos, audio) within
+                            chat messages.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can create group chats with multiple participants and that all participants
+                            receive notifications about the same.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that users can add or invite participants to an existing group chat and that the
+                            receivers get notifications about being added.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive timely notifications for new messages.</p>
+                    </li>
+                    <li>
+                        <p>Confirm the display of message delivery status indicators (e.g., sent, delivered, read) to
+                            provide users with information about the status of their messages.</p>
+                    </li>
+                    <li>
+                        <p>Validate the functionality to search for specific messages within a chat.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can block other users to prevent receiving messages from them.</p>
+                    </li>
+                    <li>
+                        <p>Ensure accurate timestamps are displayed for messages sent and received, providing users with
+                            context and timeline information.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that chat history is preserved even after logging out and logging back in.</p>
+                    </li>
+                </ol>
+                <h2 id="profile-creation-and-management-test-cases">Profile Creation and Management Test Cases</h2>
+                <ol>
+                    <li>
+                        <p>Ensure users can successfully create a new account by providing required information such as
+                            username, email, and password.</p>
+                    </li>
+                    <li>
+                        <p>Verify users can enter and update profile information such as name, bio, profile picture, and
+                            any additional details.</p>
+                    </li>
+                    <li>
+                        <p>Confirm users can set privacy options for profile visibility according to their preferences.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Validate customization options for profile appearance, ensuring users can personalize their
+                            profiles to reflect their personality or branding.</p>
+                    </li>
+                    <li>
+                        <p>Confirm users can manage their following and followers list effectively, including options to
+                            follow, unfollow, or block other users.</p>
+                    </li>
+                    <li>
+                        <p>Verify the visibility of the user’s profile to others based on privacy settings.</p>
+                    </li>
+                    <li>
+                        <p>Validate access to analytics or insights related to profile activity and engagement for a
+                            professional account.</p>
+                    </li>
+                </ol>
+                <h2 id="instagram-photo-and-videos-upload-test-cases">Instagram Photo and Videos Upload Test Cases</h2>
+                <ol>
+                    <li>
+                        <p>Verify that Instagram supports common file formats for photos (e.g., JPEG, PNG) and videos
+                            (e.g., MP4).</p>
+                    </li>
+                    <li>
+                        <p>Test the upload functionality with files of varying sizes to ensure compliance with
+                            Instagram’s maximum file size limits.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that uploaded photos and videos maintain their original resolution and quality without
+                            significant degradation.</p>
+                    </li>
+                    <li>
+                        <p>Test uploading photos and videos with different aspect ratios to verify proper display
+                            without cropping or distortion.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to add captions, hashtags, and tags to uploaded photos and videos.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can add location tags, music, and people to their posts accurately.</p>
+                    </li>
+                    <li>
+                        <p>Test applying filters to uploaded photos and videos to enhance their appearance.</p>
+                    </li>
+                    <li>
+                        <p>Verify that failed uploads due to network issues or other reasons can be retried
+                            automatically or manually without losing the uploaded content.</p>
+                    </li>
+                    <li>
+                        <p>Test the preview and editing options available before finalizing the upload.</p>
+                    </li>
+                </ol>
+                <h2 id="instagram-stories-test-cases">Instagram Stories Test Cases</h2>
+                <ol>
+                    <li>
+                        <p>Verify users can create stories with images or videos.</p>
+                    </li>
+                    <li>
+                        <p>Confirm users can add text, stickers, and emojis to their stories.</p>
+                    </li>
+                    <li>
+                        <p>Ensure users can use drawing tools such as pens, brushes, and colors on their stories.</p>
+                    </li>
+                    <li>
+                        <p>Verify users can add links to external websites or other Instagram content.</p>
+                    </li>
+                    <li>
+                        <p>Confirm users can apply filters, effects, and augmented reality (AR) features to their
+                            stories.</p>
+                    </li>
+                    <li>
+                        <p>Test that multiple photos and videos can be added to the same story.</p>
+                    </li>
+                    <li>
+                        <p>Test if another account’s content can be shared as a story based on the privacy settings of
+                            both profiles.</p>
+                    </li>
+                    <li>
+                        <p>Validate if users can share their stories with their close friends list or specific
+                            followers.</p>
+                    </li>
+                    <li>
+                        <p>Confirm users can access metrics such as views and interactions for each story.</p>
+                    </li>
+                    <li>
+                        <p>Verify users can create story highlights from existing stories.</p>
+                    </li>
+                    <li>
+                        <p>Ensure users can interact with stories by replying, sending direct messages, or reacting with
+                            emojis.</p>
+                    </li>
+                    <li>
+                        <p>Confirm users can archive or save stories for future reference.</p>
+                    </li>
+                    <li>
+                        <p>Ensure privacy settings for stories are enforced correctly, providing users with control over
+                            who can view their stories (e.g., public, private, visible to specific followers).</p>
+                    </li>
+                </ol>
+                <h2 id="instagram-reels-test-cases">Instagram Reels Test Cases</h2>
+                <ol>
+                    <li>
+                        <p>Verify that reels adhere to Instagram’s specified duration limits (e.g., 15 or 30 seconds).
+                        </p>
+                    </li>
+                    <li>
+                        <p>Test the upload functionality with various video file formats to ensure compatibility with
+                            Instagram reels.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to select audio tracks from Instagram’s library or upload custom audio for
+                            use in reels.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can trim the length of their reel video within the allowed duration limit.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Test applying effects, filters, and AR features to the video.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that users can add text, stickers, and emojis to their videos for additional
+                            customization and engagement.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can adjust the playback speed of their reel videos.</p>
+                    </li>
+                    <li>
+                        <p>Test the preview functionality to review reel videos before finalizing the upload.</p>
+                    </li>
+                    <li>
+                        <p>Verify that failed uploads of reel videos due to network issues or other reasons can be
+                            retried automatically or manually without losing the uploaded content.</p>
+                    </li>
+                </ol>
+                <h2 id="security-test-cases-for-instagram">Security Test Cases for Instagram</h2>
+                <ol>
+                    <li>
+                        <p>Verify that users are required to authenticate their identity (e.g., username/password,
+                            multi-factor authentication) before accessing their accounts.</p>
+                    </li>
+                    <li>
+                        <p>Test the system’s enforcement of password strength requirements to ensure users are
+                            encouraged to create secure passwords.</p>
+                    </li>
+                    <li>
+                        <p>Verify that sessions are properly managed, including session timeouts, session revocation,
+                            and prevention of session hijacking.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that Instagram uses HTTPS protocol for secure communication.</p>
+                    </li>
+                    <li>
+                        <p>Verify that sensitive user data such as passwords, messages, and personal information are
+                            encrypted both in transit and at rest.</p>
+                    </li>
+                    <li>
+                        <p>Test the account recovery process to ensure it is secure and resistant to unauthorized access
+                            attempts.</p>
+                    </li>
+                    <li>
+                        <p>Test for CSRF vulnerabilities to ensure that Instagram has mechanisms to prevent unauthorized
+                            actions performed on behalf of authenticated users.</p>
+                    </li>
+                    <li>
+                        <p>Verify that input validation and parameterized queries are used to prevent SQL injection
+                            attacks on Instagram’s databases.</p>
+                    </li>
+                    <li>
+                        <p>Verify that Instagram’s APIs are protected against unauthorized access.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that Instagram complies with relevant data privacy regulations (e.g., GDPR, CCPA) by
+                            implementing appropriate data</p>
+                    </li>
+                </ol>
+                <p>protection measures and user consent mechanisms.</p>
+                <ol>
+                    <li>Test third-party integrations (e.g., log in with Facebook) for security vulnerabilities and
+                        ensure they adhere to Instagram’s security standards.</li>
+                </ol>
+                <h2 id="test-case-scenarios-for-share-functionality">Test Case Scenarios for Share Functionality</h2>
+                <ol>
+                    <li>
+                        <p>Verify that users can share posts (photos/videos) from their feed to their own stories or to
+                            specific users or groups.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to share stories (user’s own or others’) to specific users, groups, or as
+                            direct messages.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users have options to share content via direct message, share to story, share to
+                            feed, or copy link.</p>
+                    </li>
+                    <li>
+                        <p>Test sharing options based on the privacy settings of the original post or story (public,
+                            private, followers only).</p>
+                    </li>
+                    <li>
+                        <p>Verify that shared content properly attributes the original creator and provides options for
+                            tagging or mentioning if applicable.</p>
+                    </li>
+                    <li>
+                        <p>Verify that shared content is previewed correctly before finalizing the share.</p>
+                    </li>
+                    <li>
+                        <p>Test sharing functionality for external content (e.g., links, articles) to ensure proper
+                            display and functionality within Instagram.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users receive appropriate error messages and fallback options if sharing fails
+                            due to network issues or other reasons.</p>
+                    </li>
+                    <li>
+                        <p>Verify that share buttons are accessible and functional across different devices and screen
+                            sizes.</p>
+                    </li>
+                </ol>
+                <h2 id="negative-test-cases-for-an-instagram">Negative Test Cases for an Instagram</h2>
+                <ol>
+                    <li>
+                        <p>Try logging in using invalid credentials, such as incorrect username and password.</p>
+                    </li>
+                    <li>
+                        <p>Attempt to create an account using inaccurate details or existing usernames.</p>
+                    </li>
+                    <li>
+                        <p>Upload an image or video in an unsupported format (e.g., BMP, TIFF) or exceeding the size
+                            limit.</p>
+                    </li>
+                    <li>
+                        <p>Update profile information with special characters, HTML, or script injections.</p>
+                    </li>
+                    <li>
+                        <p>Try to reset the password without providing a valid email or phone number.</p>
+                    </li>
+                    <li>
+                        <p>Perform actions (like posting a photo or commenting) with intermittent or slow network
+                            connections.</p>
+                    </li>
+                    <li>
+                        <p>Attempt to view private profiles without the required permissions.</p>
+                    </li>
+                    <li>
+                        <p>Try commenting banned words or phrases to check for proper privacy and security settings.</p>
+                    </li>
+                    <li>
+                        <p>See if a personal profile user can access professional tools by changing the settings.</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Maps</summary>
+            <div class="content">
+                <h3 id="basic-functionality">Basic Functionality</h3>
+                <ol>
+                    <li>
+                        <p>TC01: Verify Google Maps Loads Correctly</p>
+                    </li>
+                    <li>
+                        <p>TC02: Verify Search Functionality for Places</p>
+                    </li>
+                    <li>
+                        <p>TC03: Verify Search Functionality for Addresses</p>
+                    </li>
+                    <li>
+                        <p>TC04: Verify Directions Functionality for Driving</p>
+                    </li>
+                    <li>
+                        <p>TC05: Verify Directions Functionality for Walking</p>
+                    </li>
+                    <li>
+                        <p>TC06: Verify Directions Functionality for Bicycling</p>
+                    </li>
+                    <li>
+                        <p>TC07: Verify Directions Functionality for Transit</p>
+                    </li>
+                    <li>
+                        <p>TC08: Verify Map Zoom In and Out Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC09: Verify Map Pan Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC10: Verify Map Reset to Default View</p>
+                    </li>
+                </ol>
+                <h3 id="navigation-and-route-management">Navigation and Route Management</h3>
+                <ol>
+                    <li>
+                        <p>TC11: Verify Display of Route Details</p>
+                    </li>
+                    <li>
+                        <p>TC12: Verify Traffic Conditions Display</p>
+                    </li>
+                    <li>
+                        <p>TC13: Verify Alternate Routes Suggestion</p>
+                    </li>
+                    <li>
+                        <p>TC14: Verify Route Recalculation on Detour</p>
+                    </li>
+                    <li>
+                        <p>TC15: Verify Route Time Estimate Accuracy</p>
+                    </li>
+                    <li>
+                        <p>TC16: Verify Distance Measurement Accuracy</p>
+                    </li>
+                    <li>
+                        <p>TC17: Verify Route Preferences (e.g., avoid tolls)</p>
+                    </li>
+                    <li>
+                        <p>TC18: Verify User Location Tracking</p>
+                    </li>
+                    <li>
+                        <p>TC19: Verify Route Planning for Multiple Destinations</p>
+                    </li>
+                    <li>
+                        <p>TC20: Verify Route Sharing Functionality</p>
+                    </li>
+                </ol>
+                <h3 id="user-interaction-and-settings">User Interaction and Settings</h3>
+                <ol>
+                    <li>
+                        <p>TC21: Verify Location Marker Placement</p>
+                    </li>
+                    <li>
+                        <p>TC22: Verify Saving Locations as Favorites</p>
+                    </li>
+                    <li>
+                        <p>TC23: Verify Deleting Saved Locations</p>
+                    </li>
+                    <li>
+                        <p>TC24: Verify Viewing Saved Locations</p>
+                    </li>
+                    <li>
+                        <p>TC25: Verify Viewing Location History</p>
+                    </li>
+                    <li>
+                        <p>TC26: Verify Editing Saved Locations</p>
+                    </li>
+                    <li>
+                        <p>TC27: Verify Changing Map Display Style (e.g., satellite view)</p>
+                    </li>
+                    <li>
+                        <p>TC28: Verify Enabling and Disabling Location Services</p>
+                    </li>
+                    <li>
+                        <p>TC29: Verify User Profile Integration</p>
+                    </li>
+                    <li>
+                        <p>TC30: Verify User Feedback Submission</p>
+                    </li>
+                </ol>
+                <h3 id="business-listings-and-reviews">Business Listings and Reviews</h3>
+                <ol>
+                    <li>
+                        <p>TC31: Verify Display of Business Information</p>
+                    </li>
+                    <li>
+                        <p>TC32: Verify Business Listing Search Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC33: Verify Business Reviews Display</p>
+                    </li>
+                    <li>
+                        <p>TC34: Verify Posting a Review for a Business</p>
+                    </li>
+                    <li>
+                        <p>TC35: Verify Editing a Posted Review</p>
+                    </li>
+                    <li>
+                        <p>TC36: Verify Deleting a Posted Review</p>
+                    </li>
+                    <li>
+                        <p>TC37: Verify Viewing Business Photos</p>
+                    </li>
+                    <li>
+                        <p>TC38: Verify Contact Information Display for Businesses</p>
+                    </li>
+                    <li>
+                        <p>TC39: Verify Business Hours Display</p>
+                    </li>
+                    <li>
+                        <p>TC40: Verify Booking Functionality for Businesses (if applicable)</p>
+                    </li>
+                </ol>
+                <h3 id="advanced-features">Advanced Features</h3>
+                <ol>
+                    <li>
+                        <p>TC41: Verify Offline Maps Download Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC42: Verify Offline Maps Access and Navigation</p>
+                    </li>
+                    <li>
+                        <p>TC43: Verify Street View Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC44: Verify Street View Navigation</p>
+                    </li>
+                    <li>
+                        <p>TC45: Verify 360-Degree Photo Viewing</p>
+                    </li>
+                    <li>
+                        <p>TC46: Verify Location-Based Notifications</p>
+                    </li>
+                    <li>
+                        <p>TC47: Verify Integration with Calendar Events</p>
+                    </li>
+                    <li>
+                        <p>TC48: Verify Integration with Contacts for Location Sharing</p>
+                    </li>
+                    <li>
+                        <p>TC49: Verify Language Preferences Settings</p>
+                    </li>
+                    <li>
+                        <p>TC50: Verify Unit Preferences (e.g., miles vs. kilometers)</p>
+                    </li>
+                </ol>
+                <h3 id="accessibility-and-usability">Accessibility and Usability</h3>
+                <ol>
+                    <li>
+                        <p>TC51: Verify Accessibility Features (e.g., screen reader compatibility)</p>
+                    </li>
+                    <li>
+                        <p>TC52: Verify Usability of Map Controls</p>
+                    </li>
+                    <li>
+                        <p>TC53: Verify Responsiveness of Map on Different Devices</p>
+                    </li>
+                    <li>
+                        <p>TC54: Verify Map Load Time</p>
+                    </li>
+                    <li>
+                        <p>TC55: Verify Error Handling for Invalid Inputs</p>
+                    </li>
+                    <li>
+                        <p>TC56: Verify Help and Support Access</p>
+                    </li>
+                    <li>
+                        <p>TC57: Verify Availability of Maps in Different Regions</p>
+                    </li>
+                    <li>
+                        <p>TC58: Verify Accuracy of Search Autocomplete Suggestions</p>
+                    </li>
+                    <li>
+                        <p>TC59: Verify Map Updates for New Roads and Locations</p>
+                    </li>
+                    <li>
+                        <p>TC60: Verify User Interface Consistency Across Different Browsers</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Sheets</summary>
+            <div class="content">
+                <ol>
+                    <li>
+                        <p>Basic Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC01: Verify Google Sheets Loads Correctly</p>
+                    </li>
+                    <li>
+                        <p>TC02: Verify Spreadsheet Creation</p>
+                    </li>
+                    <li>
+                        <p>TC03: Verify Spreadsheet Opening</p>
+                    </li>
+                    <li>
+                        <p>TC04: Verify Spreadsheet Saving</p>
+                    </li>
+                    <li>
+                        <p>TC05: Verify Spreadsheet Closing</p>
+                    </li>
+                    <li>
+                        <p>TC06: Verify Spreadsheet Deletion</p>
+                    </li>
+                    <li>
+                        <p>TC07: Verify Spreadsheet Renaming</p>
+                    </li>
+                    <li>
+                        <p>TC08: Verify Spreadsheet Download in Various Formats (e.g., XLSX, CSV, PDF)</p>
+                    </li>
+                    <li>
+                        <p>TC09: Verify Spreadsheet Printing</p>
+                    </li>
+                    <li>
+                        <p>TC10: Verify Spreadsheet Version History</p>
+                    </li>
+                    <li>
+                        <p>Data Entry and Editing</p>
+                    </li>
+                    <li>
+                        <p>TC11: Verify Text Input into Cells</p>
+                    </li>
+                    <li>
+                        <p>TC12: Verify Numeric Data Entry</p>
+                    </li>
+                    <li>
+                        <p>TC13: Verify Date and Time Entry</p>
+                    </li>
+                    <li>
+                        <p>TC14: Verify Formula Input and Calculation</p>
+                    </li>
+                    <li>
+                        <p>TC15: Verify Editing Existing Cell Data</p>
+                    </li>
+                    <li>
+                        <p>TC16: Verify Cell Formatting (e.g., font size, color)</p>
+                    </li>
+                    <li>
+                        <p>TC17: Verify Cell Alignment (e.g., left, center, right)</p>
+                    </li>
+                    <li>
+                        <p>TC18: Verify Merging and Splitting Cells</p>
+                    </li>
+                    <li>
+                        <p>TC19: Verify Adding and Removing Rows</p>
+                    </li>
+                    <li>
+                        <p>TC20: Verify Adding and Removing Columns</p>
+                    </li>
+                    <li>
+                        <p>Data Management</p>
+                    </li>
+                    <li>
+                        <p>TC21: Verify Sorting Data by Columns</p>
+                    </li>
+                    <li>
+                        <p>TC22: Verify Filtering Data</p>
+                    </li>
+                    <li>
+                        <p>TC23: Verify Freezing Rows and Columns</p>
+                    </li>
+                    <li>
+                        <p>TC24: Verify Conditional Formatting Rules</p>
+                    </li>
+                    <li>
+                        <p>TC25: Verify Data Validation Rules</p>
+                    </li>
+                    <li>
+                        <p>TC26: Verify Using Named Ranges</p>
+                    </li>
+                    <li>
+                        <p>TC27: Verify Importing Data from Other Sheets</p>
+                    </li>
+                    <li>
+                        <p>TC28: Verify Exporting Data to Other Formats (e.g., CSV, XLSX)</p>
+                    </li>
+                    <li>
+                        <p>TC29: Verify Using and Applying Templates</p>
+                    </li>
+                    <li>
+                        <p>TC30: Verify Bulk Data Operations (e.g., copy, paste, delete)</p>
+                    </li>
+                    <li>
+                        <p>Formulas and Functions</p>
+                    </li>
+                    <li>
+                        <p>TC31: Verify Basic Arithmetic Functions (e.g., SUM, AVERAGE)</p>
+                    </li>
+                    <li>
+                        <p>TC32: Verify Logical Functions (e.g., IF, AND, OR)</p>
+                    </li>
+                    <li>
+                        <p>TC33: Verify Lookup Functions (e.g., VLOOKUP, HLOOKUP)</p>
+                    </li>
+                    <li>
+                        <p>TC34: Verify Date and Time Functions (e.g., NOW, DATE)</p>
+                    </li>
+                    <li>
+                        <p>TC35: Verify Text Functions (e.g., CONCATENATE, LEFT, RIGHT)</p>
+                    </li>
+                    <li>
+                        <p>TC36: Verify Array Formulas</p>
+                    </li>
+                    <li>
+                        <p>TC37: Verify Custom Functions and Scripts</p>
+                    </li>
+                    <li>
+                        <p>TC38: Verify Financial Functions (e.g., PMT, FV)</p>
+                    </li>
+                    <li>
+                        <p>TC39: Verify Error Handling in Formulas</p>
+                    </li>
+                    <li>
+                        <p>TC40: Verify Dynamic Named Ranges</p>
+                    </li>
+                    <li>
+                        <p>Collaboration and Sharing</p>
+                    </li>
+                    <li>
+                        <p>TC41: Verify Spreadsheet Sharing with Specific Users</p>
+                    </li>
+                    <li>
+                        <p>TC42: Verify Spreadsheet Sharing with Public Link</p>
+                    </li>
+                    <li>
+                        <p>TC43: Verify Spreadsheet Permission Settings (view, comment, edit)</p>
+                    </li>
+                    <li>
+                        <p>TC44: Verify Collaborator Notifications</p>
+                    </li>
+                    <li>
+                        <p>TC45: Verify Real-Time Collaboration and Editing</p>
+                    </li>
+                    <li>
+                        <p>TC46: Verify Commenting on Cells and Ranges</p>
+                    </li>
+                    <li>
+                        <p>TC47: Verify Replying to Comments</p>
+                    </li>
+                    <li>
+                        <p>TC48: Verify Resolving Comments</p>
+                    </li>
+                    <li>
+                        <p>TC49: Verify Viewing Comment History</p>
+                    </li>
+                    <li>
+                        <p>TC50: Verify Document Access Control</p>
+                    </li>
+                    <li>
+                        <p>Charts and Visualizations</p>
+                    </li>
+                    <li>
+                        <p>TC51: Verify Creating Various Chart Types (e.g., bar, line, pie)</p>
+                    </li>
+                    <li>
+                        <p>TC52: Verify Customizing Chart Appearance</p>
+                    </li>
+                    <li>
+                        <p>TC53: Verify Adding Chart Legends and Titles</p>
+                    </li>
+                    <li>
+                        <p>TC54: Verify Editing Chart Data Ranges</p>
+                    </li>
+                    <li>
+                        <p>TC55: Verify Chart Export and Integration</p>
+                    </li>
+                    <li>
+                        <p>TC56: Verify Conditional Formatting in Charts</p>
+                    </li>
+                    <li>
+                        <p>TC57: Verify Data Labels and Annotations</p>
+                    </li>
+                    <li>
+                        <p>TC58: Verify Chart Filters and Sorting</p>
+                    </li>
+                    <li>
+                        <p>TC59: Verify Trendlines and Analysis</p>
+                    </li>
+                    <li>
+                        <p>TC60: Verify Chart Sharing and Embedding</p>
+                    </li>
+                    <li>
+                        <p>Advanced Features</p>
+                    </li>
+                    <li>
+                        <p>TC61: Verify Spreadsheet Offline Access</p>
+                    </li>
+                    <li>
+                        <p>TC62: Verify Spreadsheet Offline Editing</p>
+                    </li>
+                    <li>
+                        <p>TC63: Verify Using Google Sheets Add-ons</p>
+                    </li>
+                    <li>
+                        <p>TC64: Verify Integration with Google Drive</p>
+                    </li>
+                    <li>
+                        <p>TC65: Verify Importing Data from External Sources (e.g., APIs)</p>
+                    </li>
+                    <li>
+                        <p>TC66: Verify Exporting Data to Other Systems</p>
+                    </li>
+                    <li>
+                        <p>TC67: Verify Integration with Google Forms</p>
+                    </li>
+                    <li>
+                        <p>TC68: Verify Creating and Using Pivot Tables</p>
+                    </li>
+                    <li>
+                        <p>TC69: Verify Using Google Sheets API</p>
+                    </li>
+                    <li>
+                        <p>TC70: Verify Creating and Using Custom Scripts</p>
+                    </li>
+                    <li>
+                        <p>Accessibility and Usability</p>
+                    </li>
+                    <li>
+                        <p>TC71: Verify Accessibility Features (e.g., screen reader compatibility)</p>
+                    </li>
+                    <li>
+                        <p>TC72: Verify Keyboard Shortcuts Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC73: Verify Responsive Design on Different Devices</p>
+                    </li>
+                    <li>
+                        <p>TC74: Verify Document Load Time</p>
+                    </li>
+                    <li>
+                        <p>TC75: Verify Error Handling for Data Actions</p>
+                    </li>
+                    <li>
+                        <p>TC76: Verify Help and Support Access</p>
+                    </li>
+                    <li>
+                        <p>TC77: Verify User Interface Consistency Across Browsers</p>
+                    </li>
+                    <li>
+                        <p>TC78: Verify Data Protection and Privacy Settings</p>
+                    </li>
+                    <li>
+                        <p>TC79: Verify User Interface Customization Options</p>
+                    </li>
+                    <li>
+                        <p>TC80: Verify Undo and Redo Actions</p>
+                    </li>
+                    <li>
+                        <p>Security and Privacy</p>
+                    </li>
+                    <li>
+                        <p>TC81: Verify Document Encryption</p>
+                    </li>
+                    <li>
+                        <p>TC82: Verify Document Access Logs</p>
+                    </li>
+                    <li>
+                        <p>TC83: Verify Two-Factor Authentication for Spreadsheet Access</p>
+                    </li>
+                    <li>
+                        <p>TC84: Verify Managing Document Access Rights</p>
+                    </li>
+                    <li>
+                        <p>TC85: Verify Handling of Suspicious Activity Alerts</p>
+                    </li>
+                    <li>
+                        <p>TC86: Verify Document Recovery Options</p>
+                    </li>
+                    <li>
+                        <p>TC87: Verify Data Loss Prevention (DLP) Settings</p>
+                    </li>
+                    <li>
+                        <p>TC88: Verify Secure Document Sharing Settings</p>
+                    </li>
+                    <li>
+                        <p>TC89: Verify Managing Document Ownership Transfers</p>
+                    </li>
+                    <li>
+                        <p>TC90: Verify Privacy Settings for Personal Data</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Soptify</summary>
+            <div class="content">
+                <ol>
+                    <li>
+                        <p>User Registration</p>
+                    </li>
+                    <li>
+                        <p>TC01: Verify Successful Registration with Valid Details</p>
+                    </li>
+                    <li>
+                        <p>TC02: Verify Registration with Invalid Email Format</p>
+                    </li>
+                    <li>
+                        <p>TC03: Verify Registration with Mismatched Passwords</p>
+                    </li>
+                    <li>
+                        <p>TC04: Verify Registration with Missing Required Fields</p>
+                    </li>
+                    <li>
+                        <p>TC05: Verify Registration with Existing Email Address</p>
+                    </li>
+                    <li>
+                        <p>TC06: Verify Email Verification Link Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC07: Verify Registration with Weak Password</p>
+                    </li>
+                    <li>
+                        <p>TC08: Verify Registration with Invalid Date of Birth</p>
+                    </li>
+                    <li>
+                        <p>TC09: Verify Registration with Valid Details but Without Email Verification</p>
+                    </li>
+                    <li>
+                        <p>TC10: Verify Registration Form Reset Functionality</p>
+                    </li>
+                    <li>
+                        <p>User Login</p>
+                    </li>
+                    <li>
+                        <p>TC11: Verify Successful Login with Valid Credentials</p>
+                    </li>
+                    <li>
+                        <p>TC12: Verify Login with Incorrect Password</p>
+                    </li>
+                    <li>
+                        <p>TC13: Verify Login with Non-Existent Email</p>
+                    </li>
+                    <li>
+                        <p>TC14: Verify Login with Empty Email Field</p>
+                    </li>
+                    <li>
+                        <p>TC15: Verify Login with Empty Password Field</p>
+                    </li>
+                    <li>
+                        <p>TC16: Verify Login with Special Characters in Email</p>
+                    </li>
+                    <li>
+                        <p>TC17: Verify Password Reset Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC18: Verify Logout Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC19: Verify Persistent Login After Closing Browser</p>
+                    </li>
+                    <li>
+                        <p>TC20: Verify Login with Remember Me Option</p>
+                    </li>
+                    <li>
+                        <p>Profile Management</p>
+                    </li>
+                    <li>
+                        <p>TC21: Verify Profile Information Update</p>
+                    </li>
+                    <li>
+                        <p>TC22: Verify Change of Password Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC23: Verify Account Deletion Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC24: Verify Profile Picture Upload</p>
+                    </li>
+                    <li>
+                        <p>TC25: Verify Profile Privacy Settings</p>
+                    </li>
+                    <li>
+                        <p>TC26: Verify Email Address Update</p>
+                    </li>
+                    <li>
+                        <p>TC27: Verify Viewing of Profile Information</p>
+                    </li>
+                    <li>
+                        <p>TC28: Verify Music Preferences Update</p>
+                    </li>
+                    <li>
+                        <p>TC29: Verify Login with Updated Email Address</p>
+                    </li>
+                    <li>
+                        <p>TC30: Verify Profile Data Synchronization Across Devices</p>
+                    </li>
+                    <li>
+                        <p>Search and Navigation</p>
+                    </li>
+                    <li>
+                        <p>TC31: Verify Search Functionality for Songs</p>
+                    </li>
+                    <li>
+                        <p>TC32: Verify Search Functionality for Artists</p>
+                    </li>
+                    <li>
+                        <p>TC33: Verify Search Functionality for Albums</p>
+                    </li>
+                    <li>
+                        <p>TC34: Verify Navigation to Song Page</p>
+                    </li>
+                    <li>
+                        <p>TC35: Verify Navigation to Artist Page</p>
+                    </li>
+                    <li>
+                        <p>TC36: Verify Navigation to Album Page</p>
+                    </li>
+                    <li>
+                        <p>TC37: Verify Browse Feature Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC38: Verify Playlist Creation</p>
+                    </li>
+                    <li>
+                        <p>TC39: Verify Playlist Deletion</p>
+                    </li>
+                    <li>
+                        <p>TC40: Verify Playlist Sharing</p>
+                    </li>
+                    <li>
+                        <p>Playback and User Experience</p>
+                    </li>
+                    <li>
+                        <p>TC41: Verify Play, Pause, and Stop Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC42: Verify Skip and Rewind Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC43: Verify Volume Control</p>
+                    </li>
+                    <li>
+                        <p>TC44: Verify Shuffle Play</p>
+                    </li>
+                    <li>
+                        <p>TC45: Verify Repeat Play</p>
+                    </li>
+                    <li>
+                        <p>TC46: Verify Offline Playback Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC47: Verify Playback Resume After App Restart</p>
+                    </li>
+                    <li>
+                        <p>TC48: Verify Song Lyrics Display</p>
+                    </li>
+                    <li>
+                        <p>TC49: Verify Equalizer Settings</p>
+                    </li>
+                    <li>
+                        <p>TC50: Verify Song Queue Functionality</p>
+                    </li>
+                    <li>
+                        <p>Subscription and Billing</p>
+                    </li>
+                    <li>
+                        <p>TC51: Verify Subscription Plan Selection</p>
+                    </li>
+                    <li>
+                        <p>TC52: Verify Payment Processing</p>
+                    </li>
+                    <li>
+                        <p>TC53: Verify Subscription Renewal Notification</p>
+                    </li>
+                    <li>
+                        <p>TC54: Verify Billing History Access</p>
+                    </li>
+                    <li>
+                        <p>TC55: Verify Subscription Cancellation</p>
+                    </li>
+                    <li>
+                        <p>TC56: Verify Refund Process</p>
+                    </li>
+                    <li>
+                        <p>TC57: Verify Plan Upgrade/ Downgrade</p>
+                    </li>
+                    <li>
+                        <p>TC58: Verify Billing Information Update</p>
+                    </li>
+                    <li>
+                        <p>TC59: Verify Trial Period Activation</p>
+                    </li>
+                    <li>
+                        <p>TC60: Verify Subscription Status After Payment Failure</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Weather App</summary>
+            <div class="content">
+                <ol>
+                    <li>
+                        <p>Basic Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC01: Verify Weather App Loads Correctly</p>
+                    </li>
+                    <li>
+                        <p>TC02: Verify Current Weather Display for User&#39;s Location</p>
+                    </li>
+                    <li>
+                        <p>TC03: Verify Current Weather Display for a Specific Location</p>
+                    </li>
+                    <li>
+                        <p>TC04: Verify Temperature Units (Celsius/Fahrenheit) Switching</p>
+                    </li>
+                    <li>
+                        <p>TC05: Verify Weather Data Updates</p>
+                    </li>
+                    <li>
+                        <p>TC06: Verify App Responds to Location Permissions</p>
+                    </li>
+                    <li>
+                        <p>TC07: Verify App Response to Invalid Location Input</p>
+                    </li>
+                    <li>
+                        <p>TC08: Verify Location Search Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC09: Verify Error Handling for Network Issues</p>
+                    </li>
+                    <li>
+                        <p>TC10: Verify App Load Time</p>
+                    </li>
+                    <li>
+                        <p>Weather Information</p>
+                    </li>
+                    <li>
+                        <p>TC11: Verify Display of Temperature</p>
+                    </li>
+                    <li>
+                        <p>TC12: Verify Display of Humidity</p>
+                    </li>
+                    <li>
+                        <p>TC13: Verify Display of Wind Speed and Direction</p>
+                    </li>
+                    <li>
+                        <p>TC14: Verify Display of Atmospheric Pressure</p>
+                    </li>
+                    <li>
+                        <p>TC15: Verify Display of Weather Conditions (e.g., sunny, rainy)</p>
+                    </li>
+                    <li>
+                        <p>TC16: Verify Display of UV Index</p>
+                    </li>
+                    <li>
+                        <p>TC17: Verify Display of Precipitation Probability</p>
+                    </li>
+                    <li>
+                        <p>TC18: Verify Display of Weather Alerts and Warnings</p>
+                    </li>
+                    <li>
+                        <p>TC19: Verify Hourly Weather Forecast Display</p>
+                    </li>
+                    <li>
+                        <p>TC20: Verify Daily Weather Forecast Display</p>
+                    </li>
+                    <li>
+                        <p>Forecasts and Alerts</p>
+                    </li>
+                    <li>
+                        <p>TC21: Verify 7-Day Weather Forecast Accuracy</p>
+                    </li>
+                    <li>
+                        <p>TC22: Verify 24-Hour Weather Forecast Accuracy</p>
+                    </li>
+                    <li>
+                        <p>TC23: Verify Severe Weather Alert Notifications</p>
+                    </li>
+                    <li>
+                        <p>TC24: Verify Push Notifications for Weather Alerts</p>
+                    </li>
+                    <li>
+                        <p>TC25: Verify Daily Summary Notifications</p>
+                    </li>
+                    <li>
+                        <p>TC26: Verify Weather Widget Integration</p>
+                    </li>
+                    <li>
+                        <p>TC27: Verify Forecast Updates Frequency</p>
+                    </li>
+                    <li>
+                        <p>TC28: Verify Forecast for Multiple Locations</p>
+                    </li>
+                    <li>
+                        <p>TC29: Verify Ability to Set Weather Alerts for Specific Conditions</p>
+                    </li>
+                    <li>
+                        <p>TC30: Verify Location-Based Alerts Functionality</p>
+                    </li>
+                    <li>
+                        <p>User Interaction and Settings</p>
+                    </li>
+                    <li>
+                        <p>TC31: Verify Location Detection and Accuracy</p>
+                    </li>
+                    <li>
+                        <p>TC32: Verify Manual Location Entry</p>
+                    </li>
+                    <li>
+                        <p>TC33: Verify Adding Locations to Favorites</p>
+                    </li>
+                    <li>
+                        <p>TC34: Verify Removing Locations from Favorites</p>
+                    </li>
+                    <li>
+                        <p>TC35: Verify Editing Saved Locations</p>
+                    </li>
+                    <li>
+                        <p>TC36: Verify App Theme and Color Customization</p>
+                    </li>
+                    <li>
+                        <p>TC37: Verify Units of Measurement Settings (e.g., metric vs. imperial)</p>
+                    </li>
+                    <li>
+                        <p>TC38: Verify Language Settings</p>
+                    </li>
+                    <li>
+                        <p>TC39: Verify Time Zone Adjustment</p>
+                    </li>
+                    <li>
+                        <p>TC40: Verify Customizable Notification Settings</p>
+                    </li>
+                    <li>
+                        <p>Visuals and User Experience</p>
+                    </li>
+                    <li>
+                        <p>TC41: Verify App’s Responsiveness on Different Devices</p>
+                    </li>
+                    <li>
+                        <p>TC42: Verify App’s Visual Consistency Across Devices</p>
+                    </li>
+                    <li>
+                        <p>TC43: Verify High-Contrast Mode Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC44: Verify Dark Mode Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC45: Verify Font Size and Readability</p>
+                    </li>
+                    <li>
+                        <p>TC46: Verify Map Integration for Weather Data</p>
+                    </li>
+                    <li>
+                        <p>TC47: Verify Animation and Graphics Quality</p>
+                    </li>
+                    <li>
+                        <p>TC48: Verify Accurate Display of Weather Icons</p>
+                    </li>
+                    <li>
+                        <p>TC49: Verify Map Zoom and Pan Features</p>
+                    </li>
+                    <li>
+                        <p>TC50: Verify User Interface Consistency</p>
+                    </li>
+                    <li>
+                        <p>Advanced Features</p>
+                    </li>
+                    <li>
+                        <p>TC51: Verify Historical Weather Data Access</p>
+                    </li>
+                    <li>
+                        <p>TC52: Verify Radar and Satellite Imagery Integration</p>
+                    </li>
+                    <li>
+                        <p>TC53: Verify Weather Data API Integration</p>
+                    </li>
+                    <li>
+                        <p>TC54: Verify Integration with External Weather Services</p>
+                    </li>
+                    <li>
+                        <p>TC55: Verify Ability to Compare Weather Data Across Locations</p>
+                    </li>
+                    <li>
+                        <p>TC56: Verify Integration with Calendar for Weather-Related Planning</p>
+                    </li>
+                    <li>
+                        <p>TC57: Verify Support for Multiple Weather Providers</p>
+                    </li>
+                    <li>
+                        <p>TC58: Verify Weather Data Export Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC59: Verify Voice Command and Search Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC60: Verify AI-Driven Weather Predictions and Insights</p>
+                    </li>
+                    <li>
+                        <p>Security and Privacy</p>
+                    </li>
+                    <li>
+                        <p>TC61: Verify Secure Handling of Location Data</p>
+                    </li>
+                    <li>
+                        <p>TC62: Verify User Data Privacy Settings</p>
+                    </li>
+                    <li>
+                        <p>TC63: Verify Secure Login and Authentication (if applicable)</p>
+                    </li>
+                    <li>
+                        <p>TC64: Verify Handling of User Data Permissions</p>
+                    </li>
+                    <li>
+                        <p>TC65: Verify Response to Unauthorized Access Attempts</p>
+                    </li>
+                    <li>
+                        <p>TC66: Verify Data Encryption for User Information</p>
+                    </li>
+                    <li>
+                        <p>TC67: Verify Compliance with Data Protection Regulations</p>
+                    </li>
+                    <li>
+                        <p>TC68: Verify Regular Security Updates and Patches</p>
+                    </li>
+                    <li>
+                        <p>TC69: Verify Logout Functionality</p>
+                    </li>
+                    <li>
+                        <p>TC70: Verify Secure Handling of Push Notification Data</p>
+                    </li>
+                    <li>
+                        <p>Performance and Reliability</p>
+                    </li>
+                    <li>
+                        <p>TC71: Verify App Performance Under High Traffic</p>
+                    </li>
+                    <li>
+                        <p>TC72: Verify App Performance in Low Network Conditions</p>
+                    </li>
+                    <li>
+                        <p>TC73: Verify Data Refresh Performance</p>
+                    </li>
+                    <li>
+                        <p>TC74: Verify App Stability During High-Load Scenarios</p>
+                    </li>
+                    <li>
+                        <p>TC75: Verify Speed of Location Detection and Updates</p>
+                    </li>
+                    <li>
+                        <p>TC76: Verify Accuracy of Weather Data in Real-Time</p>
+                    </li>
+                    <li>
+                        <p>TC77: Verify Load Time for Forecast Data</p>
+                    </li>
+                    <li>
+                        <p>TC78: Verify Error Handling for Weather Data Retrieval</p>
+                    </li>
+                    <li>
+                        <p>TC79: Verify Battery Consumption During Extended Use</p>
+                    </li>
+                    <li>
+                        <p>TC80: Verify App Recovery from Crashes</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+        <details>
+            <summary>Whatsapp</summary>
+            <div class="content">
+                <h2 id="installation-testing-test-scenarios-for-whatsapp">Installation Testing Test Scenarios For
+                    WhatsApp</h2>
+                <ol>
+                    <li>
+                        <p>Verify that WhatsApp installs correctly on various mobile platforms (Android, iOS).</p>
+                    </li>
+                    <li>
+                        <p>Ensure that the app requests necessary permissions (camera, contacts) during installation.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Check if the app specifies and utilizes storage space appropriately during installation.</p>
+                    </li>
+                    <li>
+                        <p>Test upgrading from an older version, ensuring data integrity and user settings are
+                            maintained.</p>
+                    </li>
+                    <li>
+                        <p>Verify the installation process on different devices.</p>
+                    </li>
+                    <li>
+                        <p>Check if pausing the installation does not reset the install percentage to zero.</p>
+                    </li>
+                    <li>
+                        <p>See if resuming the installation functionality is working properly.</p>
+                    </li>
+                </ol>
+                <h2 id="usability-testing-whatsapp-test-scenarios">Usability Testing Whatsapp Test Scenarios</h2>
+                <ol>
+                    <li>
+                        <p>Test the ease and clarity of the user registration process.</p>
+                    </li>
+                    <li>
+                        <p>Verify the simplicity and accuracy of importing contacts into WhatsApp.</p>
+                    </li>
+                    <li>
+                        <p>Test the ease of initiating a chat and sending messages.</p>
+                    </li>
+                    <li>
+                        <p>Verify the seamless sharing of various media types (photos, videos, documents).</p>
+                    </li>
+                    <li>
+                        <p>Test the user-friendliness of updating and viewing statuses.</p>
+                    </li>
+                    <li>
+                        <p>Verify the simplicity of making and receiving calls, including video calls.</p>
+                    </li>
+                    <li>
+                        <p>Check how the app handles and notifies users of incoming messages and calls.</p>
+                    </li>
+                    <li>
+                        <p>Verify the intuitiveness of app navigation, including menus and settings.</p>
+                    </li>
+                    <li>
+                        <p>Verify the responsiveness of the app to user inputs and commands.</p>
+                    </li>
+                </ol>
+                <h2 id="test-scenarios-for-performance-testing">Test Scenarios For Performance Testing</h2>
+                <ol>
+                    <li>
+                        <p>Simulate a large number of users to assess how WhatsApp handles concurrent connections.</p>
+                    </li>
+                    <li>
+                        <p>Measure the time taken for messages to be delivered across different network conditions.</p>
+                    </li>
+                    <li>
+                        <p>Test the performance of uploading and downloading media files (photos, videos).</p>
+                    </li>
+                    <li>
+                        <p>Measure the responsiveness of group chats with a significant number of participants.</p>
+                    </li>
+                    <li>
+                        <p>Assess the performance of voice and video calls under varying network conditions.</p>
+                    </li>
+                    <li>
+                        <p>Test how well WhatsApp performs when running background processes while the app is not in
+                            use.</p>
+                    </li>
+                    <li>
+                        <p>Evaluate the app’s impact on device battery life during regular usage and background
+                            processes.</p>
+                    </li>
+                </ol>
+                <h2 id="test-scenarios-for-functional-testing">Test Scenarios For Functional Testing</h2>
+                <ol>
+                    <li>
+                        <p>Verify the accuracy of user authentication processes, including login and logout.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that WhatsApp accurately syncs and updates contact information.</p>
+                    </li>
+                    <li>
+                        <p>Test the core chat features, including sending and receiving messages, multimedia, and
+                            emojis.</p>
+                    </li>
+                    <li>
+                        <p>Verify the creation, management, and interaction within group chats.</p>
+                    </li>
+                    <li>
+                        <p>Test the initiation, reception, and termination of voice and video calls.</p>
+                    </li>
+                    <li>
+                        <p>Verify that user status updates are displayed accurately to contacts.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that users can configure settings as intended, including privacy and security options.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Verify that WhatsApp functions correctly across various devices and operating system
+                            versions.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-admin-feature-of-whatsapp-group">Test Cases For Admin Feature Of WhatsApp Group
+                </h2>
+                <ol>
+                    <li>
+                        <p>Verify that the admin role can be assigned to a specific group member.</p>
+                    </li>
+                    <li>
+                        <p>Test the functionality of admin-specific permissions, such as adding/removing members and
+                            changing group settings.</p>
+                    </li>
+                    <li>
+                        <p>Check if admins receive notifications for important group activities, like member additions
+                            or removals.</p>
+                    </li>
+                    <li>
+                        <p>Verify that only admins can create, add/remove, and make other users admin in the group.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-adding-feature-of-whatsapp-group">Test Cases For Adding Feature Of Whatsapp Group
+                </h2>
+                <ol>
+                    <li>
+                        <p>Test the ability to add new members to a group, ensuring they receive invitations.</p>
+                    </li>
+                    <li>
+                        <p>Test the functionality of adding multiple members to a group simultaneously.</p>
+                    </li>
+                    <li>
+                        <p>Check if new members have appropriate permissions, such as sending messages and sharing
+                            media.</p>
+                    </li>
+                    <li>
+                        <p>Verify that existing members receive notifications for new member additions.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-delete-feature-of-whatsapp-group">Test Cases For Delete Feature Of Whatsapp Group
+                </h2>
+                <ol>
+                    <li>
+                        <p>Test the ability to delete a group, ensuring it is removed from all members’ accounts.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the admin can initiate group deletion process after removing all the members.</p>
+                    </li>
+                    <li>
+                        <p>Check if a member can exit and delete the group for only themselves.</p>
+                    </li>
+                    <li>
+                        <p>Verify that members receive notifications when removed from a group.</p>
+                    </li>
+                    <li>
+                        <p>Test any recovery options available after group deletion, such as restoring archived content.
+                        </p>
+                    </li>
+                </ol>
+                <h2 id="test-case-for-whatsapp-contact">Test Case For WhatsApp Contact</h2>
+                <ol>
+                    <li>
+                        <p>Verify that a user can successfully add a new contact to WhatsApp.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that the contact information, such as name and phone number, is correctly saved.</p>
+                    </li>
+                    <li>
+                        <p>Test the system’s behavior when attempting to add a contact with an existing number.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can delete a contact from their WhatsApp contacts list.</p>
+                    </li>
+                    <li>
+                        <p>Check if deleting a contact keeps all associated chat history intact.</p>
+                    </li>
+                    <li>
+                        <p>Test the system’s response when trying to delete a non-existent contact.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that users can edit existing contact details (name, profile picture, etc.).</p>
+                    </li>
+                    <li>
+                        <p>Ensure changes made to a contact are reflected across the application.</p>
+                    </li>
+                    <li>
+                        <p>Verify that editing a contact’s number updates it in the chat history.</p>
+                    </li>
+                    <li>
+                        <p>Verify that contacts are displayed with the correct name and profile picture.</p>
+                    </li>
+                    <li>
+                        <p>Test the application’s behavior when a contact does not have a profile picture.</p>
+                    </li>
+                    <li>
+                        <p>Test the search functionality to find contacts by name or number.</p>
+                    </li>
+                    <li>
+                        <p>Verify that search results are accurate and displayed promptly.</p>
+                    </li>
+                </ol>
+                <h2 id="test-case-for-whatsapp-text-field">Test Case For WhatsApp Text Field</h2>
+                <p>Let’s look at some test cases for the text input field of WhatsApp:</p>
+                <ol>
+                    <li>
+                        <p>Verify that users can send a text message successfully.</p>
+                    </li>
+                    <li>
+                        <p>Test sending messages with different character lengths.</p>
+                    </li>
+                    <li>
+                        <p>Test sending messages containing emojis and special characters.</p>
+                    </li>
+                    <li>
+                        <p>Ensure that emojis are displayed correctly on both the sender’s and recipient’s devices.</p>
+                    </li>
+                    <li>
+                        <p>Test text formatting options (bold, italics, underline) in the text field.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the formatting is applied and displayed correctly.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that users can edit sent text messages.</p>
+                    </li>
+                    <li>
+                        <p>Test if edited messages are updated in real-time for the recipient.</p>
+                    </li>
+                    <li>
+                        <p>Verify the ability to delete sent messages.</p>
+                    </li>
+                    <li>
+                        <p>Test if deleted messages are removed from both the sender’s and recipient’s devices.</p>
+                    </li>
+                    <li>
+                        <p>Verify that messages display accurate timestamps.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to copy and paste text within the text field.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that pasted text retains its formatting.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that text messages are encrypted for privacy.</p>
+                    </li>
+                </ol>
+                <h2 id="test-case-for-whatsapp-status">Test Case For WhatsApp Status</h2>
+                <p>An interesting feature of WhatsApp, which is used by almost every user, is the Status. It is
+                    customizable and is displayed to all the contacts in your contact list. Here are the test cases for
+                    the WhatsApp Status feature:</p>
+                <ol>
+                    <li>
+                        <p>Verify that users can post a new status.</p>
+                    </li>
+                    <li>
+                        <p>Check if a default status is present if the user does not customize it.</p>
+                    </li>
+                    <li>
+                        <p>Test different privacy settings for status (My Contacts, My Contacts Except, Only Share
+                            With).</p>
+                    </li>
+                    <li>
+                        <p>Confirm that users can see who viewed their status.</p>
+                    </li>
+                    <li>
+                        <p>Test the accuracy of the viewers’ list.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can reply to a status.</p>
+                    </li>
+                    <li>
+                        <p>Test if the reply is linked to the original status and displayed appropriately.</p>
+                    </li>
+                    <li>
+                        <p>Test if users can upload multiple statuses simultaneously.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the order is maintained when users have multiple statuses.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to edit a posted status.</p>
+                    </li>
+                    <li>
+                        <p>Verify that edits are reflected for all viewers.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can delete a posted status.</p>
+                    </li>
+                    <li>
+                        <p>Test if deleted statuses are removed from all viewers’ lists.</p>
+                    </li>
+                    <li>
+                        <p>Test the feature allowing users to mute specific contacts’ statuses.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that muted statuses do not appear in the status list.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-broadcast-feature">Test Cases For WhatsApp Broadcast Feature</h2>
+                <ol>
+                    <li>
+                        <p>Verify that users can create a new broadcast list.</p>
+                    </li>
+                    <li>
+                        <p>Test adding contacts to the broadcast list, ensuring accurate inclusion.</p>
+                    </li>
+                    <li>
+                        <p>Test the maximum limit of recipients in a broadcast list.</p>
+                    </li>
+                    <li>
+                        <p>Verify the system’s behavior when attempting to exceed the limit.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that users can edit the recipients in an existing broadcast list.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can delete a broadcast list.</p>
+                    </li>
+                    <li>
+                        <p>Test sending text messages, images, and documents via broadcast.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that all recipients receive the broadcasted content.</p>
+                    </li>
+                    <li>
+                        <p>Verify that recipients can reply to a broadcast.</p>
+                    </li>
+                    <li>
+                        <p>Test if replies are visible only to the sender.</p>
+                    </li>
+                    <li>
+                        <p>Test the feature allowing users to forward broadcast messages to other contacts.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-web">Test Cases For WhatsApp Web</h2>
+                <p>You can also use WhatsApp on your laptop or PC. WhatsApp Web is a unique feature that allows you to
+                    take full advantage of the application, not just on smartphones. Test cases for this feature are
+                    listed below:</p>
+                <ol>
+                    <li>
+                        <p>Verify that the QR code for WhatsApp Web is present.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can successfully scan the QR code on WhatsApp Web.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that users can link multiple devices to the same WhatsApp account.</p>
+                    </li>
+                    <li>
+                        <p>Test the synchronization of messages and settings across devices.</p>
+                    </li>
+                    <li>
+                        <p>Test the security logout feature by remotely logging out of WhatsApp Web.</p>
+                    </li>
+                    <li>
+                        <p>Test WhatsApp Web on different browsers (Chrome, Firefox, Safari, Edge).</p>
+                    </li>
+                    <li>
+                        <p>Test the stability of the connection between the mobile app and WhatsApp Web.</p>
+                    </li>
+                    <li>
+                        <p>Verify that messages are synchronized in real-time.</p>
+                    </li>
+                    <li>
+                        <p>Test sending and receiving messages through WhatsApp Web.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that media files can be sent and received.</p>
+                    </li>
+                    <li>
+                        <p>Test how notifications are handled when using WhatsApp Web.</p>
+                    </li>
+                    <li>
+                        <p>Verify the behavior when the mobile device is disconnected from the internet.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that emoticons and stickers are displayed correctly on WhatsApp Web.</p>
+                    </li>
+                    <li>
+                        <p>Test accessing and modifying account settings on WhatsApp Web.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that changes made on WhatsApp Web are reflected on the mobile app.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-settings">Test Cases For WhatsApp Settings</h2>
+                <ol>
+                    <li>
+                        <p>Verify that users can change their profile picture.</p>
+                    </li>
+                    <li>
+                        <p>Test updating the user’s status.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the updated status is visible to selected contacts or the public, depending on
+                            privacy settings.</p>
+                    </li>
+                    <li>
+                        <p>Test different account privacy settings (Last Seen, Profile Photo, About, Status).</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can enable and disable two-step verification.</p>
+                    </li>
+                    <li>
+                        <p>Test the account deactivation feature.</p>
+                    </li>
+                    <li>
+                        <p>Test the process of changing the phone number associated with the WhatsApp account.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can manually initiate a chat backup.</p>
+                    </li>
+                    <li>
+                        <p>Test different notification settings (message notifications, group notifications, etc.).</p>
+                    </li>
+                    <li>
+                        <p>Test different security settings (fingerprint lock, face ID, etc.).</p>
+                    </li>
+                    <li>
+                        <p>Test updating the WhatsApp application to the latest version.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the update process is smooth and does not result in data loss.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-group-chat">Test Cases For Whatsapp Group Chat</h2>
+                <ol>
+                    <li>
+                        <p>Verify that a user can successfully create a new group.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the group is immediately visible in the user’s chat list.</p>
+                    </li>
+                    <li>
+                        <p>Test adding multiple members to the group.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that all added members receive an invitation and join successfully.</p>
+                    </li>
+                    <li>
+                        <p>Test adding a group description.</p>
+                    </li>
+                    <li>
+                        <p>Verify that any member of the group can change the group name and icon.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the group admin can remove a member from the group.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the removed member no longer has access to the group.</p>
+                    </li>
+                    <li>
+                        <p>Test a group member voluntarily leaving the group.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the group updates for the remaining members.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the group creator can generate an invitation link.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that users joining via the link become members without further approval.</p>
+                    </li>
+                    <li>
+                        <p>Test sharing images, videos, and documents within the group.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can search for specific messages within the group chat.</p>
+                    </li>
+                    <li>
+                        <p>Verify that the group admin can transfer admin privileges to another group member.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the new admin has the necessary permissions.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that group information and messages are synchronized across multiple devices linked
+                            to the same account.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-profile-picture">Test Cases for WhatsApp Profile Picture</h2>
+                <ol>
+                    <li>
+                        <p>Verify that a user can upload a new profile picture.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the new picture is immediately visible to contacts.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to remove the profile picture.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the profile picture is replaced with the default avatar.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can crop the profile picture during the upload process.</p>
+                    </li>
+                    <li>
+                        <p>Test changing the profile picture frequently.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that the updated picture is visible to contacts without delay.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-individual-chats">Test Cases For WhatsApp Individual Chats</h2>
+                <ol>
+                    <li>
+                        <p>Verify that users can send text messages to individual contacts.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that sent messages are immediately delivered.</p>
+                    </li>
+                    <li>
+                        <p>Test sharing images, videos, and documents in individual chats.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can use emojis and stickers in individual chats.</p>
+                    </li>
+                    <li>
+                        <p>Test sending and receiving voice messages in individual chats.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can share contacts and locations in individual chats.</p>
+                    </li>
+                    <li>
+                        <p>Verify that messages display accurate timestamps.</p>
+                    </li>
+                    <li>
+                        <p>Confirm that read receipts (blue ticks) are displayed accurately unless stated otherwise in
+                            the privacy setting of the receiver.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can react to individual chat messages.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can mute notifications for a specific individual chat.</p>
+                    </li>
+                    <li>
+                        <p>Test deleting individual chat messages.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-audio-calls">Test Cases For WhatsApp Audio Calls</h2>
+                <ol>
+                    <li>
+                        <p>Verify that a user can successfully initiate an audio call.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to receive an incoming audio call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can answer an incoming audio call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that this feature is available for both individual and group conversations.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can switch from an audio call to a video call seamlessly.</p>
+                    </li>
+                    <li>
+                        <p>Test muting and unmuting the microphone during an audio call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can use the speakerphone during an audio call.</p>
+                    </li>
+                    <li>
+                        <p>Check that a missed call notification is sent to the receiver if they miss the call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can end an ongoing audio call.</p>
+                    </li>
+                    <li>
+                        <p>Test if an audio call can be resumed seamlessly after a brief interruption (e.g., network
+                            fluctuation).</p>
+                    </li>
+                    <li>
+                        <p>Verify how the application handles audio calls when it’s running in the background.</p>
+                    </li>
+                </ol>
+                <h2 id="test-cases-for-whatsapp-video-calls">Test Cases For WhatsApp Video Calls</h2>
+                <ol>
+                    <li>
+                        <p>Verify that a user can successfully initiate a video call.</p>
+                    </li>
+                    <li>
+                        <p>Test the ability to receive an incoming video call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can answer an incoming video call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can switch from a video call to an audio call seamlessly.</p>
+                    </li>
+                    <li>
+                        <p>Test muting and unmuting the microphone during a video call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can use the speakerphone during a video call.</p>
+                    </li>
+                    <li>
+                        <p>Test switching between the front and rear cameras during a video call.</p>
+                    </li>
+                    <li>
+                        <p>Verify that users can end an ongoing video call.</p>
+                    </li>
+                    <li>
+                        <p>Test if a video call can be resumed seamlessly after a brief interruption (e.g., network
+                            fluctuation).</p>
+                    </li>
+                    <li>
+                        <p>Verify how the application handles video calls when it’s running in the background.</p>
+                    </li>
+                    <li>
+                        <p>Test if users receive proper notifications for missed video calls.</p>
+                    </li>
+                </ol>
+                <h2 id="negative-test-cases-for-whatsapp">Negative Test Cases For WhatsApp</h2>
+                <ol>
+                    <li>
+                        <p>Attempt to register with an invalid phone number format (e.g., missing country code).</p>
+                    </li>
+                    <li>
+                        <p>Try registering with a phone number already associated with an existing WhatsApp account.</p>
+                    </li>
+                    <li>
+                        <p>Enter an incorrect verification code during the registration process.</p>
+                    </li>
+                    <li>
+                        <p>Try sending media files that exceed the maximum allowed size.</p>
+                    </li>
+                    <li>
+                        <p>Attempt to create a group without proper authentication.</p>
+                    </li>
+                    <li>
+                        <p>Perform multiple failed login attempts within a short time frame.</p>
+                    </li>
+                    <li>
+                        <p>Disconnect the device from the internet during a message transmission.</p>
+                    </li>
+                    <li>
+                        <p>Send media files with incorrect or unsupported formats.</p>
+                    </li>
+                    <li>
+                        <p>Attempt to add more members to a group than the maximum allowed.</p>
+                    </li>
+                    <li>
+                        <p>Attempt to access a user’s profile picture or status with strict privacy settings.</p>
+                    </li>
+                    <li>
+                        <p>Try to reactivate a deactivated account.</p>
+                    </li>
+                    <li>
+                        <p>Intentionally use an older version of the application without the latest security patches.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Simulate scenarios where messages are not synchronized correctly across multiple devices.</p>
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

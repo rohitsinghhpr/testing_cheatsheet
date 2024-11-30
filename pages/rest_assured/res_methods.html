@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods - RestAssured</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>GET Request</summary>
+                <div class="content">
+                    A GET request is used to retrieve data from the server at a specified resource endpoint:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.response.Response;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    Response response = given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/1");
+            
+                    System.out.println("Status Code: " + response.getStatusCode());
+                    System.out.println("Response Body: " + response.getBody().asString());
+                }
+            }
+                    </code></pre>
+                    This example sends a GET request and prints the status code and response body.
+                </div>
+            </details>
+            
+            <details>
+                <summary>POST Request</summary>
+                <div class="content">
+                    A POST request is used to send data to the server to create a new resource:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.http.ContentType;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .contentType(ContentType.JSON)
+                        .body("{ \"title\": \"foo\", \"body\": \"bar\", \"userId\": 1 }")
+                        .when()
+                        .post("https://jsonplaceholder.typicode.com/posts")
+                        .then()
+                        .statusCode(201);
+                }
+            }
+                    </code></pre>
+                    This sends a POST request with JSON data to create a new resource and verifies that the response status code is 201.
+                </div>
+            </details>
+            
+            <details>
+                <summary>PUT Request</summary>
+                <div class="content">
+                    A PUT request is used to update an existing resource with the data provided in the request:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.http.ContentType;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .contentType(ContentType.JSON)
+                        .body("{ \"title\": \"foo updated\", \"body\": \"bar updated\", \"userId\": 1 }")
+                        .when()
+                        .put("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This sends a PUT request to update an existing resource and checks that the response status code is 200.
+                </div>
+            </details>
+            
+            <details>
+                <summary>PATCH Request</summary>
+                <div class="content">
+                    A PATCH request is used to partially update an existing resource with only the provided data:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import io.restassured.http.ContentType;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .contentType(ContentType.JSON)
+                        .body("{ \"title\": \"foo patched\" }")
+                        .when()
+                        .patch("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This example sends a PATCH request to update only the <code>title</code> field of an existing resource and validates the response code.
+                </div>
+            </details>
+            
+            <details>
+                <summary>DELETE Request</summary>
+                <div class="content">
+                    A DELETE request is used to remove a specified resource from the server:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .delete("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .statusCode(200); // or 204 based on API behavior
+                }
+            }
+                    </code></pre>
+                    This sends a DELETE request to remove a resource and checks for a 200 (OK) or 204 (No Content) status code.
+                </div>
+            </details>
+            
+            <details>
+                <summary>HEAD Request</summary>
+                <div class="content">
+                    A HEAD request retrieves the headers from a resource without the response body, often used to check metadata:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .head("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .statusCode(200)
+                        .header("Content-Type", "application/json; charset=utf-8");
+                }
+            }
+                    </code></pre>
+                    This example sends a HEAD request to verify headers and checks that the response code and <code>Content-Type</code> header are as expected.
+                </div>
+            </details>
+            
+            <details>
+                <summary>OPTIONS Request</summary>
+                <div class="content">
+                    An OPTIONS request retrieves the HTTP methods supported by a specific URL:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .options("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .statusCode(200)
+                        .header("Allow", containsString("GET"));
+                }
+            }
+                    </code></pre>
+                    This sends an OPTIONS request and checks if the <code>Allow</code> header contains the allowed HTTP methods, such as GET.
+                </div>
+            </details>
+            
+        </div>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
+

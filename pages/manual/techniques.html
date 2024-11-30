@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniques</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+    <div class="details-container">
+
+        <details>
+            <summary>Equivalence Partitioning</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Description</strong>: Divides input data into partitions of equivalent values, where test
+                            cases are designed to cover each partition at least once.</p>
+                    </li>
+                    <li>
+                        <p><strong>Goal</strong>: Reduces the number of test cases while covering the entire input domain.</p>
+                    </li>
+                    <li>
+                        <p><strong>Example</strong>: If a field accepts values from 1–100, equivalence partitions might include:
+                        </p>
+                        <ul>
+                            <li>
+                                <p>Valid partition: 1–100</p>
+                            </li>
+                            <li>
+                                <p>Invalid partitions: values &lt; 1 and values &gt; 100</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Boundary Value Analysis (BVA)</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Description</strong>: Focuses on values at the boundaries of equivalence partitions, as
+                            defects often occur at these edges.</p>
+                    </li>
+                    <li>
+                        <p><strong>Goal</strong>: To detect errors at boundaries, which are more error-prone.</p>
+                    </li>
+                    <li>
+                        <p><strong>Example</strong>: For an input range of 1–100, BVA tests would include values like 0, 1, 100,
+                            and 101.</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Decision Table Testing</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Description</strong>: Represents combinations of inputs and their associated outcomes in a
+                            table format, allowing testers to cover all possible conditions.</p>
+                    </li>
+                    <li>
+                        <p><strong>Goal</strong>: To verify different combinations of input conditions and ensure correct
+                            outcomes.</p>
+                    </li>
+                    <li>
+                        <p><strong>Example</strong>: For a login form with conditions such as correct username and correct
+                            password, a decision table would list outcomes for each possible combination of conditions (e.g.,
+                            correct username + incorrect password, both correct, etc.).</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>State Transition Testing</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Description</strong>: Tests how the system behaves in various states and transitions between
+                            them, especially useful for systems with workflows or state-dependent behavior.</p>
+                    </li>
+                    <li>
+                        <p><strong>Goal</strong>: To ensure the system transitions correctly from one state to another based on
+                            specific inputs.</p>
+                    </li>
+                    <li>
+                        <p><strong>Example</strong>: In a banking application, a state transition test could verify how the
+                            system moves from “Account Locked” to “Active” after specific actions like entering the correct
+                            security answer.</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Use Case Testing</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Description</strong>: Focuses on real-world scenarios as described in use cases, helping to
+                            verify that the system functions as intended for specific user interactions.</p>
+                    </li>
+                    <li>
+                        <p><strong>Goal</strong>: To ensure the software meets the business and user requirements outlined in
+                            use cases.</p>
+                    </li>
+                    <li>
+                        <p><strong>Example</strong>: For an e-commerce site, a use case test might cover the process of a user
+                            browsing products, adding items to the cart, and completing a purchase.</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+.main_navbar a,button{
+    display: block;
+    width:100%;
+}
+
+.offcanvas-end {
+    border-left:0 !important;
+    width: calc(100vw - 0vw) !important;
+}
+
+.offcanvas-body a.active{
+    display:inline-block;
+    background-color:#dc3545;
+    color:#fff;
+}
+
+/* home link */
+
+.home-link {
+    display:none;
+    width: 100vw;
+    padding: 0.5em 0;
+    text-align: center;
+    background-color: black;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+/* details */
+
+.details-container {
+    width:90% !important;
+    margin:auto;
+    margin-bottom: 10em;
+}
+
+details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0;
+    margin: 20px auto;
+}
+
+summary {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+summary:hover {
+    background-color: #c0c0c0;
+    color: #000;
+}
+
+summary:focus {
+    outline: none;
+    background-color:blue;
+    color:white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* by mean .active means details.active */
+
+.details-container .active summary{
+    background-color:blue;
+    color:white;
+}
+
+details[open] summary {
+    background-color: #b0b0b0;
+    color: #fff;
+}
+
+details div {
+    margin-top: 10px;
+    padding-left:0;
+}
+
+details+details {
+    margin-top: 20px;
+}
+
+/* code */
+pre,
+code {
+    padding: 0;
+    margin: 0;
+    white-space: pre-line !important;
+}

@@ -1,0 +1,3590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Testing</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+
+        <details>
+            <summary>Overview | Backend Testing | Practical Approach</summary>
+            <div class="content">
+                <h3 id="database-testing-overview"><strong>Database Testing Overview</strong></h3>
+                <p>Database testing involves validating the schema, tables, triggers, procedures, and data integrity of
+                    a database. It ensures that the backend database behaves as expected and performs effectively under
+                    various scenarios. The focus is on:</p>
+                <ul>
+                    <li><strong>Data Accuracy</strong>: Ensuring correct data is stored and retrieved.</li>
+                    <li><strong>Data Integrity</strong>: Maintaining data consistency across transactions.</li>
+                    <li><strong>Performance Testing</strong>: Validating database responsiveness under load.</li>
+                    <li><strong>Security Testing</strong>: Checking for vulnerabilities like SQL injection.</li>
+                    <li><strong>Stored Procedures and Triggers</strong>: Ensuring proper execution and functionality.
+                    </li>
+                </ul>
+                <h3 id="key-aspects-of-database-testing"><strong>Key Aspects of Database Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Data Mapping and Validation</strong>:</p>
+                        <ul>
+                            <li>Ensures the data flow between the front end and database is accurate.</li>
+                            <li>Compares data in the UI with the database.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Schema Testing</strong>:</p>
+                        <ul>
+                            <li>Validates database objects such as tables, columns, and relationships.</li>
+                            <li>Checks for missing or extra fields, field lengths, and constraints (like primary keys,
+                                foreign keys, and unique keys).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Data Integrity Testing</strong>:</p>
+                        <ul>
+                            <li>Verifies that database transactions maintain data consistency.</li>
+                            <li>Ensures ACID properties (Atomicity, Consistency, Isolation, Durability) are met.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Performance Testing</strong>:</p>
+                        <ul>
+                            <li>Validates database response times for queries under load.</li>
+                            <li>Identifies performance bottlenecks.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Security Testing</strong>:</p>
+                        <ul>
+                            <li>Ensures only authorized users have access to sensitive data.</li>
+                            <li>Checks for vulnerabilities like SQL injection.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="backend-testing"><strong>Backend Testing</strong></h3>
+                <p>Backend testing is broader than database testing, focusing on the entire server-side application. It
+                    involves:</p>
+                <ul>
+                    <li>
+                        <p><strong>Server-side Logic Testing</strong>:</p>
+                        <ul>
+                            <li>Verifies business logic implemented in the backend, such as APIs, services, and
+                                middleware.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>API Testing</strong>:</p>
+                        <ul>
+                            <li>Tests the interactions between different system components via REST/SOAP APIs.</li>
+                            <li>Validates request and response payloads, HTTP status codes, and headers.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Database Testing</strong>:</p>
+                        <ul>
+                            <li>A subset of backend testing that specifically targets the database.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Server Performance and Scalability Testing</strong>:</p>
+                        <ul>
+                            <li>Validates the server&#39;s ability to handle concurrent requests and high loads.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Security Testing</strong>:</p>
+                        <ul>
+                            <li>Ensures data protection on the server side.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <h3 id="practical-approach-to-database-and-backend-testing"><strong>Practical Approach to Database and
+                        Backend Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Requirement Analysis</strong>:</p>
+                        <ul>
+                            <li>Understand business requirements and technical specs.</li>
+                            <li>Identify the database and server-side components that need to be tested.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Case Design</strong>:</p>
+                        <ul>
+                            <li>Write test cases for:<ul>
+                                    <li>CRUD operations (Create, Read, Update, Delete).</li>
+                                    <li>Validation of schema and relationships.</li>
+                                    <li>Performance metrics under various conditions.</li>
+                                    <li>Edge cases for server responses and database queries.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Environment Setup</strong>:</p>
+                        <ul>
+                            <li>Configure the database with necessary test data.</li>
+                            <li>Set up tools like <strong>SQL Server Management Studio (SSMS)</strong>,
+                                <strong>Postman</strong>, or <strong>JMeter</strong>.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execution of Test Cases</strong>:</p>
+                        <ul>
+                            <li>Run SQL queries to verify data consistency and integrity.</li>
+                            <li>Use tools like <strong>Selenium</strong>, <strong>Postman</strong>, or backend testing
+                                scripts for API testing.</li>
+                            <li>Use load testing tools (e.g., <strong>Apache JMeter</strong>,
+                                <strong>LoadRunner</strong>) to evaluate performance.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Defect Logging and Retesting</strong>:</p>
+                        <ul>
+                            <li>Record issues found in database or server-side functionality.</li>
+                            <li>Collaborate with developers to fix and retest.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Tools for Database Testing</strong>:</p>
+                        <ul>
+                            <li><strong>SQLyog</strong>, <strong>Toad</strong>, <strong>DBeaver</strong> for query
+                                execution and database analysis.</li>
+                            <li><strong>Data Factory</strong> or custom scripts for test data creation.</li>
+                            <li>Automation tools like <strong>Selenium</strong> for integration testing.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="best-practices"><strong>Best Practices</strong></h3>
+                <ul>
+                    <li>Always validate database schema updates before deployment.</li>
+                    <li>Use test data that represents real-world scenarios.</li>
+                    <li>Regularly back up the database to avoid data loss during tests.</li>
+                    <li>Automate repetitive database tests wherever possible.</li>
+                    <li>Monitor database performance metrics in real-time.</li>
+                </ul>
+                <p>This approach ensures comprehensive testing of databases and backend systems, delivering robust and
+                    reliable software.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Environment Setup</summary>
+            <div class="content">
+                <h3 id="environment-setup-for-database-testing"><strong>Environment Setup for Database Testing</strong>
+                </h3>
+                <p>The setup of a testing environment is critical to ensure smooth execution of database testing. It
+                    involves preparing the hardware, software, tools, and configurations needed for testing.</p>
+                <hr>
+                <h4 id="steps-to-set-up-a-database-testing-environment"><strong>Steps to Set Up a Database Testing
+                        Environment</strong></h4>
+                <ol>
+                    <li>
+                        <p><strong>Understand the Requirements</strong>:</p>
+                        <ul>
+                            <li>Analyze the <strong>application architecture</strong>.</li>
+                            <li>Identify the type of database (e.g., MySQL, PostgreSQL, Oracle, MongoDB).</li>
+                            <li>Review test case scenarios and database workflows.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare the Test Database</strong>:</p>
+                        <ul>
+                            <li><strong>Create a Separate Test Environment</strong>: Use a dedicated database instance
+                                for testing to avoid affecting production data.</li>
+                            <li><strong>Load Sample Data</strong>: Populate the database with realistic sample data for
+                                test cases, either by importing datasets or using scripts.</li>
+                            <li><strong>Schema Setup</strong>:<ul>
+                                    <li>Ensure all required tables, columns, constraints, indexes, and relationships are
+                                        in place.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Backup and Restore Capabilities</strong>: Configure a system to back up and
+                                restore the database to its initial state between tests.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Install and Configure Necessary Tools</strong>:</p>
+                        <ul>
+                            <li><strong>Database Management Tools</strong>: Examples include <strong>SQL Server
+                                    Management Studio (SSMS)</strong>, <strong>Toad</strong>, or
+                                <strong>DBeaver</strong>.
+                            </li>
+                            <li><strong>Test Automation Tools</strong> (optional):<ul>
+                                    <li><strong>Selenium</strong>: For database verification in web-based apps.</li>
+                                    <li><strong>Appium</strong>: For mobile database-related testing.</li>
+                                    <li><strong>Apache JMeter</strong>: For load testing databases.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Query Performance Tools</strong>:<ul>
+                                    <li>Use tools like <strong>Explain Plan</strong>, <strong>Query Profiler</strong>,
+                                        or database-specific analyzers.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Environment Configuration</strong>:</p>
+                        <ul>
+                            <li><strong>Server Setup</strong>:<ul>
+                                    <li>Install and configure the database server.</li>
+                                    <li>Optimize server settings (e.g., memory allocation, indexing).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Network Configuration</strong>:<ul>
+                                    <li>Ensure proper connectivity between the database, application server, and testing
+                                        tools.</li>
+                                </ul>
+                            </li>
+                            <li><strong>User Permissions</strong>:<ul>
+                                    <li>Create test user roles with appropriate permissions.</li>
+                                    <li>Validate security settings to ensure restricted access to sensitive data.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Integration with Other Components</strong>:</p>
+                        <ul>
+                            <li>Ensure the database connects correctly with the backend application.</li>
+                            <li>Test API endpoints that interact with the database.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Configure Automation Scripts</strong> (if applicable):</p>
+                        <ul>
+                            <li>Write scripts to automate repetitive tasks like data creation, backup/restore, and
+                                validation queries.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Set Up Logs and Monitoring</strong>:</p>
+                        <ul>
+                            <li>Enable database logging to track queries and errors during testing.</li>
+                            <li>Use monitoring tools to analyze query performance and detect bottlenecks.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Validate the Environment</strong>:</p>
+                        <ul>
+                            <li>Run sanity tests to ensure the database is functioning as expected.</li>
+                            <li>Check the compatibility of test cases with the environment.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h4 id="example-environment-setup"><strong>Example Environment Setup</strong></h4>
+                <ul>
+                    <li><strong>Database</strong>: MySQL 8.0</li>
+                    <li><strong>Tools</strong>: SQLyog for query execution, Apache JMeter for performance testing.</li>
+                    <li><strong>Data</strong>: Preloaded test data for a user registration system.</li>
+                    <li><strong>Server</strong>: MySQL database server hosted on a local machine or cloud (AWS RDS).
+                    </li>
+                    <li><strong>Scripts</strong>: Python scripts for CRUD operations and verification.</li>
+                    <li><strong>Monitoring</strong>: Use MySQL Query Profiler for performance metrics.</li>
+                </ul>
+                <hr>
+                <h4 id="best-practices-for-database-testing-setup"><strong>Best Practices for Database Testing
+                        Setup</strong></h4>
+                <ol>
+                    <li><strong>Isolate the Test Environment</strong>:<ul>
+                            <li>Never test on production databases.</li>
+                            <li>Use a staging database for a closer replication of production scenarios.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Use Realistic Test Data</strong>:<ul>
+                            <li>Simulate real-world conditions for reliable results.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Automate Where Possible</strong>:<ul>
+                            <li>Save time and reduce errors with automation for repetitive tasks.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Version Control</strong>:<ul>
+                            <li>Maintain versioning of the database schema and test scripts.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>By setting up the environment carefully, you can ensure comprehensive and effective database testing.
+                </p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>How To Test Schema of Database Table | Test Cases</summary>
+            <div class="content">
+                <h3 id="testing-the-schema-of-a-database-table"><strong>Testing the Schema of a Database Table</strong>
+                </h3>
+                <p>Schema testing ensures that the structure of a database table aligns with the design specifications.
+                    This involves validating columns, data types, constraints, relationships, and indexes. Below is a
+                    structured approach to testing the schema of a database table.</p>
+                <hr>
+                <h3 id="steps-to-test-database-table-schema"><strong>Steps to Test Database Table Schema</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Understand Requirements</strong>:</p>
+                        <ul>
+                            <li>Obtain the database schema document.</li>
+                            <li>Identify tables, columns, data types, relationships, constraints, and indexes defined in
+                                the schema.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Environment Setup</strong>:</p>
+                        <ul>
+                            <li>Set up a test database with the required schema.</li>
+                            <li>Load initial data if necessary.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Schema Objects</strong>:</p>
+                        <ul>
+                            <li>Validate the existence and structure of:<ul>
+                                    <li>Tables</li>
+                                    <li>Columns</li>
+                                    <li>Constraints</li>
+                                    <li>Indexes</li>
+                                    <li>Relationships (e.g., foreign keys)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute SQL Queries</strong>:</p>
+                        <ul>
+                            <li>Write and execute queries to verify schema definitions, such as <code>DESCRIBE</code>,
+                                <code>SHOW COLUMNS</code>, or <code>INFORMATION_SCHEMA</code> queries.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Compare Results</strong>:</p>
+                        <ul>
+                            <li>Compare the actual database schema against the expected schema defined in the design
+                                document.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="test-cases-for-schema-testing"><strong>Test Cases for Schema Testing</strong></h3>
+                <p>Here are some typical test cases to verify the database table schema:</p>
+                <h4 id="1-table-structure-validation"><strong>1. Table Structure Validation</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Expected Outcome</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify the table&#39;s name is correct.</td>
+                            <td>Table name matches the expected name.</td>
+                        </tr>
+                        <tr>
+                            <td>Validate the existence of the table.</td>
+                            <td>Table exists in the database.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="2-column-definitions"><strong>2. Column Definitions</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Expected Outcome</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify the column names are correct.</td>
+                            <td>Column names match the expected names.</td>
+                        </tr>
+                        <tr>
+                            <td>Validate the column data types.</td>
+                            <td>Data types align with specifications (e.g., <code>VARCHAR</code>, <code>INT</code>,
+                                <code>DATE</code>).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Check for correct column lengths.</td>
+                            <td>Length of fields matches requirements (e.g., <code>VARCHAR(255)</code>).</td>
+                        </tr>
+                        <tr>
+                            <td>Validate column default values.</td>
+                            <td>Default values for columns are as per the design document.</td>
+                        </tr>
+                        <tr>
+                            <td>Verify that columns allow/disallow NULL.</td>
+                            <td>NULL constraints match the schema requirements.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="3-primary-and-foreign-keys"><strong>3. Primary and Foreign Keys</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Expected Outcome</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify the primary key is defined correctly.</td>
+                            <td>The primary key is set on the correct column(s).</td>
+                        </tr>
+                        <tr>
+                            <td>Validate foreign key relationships.</td>
+                            <td>Foreign keys reference the correct tables and columns.</td>
+                        </tr>
+                        <tr>
+                            <td>Check cascading rules (ON DELETE/ON UPDATE).</td>
+                            <td>Cascading rules behave as expected.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="4-indexes-and-constraints"><strong>4. Indexes and Constraints</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Expected Outcome</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify indexes are defined on the correct columns.</td>
+                            <td>Indexes match the design document.</td>
+                        </tr>
+                        <tr>
+                            <td>Validate unique constraints on columns.</td>
+                            <td>Unique constraints enforce the correct behavior (e.g., no duplicates).</td>
+                        </tr>
+                        <tr>
+                            <td>Check default values for constraints.</td>
+                            <td>Default constraints work as specified.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="5-relationships-and-referential-integrity"><strong>5. Relationships and Referential
+                        Integrity</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Expected Outcome</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Validate parent-child relationships.</td>
+                            <td>Relationships between tables are correctly defined.</td>
+                        </tr>
+                        <tr>
+                            <td>Ensure cascading rules function properly.</td>
+                            <td>Deleting/updating a parent record behaves according to cascade rules.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="6-schema-versioning"><strong>6. Schema Versioning</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Expected Outcome</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify that the schema matches the version.</td>
+                            <td>Schema version in the database matches the expected version.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="7-data-integrity-constraints"><strong>7. Data Integrity Constraints</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Expected Outcome</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Validate check constraints.</td>
+                            <td>Data meets the conditions specified by the constraints.</td>
+                        </tr>
+                        <tr>
+                            <td>Verify the behavior of NOT NULL constraints.</td>
+                            <td>Columns with NOT NULL constraints do not accept null values.</td>
+                        </tr>
+                        <tr>
+                            <td>Ensure uniqueness of primary and unique keys.</td>
+                            <td>Duplicate entries in primary/unique key columns are not allowed.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="sql-queries-for-schema-validation"><strong>SQL Queries for Schema Validation</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Verify Table Structure</strong>:</p>
+                        <pre><code class="language-sql">SHOW COLUMNS FROM table_name;
+</code></pre>
+                        <p>or</p>
+                        <pre><code class="language-sql">DESCRIBE table_name;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Check Constraints</strong>:</p>
+                        <pre><code class="language-sql">SELECT CONSTRAINT_NAME, TABLE_NAME, COLUMN_NAME
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE TABLE_NAME = &#39;table_name&#39;;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>List Indexes</strong>:</p>
+                        <pre><code class="language-sql">SHOW INDEXES FROM table_name;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Validate Foreign Key Relationships</strong>:</p>
+                        <pre><code class="language-sql">SELECT TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE TABLE_NAME = &#39;table_name&#39;;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Check for Default Values</strong>:</p>
+                        <pre><code class="language-sql">SELECT COLUMN_NAME, COLUMN_DEFAULT
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = &#39;table_name&#39;;
+</code></pre>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="best-practices-for-schema-testing"><strong>Best Practices for Schema Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Maintain a Schema Document</strong>:</p>
+                        <ul>
+                            <li>Keep an updated schema design document for reference.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automate Schema Validation</strong>:</p>
+                        <ul>
+                            <li>Use database testing tools (e.g., <strong>Flyway</strong>, <strong>Liquibase</strong>)
+                                or write scripts for automated schema checks.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Incremental Changes</strong>:</p>
+                        <ul>
+                            <li>Validate schema changes (e.g., new columns, constraints) as part of the deployment
+                                process.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Use Version Control for Schema</strong>:</p>
+                        <ul>
+                            <li>Track schema changes in a version control system (e.g., Git).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Regular Regression Testing</strong>:</p>
+                        <ul>
+                            <li>Include schema tests in regular regression suites to catch issues early.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>By following these test cases and practices, you can ensure a robust and well-validated database
+                    schema.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Stored Procedure Testing | How To Develop and Test Stored Procedures</summary>
+            <div class="content">
+                <h3 id="stored-procedure-testing"><strong>Stored Procedure Testing</strong></h3>
+                <p>Stored procedures are SQL routines stored in the database and executed on the server side. They
+                    encapsulate logic and improve performance by reducing network traffic. Testing stored procedures
+                    ensures they execute correctly, handle edge cases, and meet performance requirements.</p>
+                <hr>
+                <h3 id="steps-to-develop-and-test-stored-procedures"><strong>Steps to Develop and Test Stored
+                        Procedures</strong></h3>
+                <h4 id="1-development-of-stored-procedures"><strong>1. Development of Stored Procedures</strong></h4>
+                <p>Developing stored procedures involves several stages:</p>
+                <ol>
+                    <li>
+                        <p><strong>Define Requirements</strong>:</p>
+                        <ul>
+                            <li>Identify the purpose of the procedure (e.g., insert, update, or fetch data).</li>
+                            <li>Outline the inputs, outputs, and the logic flow.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Design the Procedure</strong>:</p>
+                        <ul>
+                            <li>Use pseudocode or flowcharts to map the logic.</li>
+                            <li>Incorporate validations (e.g., parameter checks, transaction management).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Write the SQL Code</strong>:</p>
+                        <ul>
+                            <li>Write the stored procedure using appropriate syntax (e.g.,
+                                <code>CREATE PROCEDURE</code>).
+                            </li>
+                            <li>Ensure the use of best practices:<ul>
+                                    <li>Use parameters (<code>IN</code>, <code>OUT</code>, <code>INOUT</code>) for
+                                        flexibility.</li>
+                                    <li>Implement error handling with <code>TRY-CATCH</code> blocks or equivalent.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test During Development</strong>:</p>
+                        <ul>
+                            <li>Test in parts using subqueries or temporary procedures to validate specific logic.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h4 id="2-testing-stored-procedures"><strong>2. Testing Stored Procedures</strong></h4>
+                <p><strong>Testing stored procedures involves functional, performance, and security testing.</strong>
+                </p>
+                <h5 id="a-functional-testing"><strong>A. Functional Testing</strong></h5>
+                <p>Validate the procedure&#39;s logic by testing it against various scenarios.</p>
+                <ol>
+                    <li>
+                        <p><strong>Basic Functionality</strong>:</p>
+                        <ul>
+                            <li>Ensure the procedure executes without errors.</li>
+                            <li>Verify correct behavior for valid input data.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Input Parameter Validation</strong>:</p>
+                        <ul>
+                            <li>Test the stored procedure with valid, invalid, and boundary parameter values.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Output Validation</strong>:</p>
+                        <ul>
+                            <li>Check the returned values (result sets, output parameters) against expected results.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Transaction Management</strong>:</p>
+                        <ul>
+                            <li>Ensure proper handling of <code>COMMIT</code> and <code>ROLLBACK</code> operations
+                                during failures.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h5 id="b-negative-testing"><strong>B. Negative Testing</strong></h5>
+                <p>Test how the procedure handles erroneous or edge cases.</p>
+                <ul>
+                    <li>Invalid input parameters.</li>
+                    <li>Missing or null values in critical fields.</li>
+                    <li>Violations of constraints like unique or foreign keys.</li>
+                </ul>
+                <h5 id="c-performance-testing"><strong>C. Performance Testing</strong></h5>
+                <p>Evaluate the procedure’s performance under different conditions.</p>
+                <ol>
+                    <li>
+                        <p><strong>Query Execution Time</strong>:</p>
+                        <ul>
+                            <li>Measure how long it takes to execute the procedure with small and large datasets.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Load Testing</strong>:</p>
+                        <ul>
+                            <li>Test how the procedure behaves under concurrent executions.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Optimization</strong>:</p>
+                        <ul>
+                            <li>Analyze query plans to identify bottlenecks and optimize indexes or joins.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h5 id="d-security-testing"><strong>D. Security Testing</strong></h5>
+                <p>Ensure the procedure is secure and not vulnerable to attacks.</p>
+                <ol>
+                    <li>
+                        <p><strong>SQL Injection</strong>:</p>
+                        <ul>
+                            <li>Pass malicious input to check if the procedure sanitizes inputs properly.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Permission Checks</strong>:</p>
+                        <ul>
+                            <li>Validate that only authorized users can execute the procedure.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="steps-to-test-stored-procedures"><strong>Steps to Test Stored Procedures</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Prepare the Test Environment</strong>:</p>
+                        <ul>
+                            <li>Set up a testing database with necessary test data.</li>
+                            <li>Create mock tables or use test datasets to isolate the procedure.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Write Test Cases</strong>:</p>
+                        <ul>
+                            <li>Cover all scenarios: normal cases, edge cases, and error cases.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute the Stored Procedure</strong>:</p>
+                        <ul>
+                            <li>Use a query tool like <strong>SQL Server Management Studio (SSMS)</strong>,
+                                <strong>DBeaver</strong>, or <strong>MySQL Workbench</strong>.
+                            </li>
+                            <li>Example Execution:
+                                <pre><code class="language-sql">EXEC procedure_name @param1 = &#39;value1&#39;, @param2 = &#39;value2&#39;;
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Compare Results</strong>:</p>
+                        <ul>
+                            <li>Validate the output against the expected results.</li>
+                            <li>Use assertions in test scripts for automation.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test with Automation Tools</strong>:</p>
+                        <ul>
+                            <li>Use testing frameworks or tools like <strong>tSQLt</strong>, <strong>JUnit</strong>, or
+                                custom scripts.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Log and Fix Defects</strong>:</p>
+                        <ul>
+                            <li>Log any discrepancies and work with developers to resolve them.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="sample-test-cases-for-stored-procedures"><strong>Sample Test Cases for Stored
+                        Procedures</strong></h3>
+                <h4 id="1-basic-functionality-test"><strong>1. Basic Functionality Test</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Insert data into a table.</td>
+                            <td>Valid input parameters.</td>
+                            <td>Data is inserted successfully.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="2-parameter-validation"><strong>2. Parameter Validation</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Execute without parameters.</td>
+                            <td>None</td>
+                            <td>Error: Missing parameters.</td>
+                        </tr>
+                        <tr>
+                            <td>Execute with invalid parameter types.</td>
+                            <td>String for an INT</td>
+                            <td>Error: Invalid data type.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="3-output-validation"><strong>3. Output Validation</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fetch customer by valid ID.</td>
+                            <td>Customer ID = 101</td>
+                            <td>Returns customer details.</td>
+                        </tr>
+                        <tr>
+                            <td>Fetch customer by invalid ID.</td>
+                            <td>Customer ID = 999</td>
+                            <td>Returns no data or specific message.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="4-transaction-management"><strong>4. Transaction Management</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Scenario</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Execute procedure with a failure in-between.</td>
+                            <td>One valid and one invalid row.</td>
+                            <td>Rollback transaction completely.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="5-performance-test"><strong>5. Performance Test</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Dataset Size</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test procedure with large data</td>
+                            <td>1 million rows.</td>
+                            <td>Executes within defined time.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="best-practices-for-stored-procedure-development-and-testing"><strong>Best Practices for Stored
+                        Procedure Development and Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Design for Testability</strong>:</p>
+                        <ul>
+                            <li>Use modular design for complex procedures.</li>
+                            <li>Log intermediate steps for debugging.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test in Isolation</strong>:</p>
+                        <ul>
+                            <li>Use mock data or staging databases to avoid interfering with production.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Optimize Queries</strong>:</p>
+                        <ul>
+                            <li>Use indexes, avoid unnecessary joins, and monitor query plans.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automate Testing</strong>:</p>
+                        <ul>
+                            <li>Write test scripts to automate repetitive tests.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Version Control</strong>:</p>
+                        <ul>
+                            <li>Maintain versions of stored procedures and test scripts.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>By following these steps and best practices, you can ensure stored procedures are reliable,
+                    efficient, and secure.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Stored Procedure Testing | How To Automate SQL Stored Procedures</summary>
+            <div class="content">
+                <h3 id="how-to-automate-sql-stored-procedures"><strong>How to Automate SQL Stored Procedures</strong>
+                </h3>
+                <p>Automating SQL stored procedures involves executing them at scheduled intervals, in response to
+                    events, or as part of larger workflows, without requiring manual intervention. Automation ensures
+                    consistent execution, improves efficiency, and reduces the chances of human error.</p>
+                <hr>
+                <h3 id="methods-for-automating-sql-stored-procedures"><strong>Methods for Automating SQL Stored
+                        Procedures</strong></h3>
+                <h4 id="1-using-sql-server-agent-for-sql-server"><strong>1. Using SQL Server Agent (For SQL
+                        Server)</strong></h4>
+                <p>SQL Server Agent is a tool that allows scheduling jobs in SQL Server. </p>
+                <p><strong>Steps:</strong></p>
+                <ol>
+                    <li>
+                        <p><strong>Enable SQL Server Agent</strong>:</p>
+                        <ul>
+                            <li>Ensure SQL Server Agent service is running.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Create a New Job</strong>:</p>
+                        <ul>
+                            <li>Open SQL Server Management Studio (SSMS).</li>
+                            <li>Navigate to <strong>SQL Server Agent</strong> → <strong>Jobs</strong> → <strong>New
+                                    Job</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Define Job Properties</strong>:</p>
+                        <ul>
+                            <li>Name the job and provide a description.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Add Steps</strong>:</p>
+                        <ul>
+                            <li>Add a step to execute the stored procedure:<ul>
+                                    <li><strong>Type</strong>: T-SQL script.</li>
+                                    <li><strong>Command</strong>:
+                                        <pre><code class="language-sql">EXEC schema_name.procedure_name @param1 = value1, @param2 = value2;
+</code></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Set the Schedule</strong>:</p>
+                        <ul>
+                            <li>Define the frequency and timing (e.g., daily at 2 AM).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Enable and Monitor</strong>:</p>
+                        <ul>
+                            <li>Enable the job and monitor its execution in the <strong>Job Activity Monitor</strong>.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h4 id="2-using-task-scheduler-windows-environment"><strong>2. Using Task Scheduler (Windows
+                        Environment)</strong></h4>
+                <p>You can use Windows Task Scheduler to trigger a script that executes a stored procedure.</p>
+                <p><strong>Steps:</strong></p>
+                <ol>
+                    <li>
+                        <p><strong>Create a SQL Script</strong>:</p>
+                        <ul>
+                            <li>Save the stored procedure execution script to a <code>.sql</code> file, e.g.,
+                                <code>run_procedure.sql</code>:
+                                <pre><code class="language-sql">USE database_name;
+EXEC schema_name.procedure_name @param1 = value1, @param2 = value2;
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Create a Batch File</strong>:</p>
+                        <ul>
+                            <li>Create a <code>.bat</code> file to call the SQL script using the <code>sqlcmd</code>
+                                utility:
+                                <pre><code class="language-bat">sqlcmd -S server_name -d database_name -U username -P password -i &quot;C:\path\to\run_procedure.sql&quot;
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Set Up Task Scheduler</strong>:</p>
+                        <ul>
+                            <li>Open <strong>Task Scheduler</strong> and create a new task.</li>
+                            <li>Under <strong>Actions</strong>, set the <code>.bat</code> file to run.</li>
+                            <li>Schedule the task according to your requirements.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h4 id="3-using-cron-jobs-linux-environment"><strong>3. Using CRON Jobs (Linux Environment)</strong>
+                </h4>
+                <p>For Linux-based databases like MySQL or PostgreSQL, you can use CRON jobs.</p>
+                <p><strong>Steps:</strong></p>
+                <ol>
+                    <li>
+                        <p><strong>Create a SQL Script</strong>:</p>
+                        <ul>
+                            <li>Save the procedure execution SQL script, e.g., <code>run_procedure.sql</code>:
+                                <pre><code class="language-sql">CALL procedure_name(parameter1, parameter2);
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Create a Shell Script</strong>:</p>
+                        <ul>
+                            <li>Use a shell script to execute the SQL file:
+                                <pre><code class="language-bash">#!/bin/bash
+mysql -u username -p&#39;password&#39; -h host_name database_name &lt; /path/to/run_procedure.sql
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Set Up CRON</strong>:</p>
+                        <ul>
+                            <li>Open the CRON file using <code>crontab -e</code>.</li>
+                            <li>Add an entry to schedule the shell script:
+                                <pre><code class="language-bash">0 2 * * * /path/to/script.sh
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h4 id="4-automating-with-third-party-tools"><strong>4. Automating with Third-Party Tools</strong></h4>
+                <p>Several tools provide advanced scheduling and workflow automation:</p>
+                <ul>
+                    <li><strong>SQL Sentry</strong>: For SQL Server job management and monitoring.</li>
+                    <li><strong>Control-M</strong>: Enterprise-grade workload automation.</li>
+                    <li><strong>Azure Data Factory</strong> (for cloud databases).</li>
+                </ul>
+                <p><strong>Example with Azure Data Factory</strong>:</p>
+                <ol>
+                    <li>Create a pipeline to execute the stored procedure using the <strong>Stored Procedure
+                            Activity</strong>.</li>
+                    <li>Schedule the pipeline using triggers.</li>
+                </ol>
+                <hr>
+                <h4 id="5-automating-as-part-of-cicd-pipelines"><strong>5. Automating as Part of CI/CD
+                        Pipelines</strong></h4>
+                <p>Integrate stored procedures into your CI/CD pipelines to automate their execution during builds or
+                    deployments.</p>
+                <p><strong>Steps</strong>:</p>
+                <ol>
+                    <li>
+                        <p><strong>Use Scripts in Version Control</strong>:</p>
+                        <ul>
+                            <li>Save the stored procedure code in your repository.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Create Automation Scripts</strong>:</p>
+                        <ul>
+                            <li>Use tools like <strong>Flyway</strong>, <strong>Liquibase</strong>, or custom scripts.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Trigger Execution</strong>:</p>
+                        <ul>
+                            <li>Add a step in your CI/CD pipeline to execute the stored procedure:<ul>
+                                    <li>In Jenkins:
+                                        <pre><code class="language-sh">sqlcmd -S server_name -d database_name -U username -P password -Q &quot;EXEC procedure_name&quot;
+</code></pre>
+                                    </li>
+                                    <li>In GitHub Actions:
+                                        <pre><code class="language-yaml">- name: Run Stored Procedure
+  run: sqlcmd -S server_name -d database_name -U username -P password -Q &quot;EXEC procedure_name&quot;
+</code></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="best-practices-for-automating-stored-procedures"><strong>Best Practices for Automating Stored
+                        Procedures</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Ensure Robust Error Handling</strong>:</p>
+                        <ul>
+                            <li>Include error-handling mechanisms in stored procedures to gracefully handle failures.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Log Outputs</strong>:</p>
+                        <ul>
+                            <li>Log the execution results to a file or table for audit and debugging.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Secure Credentials</strong>:</p>
+                        <ul>
+                            <li>Use secure methods to store database credentials (e.g., encrypted files or secrets
+                                management tools).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Monitor Automation</strong>:</p>
+                        <ul>
+                            <li>Use tools to monitor job execution and alert on failures.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Thoroughly</strong>:</p>
+                        <ul>
+                            <li>Test the automated process in a staging environment before deploying to production.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Document Automation Setup</strong>:</p>
+                        <ul>
+                            <li>Maintain documentation for troubleshooting and future reference.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <p>By implementing the above methods, you can automate the execution of SQL stored procedures
+                    effectively, ensuring reliable and consistent database operations.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Stored Functions Testing | How To Test Stored Functions</summary>
+            <div class="content">
+                <h3 id="stored-functions-testing"><strong>Stored Functions Testing</strong></h3>
+                <p>Stored functions in a database return a single value after performing a defined computation or
+                    operation. Testing stored functions involves verifying their logic, inputs, and outputs to ensure
+                    they perform as intended under various scenarios.</p>
+                <hr>
+                <h3 id="steps-to-test-stored-functions"><strong>Steps to Test Stored Functions</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Understand the Function Specification</strong>:</p>
+                        <ul>
+                            <li><strong>Inputs</strong>: Parameters accepted by the function (e.g., <code>IN</code>
+                                parameters).</li>
+                            <li><strong>Logic</strong>: The expected behavior and computation.</li>
+                            <li><strong>Output</strong>: The return type and value of the function.</li>
+                            <li><strong>Dependencies</strong>: Tables, other functions, or stored procedures involved.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Set Up the Test Environment</strong>:</p>
+                        <ul>
+                            <li>Use a test database to prevent affecting production data.</li>
+                            <li>Populate the database with test data if the function depends on it.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare Test Cases</strong>:</p>
+                        <ul>
+                            <li>Write test cases covering:<ul>
+                                    <li><strong>Valid Input Values</strong>: Test with normal inputs.</li>
+                                    <li><strong>Boundary Values</strong>: Test edge cases for numerical or date ranges.
+                                    </li>
+                                    <li><strong>Invalid Inputs</strong>: Test with unexpected or erroneous values.</li>
+                                    <li><strong>Null Values</strong>: Check how the function handles <code>NULL</code>
+                                        inputs.</li>
+                                    <li><strong>Performance</strong>: Evaluate performance for large datasets.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Write and Execute SQL Queries</strong>:</p>
+                        <ul>
+                            <li>Use SQL queries to call the function and verify its output against expected results.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automate Testing</strong>:</p>
+                        <ul>
+                            <li>Create reusable scripts to automate test execution and validation.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="test-cases-for-stored-functions"><strong>Test Cases for Stored Functions</strong></h3>
+                <h4 id="1-basic-functionality-testing"><strong>1. Basic Functionality Testing</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test with valid inputs.</td>
+                            <td>Input values = <code>10, 20</code></td>
+                            <td>Returns the correct computed result.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="2-boundary-testing"><strong>2. Boundary Testing</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test with minimum allowed value.</td>
+                            <td>Input = <code>0</code></td>
+                            <td>Returns the correct result.</td>
+                        </tr>
+                        <tr>
+                            <td>Test with maximum allowed value.</td>
+                            <td>Input = <code>100</code></td>
+                            <td>Returns the correct result.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="3-negative-testing"><strong>3. Negative Testing</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test with invalid input type.</td>
+                            <td>Input = <code>&#39;string&#39;</code></td>
+                            <td>Returns an error or handled gracefully.</td>
+                        </tr>
+                        <tr>
+                            <td>Test with out-of-range values.</td>
+                            <td>Input = <code>-1</code> or <code>1000</code></td>
+                            <td>Returns an error or default value.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="4-null-input-testing"><strong>4. Null Input Testing</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test with null value.</td>
+                            <td>Input = <code>NULL</code></td>
+                            <td>Returns <code>NULL</code> or a default value.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="5-performance-testing"><strong>5. Performance Testing</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test with a large dataset.</td>
+                            <td>Input: 1 million rows.</td>
+                            <td>Executes within acceptable time.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="6-dependency-testing"><strong>6. Dependency Testing</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verify function with dependent table</td>
+                            <td>Input: Foreign key data.</td>
+                            <td>Returns correct results for valid dependencies.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="how-to-execute-stored-function-tests"><strong>How to Execute Stored Function Tests</strong></h3>
+                <h4 id="1-direct-invocation"><strong>1. Direct Invocation</strong></h4>
+                <p>You can call stored functions directly using a <code>SELECT</code> or <code>VALUES</code> statement:
+                </p>
+                <ul>
+                    <li><strong>Example Query</strong>:
+                        <pre><code class="language-sql">SELECT schema_name.function_name(parameter1, parameter2);
+</code></pre>
+                    </li>
+                </ul>
+                <h4 id="2-test-with-assertions"><strong>2. Test with Assertions</strong></h4>
+                <p>Compare the output of the function with expected results using SQL assertions:</p>
+                <ul>
+                    <li><strong>Example Query</strong>:
+                        <pre><code class="language-sql">SELECT 
+    CASE WHEN schema_name.function_name(parameter1, parameter2) = expected_value
+    THEN &#39;PASS&#39;
+    ELSE &#39;FAIL&#39;
+    END AS TestResult;
+</code></pre>
+                    </li>
+                </ul>
+                <h4 id="3-use-testing-frameworks"><strong>3. Use Testing Frameworks</strong></h4>
+                <ul>
+                    <li><strong>MySQL</strong>: Use custom scripts for automation.</li>
+                    <li><strong>PostgreSQL</strong>: Use the <code>pgTAP</code> framework for automated testing.</li>
+                    <li><strong>SQL Server</strong>: Use <strong>tSQLt</strong> for unit testing stored functions.</li>
+                </ul>
+                <hr>
+                <h3 id="sql-queries-for-stored-function-testing"><strong>SQL Queries for Stored Function
+                        Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Verify Return Value</strong>:</p>
+                        <pre><code class="language-sql">SELECT schema_name.function_name(10, 20) AS Result;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Check Behavior with Null Inputs</strong>:</p>
+                        <pre><code class="language-sql">SELECT schema_name.function_name(NULL, 20) AS Result;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Performance Testing</strong>:</p>
+                        <pre><code class="language-sql">SET STATISTICS TIME ON;
+SELECT schema_name.function_name(large_input);
+SET STATISTICS TIME OFF;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Error Handling</strong>:</p>
+                        <pre><code class="language-sql">BEGIN TRY
+    SELECT schema_name.function_name(&#39;invalid_input&#39;);
+END TRY
+BEGIN CATCH
+    SELECT ERROR_MESSAGE() AS ErrorMessage;
+END CATCH;
+</code></pre>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="automating-stored-function-testing"><strong>Automating Stored Function Testing</strong></h3>
+                <h4 id="1-write-test-scripts"><strong>1. Write Test Scripts</strong></h4>
+                <ul>
+                    <li>Automate tests by writing scripts for each test case.</li>
+                </ul>
+                <p><strong>Example in SQL Server</strong>:</p>
+                <pre><code class="language-sql">DECLARE @result INT;
+SET @result = schema_name.function_name(10, 20);
+
+IF @result = expected_value
+    PRINT &#39;Test Passed&#39;;
+ELSE
+    PRINT &#39;Test Failed&#39;;
+</code></pre>
+                <h4 id="2-use-unit-testing-frameworks"><strong>2. Use Unit Testing Frameworks</strong></h4>
+                <ul>
+                    <li>
+                        <p><strong>tSQLt</strong> (SQL Server):</p>
+                        <ul>
+                            <li>Install the framework.</li>
+                            <li>Write test cases as procedures.</li>
+                            <li>Example:
+                                <pre><code class="language-sql">CREATE PROCEDURE [test].[test_function_name]
+AS
+BEGIN
+    DECLARE @result INT;
+    SET @result = schema_name.function_name(10, 20);
+    EXEC tSQLt.AssertEquals @expected = 30, @actual = @result;
+END;
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>pgTAP</strong> (PostgreSQL):</p>
+                        <ul>
+                            <li>Install pgTAP.</li>
+                            <li>Example:
+                                <pre><code class="language-sql">SELECT plan(1);
+SELECT is(schema_name.function_name(10, 20), 30, &#39;Function returns correct value&#39;);
+SELECT done_testing();
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 id="3-continuous-integration-ci-integration"><strong>3. Continuous Integration (CI)
+                        Integration</strong></h4>
+                <p>Integrate stored function tests into your CI/CD pipelines using:</p>
+                <ul>
+                    <li><strong>Jenkins</strong></li>
+                    <li><strong>GitHub Actions</strong></li>
+                    <li><strong>Azure DevOps</strong></li>
+                </ul>
+                <hr>
+                <h3 id="best-practices-for-stored-function-testing"><strong>Best Practices for Stored Function
+                        Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Design for Testability</strong>:</p>
+                        <ul>
+                            <li>Write simple, modular functions with clear input/output definitions.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Edge Cases</strong>:</p>
+                        <ul>
+                            <li>Validate function behavior under all possible scenarios.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Log Errors</strong>:</p>
+                        <ul>
+                            <li>Use logging mechanisms to record errors during test execution.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automate Repetitive Tests</strong>:</p>
+                        <ul>
+                            <li>Use frameworks or custom scripts to reduce manual testing effort.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Version Control</strong>:</p>
+                        <ul>
+                            <li>Maintain the function code and test scripts in a version control system.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Document Test Cases</strong>:</p>
+                        <ul>
+                            <li>Clearly document all test scenarios, expected outputs, and results.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>By thoroughly testing stored functions with these methods, you can ensure their correctness,
+                    reliability, and performance in production systems.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Stored Functions Testing | How To Automate SQL Stored Functions</summary>
+            <div class="content">
+                <h3 id="how-to-automate-sql-stored-functions"><strong>How to Automate SQL Stored Functions</strong></h3>
+                <p>Automating SQL stored functions involves executing them on a predefined schedule, as part of a larger
+                    process, or through automated scripts for testing or deployment. Automation helps ensure consistent
+                    execution, reduces manual effort, and minimizes the chances of errors.</p>
+                <hr>
+                <h3 id="steps-to-automate-sql-stored-functions"><strong>Steps to Automate SQL Stored Functions</strong>
+                </h3>
+                <h4 id="1-automation-for-execution"><strong>1. Automation for Execution</strong></h4>
+                <p>You can schedule the execution of SQL stored functions regularly or trigger them based on specific
+                    events.</p>
+                <h5 id="a-using-sql-server-agent-sql-server"><strong>A. Using SQL Server Agent (SQL Server)</strong>
+                </h5>
+                <ol>
+                    <li>
+                        <p><strong>Enable SQL Server Agent</strong>:</p>
+                        <ul>
+                            <li>Ensure the SQL Server Agent service is running.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Create a New Job</strong>:</p>
+                        <ul>
+                            <li>Open SQL Server Management Studio (SSMS).</li>
+                            <li>Navigate to <strong>SQL Server Agent</strong> → <strong>Jobs</strong> → <strong>New
+                                    Job</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Define Job Steps</strong>:</p>
+                        <ul>
+                            <li>Add a step to execute the stored function:<ul>
+                                    <li><strong>Type</strong>: Transact-SQL script.</li>
+                                    <li><strong>Command</strong>:
+                                        <pre><code class="language-sql">SELECT schema_name.function_name(@param1, @param2);
+</code></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Set the Schedule</strong>:</p>
+                        <ul>
+                            <li>Configure the schedule to execute the job at desired intervals (e.g., daily at 2 AM).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Monitor Job Execution</strong>:</p>
+                        <ul>
+                            <li>Use the <strong>Job Activity Monitor</strong> in SSMS to check job status.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h5 id="b-using-cron-jobs-linux-environment"><strong>B. Using CRON Jobs (Linux Environment)</strong>
+                </h5>
+                <ol>
+                    <li>
+                        <p><strong>Create a SQL Script</strong>:</p>
+                        <ul>
+                            <li>Save the function execution in a <code>.sql</code> file:
+                                <pre><code class="language-sql">SELECT schema_name.function_name(parameter1, parameter2);
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Create a Shell Script</strong>:</p>
+                        <ul>
+                            <li>Use a shell script to run the SQL file:
+                                <pre><code class="language-bash">#!/bin/bash
+mysql -u username -p&#39;password&#39; -h host_name database_name &lt; /path/to/script.sql
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Schedule the CRON Job</strong>:</p>
+                        <ul>
+                            <li>Open the CRON file using <code>crontab -e</code> and schedule the script:
+                                <pre><code class="language-bash">0 2 * * * /path/to/script.sh
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <h5 id="c-using-windows-task-scheduler"><strong>C. Using Windows Task Scheduler</strong></h5>
+                <ol>
+                    <li>
+                        <p><strong>Create a Batch File</strong>:</p>
+                        <ul>
+                            <li>Use <code>sqlcmd</code> or a similar tool to execute the SQL script:
+                                <pre><code class="language-bat">sqlcmd -S server_name -d database_name -U username -P password -Q &quot;SELECT schema_name.function_name(parameter1, parameter2)&quot;
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Set Up Task Scheduler</strong>:</p>
+                        <ul>
+                            <li>Open Task Scheduler and create a task.</li>
+                            <li>Set the <code>.bat</code> file as the action to execute on a schedule.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h4 id="2-automation-for-testing"><strong>2. Automation for Testing</strong></h4>
+                <p>Automating stored function testing ensures consistent validation of their behavior, accuracy, and
+                    performance.</p>
+                <h5 id="a-write-automated-test-scripts"><strong>A. Write Automated Test Scripts</strong></h5>
+                <p>Create reusable scripts to test stored functions with different inputs and expected outputs.</p>
+                <ol>
+                    <li>
+                        <p><strong>Test Script Example</strong> (SQL Server):</p>
+                        <pre><code class="language-sql">DECLARE @result INT;
+SET @result = schema_name.function_name(10, 20);
+
+IF @result = expected_value
+    PRINT &#39;Test Passed&#39;;
+ELSE
+    PRINT &#39;Test Failed&#39;;
+</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>Use Assertion Frameworks</strong>:</p>
+                        <ul>
+                            <li><strong>SQL Server</strong>: Use <code>tSQLt</code> for unit testing stored functions.
+                                <pre><code class="language-sql">CREATE PROCEDURE [test].[test_function_name]
+AS
+BEGIN
+    DECLARE @result INT;
+    SET @result = schema_name.function_name(10, 20);
+    EXEC tSQLt.AssertEquals @expected = 30, @actual = @result;
+END;
+</code></pre>
+                            </li>
+                            <li><strong>PostgreSQL</strong>: Use <code>pgTAP</code> for automated testing.
+                                <pre><code class="language-sql">SELECT plan(1);
+SELECT is(schema_name.function_name(10, 20), 30, &#39;Returns correct value&#39;);
+SELECT done_testing();
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automate Execution with Scripting</strong>:</p>
+                        <ul>
+                            <li>Create a script to call the stored function and validate results using assertions.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h5 id="b-test-framework-integration"><strong>B. Test Framework Integration</strong></h5>
+                <p>Integrate stored function tests into CI/CD pipelines using tools like:</p>
+                <ul>
+                    <li><strong>Jenkins</strong></li>
+                    <li><strong>GitHub Actions</strong></li>
+                    <li><strong>Azure DevOps</strong></li>
+                </ul>
+                <p><strong>Example (GitHub Actions)</strong>:</p>
+                <pre><code class="language-yaml">name: Test Stored Functions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run SQL Tests
+      run: |
+        sqlcmd -S server_name -d database_name -U username -P password -Q &quot;SELECT schema_name.function_name(10, 20)&quot;
+</code></pre>
+                <hr>
+                <h4 id="3-automation-for-deployment"><strong>3. Automation for Deployment</strong></h4>
+                <p>Automate the deployment and versioning of stored functions in your database.</p>
+                <h5 id="a-use-migration-tools"><strong>A. Use Migration Tools</strong></h5>
+                <ul>
+                    <li><strong>Flyway</strong> or <strong>Liquibase</strong> can be used to version and automate stored
+                        function deployments.</li>
+                </ul>
+                <p><strong>Example (Flyway)</strong>:</p>
+                <ol>
+                    <li>Create a <code>.sql</code> migration file:
+                        <pre><code class="language-sql">CREATE OR REPLACE FUNCTION schema_name.function_name(parameter1, parameter2) RETURNS RETURN_TYPE AS $$
+BEGIN
+    -- Function Logic
+END;
+$$ LANGUAGE plpgsql;
+</code></pre>
+                    </li>
+                    <li>Apply migrations using Flyway:
+                        <pre><code class="language-bash">flyway migrate
+</code></pre>
+                    </li>
+                </ol>
+                <h5 id="b-scripted-deployments"><strong>B. Scripted Deployments</strong></h5>
+                <p>Use scripts to automate the deployment process:</p>
+                <ol>
+                    <li>Save the stored function in a <code>.sql</code> file.</li>
+                    <li>Use batch files, shell scripts, or tools like <code>sqlcmd</code> to deploy them.</li>
+                </ol>
+                <hr>
+                <h3 id="best-practices-for-automating-stored-functions"><strong>Best Practices for Automating Stored
+                        Functions</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Design for Testability</strong>:</p>
+                        <ul>
+                            <li>Use clear input/output parameters and avoid tightly coupling functions with specific
+                                tables.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Log Outputs</strong>:</p>
+                        <ul>
+                            <li>Store execution results in log tables for monitoring and debugging.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Error Handling</strong>:</p>
+                        <ul>
+                            <li>Implement robust error-handling mechanisms in the stored function.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Secure Credentials</strong>:</p>
+                        <ul>
+                            <li>Use secure methods to manage database credentials, such as encrypted files or secrets
+                                managers.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Document Automation</strong>:</p>
+                        <ul>
+                            <li>Maintain clear documentation of automated processes, including schedules, scripts, and
+                                tools used.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Monitor Automated Tasks</strong>:</p>
+                        <ul>
+                            <li>Set up alerts or monitoring for failures in automation tasks.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Thoroughly</strong>:</p>
+                        <ul>
+                            <li>Validate automation scripts in a staging environment before deploying them to
+                                production.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <p>By following these approaches, you can automate the execution, testing, and deployment of SQL stored
+                    functions effectively, ensuring their reliability and performance in production systems.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Triggers Testing | Types Of Triggers | Test Cases</summary>
+            <div class="content">
+                <h3 id="triggers-testing"><strong>Triggers Testing</strong></h3>
+                <p>Triggers are database mechanisms that automatically execute a predefined action when specific events
+                    occur on a table or view. Testing triggers ensures they perform their intended actions correctly and
+                    handle edge cases effectively.</p>
+                <hr>
+                <h3 id="types-of-triggers"><strong>Types of Triggers</strong></h3>
+                <p>Triggers can be categorized based on their scope and timing:</p>
+                <h4 id="1-by-scope"><strong>1. By Scope</strong></h4>
+                <ul>
+                    <li><strong>Row-Level Triggers</strong>:<ul>
+                            <li>Executed for each row affected by the triggering statement.</li>
+                            <li>Example: Updating a column for each inserted row.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Statement-Level Triggers</strong>:<ul>
+                            <li>Executed once per SQL statement, regardless of the number of rows affected.</li>
+                            <li>Example: Logging the details of a bulk insert operation.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 id="2-by-timing"><strong>2. By Timing</strong></h4>
+                <ul>
+                    <li><strong>Before Triggers</strong>:<ul>
+                            <li>Execute before the triggering event.</li>
+                            <li>Example: Validate data before an insert or update operation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>After Triggers</strong>:<ul>
+                            <li>Execute after the triggering event.</li>
+                            <li>Example: Log changes after a delete operation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Instead Of Triggers</strong>:<ul>
+                            <li>Execute instead of the triggering event.</li>
+                            <li>Example: Replace an insert operation with a custom action.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 id="3-by-event"><strong>3. By Event</strong></h4>
+                <ul>
+                    <li><strong>DML Triggers</strong>:<ul>
+                            <li>Triggered by <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>
+                                operations.</li>
+                        </ul>
+                    </li>
+                    <li><strong>DDL Triggers</strong>:<ul>
+                            <li>Triggered by schema changes like <code>CREATE</code>, <code>ALTER</code>, or
+                                <code>DROP</code>.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Logon Triggers</strong>:<ul>
+                            <li>Triggered by <code>LOGON</code> events, often used for auditing or access control.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <h3 id="steps-to-test-triggers"><strong>Steps to Test Triggers</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Understand the Trigger&#39;s Purpose</strong>:</p>
+                        <ul>
+                            <li>Review the trigger’s logic and associated table(s).</li>
+                            <li>Identify the events (e.g., <code>INSERT</code>, <code>UPDATE</code>,
+                                <code>DELETE</code>) and the expected behavior.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare the Test Environment</strong>:</p>
+                        <ul>
+                            <li>Set up test tables, views, and dependencies.</li>
+                            <li>Use a test database to avoid affecting production data.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Write Test Cases</strong>:</p>
+                        <ul>
+                            <li>Cover all scenarios, including positive, negative, and edge cases.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute the Trigger</strong>:</p>
+                        <ul>
+                            <li>Perform the actions (e.g., insert, update) that would invoke the trigger.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Validate the Results</strong>:</p>
+                        <ul>
+                            <li>Verify the trigger’s effect on the database (e.g., logs, updated fields).</li>
+                            <li>Check the trigger’s performance and side effects.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automate Testing</strong>:</p>
+                        <ul>
+                            <li>Use scripts or testing frameworks to automate repetitive tests.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="test-cases-for-triggers"><strong>Test Cases for Triggers</strong></h3>
+                <h4 id="1-functional-test-cases"><strong>1. Functional Test Cases</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trigger fires on valid <code>INSERT</code>.</td>
+                            <td>Insert valid data into table.</td>
+                            <td>Trigger executes and performs intended action.</td>
+                        </tr>
+                        <tr>
+                            <td>Trigger fires on valid <code>UPDATE</code>.</td>
+                            <td>Update a row in the table.</td>
+                            <td>Trigger executes and updates dependent fields.</td>
+                        </tr>
+                        <tr>
+                            <td>Trigger fires on valid <code>DELETE</code>.</td>
+                            <td>Delete a row in the table.</td>
+                            <td>Trigger logs the deleted row in an audit table.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="2-negative-test-cases"><strong>2. Negative Test Cases</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trigger with invalid data.</td>
+                            <td>Insert invalid data.</td>
+                            <td>Trigger prevents operation or handles gracefully.</td>
+                        </tr>
+                        <tr>
+                            <td>Trigger when constraints fail.</td>
+                            <td>Update that violates rules.</td>
+                            <td>Trigger prevents the update.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="3-performance-test-cases"><strong>3. Performance Test Cases</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bulk insert of 10,000 rows.</td>
+                            <td>Insert large dataset.</td>
+                            <td>Trigger executes efficiently without timeout.</td>
+                        </tr>
+                        <tr>
+                            <td>Concurrent updates by multiple users.</td>
+                            <td>Simultaneous updates.</td>
+                            <td>Trigger handles concurrency correctly.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="4-edge-cases"><strong>4. Edge Cases</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trigger fires with NULL values.</td>
+                            <td>Insert with NULL fields.</td>
+                            <td>Trigger handles NULL values appropriately.</td>
+                        </tr>
+                        <tr>
+                            <td>Trigger on empty table.</td>
+                            <td>Update a non-existent row.</td>
+                            <td>Trigger doesn’t cause errors.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="5-dependency-testing"><strong>5. Dependency Testing</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trigger relies on another table.</td>
+                            <td>Insert into primary table.</td>
+                            <td>Trigger correctly updates related table.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="sample-sql-test-cases"><strong>Sample SQL Test Cases</strong></h3>
+                <h4 id="1-verify-trigger-execution-on-insert"><strong>1. Verify Trigger Execution on
+                        <code>INSERT</code></strong></h4>
+                <pre><code class="language-sql">-- Insert data to test the trigger
+INSERT INTO orders (order_id, customer_id, order_date)
+VALUES (1, 101, &#39;2024-01-01&#39;);
+
+-- Verify trigger action (e.g., audit table updated)
+SELECT * FROM audit_table WHERE action = &#39;INSERT&#39;;
+</code></pre>
+                <h4 id="2-verify-trigger-execution-on-update"><strong>2. Verify Trigger Execution on
+                        <code>UPDATE</code></strong></h4>
+                <pre><code class="language-sql">-- Update data to test the trigger
+UPDATE orders
+SET order_status = &#39;Shipped&#39;
+WHERE order_id = 1;
+
+-- Verify trigger action (e.g., log table updated)
+SELECT * FROM log_table WHERE action = &#39;UPDATE&#39; AND order_id = 1;
+</code></pre>
+                <h4 id="3-test-trigger-handling-of-null-values"><strong>3. Test Trigger Handling of NULL Values</strong>
+                </h4>
+                <pre><code class="language-sql">-- Insert a row with NULL to test the trigger
+INSERT INTO orders (order_id, customer_id, order_date, order_status)
+VALUES (2, NULL, &#39;2024-01-02&#39;, NULL);
+
+-- Verify the trigger handled NULL correctly
+SELECT * FROM audit_table WHERE order_id = 2;
+</code></pre>
+                <h4 id="4-test-trigger-preventing-invalid-operations"><strong>4. Test Trigger Preventing Invalid
+                        Operations</strong></h4>
+                <pre><code class="language-sql">-- Attempt an update that violates business rules
+UPDATE orders
+SET order_status = &#39;InvalidStatus&#39;
+WHERE order_id = 1;
+
+-- Verify the trigger blocked the operation
+SELECT * FROM orders WHERE order_id = 1;
+</code></pre>
+                <hr>
+                <h3 id="automating-trigger-testing"><strong>Automating Trigger Testing</strong></h3>
+                <h4 id="1-use-sql-scripts"><strong>1. Use SQL Scripts</strong></h4>
+                <ul>
+                    <li>Create reusable scripts to test various scenarios.</li>
+                </ul>
+                <p><strong>Example</strong>:</p>
+                <pre><code class="language-sql">-- Test trigger on INSERT
+BEGIN TRANSACTION;
+INSERT INTO orders (order_id, customer_id, order_date) VALUES (3, 102, &#39;2024-01-03&#39;);
+ROLLBACK TRANSACTION;
+
+-- Verify that no unintended changes occurred
+SELECT * FROM orders WHERE order_id = 3;
+</code></pre>
+                <h4 id="2-use-testing-frameworks"><strong>2. Use Testing Frameworks</strong></h4>
+                <ul>
+                    <li><strong>tSQLt</strong> (SQL Server):<ul>
+                            <li>Example:
+                                <pre><code class="language-sql">CREATE PROCEDURE [test].[test_insert_trigger]
+AS
+BEGIN
+    -- Arrange: Insert test data
+    INSERT INTO orders (order_id, customer_id, order_date)
+    VALUES (4, 103, &#39;2024-01-04&#39;);
+
+    -- Assert: Verify trigger action
+    EXEC tSQLt.AssertEqualsTable @Expected = &#39;ExpectedAudit&#39;, @Actual = &#39;audit_table&#39;;
+END;
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>pgTAP</strong> (PostgreSQL):<ul>
+                            <li>Example:
+                                <pre><code class="language-sql">SELECT plan(1);
+SELECT has_trigger(&#39;public&#39;, &#39;orders&#39;, &#39;trigger_name&#39;, &#39;Trigger exists&#39;);
+SELECT done_testing();
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 id="3-cicd-integration"><strong>3. CI/CD Integration</strong></h4>
+                <p>Integrate trigger tests into CI/CD pipelines using automation tools like Jenkins or GitHub Actions.
+                </p>
+                <p><strong>Example (GitHub Actions)</strong>:</p>
+                <pre><code class="language-yaml">name: Test Triggers
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Execute Trigger Tests
+      run: |
+        sqlcmd -S server_name -d database_name -U username -P password -Q &quot;EXEC test_trigger_procedure&quot;
+</code></pre>
+                <hr>
+                <h3 id="best-practices-for-trigger-testing"><strong>Best Practices for Trigger Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Test in Isolation</strong>:</p>
+                        <ul>
+                            <li>Disable other triggers to avoid interference during testing.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Log Trigger Actions</strong>:</p>
+                        <ul>
+                            <li>Use log tables for auditing and debugging.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Handle Edge Cases</strong>:</p>
+                        <ul>
+                            <li>Test triggers with NULL values, empty datasets, and unexpected inputs.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Monitor Performance</strong>:</p>
+                        <ul>
+                            <li>Ensure triggers handle high loads efficiently.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Avoid Over-Complexity</strong>:</p>
+                        <ul>
+                            <li>Keep trigger logic simple to reduce errors and improve testability.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Use Version Control</strong>:</p>
+                        <ul>
+                            <li>Maintain trigger definitions and test scripts in version control.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>By rigorously testing triggers with these methods and tools, you can ensure their reliability and
+                    correctness in production systems.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Triggers Testing | Before Update & After Update</summary>
+            <div class="content">
+                <h3 id="before-update--after-update-in-triggers-testing"><strong>Before Update &amp; After Update in
+                        Triggers Testing</strong></h3>
+                <p>Testing <strong><code>BEFORE UPDATE</code></strong> and <strong><code>AFTER UPDATE</code></strong>
+                    triggers ensures that these triggers behave as intended when an update operation is performed on the
+                    associated table. These triggers differ in their timing and use cases:</p>
+                <ul>
+                    <li><strong>BEFORE UPDATE Trigger</strong>: Executes before the update operation. Often used for
+                        validation, setting default values, or modifying the data before it’s updated.</li>
+                    <li><strong>AFTER UPDATE Trigger</strong>: Executes after the update operation. Commonly used for
+                        logging, auditing, or cascading changes to other tables.</li>
+                </ul>
+                <hr>
+                <h3 id="key-differences"><strong>Key Differences</strong></h3>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Aspect</strong></th>
+                            <th><strong>BEFORE UPDATE</strong></th>
+                            <th><strong>AFTER UPDATE</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Execution Timing</strong></td>
+                            <td>Before the data is updated in the table.</td>
+                            <td>After the data has been updated in the table.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Use Case</strong></td>
+                            <td>Validate or modify input data.</td>
+                            <td>Log changes or trigger additional actions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Access to Updated Data</strong></td>
+                            <td>Access both old and new values.</td>
+                            <td>Access old and new values post-update.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="testing-before-update-triggers"><strong>Testing BEFORE UPDATE Triggers</strong></h3>
+                <h4 id="steps-to-test-before-update-triggers"><strong>Steps to Test BEFORE UPDATE Triggers</strong></h4>
+                <ol>
+                    <li>
+                        <p><strong>Understand the Trigger Logic</strong>:</p>
+                        <ul>
+                            <li>Determine how the trigger modifies or validates data before the update.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare Test Cases</strong>:</p>
+                        <ul>
+                            <li>Include scenarios for valid updates, invalid updates, and edge cases.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute Update Statements</strong>:</p>
+                        <ul>
+                            <li>Perform <code>UPDATE</code> operations that invoke the trigger.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Verify Data in the Table</strong>:</p>
+                        <ul>
+                            <li>Check whether the data is modified or validated as expected before the update completes.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <h4 id="example-test-cases-for-before-update-trigger"><strong>Example Test Cases for BEFORE UPDATE
+                        Trigger</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Modify a value before the update.</td>
+                            <td>Update <code>salary = 5000</code> to <code>salary = -1000</code></td>
+                            <td>Trigger adjusts <code>salary</code> to minimum <code>0</code>.</td>
+                        </tr>
+                        <tr>
+                            <td>Validate data before updating.</td>
+                            <td>Update <code>email = &#39;invalid_email&#39;</code>.</td>
+                            <td>Trigger blocks the update operation.</td>
+                        </tr>
+                        <tr>
+                            <td>Test behavior with NULL values.</td>
+                            <td>Update <code>phone_number</code> to <code>NULL</code>.</td>
+                            <td>Trigger prevents update or sets a default.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="example-sql-for-testing-before-update-trigger"><strong>Example SQL for Testing BEFORE UPDATE
+                        Trigger</strong></h4>
+                <p>Trigger definition:</p>
+                <pre><code class="language-sql">CREATE TRIGGER validate_salary_before_update
+BEFORE UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    IF NEW.salary &lt; 0 THEN
+        SET NEW.salary = 0; -- Ensure salary cannot be negative
+    END IF;
+END;
+</code></pre>
+                <p>Test query:</p>
+                <pre><code class="language-sql">UPDATE employees SET salary = -1000 WHERE employee_id = 1;
+
+-- Verify the salary is adjusted to 0
+SELECT salary FROM employees WHERE employee_id = 1;
+</code></pre>
+                <hr>
+                <h3 id="testing-after-update-triggers"><strong>Testing AFTER UPDATE Triggers</strong></h3>
+                <h4 id="steps-to-test-after-update-triggers"><strong>Steps to Test AFTER UPDATE Triggers</strong></h4>
+                <ol>
+                    <li>
+                        <p><strong>Understand the Trigger Logic</strong>:</p>
+                        <ul>
+                            <li>Identify the post-update actions, such as logging or updating dependent tables.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare Test Cases</strong>:</p>
+                        <ul>
+                            <li>Test cases should cover successful updates, cascading changes, and failure scenarios.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute Update Statements</strong>:</p>
+                        <ul>
+                            <li>Perform updates that activate the trigger.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Verify Trigger Effects</strong>:</p>
+                        <ul>
+                            <li>Check audit logs, dependent table updates, or other actions performed by the trigger.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <h4 id="example-test-cases-for-after-update-trigger"><strong>Example Test Cases for AFTER UPDATE
+                        Trigger</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Log the update in an audit table.</td>
+                            <td>Update <code>address = &#39;New Address&#39;</code>.</td>
+                            <td>Audit table logs the update details.</td>
+                        </tr>
+                        <tr>
+                            <td>Cascade updates to a dependent table.</td>
+                            <td>Update <code>product_price = 100</code> to <code>110</code>.</td>
+                            <td>Related table updates <code>price</code> accordingly.</td>
+                        </tr>
+                        <tr>
+                            <td>Handle concurrent updates.</td>
+                            <td>Simultaneous updates by two users.</td>
+                            <td>Trigger executes without conflicts.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="example-sql-for-testing-after-update-trigger"><strong>Example SQL for Testing AFTER UPDATE
+                        Trigger</strong></h4>
+                <p>Trigger definition:</p>
+                <pre><code class="language-sql">CREATE TRIGGER log_employee_update
+AFTER UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (employee_id, old_salary, new_salary, updated_at)
+    VALUES (OLD.employee_id, OLD.salary, NEW.salary, NOW());
+END;
+</code></pre>
+                <p>Test query:</p>
+                <pre><code class="language-sql">UPDATE employees SET salary = 7000 WHERE employee_id = 1;
+
+-- Verify the audit log contains the update
+SELECT * FROM audit_log WHERE employee_id = 1;
+</code></pre>
+                <hr>
+                <h3 id="combined-before-and-after-update-trigger-testing"><strong>Combined BEFORE and AFTER UPDATE
+                        Trigger Testing</strong></h3>
+                <p>When both <code>BEFORE UPDATE</code> and <code>AFTER UPDATE</code> triggers exist, test them together
+                    to ensure they work as expected and don’t conflict.</p>
+                <h4 id="example-scenario"><strong>Example Scenario</strong></h4>
+                <ol>
+                    <li><strong>BEFORE UPDATE</strong> modifies the data:<ul>
+                            <li>Ensures salary is non-negative.</li>
+                        </ul>
+                    </li>
+                    <li><strong>AFTER UPDATE</strong> logs the change:<ul>
+                            <li>Records the original and final salary values in an audit table.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Trigger definitions:</p>
+                <pre><code class="language-sql">-- BEFORE UPDATE Trigger
+CREATE TRIGGER validate_salary_before_update
+BEFORE UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    IF NEW.salary &lt; 0 THEN
+        SET NEW.salary = 0; -- Ensure salary cannot be negative
+    END IF;
+END;
+
+-- AFTER UPDATE Trigger
+CREATE TRIGGER log_employee_update
+AFTER UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (employee_id, old_salary, new_salary, updated_at)
+    VALUES (OLD.employee_id, OLD.salary, NEW.salary, NOW());
+END;
+</code></pre>
+                <p>Test queries:</p>
+                <pre><code class="language-sql">-- Test case: Salary is negative
+UPDATE employees SET salary = -1000 WHERE employee_id = 1;
+
+-- Verify BEFORE UPDATE adjusted the salary to 0
+SELECT salary FROM employees WHERE employee_id = 1;
+
+-- Verify AFTER UPDATE logged the change
+SELECT * FROM audit_log WHERE employee_id = 1;
+</code></pre>
+                <p>Expected results:</p>
+                <ol>
+                    <li>Salary in the <code>employees</code> table is <code>0</code>.</li>
+                    <li>Audit log contains:<ul>
+                            <li><code>employee_id</code>: <code>1</code></li>
+                            <li><code>old_salary</code>: Original salary before update.</li>
+                            <li><code>new_salary</code>: <code>0</code>.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="automating-trigger-testing"><strong>Automating Trigger Testing</strong></h3>
+                <h4 id="1-using-sql-scripts"><strong>1. Using SQL Scripts</strong></h4>
+                <p>Write reusable SQL scripts to test the trigger with various inputs and validate outputs.</p>
+                <p><strong>Example</strong>:</p>
+                <pre><code class="language-sql">-- Test BEFORE UPDATE Trigger
+UPDATE employees SET salary = -5000 WHERE employee_id = 2;
+SELECT salary FROM employees WHERE employee_id = 2;
+
+-- Test AFTER UPDATE Trigger
+UPDATE employees SET salary = 6000 WHERE employee_id = 2;
+SELECT * FROM audit_log WHERE employee_id = 2;
+</code></pre>
+                <h4 id="2-using-frameworks"><strong>2. Using Frameworks</strong></h4>
+                <ul>
+                    <li><strong>tSQLt</strong> (SQL Server): Automate tests for SQL triggers.</li>
+                    <li><strong>pgTAP</strong> (PostgreSQL): Validate triggers using PostgreSQL&#39;s unit testing
+                        framework.</li>
+                </ul>
+                <hr>
+                <h3 id="best-practices-for-testing-before--after-update-triggers"><strong>Best Practices for Testing
+                        BEFORE &amp; AFTER UPDATE Triggers</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Isolate Tests</strong>:</p>
+                        <ul>
+                            <li>Test each trigger individually to ensure independent functionality.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Handle Edge Cases</strong>:</p>
+                        <ul>
+                            <li>Include scenarios with NULL values, constraints, and invalid updates.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Validate Dependencies</strong>:</p>
+                        <ul>
+                            <li>Ensure cascading updates or external dependencies work as expected.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Monitor Performance</strong>:</p>
+                        <ul>
+                            <li>Test triggers under high loads or bulk updates.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Document Test Scenarios</strong>:</p>
+                        <ul>
+                            <li>Clearly document input data, expected outcomes, and observed behavior.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>By systematically testing both <code>BEFORE UPDATE</code> and <code>AFTER UPDATE</code> triggers, you
+                    ensure robust and predictable behavior in your database operations.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Triggers Testing | Before Delete& After Delete</summary>
+            <div class="content">
+                <h3 id="before-delete--after-delete-in-triggers-testing"><strong>Before Delete &amp; After Delete in
+                        Triggers Testing</strong></h3>
+                <p>Testing <strong><code>BEFORE DELETE</code></strong> and <strong><code>AFTER DELETE</code></strong>
+                    triggers ensures they behave as expected when a delete operation is performed. These triggers
+                    execute at different points in the delete lifecycle:</p>
+                <ul>
+                    <li><strong>BEFORE DELETE Trigger</strong>: Executes before the deletion of a row. Typically used to
+                        validate conditions, restrict deletion, or handle data before it is removed.</li>
+                    <li><strong>AFTER DELETE Trigger</strong>: Executes after a row has been deleted. Commonly used for
+                        logging, auditing, or cascading deletions to related tables.</li>
+                </ul>
+                <hr>
+                <h3 id="key-differences"><strong>Key Differences</strong></h3>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Aspect</strong></th>
+                            <th><strong>BEFORE DELETE</strong></th>
+                            <th><strong>AFTER DELETE</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Execution Timing</strong></td>
+                            <td>Before the row is deleted.</td>
+                            <td>After the row is deleted.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Use Case</strong></td>
+                            <td>Validate conditions or restrict deletion.</td>
+                            <td>Log deletion or cascade changes.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Access to Data</strong></td>
+                            <td>Access to the row being deleted (<code>OLD</code>).</td>
+                            <td>Access only to the row just deleted (<code>OLD</code>).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="testing-before-delete-triggers"><strong>Testing BEFORE DELETE Triggers</strong></h3>
+                <h4 id="steps-to-test-before-delete-triggers"><strong>Steps to Test BEFORE DELETE Triggers</strong></h4>
+                <ol>
+                    <li>
+                        <p><strong>Understand the Trigger Logic</strong>:</p>
+                        <ul>
+                            <li>Determine the purpose of the trigger, such as validation or deletion prevention.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare Test Cases</strong>:</p>
+                        <ul>
+                            <li>Cover scenarios for allowed deletions, restricted deletions, and edge cases.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute Delete Statements</strong>:</p>
+                        <ul>
+                            <li>Perform delete operations that invoke the trigger.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Verify Behavior</strong>:</p>
+                        <ul>
+                            <li>Confirm whether the trigger allowed or blocked the deletion based on its logic.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h4 id="example-test-cases-for-before-delete-trigger"><strong>Example Test Cases for BEFORE DELETE
+                        Trigger</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Restrict deletion if certain conditions met.</td>
+                            <td>Delete a row where <code>status = &#39;active&#39;</code>.</td>
+                            <td>Trigger prevents the deletion.</td>
+                        </tr>
+                        <tr>
+                            <td>Allow deletion for valid conditions.</td>
+                            <td>Delete a row where <code>status = &#39;inactive&#39;</code>.</td>
+                            <td>Trigger allows the deletion.</td>
+                        </tr>
+                        <tr>
+                            <td>Handle edge cases (NULL values).</td>
+                            <td>Delete a row with NULL fields.</td>
+                            <td>Trigger handles gracefully or prevents deletion.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="example-sql-for-testing-before-delete-trigger"><strong>Example SQL for Testing BEFORE DELETE
+                        Trigger</strong></h4>
+                <p>Trigger definition:</p>
+                <pre><code class="language-sql">CREATE TRIGGER prevent_active_user_delete
+BEFORE DELETE ON users
+FOR EACH ROW
+BEGIN
+    IF OLD.status = &#39;active&#39; THEN
+        SIGNAL SQLSTATE &#39;45000&#39;
+        SET MESSAGE_TEXT = &#39;Cannot delete active users&#39;;
+    END IF;
+END;
+</code></pre>
+                <p>Test query:</p>
+                <pre><code class="language-sql">-- Test: Attempt to delete an active user
+DELETE FROM users WHERE user_id = 1;
+
+-- Expected: Trigger blocks deletion and throws an error
+-- Verify the row still exists
+SELECT * FROM users WHERE user_id = 1;
+</code></pre>
+                <hr>
+                <h3 id="testing-after-delete-triggers"><strong>Testing AFTER DELETE Triggers</strong></h3>
+                <h4 id="steps-to-test-after-delete-triggers"><strong>Steps to Test AFTER DELETE Triggers</strong></h4>
+                <ol>
+                    <li>
+                        <p><strong>Understand the Trigger Logic</strong>:</p>
+                        <ul>
+                            <li>Identify post-deletion actions, such as logging or cascading deletions.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare Test Cases</strong>:</p>
+                        <ul>
+                            <li>Include scenarios for single and bulk deletions, and verify the trigger&#39;s effects.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute Delete Statements</strong>:</p>
+                        <ul>
+                            <li>Perform delete operations to activate the trigger.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Verify Trigger Effects</strong>:</p>
+                        <ul>
+                            <li>Check audit logs, cascaded deletions, or other changes made by the trigger.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h4 id="example-test-cases-for-after-delete-trigger"><strong>Example Test Cases for AFTER DELETE
+                        Trigger</strong></h4>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Test Case</strong></th>
+                            <th><strong>Input</strong></th>
+                            <th><strong>Expected Output</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Log the deletion in an audit table.</td>
+                            <td>Delete a row with <code>user_id = 1</code>.</td>
+                            <td>Trigger inserts the row details into <code>audit_table</code>.</td>
+                        </tr>
+                        <tr>
+                            <td>Cascade deletions to related tables.</td>
+                            <td>Delete a parent row in <code>orders</code>.</td>
+                            <td>Trigger deletes related rows in <code>order_items</code>.</td>
+                        </tr>
+                        <tr>
+                            <td>Handle bulk deletions.</td>
+                            <td>Delete multiple rows with <code>status = &#39;archived&#39;</code>.</td>
+                            <td>Trigger logs all deleted rows.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="example-sql-for-testing-after-delete-trigger"><strong>Example SQL for Testing AFTER DELETE
+                        Trigger</strong></h4>
+                <p>Trigger definition:</p>
+                <pre><code class="language-sql">CREATE TRIGGER log_user_delete
+AFTER DELETE ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (user_id, deleted_at, reason)
+    VALUES (OLD.user_id, NOW(), &#39;User deleted&#39;);
+END;
+</code></pre>
+                <p>Test query:</p>
+                <pre><code class="language-sql">-- Test: Delete a user
+DELETE FROM users WHERE user_id = 1;
+
+-- Verify the audit log contains the deletion
+SELECT * FROM audit_log WHERE user_id = 1;
+</code></pre>
+                <hr>
+                <h3 id="combined-before-and-after-delete-trigger-testing"><strong>Combined BEFORE and AFTER DELETE
+                        Trigger Testing</strong></h3>
+                <p>When both <code>BEFORE DELETE</code> and <code>AFTER DELETE</code> triggers exist, test them together
+                    to ensure they function correctly and don’t conflict.</p>
+                <h4 id="example-scenario"><strong>Example Scenario</strong></h4>
+                <ol>
+                    <li><strong>BEFORE DELETE</strong>:<ul>
+                            <li>Prevent deletion if the user is &quot;active.&quot;</li>
+                        </ul>
+                    </li>
+                    <li><strong>AFTER DELETE</strong>:<ul>
+                            <li>Log the deletion in an audit table if deletion occurs.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Trigger definitions:</p>
+                <pre><code class="language-sql">-- BEFORE DELETE Trigger
+CREATE TRIGGER prevent_active_user_delete
+BEFORE DELETE ON users
+FOR EACH ROW
+BEGIN
+    IF OLD.status = &#39;active&#39; THEN
+        SIGNAL SQLSTATE &#39;45000&#39;
+        SET MESSAGE_TEXT = &#39;Cannot delete active users&#39;;
+    END IF;
+END;
+
+-- AFTER DELETE Trigger
+CREATE TRIGGER log_user_delete
+AFTER DELETE ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (user_id, deleted_at, reason)
+    VALUES (OLD.user_id, NOW(), &#39;User deleted&#39;);
+END;
+</code></pre>
+                <p>Test query:</p>
+                <pre><code class="language-sql">-- Attempt to delete an active user
+DELETE FROM users WHERE user_id = 1;
+
+-- Expected: Deletion is prevented
+-- Verify the row still exists
+SELECT * FROM users WHERE user_id = 1;
+
+-- Test: Delete an inactive user
+DELETE FROM users WHERE user_id = 2;
+
+-- Expected: Row is deleted and logged in audit table
+SELECT * FROM audit_log WHERE user_id = 2;
+</code></pre>
+                <hr>
+                <h3 id="automating-trigger-testing"><strong>Automating Trigger Testing</strong></h3>
+                <h4 id="1-using-sql-scripts"><strong>1. Using SQL Scripts</strong></h4>
+                <p>Create reusable SQL scripts to test the triggers with different scenarios.</p>
+                <p><strong>Example Script</strong>:</p>
+                <pre><code class="language-sql">-- Test BEFORE DELETE Trigger
+BEGIN TRANSACTION;
+DELETE FROM users WHERE status = &#39;active&#39;;
+ROLLBACK TRANSACTION;
+
+-- Test AFTER DELETE Trigger
+BEGIN TRANSACTION;
+DELETE FROM users WHERE status = &#39;inactive&#39;;
+ROLLBACK TRANSACTION;
+SELECT * FROM audit_log WHERE user_id = 2;
+</code></pre>
+                <h4 id="2-using-testing-frameworks"><strong>2. Using Testing Frameworks</strong></h4>
+                <ul>
+                    <li>
+                        <p><strong>tSQLt</strong> (SQL Server):</p>
+                        <ul>
+                            <li>Example:
+                                <pre><code class="language-sql">CREATE PROCEDURE [test].[test_before_delete_trigger]
+AS
+BEGIN
+    -- Arrange: Insert a test user
+    INSERT INTO users (user_id, status) VALUES (100, &#39;active&#39;);
+
+    -- Act: Try to delete the user
+    BEGIN TRY
+        DELETE FROM users WHERE user_id = 100;
+    END TRY
+    BEGIN CATCH
+        -- Assert: Verify trigger blocked the delete
+        SELECT ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH;
+END;
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>pgTAP</strong> (PostgreSQL):</p>
+                        <ul>
+                            <li>Example:
+                                <pre><code class="language-sql">SELECT plan(1);
+DELETE FROM users WHERE user_id = 100;
+SELECT has_row(&#39;audit_log&#39;, &#39;user_id = 100&#39;, &#39;Log exists for deleted user&#39;);
+SELECT done_testing();
+</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <h3 id="best-practices-for-before--after-delete-trigger-testing"><strong>Best Practices for BEFORE &amp;
+                        AFTER DELETE Trigger Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Isolate Tests</strong>:</p>
+                        <ul>
+                            <li>Test <code>BEFORE DELETE</code> and <code>AFTER DELETE</code> triggers independently.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Handle Edge Cases</strong>:</p>
+                        <ul>
+                            <li>Include scenarios with NULL values, constraints, and invalid deletes.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Verify Dependencies</strong>:</p>
+                        <ul>
+                            <li>Ensure cascading deletions or other dependencies behave as expected.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test with Bulk Operations</strong>:</p>
+                        <ul>
+                            <li>Test triggers with single-row and multi-row deletions to evaluate performance.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Monitor Side Effects</strong>:</p>
+                        <ul>
+                            <li>Check for unintended effects on other triggers or database objects.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Document Test Scenarios</strong>:</p>
+                        <ul>
+                            <li>Maintain clear documentation for input conditions, expected outputs, and actual results.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>By rigorously testing <code>BEFORE DELETE</code> and <code>AFTER DELETE</code> triggers, you can
+                    ensure robust and reliable database operations while preventing data loss or errors.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Data Mapping Testing | CRUD Operations | Grey Box Testing</summary>
+            <div class="content">
+                <h3 id="data-mapping-testing--crud-operations--grey-box-testing"><strong>Data Mapping Testing | CRUD
+                        Operations | Grey Box Testing</strong></h3>
+                <p><strong>Data Mapping Testing</strong> is a type of testing used to validate the process of
+                    transferring and transforming data between different systems or components. This kind of testing
+                    ensures that data is correctly mapped from one format or database to another, whether from source to
+                    target databases, applications, or across different data structures. It is particularly important in
+                    environments where data is frequently exchanged or migrated, such as ETL (Extract, Transform, Load)
+                    processes, database migrations, or integrations between software systems.</p>
+                <h3 id="key-concepts"><strong>Key Concepts</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Data Mapping</strong>:</p>
+                        <ul>
+                            <li><strong>Definition</strong>: Data mapping is the process of connecting data from one
+                                source to a destination, mapping each source field to a corresponding target field.</li>
+                            <li><strong>Purpose</strong>: Ensures that the data is correctly transformed, transferred,
+                                and aligned between the source and destination systems, while maintaining consistency,
+                                accuracy, and integrity.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>CRUD Operations</strong>:</p>
+                        <ul>
+                            <li><strong>CRUD</strong> stands for Create, Read, Update, and Delete, which are the four
+                                basic operations performed on data in databases and applications.</li>
+                            <li><strong>Testing CRUD operations</strong> helps ensure that data is properly handled in
+                                all scenarios, including the mapping between source and target systems.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Grey Box Testing</strong>:</p>
+                        <ul>
+                            <li><strong>Definition</strong>: Grey box testing is a hybrid approach that combines aspects
+                                of both black-box testing (external testing with no knowledge of internal workings) and
+                                white-box testing (internal testing with full knowledge of the code).</li>
+                            <li><strong>Purpose</strong>: In the context of data mapping, grey box testing involves
+                                testing the data flow, transformations, and mapping logic while having partial knowledge
+                                of the internal structure (e.g., schema details, data flow rules, or transformation
+                                logic).</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="data-mapping-testing-overview"><strong>Data Mapping Testing: Overview</strong></h3>
+                <p><strong>Data Mapping Testing</strong> validates that data is accurately transferred and transformed
+                    between different systems or databases. The test ensures:</p>
+                <ul>
+                    <li>Correct transformation rules are applied.</li>
+                    <li>All fields are properly mapped from the source to the target.</li>
+                    <li>Data integrity is preserved during the mapping and transfer process.</li>
+                    <li>Data constraints (like unique keys or formats) are maintained.</li>
+                </ul>
+                <hr>
+                <h3 id="crud-operations-in-data-mapping-testing"><strong>CRUD Operations in Data Mapping
+                        Testing</strong></h3>
+                <p>When performing <strong>CRUD operations</strong> during data mapping testing, the goal is to ensure
+                    that all CRUD actions (Create, Read, Update, Delete) work correctly across systems or components:
+                </p>
+                <ol>
+                    <li>
+                        <p><strong>Create</strong>:</p>
+                        <ul>
+                            <li>Verify that new records are properly inserted into the target system from the source.
+                            </li>
+                            <li>Ensure that the data in the target matches the mapped data in terms of format, value,
+                                and business rules.</li>
+                        </ul>
+                        <p><strong>Example</strong>: </p>
+                        <ul>
+                            <li>Source: A new customer is created in the CRM system with <code>Name</code>,
+                                <code>Email</code>, and <code>Phone</code>.
+                            </li>
+                            <li>Target: Ensure the customer data is correctly inserted into the target system (e.g., a
+                                billing system) with all relevant fields mapped correctly.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Read</strong>:</p>
+                        <ul>
+                            <li>Verify that the target system retrieves the correct data from the source when queried.
+                            </li>
+                            <li>Ensure that all mappings between source and target fields are properly applied during
+                                data retrieval.</li>
+                        </ul>
+                        <p><strong>Example</strong>: </p>
+                        <ul>
+                            <li>Source: Query for customer data.</li>
+                            <li>Target: Verify that the data read from the target system corresponds to the source
+                                values, e.g., customer name, email, phone number.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Update</strong>:</p>
+                        <ul>
+                            <li>Verify that when records are updated in the source, the target system reflects those
+                                changes accurately.</li>
+                            <li>Ensure that the update process correctly maps new data values to the target system
+                                without data corruption.</li>
+                        </ul>
+                        <p><strong>Example</strong>: </p>
+                        <ul>
+                            <li>Source: Update the customer’s email address in the CRM.</li>
+                            <li>Target: Verify that the email address is updated in the billing system.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Delete</strong>:</p>
+                        <ul>
+                            <li>Ensure that when a record is deleted from the source, it is also removed or properly
+                                flagged as deleted in the target.</li>
+                            <li>Test cascading deletes or related deletions in cases where foreign keys or dependencies
+                                exist.</li>
+                        </ul>
+                        <p><strong>Example</strong>: </p>
+                        <ul>
+                            <li>Source: Delete a customer from the CRM.</li>
+                            <li>Target: Verify that the corresponding customer record is deleted from the target system.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="grey-box-testing-in-data-mapping"><strong>Grey Box Testing in Data Mapping</strong></h3>
+                <p><strong>Grey Box Testing</strong> is crucial for testing data mapping processes, as it allows testers
+                    to have partial knowledge of the system. It combines the following:</p>
+                <ul>
+                    <li><strong>Black-box aspects</strong>: Testing the system without knowing the internal workings,
+                        which tests the external data flow and transformation.</li>
+                    <li><strong>White-box aspects</strong>: Having some access to the logic, such as the schema or
+                        transformation rules, to ensure correctness in the data mapping process.</li>
+                </ul>
+                <p>In grey box testing, testers focus on the following:</p>
+                <ol>
+                    <li>
+                        <p><strong>Data Flow Validation</strong>:</p>
+                        <ul>
+                            <li>Understand how data flows between the source and target system. This includes
+                                understanding which data sources are involved, the relationships between them, and how
+                                data is transferred.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Schema Mapping</strong>:</p>
+                        <ul>
+                            <li>Ensure that source fields are correctly mapped to target fields. A grey-box tester might
+                                have access to the schema of both the source and target systems, but still test the
+                                transfer and transformation logic.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Transformation Logic</strong>:</p>
+                        <ul>
+                            <li>Ensure the data transformation logic is correct. This might include transformations such
+                                as date formats, currency conversions, string manipulations, or aggregations.</li>
+                            <li>Test edge cases and exceptions in the transformation rules (e.g., invalid or missing
+                                data).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Error Handling</strong>:</p>
+                        <ul>
+                            <li>Check that proper error handling is in place when invalid or inconsistent data is
+                                encountered.</li>
+                            <li>Test scenarios where data mapping fails, and verify the system&#39;s response (e.g.,
+                                rollbacks, error messages).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Data Integrity</strong>:</p>
+                        <ul>
+                            <li>Ensure that no data corruption occurs during the transfer process, and the integrity of
+                                the data is maintained across systems.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="example-data-mapping-testing-using-crud-operations--grey-box-testing"><strong>Example: Data
+                        Mapping Testing Using CRUD Operations &amp; Grey Box Testing</strong></h3>
+                <h4 id="scenario-migrating-customer-data-from-crm-to-billing-system"><strong>Scenario: Migrating
+                        Customer Data from CRM to Billing System</strong></h4>
+                <ol>
+                    <li>
+                        <p><strong>Create Operation</strong>:</p>
+                        <ul>
+                            <li><strong>Source</strong>: A new customer record is added in the CRM (name, email, phone
+                                number, address).</li>
+                            <li><strong>Target</strong>: The new customer record should be created in the billing
+                                system.</li>
+                            <li><strong>Grey Box Testing</strong>: Verify the mapping between fields (e.g.,
+                                <code>phone_number</code> in the CRM maps to <code>contact_number</code> in the billing
+                                system) using schema knowledge.
+                            </li>
+                        </ul>
+                        <p><strong>Test Case</strong>:</p>
+                        <ul>
+                            <li>Test with valid customer data.</li>
+                            <li>Ensure the data is inserted into the target system with the correct mapping (e.g.,
+                                <code>phone_number</code> → <code>contact_number</code>).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Read Operation</strong>:</p>
+                        <ul>
+                            <li><strong>Source</strong>: Retrieve customer data from CRM.</li>
+                            <li><strong>Target</strong>: The billing system should return the same data for the same
+                                customer.</li>
+                            <li><strong>Grey Box Testing</strong>: Use knowledge of the data flow to verify that the
+                                query is correctly pulling data from both systems and transforming it correctly.</li>
+                        </ul>
+                        <p><strong>Test Case</strong>:</p>
+                        <ul>
+                            <li>Execute a query to fetch customer data from the billing system.</li>
+                            <li>Verify that the data corresponds with the original source data.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Update Operation</strong>:</p>
+                        <ul>
+                            <li><strong>Source</strong>: Update a customer’s email in the CRM.</li>
+                            <li><strong>Target</strong>: The billing system should reflect this change.</li>
+                            <li><strong>Grey Box Testing</strong>: Verify that the transformation rules correctly handle
+                                updates, ensuring the correct mapping is applied (e.g., update email from CRM → billing
+                                system).</li>
+                        </ul>
+                        <p><strong>Test Case</strong>:</p>
+                        <ul>
+                            <li>Update the email in the CRM.</li>
+                            <li>Verify that the billing system reflects the updated email address.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Delete Operation</strong>:</p>
+                        <ul>
+                            <li><strong>Source</strong>: A customer record is deleted from the CRM.</li>
+                            <li><strong>Target</strong>: The billing system should delete the corresponding record or
+                                flag it as deleted.</li>
+                            <li><strong>Grey Box Testing</strong>: Verify that the delete operation correctly triggers
+                                the cascading delete in the target system, ensuring data integrity and consistency.</li>
+                        </ul>
+                        <p><strong>Test Case</strong>:</p>
+                        <ul>
+                            <li>Delete a customer record from CRM.</li>
+                            <li>Ensure the record is either deleted or flagged in the billing system.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="best-practices-for-data-mapping-testing-with-crud-operations-and-grey-box-testing"><strong>Best
+                        Practices for Data Mapping Testing with CRUD Operations and Grey Box Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Understand Data Sources and Targets</strong>:</p>
+                        <ul>
+                            <li>Gain partial knowledge of the internal schema, mappings, and transformation rules, but
+                                focus on how data moves between systems.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Use Boundary and Edge Case Testing</strong>:</p>
+                        <ul>
+                            <li>Test extreme values (e.g., very large numbers, empty strings, invalid data formats) to
+                                ensure mappings handle all scenarios correctly.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Verify Data Consistency</strong>:</p>
+                        <ul>
+                            <li>After performing CRUD operations, ensure the data in both systems (source and target) is
+                                consistent and synchronized.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automate Where Possible</strong>:</p>
+                        <ul>
+                            <li>Use automation tools to test CRUD operations and mappings across multiple datasets. This
+                                is especially useful for large datasets or complex data flows.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Check for Data Integrity and Error Handling</strong>:</p>
+                        <ul>
+                            <li>Ensure the system handles missing, incomplete, or corrupt data correctly by implementing
+                                proper error handling and rollback mechanisms.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Audit and Log Data Transfers</strong>:</p>
+                        <ul>
+                            <li>Implement logging mechanisms that track data transformations and any issues encountered
+                                during mapping, ensuring traceability.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="conclusion"><strong>Conclusion</strong></h3>
+                <p><strong>Data Mapping Testing</strong> is crucial for ensuring the accuracy and integrity of data
+                    between systems. When combined with <strong>CRUD operations</strong> and <strong>Grey Box
+                        Testing</strong>, it helps test both the functionality of data transfers (insertion, retrieval,
+                    update, deletion) and the underlying transformation logic. By combining knowledge of the internal
+                    structure and external behavior, grey box testing allows testers to effectively verify the
+                    correctness, reliability, and efficiency of data mapping processes.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>ACID Properties | A-Atomic | C-Consistent | I-Isolated | D-Durable</summary>
+            <div class="content">
+                <h3 id="acid-properties-understanding-database-transaction-management"><strong>ACID Properties:
+                        Understanding Database Transaction Management</strong></h3>
+                <p>ACID is an acronym that stands for <strong>Atomicity, Consistency, Isolation, and
+                        Durability</strong>. These four properties are the foundational principles that ensure database
+                    transactions are processed reliably and ensure the integrity of data, even in the event of system
+                    failures or errors. Each property plays a critical role in managing the database&#39;s behavior when
+                    handling multiple operations or queries, especially when performing concurrent transactions.</p>
+                <p>Here is a breakdown of each of the ACID properties:</p>
+                <hr>
+                <h3 id="1-atomicity-a"><strong>1. Atomicity (A)</strong></h3>
+                <p><strong>Definition</strong>:<br>Atomicity refers to the &quot;all-or-nothing&quot; principle of
+                    database transactions. It ensures that a transaction is treated as a single, indivisible unit of
+                    work. Either all operations in the transaction are executed successfully, or none of them are. If
+                    any operation fails, the database will roll back to its initial state before the transaction began,
+                    ensuring no partial updates to the database.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li>The transaction is atomic, meaning it is fully completed or not executed at all.</li>
+                    <li>It ensures that even if there’s a failure during the transaction (e.g., a crash or power
+                        failure), no partial updates will persist in the database.</li>
+                </ul>
+                <p><strong>Example</strong>:<br>Consider a bank transfer where <code>Account A</code> is debited and
+                    <code>Account B</code> is credited.
+                </p>
+                <ul>
+                    <li>If the debit operation succeeds but the credit operation fails, the transaction will be rolled
+                        back, and both accounts will remain unchanged.</li>
+                    <li>If both operations succeed, the transaction is committed, and both accounts reflect the correct
+                        balance.</li>
+                </ul>
+                <hr>
+                <h3 id="2-consistency-c"><strong>2. Consistency (C)</strong></h3>
+                <p><strong>Definition</strong>:<br>Consistency ensures that a transaction transforms the database from
+                    one valid state to another. The database must always be in a consistent state before and after a
+                    transaction. Any transaction that violates database integrity rules (such as constraints, triggers,
+                    or foreign key relationships) is not allowed to complete.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li>Consistency guarantees that the database will not contain any invalid data after the
+                        transaction.</li>
+                    <li>Before and after a transaction, the database will adhere to all predefined rules, such as data
+                        types, constraints (e.g., NOT NULL, UNIQUE), and foreign key relationships.</li>
+                </ul>
+                <p><strong>Example</strong>:<br>Consider a scenario where you are inserting a record into an
+                    &quot;Orders&quot; table:</p>
+                <ul>
+                    <li>If a transaction is processing an order but fails to insert all the necessary data (e.g.,
+                        product IDs that don’t exist), the transaction will fail, ensuring that the database doesn’t end
+                        up in an inconsistent state (such as having orders without products).</li>
+                </ul>
+                <hr>
+                <h3 id="3-isolation-i"><strong>3. Isolation (I)</strong></h3>
+                <p><strong>Definition</strong>:<br>Isolation ensures that the operations of one transaction are isolated
+                    from the operations of other concurrent transactions. Even when multiple transactions are happening
+                    simultaneously, the intermediate states of one transaction should not be visible to other
+                    transactions. It ensures that transactions do not interfere with each other in a way that could lead
+                    to inconsistent data.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li>Isolation ensures that one transaction’s changes are not visible to others until the transaction
+                        is complete.</li>
+                    <li>It is achieved by using locks or other mechanisms that prevent conflicting transactions from
+                        executing at the same time.</li>
+                    <li>Isolation is often defined in terms of <strong>isolation levels</strong> (e.g., <strong>READ
+                            UNCOMMITTED</strong>, <strong>READ COMMITTED</strong>, <strong>REPEATABLE READ</strong>, and
+                        <strong>SERIALIZABLE</strong>), which control how and when the changes made by one transaction
+                        become visible to other transactions.
+                    </li>
+                </ul>
+                <p><strong>Example</strong>:<br>If two transactions are trying to update the same record at the same
+                    time:</p>
+                <ul>
+                    <li>Transaction 1 updates a bank account’s balance.</li>
+                    <li>Transaction 2 also tries to update the same account simultaneously.</li>
+                </ul>
+                <p>With isolation, one transaction will be forced to wait until the other finishes, preventing conflicts
+                    like lost updates, dirty reads, or non-repeatable reads.</p>
+                <hr>
+                <h3 id="4-durability-d"><strong>4. Durability (D)</strong></h3>
+                <p><strong>Definition</strong>:<br>Durability ensures that once a transaction is committed, it will
+                    persist in the database, even in the event of a power failure, crash, or system malfunction.
+                    Committed transactions are permanently saved to the database, and any changes made are not lost.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li>Once a transaction is completed (committed), its changes are permanent and cannot be undone,
+                        even in the case of an unexpected system failure.</li>
+                    <li>This is typically achieved through transaction logs and other persistence mechanisms that ensure
+                        the data is written to stable storage.</li>
+                </ul>
+                <p><strong>Example</strong>: </p>
+                <ul>
+                    <li>After completing a bank transfer (debiting from one account and crediting another), the
+                        transaction is committed. If the database crashes right after the commit, the transaction data
+                        will still be recovered and intact after the system is restarted.</li>
+                    <li>The log entries created during the transaction help the database recover and ensure that all
+                        committed data persists.</li>
+                </ul>
+                <hr>
+                <h3 id="acid-property-summary-table"><strong>ACID Property Summary Table</strong></h3>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><strong>Property</strong></th>
+                            <th><strong>Definition</strong></th>
+                            <th><strong>Key Behavior</strong></th>
+                            <th><strong>Example</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Atomicity</strong></td>
+                            <td>All operations in a transaction are treated as a single unit. Either all operations
+                                succeed, or none of them do.</td>
+                            <td>Ensures that no partial transactions are committed.</td>
+                            <td>A bank transfer that debits and credits accounts must either fully succeed or fail
+                                completely.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consistency</strong></td>
+                            <td>A transaction transforms the database from one valid state to another.</td>
+                            <td>Ensures data integrity by enforcing constraints, rules, and business logic.</td>
+                            <td>A transaction that adds an order ensures the order complies with data integrity rules
+                                (e.g., product IDs exist).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Isolation</strong></td>
+                            <td>Transactions do not interfere with each other. Concurrent transactions are isolated to
+                                avoid conflicts.</td>
+                            <td>Ensures that intermediate states of transactions are not visible to others.</td>
+                            <td>One transaction updates a user’s balance without others seeing it until completed.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Durability</strong></td>
+                            <td>Once a transaction is committed, its changes are permanent, even in the event of a
+                                crash.</td>
+                            <td>Ensures committed data is safely stored and persistent.</td>
+                            <td>After committing a payment, the transaction’s result will be preserved despite a system
+                                crash.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="acid-vs-base"><strong>ACID vs. BASE</strong></h3>
+                <p>While <strong>ACID</strong> is used primarily in relational databases to ensure strong consistency,
+                    there is another concept in distributed systems known as <strong>BASE</strong> (Basically Available,
+                    Soft state, Eventual consistency). BASE is more relaxed and suitable for systems where high
+                    availability and scalability are prioritized over strong consistency (like in NoSQL databases).</p>
+                <h3 id="when-to-use-acid"><strong>When to Use ACID</strong>:</h3>
+                <ul>
+                    <li><strong>Transactional Systems</strong>: Banking systems, booking systems, and financial
+                        applications require strong consistency and reliable data handling, making ACID properties
+                        essential.</li>
+                    <li><strong>Critical Systems</strong>: Applications that cannot afford data corruption, such as
+                        healthcare or insurance systems, must adhere to ACID principles.</li>
+                </ul>
+                <h3 id="when-base-might-be-preferred"><strong>When BASE Might Be Preferred</strong>:</h3>
+                <ul>
+                    <li><strong>Distributed Systems</strong>: NoSQL databases or microservices architectures might use
+                        BASE properties for flexibility, where ultimate consistency is not immediately required, but the
+                        system needs to handle more throughput and scalability.</li>
+                </ul>
+                <hr>
+                <h3 id="conclusion"><strong>Conclusion</strong></h3>
+                <p>The ACID properties — <strong>Atomicity</strong>, <strong>Consistency</strong>,
+                    <strong>Isolation</strong>, and <strong>Durability</strong> — are essential principles for ensuring
+                    the integrity and reliability of transactions in relational database systems. These properties
+                    protect data from corruption, ensure it remains consistent even during concurrent operations, and
+                    make sure that data persists after a transaction is committed, even in the face of system failures.
+                    Understanding and implementing ACID properties helps in building robust and reliable applications
+                    where data integrity and consistency are paramount.
+                </p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Data Integrity Testing | Integrity Constraints</summary>
+            <div class="content">
+                <h3 id="data-integrity-testing--integrity-constraints"><strong>Data Integrity Testing | Integrity
+                        Constraints</strong></h3>
+                <p><strong>Data Integrity Testing</strong> is the process of ensuring that the data within a database is
+                    accurate, consistent, and reliable. It involves verifying that the data conforms to predefined
+                    rules, constraints, and standards to maintain its correctness and quality. Integrity constraints are
+                    rules or conditions that ensure data in the database is valid, and data integrity testing checks
+                    that these constraints are being enforced as expected.</p>
+                <hr>
+                <h3 id="what-is-data-integrity"><strong>What is Data Integrity?</strong></h3>
+                <p><strong>Data Integrity</strong> refers to the accuracy, consistency, and reliability of data
+                    throughout its lifecycle. It ensures that the data remains correct and unchanged during its storage,
+                    retrieval, or transmission. Integrity checks are implemented to prevent data corruption,
+                    unauthorized access, or data manipulation, maintaining high-quality data.</p>
+                <hr>
+                <h3 id="types-of-integrity-constraints"><strong>Types of Integrity Constraints</strong></h3>
+                <p>Integrity constraints are rules that the database enforces to ensure the validity and consistency of
+                    data. There are several types of integrity constraints used in relational databases:</p>
+                <ol>
+                    <li><strong>Entity Integrity</strong></li>
+                    <li><strong>Referential Integrity</strong></li>
+                    <li><strong>Domain Integrity</strong></li>
+                    <li><strong>User-defined Integrity</strong></li>
+                </ol>
+                <p>Each of these constraints serves a specific purpose in ensuring the integrity of data.</p>
+                <hr>
+                <h3 id="1-entity-integrity"><strong>1. Entity Integrity</strong></h3>
+                <p><strong>Definition</strong>:<br>Entity integrity ensures that each record (or entity) in a table is
+                    unique and identifiable. The primary mechanism for enforcing entity integrity is the <strong>Primary
+                        Key</strong>.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li>A primary key uniquely identifies each record in a table.</li>
+                    <li>Every table must have a primary key.</li>
+                    <li>The primary key cannot have NULL values.</li>
+                </ul>
+                <p><strong>Example</strong>:</p>
+                <ul>
+                    <li>In a <strong>Customer</strong> table, a column like <strong>CustomerID</strong> could serve as
+                        the primary key. This ensures that each customer is uniquely identified and no two customers
+                        have the same ID.</li>
+                </ul>
+                <p><strong>Testing Entity Integrity</strong>:</p>
+                <ul>
+                    <li>Verify that the primary key constraint is properly applied.</li>
+                    <li>Ensure there are no NULL values in columns defined as primary keys.</li>
+                    <li>Test for uniqueness by inserting duplicate values into primary key columns.</li>
+                </ul>
+                <hr>
+                <h3 id="2-referential-integrity"><strong>2. Referential Integrity</strong></h3>
+                <p><strong>Definition</strong>:<br>Referential integrity ensures that relationships between tables
+                    remain consistent. It guarantees that foreign keys in one table point to valid records in another
+                    table, maintaining consistent links between the tables.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li><strong>Foreign Key</strong> constraints are used to enforce referential integrity.</li>
+                    <li>A foreign key in a child table must match a primary key or unique key in the parent table.</li>
+                    <li>It prevents orphaned records (records that reference non-existent records in another table).
+                    </li>
+                </ul>
+                <p><strong>Example</strong>:</p>
+                <ul>
+                    <li>Consider a <strong>Order</strong> table with a <strong>CustomerID</strong> foreign key
+                        referencing the <strong>Customer</strong> table&#39;s <strong>CustomerID</strong> primary key.
+                        The foreign key ensures that orders cannot be placed for customers who do not exist.</li>
+                </ul>
+                <p><strong>Testing Referential Integrity</strong>:</p>
+                <ul>
+                    <li>Ensure foreign keys are correctly defined and linked between tables.</li>
+                    <li>Test the insertion of records in child tables that reference non-existing parent records to
+                        ensure they are rejected.</li>
+                    <li>Test cascading updates or deletes, depending on the foreign key constraints (e.g., CASCADE,
+                        RESTRICT).</li>
+                </ul>
+                <hr>
+                <h3 id="3-domain-integrity"><strong>3. Domain Integrity</strong></h3>
+                <p><strong>Definition</strong>:<br>Domain integrity ensures that all values in a column fall within a
+                    specific set of acceptable values or constraints. This can be achieved using <strong>Check
+                        Constraints</strong> and <strong>Data Types</strong>.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li>A column must only contain values that are of a valid type (e.g., integers, dates, strings).
+                    </li>
+                    <li>Check constraints ensure values fall within specific ranges or meet certain conditions.</li>
+                </ul>
+                <p><strong>Example</strong>:</p>
+                <ul>
+                    <li>In an <strong>Employee</strong> table, the <strong>Salary</strong> column could have a check
+                        constraint to ensure the salary is greater than a specified value, e.g.,
+                        <code>Salary &gt; 0</code>.</li>
+                    <li>A <strong>DateOfBirth</strong> column might have a check to ensure the date falls before today’s
+                        date.</li>
+                </ul>
+                <p><strong>Testing Domain Integrity</strong>:</p>
+                <ul>
+                    <li>Ensure columns have appropriate data types and constraints.</li>
+                    <li>Test boundary values, ensuring values are within allowed limits.</li>
+                    <li>Test invalid values (e.g., entering text into a numeric column) to ensure they are rejected.
+                    </li>
+                </ul>
+                <hr>
+                <h3 id="4-user-defined-integrity"><strong>4. User-defined Integrity</strong></h3>
+                <p><strong>Definition</strong>:<br>User-defined integrity refers to constraints and rules defined by the
+                    user based on business requirements. These can include more complex rules that cannot be captured by
+                    other types of integrity constraints, such as custom validation rules or triggers.</p>
+                <p><strong>Key Points</strong>:</p>
+                <ul>
+                    <li>These rules are usually defined by the business logic and can include things like custom
+                        validation, triggers, and stored procedures.</li>
+                    <li>User-defined integrity could be applied for complex validation logic that is beyond the scope of
+                        domain integrity or referential integrity.</li>
+                </ul>
+                <p><strong>Example</strong>:</p>
+                <ul>
+                    <li>In a <strong>Loan</strong> table, you could have a rule where the loan amount cannot exceed a
+                        certain percentage of the borrower’s income. This could be enforced by a stored procedure or
+                        trigger.</li>
+                </ul>
+                <p><strong>Testing User-defined Integrity</strong>:</p>
+                <ul>
+                    <li>Verify that any user-defined rules or logic (e.g., triggers, stored procedures) are correctly
+                        implemented and enforce the required behavior.</li>
+                    <li>Test complex validation scenarios to ensure the business logic is applied correctly.</li>
+                </ul>
+                <hr>
+                <h3 id="data-integrity-testing-approach"><strong>Data Integrity Testing Approach</strong></h3>
+                <p>Data Integrity Testing ensures that all integrity constraints are applied and enforced during various
+                    database operations such as inserts, updates, and deletes. The approach can be broken down into
+                    several key steps:</p>
+                <hr>
+                <h3 id="steps-for-data-integrity-testing"><strong>Steps for Data Integrity Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Identify Integrity Constraints</strong>:</p>
+                        <ul>
+                            <li>Review the database schema to identify the integrity constraints in place. This includes
+                                primary keys, foreign keys, unique constraints, check constraints, and any user-defined
+                                constraints.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Verify Data Types</strong>:</p>
+                        <ul>
+                            <li>Ensure that each column is associated with the correct data type and that no data
+                                violates the expected data type (e.g., inserting text in an integer field).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Primary and Foreign Keys</strong>:</p>
+                        <ul>
+                            <li>Test if primary key constraints enforce uniqueness in the table.</li>
+                            <li>Ensure that foreign key constraints prevent orphaned records and enforce referential
+                                integrity between related tables.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Check Constraints</strong>:</p>
+                        <ul>
+                            <li>Test whether the database enforces check constraints that limit data values to valid
+                                ranges or conditions (e.g., age must be greater than 18, dates cannot be in the future).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Validate NULL Constraints</strong>:</p>
+                        <ul>
+                            <li>Ensure that columns with NOT NULL constraints do not accept NULL values.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Insert/Update/Delete Operations</strong>:</p>
+                        <ul>
+                            <li>Test inserting data that violates integrity constraints (e.g., duplicate primary keys,
+                                foreign keys that do not exist in the referenced table, invalid data types, etc.).</li>
+                            <li>Test that the system prevents invalid updates or deletes (e.g., attempting to delete a
+                                parent record when child records exist, violating referential integrity).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Cascading Effects</strong>:</p>
+                        <ul>
+                            <li>If cascading updates or deletes are enabled, test that the changes in parent tables are
+                                correctly reflected in child tables, and that no orphaned records remain.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Business Rules (User-defined Constraints)</strong>:</p>
+                        <ul>
+                            <li>Test any user-defined business rules, triggers, and stored procedures to ensure they are
+                                functioning as expected.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Check Transactional Integrity</strong>:</p>
+                        <ul>
+                            <li>Ensure that data integrity is preserved across transactions, especially in multi-step
+                                operations or when using ACID properties (Atomicity, Consistency, Isolation,
+                                Durability).</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="data-integrity-testing-example"><strong>Data Integrity Testing Example:</strong></h3>
+                <p>Consider a <strong>Library Database</strong> with the following tables and constraints:</p>
+                <ul>
+                    <li>
+                        <p><strong>Book</strong> table with:</p>
+                        <ul>
+                            <li><code>BookID</code> (Primary Key)</li>
+                            <li><code>Title</code></li>
+                            <li><code>Author</code></li>
+                            <li><code>PublicationYear</code></li>
+                            <li><code>ISBN</code> (Unique Key)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Loan</strong> table with:</p>
+                        <ul>
+                            <li><code>LoanID</code> (Primary Key)</li>
+                            <li><code>BookID</code> (Foreign Key referencing Book table)</li>
+                            <li><code>MemberID</code> (Foreign Key referencing Member table)</li>
+                            <li><code>LoanDate</code></li>
+                            <li><code>ReturnDate</code></li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <h4 id="test-cases"><strong>Test Cases</strong>:</h4>
+                <ol>
+                    <li>
+                        <p><strong>Entity Integrity</strong>:</p>
+                        <ul>
+                            <li>Insert two books with the same <code>BookID</code>. Ensure the database rejects the
+                                duplicate due to the primary key constraint.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Referential Integrity</strong>:</p>
+                        <ul>
+                            <li>Try inserting a loan record for a book that doesn’t exist in the <strong>Book</strong>
+                                table. The database should reject this due to the foreign key constraint.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Domain Integrity</strong>:</p>
+                        <ul>
+                            <li>Try inserting a record into the <strong>Loan</strong> table with an invalid
+                                <code>LoanDate</code> (e.g., a future date). The check constraint should ensure only
+                                valid dates are allowed.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>User-defined Integrity</strong>:</p>
+                        <ul>
+                            <li>Implement a trigger that ensures a book cannot be loaned out if it is marked as
+                                &quot;damaged.&quot; Test the trigger by attempting to insert a loan for a damaged book.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="best-practices-for-data-integrity-testing"><strong>Best Practices for Data Integrity
+                        Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Test with Realistic Data</strong>:<br>Ensure the test data reflects realistic
+                            scenarios to uncover potential issues with integrity constraints.</p>
+                    </li>
+                    <li>
+                        <p><strong>Edge Case Testing</strong>:<br>Test boundary cases like maximum lengths, minimum
+                            values, and NULL values to validate constraints.</p>
+                    </li>
+                    <li>
+                        <p><strong>Automation</strong>:<br>Where possible, automate tests for data integrity, especially
+                            in large databases or systems with frequent updates.</p>
+                    </li>
+                    <li>
+                        <p><strong>Continuous Testing</strong>:<br>Incorporate data integrity checks into continuous
+                            integration (CI) pipelines to ensure ongoing compliance with integrity rules.</p>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="conclusion"><strong>Conclusion</strong></h3>
+                <p>Data Integrity Testing is crucial for ensuring the correctness, consistency, and reliability of data
+                    within a database. By verifying that integrity constraints such as primary keys, foreign keys, and
+                    check constraints are correctly enforced, organizations can prevent data anomalies and corruption.
+                    Proper data integrity testing ensures that the database maintains high-quality, valid data
+                    throughout its lifecycle, which is essential for the proper functioning of applications that rely on
+                    the database.</p>
+
+            </div>
+        </details>
+
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-sql.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

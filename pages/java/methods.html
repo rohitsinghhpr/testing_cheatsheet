@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+<body>
+    
+    <div class="details-container">
+        <details>
+            <summary>String Mehtods</summary>
+            <div class="content">
+                <p>Here’s an explanation of commonly used Java <code>String</code> methods along with examples for each:</p>
+<hr>
+<h3 id="1-length">1. <strong><code>length()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of characters in the string.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;Hello&quot;;
+int length = str.length(); // Returns 5
+</code></pre>
+</li>
+</ul>
+<h3 id="2-charatint-index">2. <strong><code>charAt(int index)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the character at the specified index.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;Hello&quot;;
+char ch = str.charAt(1); // Returns &#39;e&#39;
+</code></pre>
+</li>
+</ul>
+<h3 id="3-substringint-start-int-end">3. <strong><code>substring(int start, int end)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a new string that is a substring from <code>start</code> index to <code>end</code> index (exclusive).</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;Hello, World&quot;;
+String sub = str.substring(7, 12); // Returns &quot;World&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="4-touppercase">4. <strong><code>toUpperCase()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts all characters in the string to uppercase.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;hello&quot;;
+String upper = str.toUpperCase(); // Returns &quot;HELLO&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="5-tolowercase">5. <strong><code>toLowerCase()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts all characters in the string to lowercase.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;HELLO&quot;;
+String lower = str.toLowerCase(); // Returns &quot;hello&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="6-trim">6. <strong><code>trim()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes leading and trailing whitespace from the string.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;   Hello   &quot;;
+String trimmed = str.trim(); // Returns &quot;Hello&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="7-startswithstring-prefix">7. <strong><code>startsWith(String prefix)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the string starts with the specified prefix.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;Java programming&quot;;
+boolean result = str.startsWith(&quot;Java&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="8-endswithstring-suffix">8. <strong><code>endsWith(String suffix)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the string ends with the specified suffix.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;Java programming&quot;;
+boolean result = str.endsWith(&quot;ing&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="9-containscharsequence-sequence">9. <strong><code>contains(CharSequence sequence)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the string contains the specified sequence.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;Hello, Java&quot;;
+boolean result = str.contains(&quot;Java&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="10-indexofint-ch">10. <strong><code>indexOf(int ch)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the index of the first occurrence of the specified character.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;banana&quot;;
+int index = str.indexOf(&#39;a&#39;); // Returns 1
+</code></pre>
+</li>
+</ul>
+<h3 id="11-lastindexofint-ch">11. <strong><code>lastIndexOf(int ch)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the index of the last occurrence of the specified character.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;banana&quot;;
+int index = str.lastIndexOf(&#39;a&#39;); // Returns 5
+</code></pre>
+</li>
+</ul>
+<h3 id="12-replacecharsequence-target-charsequence-replacement">12. <strong><code>replace(CharSequence target, CharSequence replacement)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Replaces all occurrences of the target sequence with the replacement sequence.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;Java is fun&quot;;
+String replaced = str.replace(&quot;fun&quot;, &quot;powerful&quot;); // Returns &quot;Java is powerful&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="13-concatstring-str">13. <strong><code>concat(String str)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Concatenates the specified string to the end of the current string.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str1 = &quot;Hello, &quot;;
+String str2 = &quot;World!&quot;;
+String result = str1.concat(str2); // Returns &quot;Hello, World!&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="14-isempty">14. <strong><code>isEmpty()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the string is empty (has zero length).</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;&quot;;
+boolean result = str.isEmpty(); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="15-formatstring-format-object-args">15. <strong><code>format(String format, Object... args)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Formats the string using the specified format and arguments.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String formatted = String.format(&quot;Hello, %s!&quot;, &quot;World&quot;); // Returns &quot;Hello, World!&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="16-splitstring-regex">16. <strong><code>split(String regex)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Splits the string based on the specified delimiter and returns an array of substrings.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;apple,banana,orange&quot;;
+String[] fruits = str.split(&quot;,&quot;); // Returns [&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="17-equalsobject-obj">17. <strong><code>equals(Object obj)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Compares the content of the string to another object to check for equality.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str1 = &quot;Java&quot;;
+String str2 = &quot;Java&quot;;
+boolean isEqual = str1.equals(str2); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="18-comparetostring-anotherstring">18. <strong><code>compareTo(String anotherString)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Compares two strings lexicographically.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str1 = &quot;Apple&quot;;
+String str2 = &quot;Banana&quot;;
+int comparison = str1.compareTo(str2); // Returns negative value as &quot;Apple&quot; is lexicographically less than &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="19-intern">19. <strong><code>intern()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a canonical representation of the string.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str1 = new String(&quot;Hello&quot;).intern();
+String str2 = &quot;Hello&quot;;
+boolean result = (str1 == str2); // Returns true because both refer to the same string pool instance
+</code></pre>
+</li>
+</ul>
+<h3 id="20-matchesstring-regex">20. <strong><code>matches(String regex)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the string matches the specified regular expression pattern.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String str = &quot;hello123&quot;;
+boolean matches = str.matches(&quot;\\w+&quot;); // Returns true (matches a word with alphanumeric characters)
+</code></pre>
+</li>
+</ul>
+<h3 id="21-valueofobject-obj">21. <strong><code>valueOf(Object obj)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts the specified object to a string representation.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int num = 10;
+String str = String.valueOf(num); // Returns &quot;10&quot;
+</code></pre>
+</li>
+</ul>
+            </div>
+        </details>
+        <details>
+            <summary>Array Class Methods</summary>
+            <div class="content">
+                <p>Here’s an explanation of the commonly used methods in the Java <code>Arrays</code> class, with examples:</p>
+<hr>
+<h3 id="1-tostringint-array">1. <strong><code>toString(int[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts an array to a string representation.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {1, 2, 3, 4};
+String arrayString = Arrays.toString(numbers); // Returns &quot;[1, 2, 3, 4]&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="2-sortint-array">2. <strong><code>sort(int[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Sorts the array in ascending order. It modifies the array directly.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {4, 2, 3, 1};
+Arrays.sort(numbers); // numbers becomes [1, 2, 3, 4]
+</code></pre>
+</li>
+</ul>
+<h3 id="3-binarysearchint-array-int-key">3. <strong><code>binarySearch(int[] array, int key)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Searches for a specified element in a sorted array using the binary search algorithm. Returns the index of the element if found; otherwise, returns a negative insertion point.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {1, 2, 3, 4, 5};
+int index = Arrays.binarySearch(numbers, 3); // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="4-copyofint-original-int-newlength">4. <strong><code>copyOf(int[] original, int newLength)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Creates a copy of the specified array with a new length.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {1, 2, 3};
+int[] copy = Arrays.copyOf(numbers, 5); // Returns [1, 2, 3, 0, 0]
+</code></pre>
+</li>
+</ul>
+<h3 id="5-copyofrangeint-original-int-from-int-to">5. <strong><code>copyOfRange(int[] original, int from, int to)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Creates a copy of the specified range from an array.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {1, 2, 3, 4, 5};
+int[] rangeCopy = Arrays.copyOfRange(numbers, 1, 4); // Returns [2, 3, 4]
+</code></pre>
+</li>
+</ul>
+<h3 id="6-fillint-array-int-value">6. <strong><code>fill(int[] array, int value)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Fills the entire array with the specified value.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = new int[5];
+Arrays.fill(numbers, 9); // Returns [9, 9, 9, 9, 9]
+</code></pre>
+</li>
+</ul>
+<h3 id="7-equalsint-a-int-b">7. <strong><code>equals(int[] a, int[] b)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if two arrays are equal by comparing each element in order.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] a = {1, 2, 3};
+int[] b = {1, 2, 3};
+boolean isEqual = Arrays.equals(a, b); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="8-deepequalsobject-a-object-b">8. <strong><code>deepEquals(Object[] a, Object[] b)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if two arrays are equal deeply, including nested arrays.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Integer[][] a = {{1, 2}, {3, 4}};
+Integer[][] b = {{1, 2}, {3, 4}};
+boolean isEqual = Arrays.deepEquals(a, b); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="9-hashcodeint-array">9. <strong><code>hashCode(int[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a hash code based on the array’s contents.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {1, 2, 3};
+int hashCode = Arrays.hashCode(numbers); // Returns hash code value
+</code></pre>
+</li>
+</ul>
+<h3 id="10-deephashcodeobject-array">10. <strong><code>deepHashCode(Object[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a deep hash code for an array, which considers nested arrays.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Integer[][] array = {{1, 2}, {3, 4}};
+int hashCode = Arrays.deepHashCode(array); // Returns deep hash code
+</code></pre>
+</li>
+</ul>
+<h3 id="11-aslistt-a">11. <strong><code>asList(T... a)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts an array to a <code>List</code> backed by the array.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">String[] words = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;};
+List&lt;String&gt; list = Arrays.asList(words); // Returns [apple, banana, cherry]
+</code></pre>
+</li>
+</ul>
+<h3 id="12-deeptostringobject-array">12. <strong><code>deepToString(Object[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts a multi-dimensional array to a string.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Integer[][] array = {{1, 2}, {3, 4}};
+String arrayString = Arrays.deepToString(array); // Returns &quot;[[1, 2], [3, 4]]&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="13-tostringobject-array">13. <strong><code>toString(Object[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts a single-dimensional array to a string.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Integer[] array = {1, 2, 3, 4};
+String arrayString = Arrays.toString(array); // Returns &quot;[1, 2, 3, 4]&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="14-parallelsortint-array">14. <strong><code>parallelSort(int[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Sorts the array in parallel for performance on large datasets.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {4, 2, 3, 1};
+Arrays.parallelSort(numbers); // numbers becomes [1, 2, 3, 4]
+</code></pre>
+</li>
+</ul>
+<h3 id="15-setallint-array-intunaryoperator-generator">15. <strong><code>setAll(int[] array, IntUnaryOperator generator)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Sets each element of the array using a generator function.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = new int[5];
+Arrays.setAll(numbers, i -&gt; i * 2); // Returns [0, 2, 4, 6, 8]
+</code></pre>
+</li>
+</ul>
+<h3 id="16-streamint-array">16. <strong><code>stream(int[] array)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a sequential stream for the array, allowing for stream operations.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] numbers = {1, 2, 3, 4, 5};
+int sum = Arrays.stream(numbers).sum(); // Returns 15
+</code></pre>
+</li>
+</ul>
+<h3 id="17-mismatchint-a-int-b">17. <strong><code>mismatch(int[] a, int[] b)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Finds the first index where two arrays differ. Returns -1 if they are identical.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] a = {1, 2, 3};
+int[] b = {1, 2, 4};
+int mismatchIndex = Arrays.mismatch(a, b); // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="18-compareint-a-int-b">18. <strong><code>compare(int[] a, int[] b)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Compares two arrays lexicographically.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] a = {1, 2, 3};
+int[] b = {1, 2, 4};
+int comparison = Arrays.compare(a, b); // Returns negative because a &lt; b
+</code></pre>
+</li>
+</ul>
+<h3 id="19-compareunsignedint-a-int-b">19. <strong><code>compareUnsigned(int[] a, int[] b)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Compares two arrays lexicographically treating values as unsigned.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">int[] a = {1, 2, 3};
+int[] b = {1, 2, 4};
+int comparison = Arrays.compareUnsigned(a, b); // Returns negative because a &lt; b
+</code></pre>
+</li>
+</ul>
+<hr>
+<p>The <code>Arrays</code> class in Java provides a powerful set of methods for array manipulation, from basic operations like sorting and searching to advanced parallel sorting and array transformations. These methods make array processing more efficient and code more readable.</p>
+
+            </div>
+        </details>
+        <details>
+            <summary>Math Methods</summary>
+            <div class="contetn">
+                <h3 id="explanation-of-java-math-methods-with-examples">Explanation of Java Math Methods with Examples:</h3>
+<ol>
+<li><p><strong>abs(int value)</strong> – Returns the absolute value of the given integer.</p>
+<ul>
+<li>Example: abs(-10) returns 10.</li>
+</ul>
+</li>
+<li><p><strong>max(int a, int b)</strong> – Returns the maximum of two integers.</p>
+<ul>
+<li>Example: max(5, 10) returns 10.</li>
+</ul>
+</li>
+<li><p><strong>min(int a, int b)</strong> – Returns the minimum of two integers.</p>
+<ul>
+<li>Example: min(5, 10) returns 5.</li>
+</ul>
+</li>
+<li><p><strong>sqrt(double value)</strong> – Returns the square root of the given double.</p>
+<ul>
+<li>Example: sqrt(25) returns 5.0.</li>
+</ul>
+</li>
+<li><p><strong>pow(double base, double exponent)</strong> – Returns the result of raising the base to the power of exponent.</p>
+<ul>
+<li>Example: pow(2, 3) returns 8.0.</li>
+</ul>
+</li>
+<li><p><strong>log(double value)</strong> – Returns the natural logarithm (base e) of a double.</p>
+<ul>
+<li>Example: log(2.718) returns approximately 1.0.</li>
+</ul>
+</li>
+<li><p><strong>random()</strong> – Returns a random double between 0.0 (inclusive) and 1.0 (exclusive).</p>
+<ul>
+<li>Example: random() might return 0.54321.</li>
+</ul>
+</li>
+<li><p><strong>round(double value)</strong> – Rounds the double to the nearest integer.</p>
+<ul>
+<li>Example: round(4.6) returns 5.</li>
+</ul>
+</li>
+<li><p><strong>ceil(double value)</strong> – Returns the smallest integer greater than or equal to the input double.</p>
+<ul>
+<li>Example: ceil(4.3) returns 5.0.</li>
+</ul>
+</li>
+<li><p><strong>floor(double value)</strong> – Returns the largest integer less than or equal to the input double.</p>
+    <ul>
+        <li>Example: floor(4.8) returns 4.0.</li>
+    </ul>
+</li>
+</ol>            </div>
+        </details>
+        <details>
+            <summary>Date Methods</summary>
+            <div class="content">
+                <p>The <code>Date</code> class in Java provides a variety of methods to work with dates and times. Here’s a breakdown of the key methods along with examples:</p>
+<hr>
+<h3 id="1-date-constructor">1. <strong><code>Date()</code> Constructor</strong></h3>
+<ul>
+<li><strong>Description</strong>: Creates a <code>Date</code> object initialized to the current date and time.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date currentDate = new Date(); // Current date and time
+</code></pre>
+</li>
+</ul>
+<h3 id="2-datelong-date-constructor">2. <strong><code>Date(long date)</code> Constructor</strong></h3>
+<ul>
+<li><strong>Description</strong>: Creates a <code>Date</code> object initialized to the specified number of milliseconds since January 1, 1970, 00:00:00 GMT.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date specificDate = new Date(1633046400000L); // Date for specified milliseconds
+</code></pre>
+</li>
+</ul>
+<h3 id="3-gettime">3. <strong><code>getTime()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date = new Date();
+long milliseconds = date.getTime(); // Milliseconds since epoch
+</code></pre>
+</li>
+</ul>
+<h3 id="4-settimelong-time">4. <strong><code>setTime(long time)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Sets the <code>Date</code> object to represent a point in time that is <code>time</code> milliseconds after January 1, 1970, 00:00:00 GMT.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date = new Date();
+date.setTime(1633046400000L); // Set date to specific milliseconds since epoch
+</code></pre>
+</li>
+</ul>
+<h3 id="5-beforedate-when">5. <strong><code>before(Date when)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the date is before the specified date.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date1 = new Date(1633046400000L);
+Date date2 = new Date(1633132800000L);
+boolean isBefore = date1.before(date2); // Returns true if date1 is before date2
+</code></pre>
+</li>
+</ul>
+<h3 id="6-afterdate-when">6. <strong><code>after(Date when)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the date is after the specified date.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date1 = new Date(1633046400000L);
+Date date2 = new Date(1633132800000L);
+boolean isAfter = date2.after(date1); // Returns true if date2 is after date1
+</code></pre>
+</li>
+</ul>
+<h3 id="7-equalsobject-obj">7. <strong><code>equals(Object obj)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if two dates are exactly equal.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date1 = new Date(1633046400000L);
+Date date2 = new Date(1633046400000L);
+boolean isEqual = date1.equals(date2); // Returns true if date1 and date2 are the same
+</code></pre>
+</li>
+</ul>
+<h3 id="8-comparetodate-anotherdate">8. <strong><code>compareTo(Date anotherDate)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Compares two dates, returning a negative, zero, or positive value based on whether the date is before, equal to, or after the specified date.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date1 = new Date(1633046400000L);
+Date date2 = new Date(1633132800000L);
+int comparison = date1.compareTo(date2); // Returns negative if date1 is before date2
+</code></pre>
+</li>
+</ul>
+<h3 id="9-tostring">9. <strong><code>toString()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a string representation of the date in the format: <code>E MMM dd HH:mm:ss z yyyy</code>.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date = new Date();
+String dateString = date.toString(); // Example output: &quot;Wed Oct 01 00:00:00 GMT 2021&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="10-toinstant">10. <strong><code>toInstant()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts the <code>Date</code> to an <code>Instant</code> object, which represents a specific point in time in UTC.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Date date = new Date();
+Instant instant = date.toInstant(); // Converts Date to Instant
+</code></pre>
+</li>
+</ul>
+<h3 id="11-frominstant-instant-static-method">11. <strong><code>from(Instant instant)</code></strong> (Static Method)</h3>
+<ul>
+<li><strong>Description</strong>: Creates a <code>Date</code> object from an <code>Instant</code>.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Instant instant = Instant.now();
+Date dateFromInstant = Date.from(instant); // Converts Instant to Date
+</code></pre>
+</li>
+</ul>
+<hr>
+<p>The <code>Date</code> class provides a basic structure for working with dates and times, though it has largely been replaced by the <code>java.time</code> package in Java 8 and later for more complex date-time manipulation. The <code>Date</code> class is still commonly used for simple date and time storage and for interacting with legacy code.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>ArrayList Methods</summary>
+            <div class="content">
+                <p>Here’s a breakdown of commonly used methods in Java’s <code>ArrayList</code> class, with explanations and examples for each:</p>
+<hr>
+<h3 id="1-adde-element">1. <strong><code>add(E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element to the end of the <code>ArrayList</code>.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+list.add(&quot;Apple&quot;); // Adds &quot;Apple&quot; to the list
+</code></pre>
+</li>
+</ul>
+<h3 id="2-addint-index-e-element">2. <strong><code>add(int index, E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Inserts the specified element at the specified position in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+list.add(&quot;Apple&quot;);
+list.add(0, &quot;Banana&quot;); // Inserts &quot;Banana&quot; at index 0
+</code></pre>
+</li>
+</ul>
+<h3 id="3-addallcollection-extends-e-c">3. <strong><code>addAll(Collection&lt;? extends E&gt; c)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds all elements from the specified collection to the end of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+list.add(&quot;Apple&quot;);
+list.addAll(Arrays.asList(&quot;Banana&quot;, &quot;Cherry&quot;)); // Adds &quot;Banana&quot; and &quot;Cherry&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="4-getint-index">4. <strong><code>get(int index)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the element at the specified index.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String fruit = list.get(1); // Returns &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="5-setint-index-e-element">5. <strong><code>set(int index, E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Replaces the element at the specified index with the specified element.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+list.set(1, &quot;Cherry&quot;); // Replaces &quot;Banana&quot; with &quot;Cherry&quot; at index 1
+</code></pre>
+</li>
+</ul>
+<h3 id="6-removeint-index">6. <strong><code>remove(int index)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the element at the specified index and returns it.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.remove(1); // Removes &quot;Banana&quot; from the list
+</code></pre>
+</li>
+</ul>
+<h3 id="7-removeobject-o">7. <strong><code>remove(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the first occurrence of the specified element, if it exists.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.remove(&quot;Banana&quot;); // Removes &quot;Banana&quot; from the list
+</code></pre>
+</li>
+</ul>
+<h3 id="8-clear">8. <strong><code>clear()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes all elements from the list, making it empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.clear(); // Empties the list
+</code></pre>
+</li>
+</ul>
+<h3 id="9-containsobject-o">9. <strong><code>contains(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the list contains the specified element.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+boolean hasBanana = list.contains(&quot;Banana&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="10-indexofobject-o">10. <strong><code>indexOf(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the index of the first occurrence of the specified element, or -1 if not found.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+int index = list.indexOf(&quot;Banana&quot;); // Returns 1
+</code></pre>
+</li>
+</ul>
+<h3 id="11-lastindexofobject-o">11. <strong><code>lastIndexOf(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the index of the last occurrence of the specified element, or -1 if not found.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Apple&quot;));
+int index = list.lastIndexOf(&quot;Apple&quot;); // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="12-isempty">12. <strong><code>isEmpty()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+boolean empty = list.isEmpty(); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="13-size">13. <strong><code>size()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of elements in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+int size = list.size(); // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="14-toarray">14. <strong><code>toArray()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts the list to a standard array.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+Object[] array = list.toArray(); // Converts to [&quot;Apple&quot;, &quot;Banana&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="15-toarrayt-a">15. <strong><code>toArray(T[] a)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Converts the list to an array of the specified type.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String[] array = list.toArray(new String[0]); // Converts to [&quot;Apple&quot;, &quot;Banana&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="16-sublistint-fromindex-int-toindex">16. <strong><code>subList(int fromIndex, int toIndex)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a view of the portion of the list between <code>fromIndex</code> and <code>toIndex</code>.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+List&lt;String&gt; subList = list.subList(1, 3); // Returns [&quot;Banana&quot;, &quot;Cherry&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="17-foreachconsumer-super-e-action">17. <strong><code>forEach(Consumer&lt;? super E&gt; action)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Performs the specified action for each element in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.forEach(System.out::println); // Prints each element in the list
+</code></pre>
+</li>
+</ul>
+<h3 id="18-replaceallunaryoperatore-operator">18. <strong><code>replaceAll(UnaryOperator&lt;E&gt; operator)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Replaces each element in the list with the result of applying the specified operator.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+list.replaceAll(String::toUpperCase); // Converts each element to uppercase: [&quot;APPLE&quot;, &quot;BANANA&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="19-removeifpredicate-super-e-filter">19. <strong><code>removeIf(Predicate&lt;? super E&gt; filter)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes all elements that satisfy the given condition.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.removeIf(fruit -&gt; fruit.startsWith(&quot;B&quot;)); // Removes &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="20-retainallcollection-c">20. <strong><code>retainAll(Collection&lt;?&gt; c)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Retains only the elements in the list that are also in the specified collection.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.retainAll(Arrays.asList(&quot;Apple&quot;, &quot;Cherry&quot;)); // Retains &quot;Apple&quot; and &quot;Cherry&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="21-sortcomparator-super-e-c">21. <strong><code>sort(Comparator&lt;? super E&gt; c)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Sorts the list according to the specified comparator.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Banana&quot;, &quot;Apple&quot;, &quot;Cherry&quot;));
+list.sort(String::compareTo); // Sorts alphabetically: [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="22-iterator">22. <strong><code>iterator()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns an iterator over the elements in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+Iterator&lt;String&gt; iterator = list.iterator();
+while(iterator.hasNext()) {
+    System.out.println(iterator.next()); // Prints each element
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="23-listiterator">23. <strong><code>listIterator()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a list iterator over the elements in the list, allowing bidirectional traversal.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+ListIterator&lt;String&gt; listIterator = list.listIterator();
+while(listIterator.hasNext()) {
+    System.out.println(listIterator.next()); // Prints each element
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="24-clone">24. <strong><code>clone()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Creates a shallow copy of the <code>ArrayList</code>.</li>
+<li><strong>Example</strong>:
+```java
+ArrayList<String> list = new ArrayList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+ArrayList<String> clonedList = (ArrayList<String>) list</li>
+</ul>
+<p>.clone();
+     ```</p>
+<hr>
+<p>The <code>ArrayList</code> class provides a flexible, dynamically resizable array-like structure with powerful methods for data manipulation, making it a go-to for handling lists in Java.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>LinkedList Methods</summary>
+            <div class="content">
+                <p>Here’s a breakdown of the commonly used methods of Java’s <code>LinkedList</code> class, with explanations and examples for each:</p>
+<hr>
+<h3 id="1-adde-element">1. <strong><code>add(E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element to the end of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+list.add(&quot;Apple&quot;); // Adds &quot;Apple&quot; to the end of the list
+</code></pre>
+</li>
+</ul>
+<h3 id="2-addint-index-e-element">2. <strong><code>add(int index, E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Inserts the specified element at the specified position in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+list.add(&quot;Apple&quot;);
+list.add(0, &quot;Banana&quot;); // Adds &quot;Banana&quot; at index 0
+</code></pre>
+</li>
+</ul>
+<h3 id="3-addfirste-element">3. <strong><code>addFirst(E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element at the beginning of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+list.addFirst(&quot;Apple&quot;); // Adds &quot;Apple&quot; at the beginning
+</code></pre>
+</li>
+</ul>
+<h3 id="4-addlaste-element">4. <strong><code>addLast(E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element at the end of the list (equivalent to <code>add()</code>).</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+list.addLast(&quot;Banana&quot;); // Adds &quot;Banana&quot; at the end
+</code></pre>
+</li>
+</ul>
+<h3 id="5-getint-index">5. <strong><code>get(int index)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the element at the specified index.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String fruit = list.get(1); // Returns &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="6-getfirst">6. <strong><code>getFirst()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the first element of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String firstFruit = list.getFirst(); // Returns &quot;Apple&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="7-getlast">7. <strong><code>getLast()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the last element of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String lastFruit = list.getLast(); // Returns &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="8-removeint-index">8. <strong><code>remove(int index)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the element at the specified index and returns it.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.remove(1); // Removes &quot;Banana&quot; at index 1
+</code></pre>
+</li>
+</ul>
+<h3 id="9-removeobject-o">9. <strong><code>remove(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the first occurrence of the specified element from the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.remove(&quot;Banana&quot;); // Removes &quot;Banana&quot; from the list
+</code></pre>
+</li>
+</ul>
+<h3 id="10-removefirst">10. <strong><code>removeFirst()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the first element of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.removeFirst(); // Removes &quot;Apple&quot; from the list
+</code></pre>
+</li>
+</ul>
+<h3 id="11-removelast">11. <strong><code>removeLast()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the last element of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.removeLast(); // Removes &quot;Cherry&quot; from the list
+</code></pre>
+</li>
+</ul>
+<h3 id="12-removefirstoccurrenceobject-o">12. <strong><code>removeFirstOccurrence(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the first occurrence of the specified element from the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Banana&quot;));
+list.removeFirstOccurrence(&quot;Banana&quot;); // Removes the first &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="13-removelastoccurrenceobject-o">13. <strong><code>removeLastOccurrence(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the last occurrence of the specified element from the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Banana&quot;));
+list.removeLastOccurrence(&quot;Banana&quot;); // Removes the last &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="14-clear">14. <strong><code>clear()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes all elements from the list, making it empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;));
+list.clear(); // Clears all elements from the list
+</code></pre>
+</li>
+</ul>
+<h3 id="15-containsobject-o">15. <strong><code>contains(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the list contains the specified element.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+boolean containsBanana = list.contains(&quot;Banana&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="16-size">16. <strong><code>size()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of elements in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+int size = list.size(); // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="17-isempty">17. <strong><code>isEmpty()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+boolean empty = list.isEmpty(); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="18-peek">18. <strong><code>peek()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the first element of the list, or <code>null</code> if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String first = list.peek(); // Returns &quot;Apple&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="19-peekfirst">19. <strong><code>peekFirst()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the first element of the list without removing it, or <code>null</code> if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String first = list.peekFirst(); // Returns &quot;Apple&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="20-peeklast">20. <strong><code>peekLast()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the last element of the list without removing it, or <code>null</code> if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String last = list.peekLast(); // Returns &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="21-poll">21. <strong><code>poll()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Retrieves and removes the first element of the list, or returns <code>null</code> if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String first = list.poll(); // Removes and returns &quot;Apple&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="22-pollfirst">22. <strong><code>pollFirst()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Retrieves and removes the first element of the list, or returns <code>null</code> if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String first = list.pollFirst(); // Removes and returns &quot;Apple&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="23-polllast">23. <strong><code>pollLast()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Retrieves and removes the last element of the list, or returns <code>null</code> if the list is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+String last = list.pollLast(); // Removes and returns &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="24-offere-element">24. <strong><code>offer(E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element to the end of the list (similar to <code>add()</code>).</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+list.offer(&quot;Apple&quot;); // Adds &quot;Apple&quot; to the end of the list
+</code></pre>
+</li>
+</ul>
+<h3 id="25-offerfirste-element">25. <strong><code>offerFirst(E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element at the beginning of the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+list.offerFirst(&quot;Banana&quot;); // Adds &quot;Banana&quot; at the beginning
+</code></pre>
+</li>
+</ul>
+<h3 id="26-offerlaste-element">26. <strong><code>offerLast(E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element at the end of the list (similar to <code>offer()</code>).</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();
+list.offerLast(&quot;Cherry&quot;); // Adds &quot;Cherry&quot; to the end
+</code></pre>
+</li>
+</ul>
+<h3 id="27-listiterator">27. **`listIterator</h3>
+<p>()`**</p>
+<ul>
+<li><strong>Description</strong>: Returns a list iterator over the elements in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+ListIterator&lt;String&gt; iterator = list.listIterator();
+while(iterator.hasNext()) {
+    System.out.println(iterator.next()); // Prints each element in the list
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="28-iterator">28. <strong><code>iterator()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns an iterator over the elements in the list.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;(Arrays.asList(&quot;Apple&quot;, &quot;Banana&quot;));
+Iterator&lt;String&gt; iterator = list.iterator();
+while(iterator.hasNext()) {
+    System.out.println(iterator.next()); // Prints each element
+}
+</code></pre>
+</li>
+</ul>
+<hr>
+<p>The <code>LinkedList</code> class in Java provides a doubly linked list implementation, allowing for fast insertions and deletions from both ends of the list, making it suitable for use cases where frequent additions and removals are needed.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Vector</summary>
+            <div class="content">
+                <p>Here’s a detailed overview of commonly used methods for the <code>Vector</code> and <code>Stack</code> classes in Java:</p>
+<hr>
+<h2 id="vector-class-methods"><strong><code>Vector</code> Class Methods</strong></h2>
+<p>The <code>Vector</code> class is part of the Java Collections Framework and provides a dynamic array-like data structure that can grow or shrink as needed. Unlike <code>ArrayList</code>, <code>Vector</code> is synchronized, which means it is thread-safe. However, due to its synchronization, <code>Vector</code> tends to be slower in performance compared to <code>ArrayList</code> in single-threaded scenarios.</p>
+<h3 id="1-adde-e">1. <strong><code>add(E e)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Appends the specified element to the end of the vector.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.add(&quot;Banana&quot;);
+</code></pre>
+</li>
+</ul>
+<h3 id="2-addint-index-e-element">2. <strong><code>add(int index, E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Inserts the specified element at the specified position in the vector.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.add(&quot;Banana&quot;);
+vector.add(1, &quot;Cherry&quot;);  // Adds &quot;Cherry&quot; at index 1
+</code></pre>
+</li>
+</ul>
+<h3 id="3-getint-index">3. <strong><code>get(int index)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the element at the specified index.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.add(&quot;Banana&quot;);
+String element = vector.get(0); // Returns &quot;Apple&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="4-setint-index-e-element">4. <strong><code>set(int index, E element)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Replaces the element at the specified position in the vector with the specified element.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.add(&quot;Banana&quot;);
+vector.set(1, &quot;Cherry&quot;);  // Replaces &quot;Banana&quot; with &quot;Cherry&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="5-removeint-index">5. <strong><code>remove(int index)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the element at the specified position in the vector.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.add(&quot;Banana&quot;);
+vector.remove(0);  // Removes &quot;Apple&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="6-removeobject-o">6. <strong><code>remove(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the first occurrence of the specified element from the vector.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.add(&quot;Banana&quot;);
+vector.remove(&quot;Banana&quot;);  // Removes &quot;Banana&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="7-size">7. <strong><code>size()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of elements in the vector.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.add(&quot;Banana&quot;);
+int size = vector.size();  // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="8-isempty">8. <strong><code>isEmpty()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the vector is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+boolean empty = vector.isEmpty();  // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="9-clear">9. <strong><code>clear()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes all elements from the vector.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+vector.clear();  // Removes all elements
+</code></pre>
+</li>
+</ul>
+<h3 id="10-containsobject-o">10. <strong><code>contains(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the vector contains the specified element.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.add(&quot;Apple&quot;);
+boolean contains = vector.contains(&quot;Apple&quot;);  // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="11-trimtosize">11. <strong><code>trimToSize()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Resizes the vector so that its size matches the current number of elements.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;(10);
+vector.add(&quot;Apple&quot;);
+vector.trimToSize();  // Trims capacity to size 1
+</code></pre>
+</li>
+</ul>
+<h3 id="12-ensurecapacityint-mincapacity">12. <strong><code>ensureCapacity(int minCapacity)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Ensures that the vector has at least the specified capacity.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Vector&lt;String&gt; vector = new Vector&lt;&gt;();
+vector.ensureCapacity(20);  // Ensures vector can hold at least 20 elements
+</code></pre>
+</li>
+</ul>            </div>
+        </details>
+
+        <details>
+            <summary>Stack</summary>
+            <div class="content">
+                <h2 id="stack-class-methods"><strong><code>Stack</code> Class Methods</strong></h2>
+<p>The <code>Stack</code> class in Java extends the <code>Vector</code> class and represents a last-in, first-out (LIFO) stack of objects. It provides methods to push and pop elements from the stack.</p>
+<h3 id="1-pushe-item">1. <strong><code>push(E item)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Pushes an item onto the top of the stack.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+stack.push(&quot;Apple&quot;);  // Adds &quot;Apple&quot; to the stack
+stack.push(&quot;Banana&quot;); // Adds &quot;Banana&quot; to the stack
+</code></pre>
+</li>
+</ul>
+<h3 id="2-pop">2. <strong><code>pop()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes and returns the top element from the stack. Throws <code>EmptyStackException</code> if the stack is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+stack.push(&quot;Apple&quot;);
+String topElement = stack.pop();  // Removes &quot;Apple&quot; and returns it
+</code></pre>
+</li>
+</ul>
+<h3 id="3-peek">3. <strong><code>peek()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the top element of the stack without removing it. Throws <code>EmptyStackException</code> if the stack is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+stack.push(&quot;Apple&quot;);
+String topElement = stack.peek();  // Returns &quot;Apple&quot; without removing it
+</code></pre>
+</li>
+</ul>
+<h3 id="4-isempty">4. <strong><code>isEmpty()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the stack is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+boolean empty = stack.isEmpty();  // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="5-searchobject-o">5. <strong><code>search(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the 1-based position of the object from the top of the stack. Returns <code>-1</code> if the element is not found.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+stack.push(&quot;Apple&quot;);
+stack.push(&quot;Banana&quot;);
+int position = stack.search(&quot;Banana&quot;);  // Returns 1 (since &quot;Banana&quot; is at the top)
+</code></pre>
+</li>
+</ul>
+<h3 id="6-size">6. <strong><code>size()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of elements in the stack.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">Stack&lt;String&gt; stack = new Stack&lt;&gt;();
+stack.push(&quot;Apple&quot;);
+stack.push(&quot;Banana&quot;);
+int size = stack.size();  // Returns 2
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="key-characteristics-of-vector-and-stack"><strong>Key Characteristics of <code>Vector</code> and <code>Stack</code></strong></h3>
+<ul>
+<li><strong>Thread Safety</strong>: Both <code>Vector</code> and <code>Stack</code> are synchronized, making them thread-safe. However, this synchronization can lead to performance overhead in single-threaded environments.</li>
+<li><strong>Dynamic Growth</strong>: The <code>Vector</code> class grows dynamically as needed when elements are added, unlike arrays that have a fixed size.</li>
+<li><strong><code>Stack</code> Specifics</strong>: The <code>Stack</code> class is a subclass of <code>Vector</code> that provides LIFO (Last-In, First-Out) behavior, with methods like <code>push</code>, <code>pop</code>, and <code>peek</code> to mimic stack operations.</li>
+</ul>
+<p>In modern Java programming, <code>ArrayList</code> and <code>Deque</code> (or <code>LinkedList</code>) are often preferred over <code>Vector</code> and <code>Stack</code> for better performance in non-concurrent environments. However, <code>Vector</code> and <code>Stack</code> are still commonly used in legacy systems.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>HashMap Methods</summary>
+            <div class="content">
+                <p>Here&#39;s a detailed overview of commonly used methods of the <code>HashMap</code> class in Java, with explanations and examples for each:</p>
+<hr>
+<h3 id="1-putk-key-v-value">1. <strong><code>put(K key, V value)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Associates the specified value with the specified key in the map. If the key already exists, it updates the value.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.put(&quot;Carrot&quot;, &quot;Vegetable&quot;);
+</code></pre>
+</li>
+</ul>
+<h3 id="2-getobject-key">2. <strong><code>get(Object key)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the value associated with the specified key. Returns <code>null</code> if the key does not exist in the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+String value = map.get(&quot;Apple&quot;); // Returns &quot;Fruit&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="3-containskeyobject-key">3. <strong><code>containsKey(Object key)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the map contains a mapping for the specified key.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+boolean contains = map.containsKey(&quot;Apple&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="4-containsvalueobject-value">4. <strong><code>containsValue(Object value)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the map contains the specified value.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+boolean contains = map.containsValue(&quot;Fruit&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="5-removeobject-key">5. <strong><code>remove(Object key)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the key-value pair associated with the specified key.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.remove(&quot;Apple&quot;); // Removes the key-value pair (&quot;Apple&quot;, &quot;Fruit&quot;)
+</code></pre>
+</li>
+</ul>
+<h3 id="6-clear">6. <strong><code>clear()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes all key-value pairs from the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.clear(); // Clears all elements from the map
+</code></pre>
+</li>
+</ul>
+<h3 id="7-keyset">7. <strong><code>keySet()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a <code>Set</code> view of all the keys in the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.put(&quot;Carrot&quot;, &quot;Vegetable&quot;);
+Set&lt;String&gt; keys = map.keySet(); // Returns [&quot;Apple&quot;, &quot;Carrot&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="8-values">8. <strong><code>values()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a <code>Collection</code> view of all the values in the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.put(&quot;Carrot&quot;, &quot;Vegetable&quot;);
+Collection&lt;String&gt; values = map.values(); // Returns [&quot;Fruit&quot;, &quot;Vegetable&quot;]
+</code></pre>
+</li>
+</ul>
+<h3 id="9-entryset">9. <strong><code>entrySet()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a <code>Set</code> view of the mappings (key-value pairs) in the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.put(&quot;Carrot&quot;, &quot;Vegetable&quot;);
+Set&lt;Map.Entry&lt;String, String&gt;&gt; entrySet = map.entrySet();
+// Returns a set containing key-value pairs: [(&quot;Apple&quot;, &quot;Fruit&quot;), (&quot;Carrot&quot;, &quot;Vegetable&quot;)]
+</code></pre>
+</li>
+</ul>
+<h3 id="10-putifabsentk-key-v-value">10. <strong><code>putIfAbsent(K key, V value)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the key-value pair to the map only if the key is not already mapped to a value. If the key exists, it does nothing.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.putIfAbsent(&quot;Apple&quot;, &quot;Fresh Fruit&quot;); // Does nothing as &quot;Apple&quot; already exists
+map.putIfAbsent(&quot;Banana&quot;, &quot;Fruit&quot;); // Adds the pair (&quot;Banana&quot;, &quot;Fruit&quot;)
+</code></pre>
+</li>
+</ul>
+<h3 id="11-replacek-key-v-value">11. <strong><code>replace(K key, V value)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Replaces the value for the specified key if the key exists.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.replace(&quot;Apple&quot;, &quot;Fresh Fruit&quot;); // Replaces &quot;Fruit&quot; with &quot;Fresh Fruit&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="12-replacek-key-v-oldvalue-v-newvalue">12. <strong><code>replace(K key, V oldValue, V newValue)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Replaces the value for the specified key only if the current value equals the specified old value.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.replace(&quot;Apple&quot;, &quot;Fruit&quot;, &quot;Fresh Fruit&quot;); // Replaces &quot;Fruit&quot; with &quot;Fresh Fruit&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="13-size">13. <strong><code>size()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of key-value pairs in the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.put(&quot;Carrot&quot;, &quot;Vegetable&quot;);
+int size = map.size(); // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="14-isempty">14. <strong><code>isEmpty()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the map is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+boolean empty = map.isEmpty(); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="15-clone">15. <strong><code>clone()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Creates a shallow copy of the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+HashMap&lt;String, String&gt; clonedMap = (HashMap&lt;String, String&gt;) map.clone(); // Shallow copy
+</code></pre>
+</li>
+</ul>
+<h3 id="16-foreachbiconsumer-super-k--super-v-action">16. <strong><code>forEach(BiConsumer&lt;? super K, ? super V&gt; action)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Performs the given action for each entry in the map.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.put(&quot;Carrot&quot;, &quot;Vegetable&quot;);
+map.forEach((key, value) -&gt; System.out.println(key + &quot;: &quot; + value));
+// Output: Apple: Fruit
+//         Carrot: Vegetable
+</code></pre>
+</li>
+</ul>
+<h3 id="17-computek-key-bifunction-super-k--super-v--extends-v-remappingfunction">17. <strong><code>compute(K key, BiFunction&lt;? super K, ? super V, ? extends V&gt; remappingFunction)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Computes a new value for the specified key using the remapping function, and replaces the current value if the key exists, or inserts a new key-value pair if it doesn’t.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, 2);
+map.compute(&quot;Apple&quot;, (key, val) -&gt; val == null ? 1 : val + 1); // Increments the value to 3
+</code></pre>
+</li>
+</ul>
+<h3 id="18-computeifabsentk-key-function-super-k--extends-v-mappingfunction">18. <strong><code>computeIfAbsent(K key, Function&lt;? super K, ? extends V&gt; mappingFunction)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Computes the value for the specified key if the key is not already mapped to a value.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.computeIfAbsent(&quot;Apple&quot;, key -&gt; 5); // Adds &quot;Apple&quot; with value 5 if absent
+</code></pre>
+</li>
+</ul>
+<h3 id="19-computeifpresentk-key-bifunction-super-k--super-v--extends-v-remappingfunction">19. <strong><code>computeIfPresent(K key, BiFunction&lt;? super K, ? super V, ? extends V&gt; remappingFunction)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Computes the new value for the specified key if the key exists.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, 2);
+map.computeIfPresent(&quot;Apple&quot;, (key, val) -&gt; val + 1); // Increments value to 3
+</code></pre>
+</li>
+</ul>
+<h3 id="20-mergek-key-v-value-bifunction-super-v--super-v--extends-v-remappingfunction">20. <strong><code>merge(K key, V value, BiFunction&lt;? super V, ? super V, ? extends V&gt; remappingFunction)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Merges the specified value with the current value associated with the key using the provided remapping function.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, 2);
+map.merge(&quot;Apple&quot;, 3, Integer::sum); // Adds 3 to the existing value, resulting in 5
+</code></pre>
+</li>
+</ul>
+<h3 id="21-values">21. <strong><code>values()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns a <code>Collection</code> of all values contained in the map.</li>
+<li><strong>Example</strong>:
+```java
+HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;Apple&quot;, &quot;Fruit&quot;);
+map.put(&quot;Carrot&quot;, &quot;Vegetable&quot;);
+Collection<String> values = map.values(); // Returns [Fruit,</li>
+</ul>
+<p> Vegetable]
+     ```</p>
+<hr>
+<p>The <code>HashMap</code> class is part of the Java Collections Framework and provides a key-value mapping for fast retrieval of data. It is based on a hash table and offers constant-time complexity (O(1)) for basic operations like <code>put</code>, <code>get</code>, and <code>remove</code> under typical conditions.</p>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>HashSet Methods</summary>
+            <div class="content">
+                <p>Here’s an overview of the commonly used methods of the <code>HashSet</code> class in Java, with explanations and examples for each:</p>
+<hr>
+<h3 id="1-adde-e">1. <strong><code>add(E e)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds the specified element to the set if it is not already present.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);  // Adds &quot;Apple&quot; to the set
+set.add(&quot;Banana&quot;); // Adds &quot;Banana&quot; to the set
+set.add(&quot;Apple&quot;);  // Does nothing as &quot;Apple&quot; already exists in the set
+</code></pre>
+</li>
+</ul>
+<h3 id="2-removeobject-o">2. <strong><code>remove(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes the specified element from the set if it is present.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.remove(&quot;Apple&quot;); // Removes &quot;Apple&quot; from the set
+</code></pre>
+</li>
+</ul>
+<h3 id="3-containsobject-o">3. <strong><code>contains(Object o)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the set contains the specified element.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+boolean contains = set.contains(&quot;Apple&quot;); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="4-size">4. <strong><code>size()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns the number of elements in the set.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.add(&quot;Banana&quot;);
+int size = set.size(); // Returns 2
+</code></pre>
+</li>
+</ul>
+<h3 id="5-isempty">5. <strong><code>isEmpty()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the set is empty.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+boolean empty = set.isEmpty(); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="6-clear">6. <strong><code>clear()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes all elements from the set.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.add(&quot;Banana&quot;);
+set.clear(); // Clears all elements from the set
+</code></pre>
+</li>
+</ul>
+<h3 id="7-iterator">7. <strong><code>iterator()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns an iterator over the elements in the set.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.add(&quot;Banana&quot;);
+Iterator&lt;String&gt; iterator = set.iterator();
+while(iterator.hasNext()) {
+    System.out.println(iterator.next()); // Prints each element in the set
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="8-addallcollection-extends-e-c">8. <strong><code>addAll(Collection&lt;? extends E&gt; c)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Adds all elements from the specified collection to the set.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set1 = new HashSet&lt;&gt;();
+set1.add(&quot;Apple&quot;);
+set1.add(&quot;Banana&quot;);
+
+HashSet&lt;String&gt; set2 = new HashSet&lt;&gt;();
+set2.add(&quot;Cherry&quot;);
+set2.add(&quot;Date&quot;);
+
+set1.addAll(set2); // Adds all elements from set2 to set1
+</code></pre>
+</li>
+</ul>
+<h3 id="9-removeallcollection-c">9. <strong><code>removeAll(Collection&lt;?&gt; c)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Removes from the set all elements that are contained in the specified collection.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set1 = new HashSet&lt;&gt;();
+set1.add(&quot;Apple&quot;);
+set1.add(&quot;Banana&quot;);
+
+HashSet&lt;String&gt; set2 = new HashSet&lt;&gt;();
+set2.add(&quot;Banana&quot;);
+
+set1.removeAll(set2); // Removes &quot;Banana&quot; from set1
+</code></pre>
+</li>
+</ul>
+<h3 id="10-retainallcollection-c">10. <strong><code>retainAll(Collection&lt;?&gt; c)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Retains only the elements in the set that are contained in the specified collection.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set1 = new HashSet&lt;&gt;();
+set1.add(&quot;Apple&quot;);
+set1.add(&quot;Banana&quot;);
+
+HashSet&lt;String&gt; set2 = new HashSet&lt;&gt;();
+set2.add(&quot;Banana&quot;);
+
+set1.retainAll(set2); // Retains only &quot;Banana&quot; in set1
+</code></pre>
+</li>
+</ul>
+<h3 id="11-containsallcollection-c">11. <strong><code>containsAll(Collection&lt;?&gt; c)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Checks if the set contains all the elements of the specified collection.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set1 = new HashSet&lt;&gt;();
+set1.add(&quot;Apple&quot;);
+set1.add(&quot;Banana&quot;);
+
+HashSet&lt;String&gt; set2 = new HashSet&lt;&gt;();
+set2.add(&quot;Apple&quot;);
+
+boolean containsAll = set1.containsAll(set2); // Returns true
+</code></pre>
+</li>
+</ul>
+<h3 id="12-toarray">12. <strong><code>toArray()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns an array containing all the elements in the set.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.add(&quot;Banana&quot;);
+Object[] array = set.toArray(); // Converts set to array
+</code></pre>
+</li>
+</ul>
+<h3 id="13-toarrayt-a">13. <strong><code>toArray(T[] a)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Returns an array containing all the elements of the set, using the specified array type.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.add(&quot;Banana&quot;);
+String[] array = set.toArray(new String[0]); // Converts set to a String array
+</code></pre>
+</li>
+</ul>
+<h3 id="14-foreachconsumer-super-e-action">14. <strong><code>forEach(Consumer&lt;? super E&gt; action)</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Performs the given action for each element in the set.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.add(&quot;Banana&quot;);
+set.forEach(element -&gt; System.out.println(element)); // Prints each element in the set
+</code></pre>
+</li>
+</ul>
+<h3 id="15-spliterator">15. <strong><code>spliterator()</code></strong></h3>
+<ul>
+<li><strong>Description</strong>: Creates a <code>Spliterator</code> over the elements in the set.</li>
+<li><strong>Example</strong>:<pre><code class="language-java">HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add(&quot;Apple&quot;);
+set.add(&quot;Banana&quot;);
+Spliterator&lt;String&gt; spliterator = set.spliterator();
+spliterator.forEachRemaining(System.out::println); // Prints each element in the set
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="key-characteristics-of-hashset">Key Characteristics of <code>HashSet</code>:</h3>
+<ul>
+<li><strong>Uniqueness</strong>: A <code>HashSet</code> does not allow duplicate elements. If you try to add an element that is already present, it will not be added again.</li>
+<li><strong>Unordered</strong>: The elements in a <code>HashSet</code> are not stored in any particular order. The order may change when you iterate over the set.</li>
+<li><strong>Backed by HashMap</strong>: Internally, <code>HashSet</code> is backed by a <code>HashMap</code>, where the elements are stored as keys, and a dummy value is used for each key.</li>
+<li><strong>Performance</strong>: Most operations (add, remove, contains) are O(1) on average due to the underlying hash table.</li>
+</ul>
+<p>The <code>HashSet</code> class is part of the Java Collections Framework and is commonly used when you need to store unique elements in an unordered collection. It provides fast lookups and ensures no duplicate values.</p>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+</html>

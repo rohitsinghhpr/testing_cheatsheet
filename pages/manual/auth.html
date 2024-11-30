@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+    <div class="details-container">
+
+        <h3 id="3-authentication"><strong>Authentication</strong></h3>
+        <p> <strong>Definition</strong>: Authentication is the process of verifying the identity of a user, device, or system.
+            It ensures that the entity trying to access the system is who they claim to be.</p>
+        <p> <strong>Example</strong>:</p>
+        <ul>
+            <li><strong>Scenario</strong>: A user attempts to log into a website by entering a username and password.</li>
+            <li><strong>Authentication Process</strong>: The system checks if the username and password match those stored in
+                the database. If they match, the user is authenticated, and access is granted.</li>
+            <li><strong>Example in Action</strong>: Logging into an email account using a username and password or using
+                two-factor authentication (e.g., receiving a code on your phone).</li>
+            <li><strong>Question it answers</strong>: &quot;Are you who you say you are?&quot;</li>
+        </ul>
+        <h3 id="4-authorization"><strong>Authorization</strong></h3>
+        <p> <strong>Definition</strong>: Authorization is the process of granting or denying access to specific resources or
+            actions after the user’s identity has been authenticated. It determines what an authenticated user is allowed to do
+            within the system.</p>
+        <p> <strong>Example</strong>:</p>
+        <ul>
+            <li><strong>Scenario</strong>: After logging into a banking application, a user attempts to access their account
+                balance.</li>
+            <li><strong>Authorization Process</strong>: The system checks whether the authenticated user has permission to view
+                the account balance. If the user has sufficient permissions, the system grants access. If not, the user may be
+                denied access with an error message like &quot;Insufficient permissions.&quot;</li>
+            <li><strong>Example in Action</strong>: A regular user may have access to their own account information, while an
+                administrator may have access to all user accounts and settings.</li>
+            <li><strong>Question it answers</strong>: &quot;What are you allowed to do?&quot;</li>
+        </ul>    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

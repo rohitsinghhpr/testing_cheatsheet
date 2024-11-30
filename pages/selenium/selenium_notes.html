@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locators - Selenium</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>WebDriver Methods</summary>
+                <div class="content">
+                    <h3 id="webdriver-methods">WebDriver Methods</h3>
+                    <p>These methods are used to control the browser and manage the
+                        WebDriver instance:</p>
+                    <ol>
+                        <li><strong><code>get(url)</code></strong>: Opens the specified URL
+                            in the browser.</li>
+                        <li><strong><code>getCurrentUrl()</code></strong>: Returns the
+                            current URL of the browser.</li>
+                        <li><strong><code>getTitle()</code></strong>: Returns the title of
+                            the current page.</li>
+                        <li><strong><code>findElement(By by)</code></strong>: Finds the
+                            first WebElement using the given
+                            method.</li>
+                        <li><strong><code>findElements(By by)</code></strong>: Finds all
+                            WebElements using the given
+                            method.</li>
+                        <li><strong><code>getPageSource()</code></strong>: Returns the
+                            source code of the current page.
+                        </li>
+                        <li><strong><code>close()</code></strong>: Closes the current
+                            browser window.</li>
+                        <li><strong><code>quit()</code></strong>: Closes all browser windows
+                            and ends the WebDriver
+                            session.</li>
+                        <li><strong><code>getWindowHandles()</code></strong>: Returns a set
+                            of window handles for all
+                            open browser windows.</li>
+                        <li><strong><code>getWindowHandle()</code></strong>: Returns the
+                            window handle of the current
+                            window.</li>
+                        <li><strong><code>switchTo()</code></strong>: Switches to a
+                            different frame, window, or alert.
+                            <ul>
+                                <li><code>switchTo().frame()</code></li>
+                                <li><code>switchTo().window()</code></li>
+                                <li><code>switchTo().alert()</code></li>
+                            </ul>
+                        </li>
+                        <li><strong><code>navigate()</code></strong>: Allows navigation to
+                            and from web pages.<ul>
+                                <li><code>navigate().to(url)</code></li>
+                                <li><code>navigate().back()</code></li>
+                                <li><code>navigate().forward()</code></li>
+                                <li><code>navigate().refresh()</code></li>
+                            </ul>
+                        </li>
+                        <li><strong><code>manage()</code></strong>: Provides various options
+                            to manage the browser.<ul>
+                                <li>
+                                    <p><code>manage().timeouts()</code></p>
+                                    <ul>
+                                        <li><strong><code>implicitlyWait(Duration duration)</code></strong>:
+                                            Sets the
+                                            amount of time the driver should wait when
+                                            searching for an element if it is
+                                            not immediately present; use this to handle
+                                            situations where elements take
+                                            time to appear.<ul>
+                                                <li><strong>Scenario</strong>: When elements
+                                                    on a page load
+                                                    asynchronously and you want to ensure
+                                                    that WebDriver waits long
+                                                    enough to find all elements without
+                                                    throwing an exception
+                                                    immediately.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong><code>pageLoadTimeout(Duration duration)</code></strong>:
+                                            Sets the
+                                            maximum amount of time to wait for a page to
+                                            load before throwing an error;
+                                            use this to handle slow-loading pages.<ul>
+                                                <li><strong>Scenario</strong>: When
+                                                    navigating to a webpage that might
+                                                    take a longer time to load due to heavy
+                                                    content or slow server
+                                                    response.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong><code>scriptTimeout(Duration duration)</code></strong>:
+                                            Sets the
+                                            amount of time to wait for an asynchronous
+                                            script to finish execution before
+                                            throwing an error; use this for operations that
+                                            involve executing JavaScript
+                                            with a delay.<ul>
+                                                <li><strong>Scenario</strong>: When
+                                                    executing JavaScript code via
+                                                    <code>executeAsyncScript</code> that
+                                                    involves asynchronous
+                                                    operations, such as AJAX calls, which
+                                                    might take some time to
+                                                    complete.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p><code>manage().window()</code></p>
+                                    <p> Sure, here are concise explanations of each
+                                        sub-method of
+                                        <code>manage().window()</code>:
+                                    </p>
+                                    <ul>
+                                        <li><strong><code>maximize()</code></strong>:
+                                            Maximizes the browser window to
+                                            fill the screen.</li>
+                                        <li><strong><code>minimize()</code></strong>:
+                                            Minimizes the browser window to
+                                            the taskbar.</li>
+                                        <li><strong><code>fullscreen()</code></strong>:
+                                            Switches the browser window to
+                                            full-screen mode.</li>
+                                        <li><strong><code>setPosition(Point targetPosition)</code></strong>:
+                                            Sets the
+                                            browser window's position to specified
+                                            <code>x</code> and <code>y</code>
+                                            coordinates.
+                                        </li>
+                                        <li><strong><code>setSize(Dimension targetSize)</code></strong>:
+                                            Sets the
+                                            browser window's size to the specified width
+                                            and height.</li>
+                                        <li><strong><code>getPosition()</code></strong>:
+                                            Returns the current position of
+                                            the browser window as a <code>Point</code>
+                                            object.</li>
+                                        <li><strong><code>getSize()</code></strong>: Returns
+                                            the current size of the
+                                            browser window as a <code>Dimension</code>
+                                            object.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p><code>manage().cookies()</code></p>
+                                    <p> Sure, here are concise explanations of each
+                                        sub-method of
+                                        <code>manage().cookies()</code>:
+                                    </p>
+                                    <ul>
+                                        <li><strong><code>addCookie(Cookie cookie)</code></strong>:
+                                            Adds a specified
+                                            cookie to the current domain.</li>
+                                        <li><strong><code>deleteCookie(Cookie cookie)</code></strong>:
+                                            Deletes a
+                                            specified cookie from the current domain.</li>
+                                        <li><strong><code>deleteCookieNamed(String name)</code></strong>:
+                                            Deletes a
+                                            cookie by its name.</li>
+                                        <li><strong><code>deleteAllCookies()</code></strong>:
+                                            Deletes all cookies from
+                                            the current domain.</li>
+                                        <li><strong><code>getCookieNamed(String name)</code></strong>:
+                                            Returns the
+                                            cookie with the specified name.</li>
+                                        <li><strong><code>getCookies()</code></strong>:
+                                            Returns a set of all cookies for
+                                            the current domain.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong><code>executeScript(script, *args)</code></strong>:
+                            Executes JavaScript in the
+                            context of the current window or frame.</li>
+                        <li><strong><code>executeAsyncScript(script, *args)</code></strong>:
+                            Executes asynchronous
+                            JavaScript in the context of the current window or frame.</li>
+                    </ol>
+    
+                </div>
+            </details>
+            <details>
+                <summary>WebElement Methods</summary>
+                <div class="content">
+                    <ol>
+                        <li><strong><code>click()</code></strong>: Clicks on the element.</li>
+                        <li><strong><code>submit()</code></strong>: Submits a form.</li>
+                        <li><strong><code>sendKeys(keys)</code></strong>: Sends a sequence of
+                            keystrokes to the element.
+                        </li>
+                        <li><strong><code>clear()</code></strong>: Clears the content of a text
+                            field or text area.</li>
+                        <li><strong><code>isSelected()</code></strong>: Checks if the element is
+                            selected.</li>
+                        <li><strong><code>isEnabled()</code></strong>: Checks if the element is
+                            enabled.</li>
+                        <li><strong><code>isDisplayed()</code></strong>: Checks if the element
+                            is displayed.</li>
+                        <li><strong><code>getText()</code></strong>: Gets the visible text of
+                            the element.</li>
+                        <li><strong><code>getTagName()</code></strong>: Returns the tag name of
+                            the element.</li>
+                        <li><strong><code>getAttribute(attributeName)</code></strong>: Gets the
+                            value of the specified
+                            attribute.</li>
+                        <li><strong><code>getCssValue(propertyName)</code></strong>: Gets the
+                            value of a CSS property.</li>
+                        <li><strong><code>getLocation()</code></strong>: Gets the location of
+                            the element.</li>
+                        <li><strong><code>getSize()</code></strong>: Gets the size of the
+                            element.</li>
+                        <li><strong><code>getRect()</code></strong>: Gets the location and size
+                            of the element as a
+                            rectangle.</li>
+                        <li><strong><code>findElement(By by)</code></strong>: Finds the first
+                            child element using the given
+                            method.</li>
+                        <li><strong><code>findElements(By by)</code></strong>: Finds all child
+                            elements using the given
+                            method.</li>
+                    </ol>
+                </div>
+            </details>
+        </div>
+        <div class="content">
+            <details>
+                <summary>Locators</summary>
+                <div class="content">
+                    <pre class="language-java" tabindex="0">                <code class="language-java">
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"element_id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"element_name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token comment">// &lt;input type="test" name="email"/&gt;</span>
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">className</span><span class="token punctuation">(</span><span class="token string">"class_name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">tagName</span><span class="token punctuation">(</span><span class="token string">"tag_name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">linkText</span><span class="token punctuation">(</span><span class="token string">"link_text"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">partialLinkText</span><span class="token punctuation">(</span><span class="token string">"partial_link_text"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"css_selector"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"xpath_expression"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    </code>
+                </pre>
+                </div>
+            </details>
+            <details>
+                <summary>Css Locatoss</summary>
+                <div class="content">
+                    <pre class="language-java" tabindex="0">                                                <code class="language-java">
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"#elementId"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">".className"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"tagName"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"[attribute='value']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"[attribute1='value1'][attribute2='value2']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"[attribute^='prefix']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"[attribute$='suffix']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag childTag"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag &gt; childTag"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"siblingTag ~ siblingTag"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"siblingTag + siblingTag"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag:nth-child(n)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag:first-child"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag:last-child"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag:nth-of-type(n)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag:first-of-type"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"parentTag:last-of-type"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"tagName:not(.excludedClass)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    </code>
+                </pre>
+                </div>
+            </details>
+            <details>
+                <summary>Xpath</summary>
+                <div class="content">
+                    <pre class="language-java" tabindex="0">                                                <code class="language-java">
+                        <span class="token comment">// Absolute XPath - Uses a full path from the root element to the desired element.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"/html/body/div[1]/div[2]/div[3]/button"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Relative XPath - Uses a shorter path starting from the current element or the current context.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//button[@id='submit']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Basic XPath - Select an element by its tag name.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//tagName"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath with Attributes - Select elements based on attributes.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@id='username']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//button[@class='btn-primary']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath with Multiple Attributes - Select elements based on multiple attributes.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@id='username' and @name='user']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath with Contains Function - Select elements containing a specific attribute value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[contains(@name, 'user')]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath with Starts-With Function - Select elements where an attribute value starts with a specific substring.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[starts-with(@name, 'user')]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath with Text - Select elements based on their text content.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//a[text()='Sign In']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath with Index - Select the nth element in a set of matching elements.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"(//input[@type='text'])[2]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath Axes</span>
+                        
+                        <span class="token comment">// Ancestor Axis - Selects all ancestors (parent, grandparent, etc.) of the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='child']//ancestor::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Ancestor-Or-Self Axis - Selects all ancestors (parent, grandparent, etc.) and the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='child']//ancestor-or-self::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Attribute Axis - Selects all attributes of the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@id='username']/@*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Child Axis - Selects all children of the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='parent']//child::input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Descendant Axis - Selects all descendants (children, grandchildren, etc.) of the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='ancestor']//descendant::input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Descendant-Or-Self Axis - Selects all descendants and the current node itself.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='ancestor']//descendant-or-self::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Following Axis - Selects everything in the document after the closing tag of the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//h2[@class='title']//following::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Following-Sibling Axis - Selects all siblings after the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='current']//following-sibling::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Parent Axis - Selects the parent of the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='child']//parent::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Preceding Axis - Selects all nodes before the current node in the document.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//h2[@class='title']//preceding::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Preceding-Sibling Axis - Selects all siblings before the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='current']//preceding-sibling::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Self Axis - Selects the current node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[@class='current']//self::div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath Operators</span>
+                        
+                        <span class="token comment">// And Operator - Combines two conditions and returns true if both conditions are true.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@type='text' and @name='username']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Or Operator - Combines two conditions and returns true if at least one condition is true.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@type='text' or @type='password']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Not Operator - Negates the condition.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[not(@type='hidden')]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Relational Operators</span>
+                        
+                        <span class="token comment">// Equals Operator - Checks if the value of an attribute equals a specified value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@name='username' and @value='admin']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Not Equals Operator - Checks if the value of an attribute does not equal a specified value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@name='username' and @value!='admin']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Less Than Operator - Checks if the value of an attribute is less than a specified value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@value &lt; 100]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Greater Than Operator - Checks if the value of an attribute is greater than a specified value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@value &gt; 100]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Less Than or Equal To Operator - Checks if the value of an attribute is less than or equal to a specified value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@value &lt;= 100]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Greater Than or Equal To Operator - Checks if the value of an attribute is greater than or equal to a specified value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@value &gt;= 100]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Arithmetic Operators</span>
+                        
+                        <span class="token comment">// Addition Operator - Adds two numeric values.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"(//input[@type='text'])[position() + 1]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Subtraction Operator - Subtracts one numeric value from another.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"(//input[@type='text'])[position() - 1]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Multiplication Operator - Multiplies two numeric values.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@value * 2 = 200]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Division Operator - Divides one numeric value by another.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@value div 2 = 50]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Modulus Operator - Returns the remainder of a division.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@value mod 2 = 1]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// Union Operator - Combines the results of two XPath expressions.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[@type='text'] | //input[@type='password']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// XPath Functions</span>
+                        
+                        <span class="token comment">// text() - Returns the text content of an element.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//a[text()='Sign In']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// contains() - Checks if a string contains a specified substring.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[contains(@name, 'user')]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// starts-with() - Checks if a string starts with a specified substring.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[starts-with(@name, 'user')]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// substring() - Returns a substring from a string.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[substring(@name, 1, 4) = 'user']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// substring-before() - Returns the substring before a specified delimiter.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[substring-before(@name, '_') = 'user']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// substring-after() - Returns the substring after a specified delimiter.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[substring-after(@name, '_') = 'name']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// normalize-space() - Removes leading and trailing spaces from a string.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//div[normalize-space(text())='Username']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// boolean() - Converts a value to a boolean.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[boolean(@disabled)]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// not() - Returns the negation of a boolean value.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[not(@type='hidden')]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// name() - Returns the name of a node.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[name()='username']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// local-name() - Returns the local name of a node (excluding the namespace prefix).</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//*[local-name()='input']"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// count() - Returns the number of nodes matching a given expression.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"count(//input)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// sum() - Returns the sum of numeric values in a set of nodes.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"//input[sum(//prices) &gt; 100]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// position() - Returns the position of a node in a node set.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"(//input[@type='text'])[position()=2]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        
+                        <span class="token comment">// last() - Returns the last node in a node set.</span>
+                        <span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">xpath</span><span class="token punctuation">(</span><span class="token string">"(//input[@type='text'])[last()]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        </code>
+                                                                    </pre>
+                </div>
+            </details>
+        </div>
+        <div class="content">
+            <details>
+                <summary>Implicit Wait</summary>
+                <div class="content">
+                    <p>Implicit wait instructs WebDriver to wait for a certain amount of time
+                        when trying to find an element if it is not immediately available. It
+                        sets a default wait time for the entire duration of the WebDriver
+                        session.</p>
+                    <pre class="language-java" tabindex="0">                                <code class="language-java">
+                            <span class="token comment">// Set implicit wait</span>
+                            driver<span class="token punctuation">.</span><span class="token function">manage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timeouts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">implicitlyWait</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span><span class="token constant">SECONDS</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token comment">// Open a website</span>
+                            driver<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"&lt;http://example.com&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token comment">// Interact with elements</span>
+                            <span class="token comment">// WebDriver will wait up to 10 seconds for elements to be found</span>
+                            driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"someElementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        </code>
+                    </pre>
+                </div>
+            </details>
+            <details>
+                <summary>Explict Wait</summary>
+                <div class="content">
+                    <p>Explicit wait allows you to specify a certain condition to wait for
+                        before proceeding further in the code. It provides more flexibility
+                        compared to implicit wait as you can target specific elements and
+                        conditions.</p>
+                    <pre class="language-java" tabindex="0"><code class="language-java">
+                            <span class="token comment">// Define explicit wait</span>
+    <span class="token class-name">WebDriverWait</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Wait for element to be visible and interact with it</span>
+    <span class="token class-name">WebElement</span> element <span class="token operator">=</span> wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">visibilityOfElementLocated</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"someElementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    element<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        </code>
+                    </pre>
+                    <ul>
+                        <li><code>visibilityOfElementLocated(By locator)</code>: Waits for an
+                            element to be visible</li>
+                        <li><code>elementToBeClickable(By locator)</code></li>
+                        <li><code>presenceOfElementLocated(By locator)</code></li>
+                        <li><code>textToBePresentInElement(By locator, String text)</code></li>
+                    </ul>
+                    <pre class="language-java" tabindex="0">                    <code class="language-java">        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                            <span class="token comment">// 1. Element to be visible</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">visibilityOfElementLocated</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"elementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 2. Element to be clickable</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">elementToBeClickable</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"buttonId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 3. Element to be present in the DOM</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">presenceOfElementLocated</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"someId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 4. Element to be selected (Checkbox or radio button)</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">elementToBeSelected</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"checkboxId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 5. Element to be selected (for any condition)</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">elementToBeSelected</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"checkboxId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 6. Alert to be present</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">alertIsPresent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 7. Title to be</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">titleIs</span><span class="token punctuation">(</span><span class="token string">"Expected Page Title"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 8. Title contains</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">titleContains</span><span class="token punctuation">(</span><span class="token string">"Expected"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 9. Text to be present in the element</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">textToBePresentInElementLocated</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"someElementId"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"Expected Text"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 10. Text to be present in an element's value</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">textToBePresentInElementValue</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"someElementId"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"Expected Text"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 11. Stale Element Reference Exception</span>
+                            <span class="token class-name">WebElement</span> staleElement <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"someId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">stalenessOf</span><span class="token punctuation">(</span>staleElement<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 12. URL contains</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">urlContains</span><span class="token punctuation">(</span><span class="token string">"expected"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 13. URL to be</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">urlToBe</span><span class="token punctuation">(</span><span class="token string">"https://example.com/somepage"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            
+                            <span class="token comment">// 14. Presence of multiple elements</span>
+                            wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">presenceOfAllElementsLocatedBy</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">className</span><span class="token punctuation">(</span><span class="token string">"multipleElements"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                
+                        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">TimeoutException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Timed out waiting for conditions to be met."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+                            driver<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span></code>
+                    </pre>
+                </div>
+            </details>
+            <details>
+                <summary>Fluent Wait</summary>
+                <div class="content">
+                    <p>Fluent wait is a more advanced type of explicit wait that allows you to
+                        set the maximum amount of time to wait for a condition, as well as the
+                        frequency with which to check the condition. Additionally, you can
+                        ignore specific types of exceptions while waiting.</p>
+                    <p>Use fluent wait when you need more control over the waiting behavior,
+                        such as polling intervals and exception handling.</p>
+                    <pre class="language-java" tabindex="0">                                                <code class="language-java">
+                            <span class="token comment">// Define fluent wait</span>
+    <span class="token class-name">FluentWait</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FluentWait</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">withTimeout</span><span class="token punctuation">(</span><span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">pollingEvery</span><span class="token punctuation">(</span><span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">ignoring</span><span class="token punctuation">(</span><span class="token class-name">Exception</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Wait for element to be present and interact with it</span>
+    <span class="token class-name">WebElement</span> element <span class="token operator">=</span> wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">WebElement</span> <span class="token function">apply</span><span class="token punctuation">(</span><span class="token class-name">WebDriver</span> driver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"someElementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    element<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+                        </code>
+                    </pre>
+                </div>
+            </details>
+        </div>
+        <div class="content">
+            <details>
+                <Summary>Action API</Summary>
+                <div class="content">
+                    <pre class="language-java" tabindex="0">                                    <code class="language-java">
+        <span class="token comment">// click() - Clicks on a web element.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// clickAndHold() - Clicks (without releasing) at the current mouse location or on a given element.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">clickAndHold</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// contextClick() - Performs a right-click at the current mouse location or on a given element.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">contextClick</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// doubleClick() - Performs a double-click at the current mouse location or on a given element.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">doubleClick</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// dragAndDrop() - Drags an element from a source location and drops it at a target location.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">dragAndDrop</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// dragAndDropBy() - Drags an element from its current location and drops it at an offset.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">dragAndDropBy</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// moveByOffset() - Moves the mouse from the current position by the given offset.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">moveByOffset</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// moveToElement() - Moves the mouse to the middle of the given element.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">moveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// release() - Releases the pressed mouse button at the current mouse location or on a given element.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// sendKeys() - Sends a sequence of keys to the currently focused element.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> <span class="token class-name">Keys</span><span class="token punctuation">.</span><span class="token constant">ENTER</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// keyDown() - Performs a key press without releasing it.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">keyDown</span><span class="token punctuation">(</span><span class="token class-name">Keys</span><span class="token punctuation">.</span><span class="token constant">CONTROL</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// keyUp() - Releases a pressed key.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">keyUp</span><span class="token punctuation">(</span><span class="token class-name">Keys</span><span class="token punctuation">.</span><span class="token constant">CONTROL</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// build() - Generates a composite action containing all actions so far.</span>
+        <span class="token class-name">Action</span> action <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">moveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        action<span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// perform() - A convenience method for performing the actions built so far.</span>
+        <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">moveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        </code>
+                    </pre>
+                </div>
+            </details>
+        </div>
+        <div class="content">
+            <details>
+                <summary>Selenium Exception</summary>
+                <div class="content">
+                    <p>Selenium WebDriver can throw various exceptions during the execution of automation
+                        scripts. Understanding these exceptions and their solutions is crucial for writing
+                        robust and reliable test scripts. Here are some common Selenium Java exceptions and
+                        their solutions:</p>
+                    <ol>
+                        <li>
+                            <p><strong>NoSuchElementException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when an element could not be
+                                        found on the web page.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Ensure the locator used to find the
+                                        element is correct and wait for the element to be present.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebDriverWait</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span> <span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">presenceOfElementLocated</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"elementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>StaleElementReferenceException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when a reference to an element
+                                        is no longer valid (e.g., the element has been refreshed or removed
+                                        from the DOM).</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Re-acquire the element reference after the
+                                        page updates or use explicit waits.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"elementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        element<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// Re-locate the element if necessary</span>
+        element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"elementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>TimeoutException</strong></p>
+                            <ul>
+                                <li><strong>Description</strong>: Thrown when a command does not complete in
+                                    the specified timeout period.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>ElementNotVisibleException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when an element is present in
+                                        the DOM but not visible.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Ensure the element is visible before
+                                        interacting with it or use waits to handle visibility.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebDriverWait</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span> <span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">visibilityOfElementLocated</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"elementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>ElementNotInteractableException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when an element is not
+                                        interactable (e.g., it is disabled or not visible).</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Wait for the element to become
+                                        interactable or ensure it is in the correct state.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebDriverWait</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span> <span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">WebElement</span> element <span class="token operator">=</span> wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">elementToBeClickable</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"elementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>NoAlertPresentException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when switching to an alert but
+                                        no alert is present.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Ensure an alert is present before
+                                        switching to it.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebDriverWait</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDriverWait</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span> <span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wait<span class="token punctuation">.</span><span class="token function">until</span><span class="token punctuation">(</span><span class="token class-name">ExpectedConditions</span><span class="token punctuation">.</span><span class="token function">alertIsPresent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Alert</span> alert <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        alert<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>InvalidSelectorException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when an invalid selector is
+                                        used.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Verify the correctness of the selector
+                                        syntax.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">cssSelector</span><span class="token punctuation">(</span><span class="token string">"valid-css-selector"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>WebDriverException</strong></p>
+                            <ul>
+                                <li><strong>Description</strong>: Generic exception thrown when something
+                                    goes wrong with the WebDriver.</li>
+                                <li><strong>Solution</strong>: Investigate the root cause by checking the
+                                    error message and stack trace. Ensure WebDriver and browser versions are
+                                    compatible.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>MoveTargetOutOfBoundsException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when the target for a mouse
+                                        action is outside the view.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Scroll the element into view before
+                                        performing the action.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"elementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">JavascriptExecutor</span><span class="token punctuation">)</span> driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">executeScript</span><span class="token punctuation">(</span><span class="token string">"arguments[0].scrollIntoView(true);"</span><span class="token punctuation">,</span> element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>SessionNotFoundException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when the session ID is not found
+                                        (e.g., when the session is terminated).</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Ensure the WebDriver session is properly
+                                        initialized and not terminated prematurely.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebDriver</span> driver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChromeDriver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        driver<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"&lt;https://www.example.com&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        driver<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>UnhandledAlertException</strong></p>
+                            <ul>
+                                <li>
+                                    <p><strong>Description</strong>: Thrown when there is an unhandled alert
+                                        on the web page.</p>
+                                </li>
+                                <li>
+                                    <p><strong>Solution</strong>: Handle the alert before performing further
+                                        actions.</p>
+                                    <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Alert</span> alert <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        alert<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">NoAlertPresentException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// No alert found, proceed with the test</span>
+        <span class="token punctuation">}</span>
+        </code></pre>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>InvalidElementStateException</strong></p>
+                            <ul>
+                                <li><strong>Description</strong>: Thrown when an element is in an invalid
+                                    state for the action being performed (e.g., trying to send keys to a
+                                    non-input element).</li>
+                                <li><strong>Solution</strong>: Ensure the element is in the correct state
+                                    before performing the action.</li>
+                            </ul>
+                            <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">WebElement</span> element <span class="token operator">=</span> driver<span class="token punctuation">.</span><span class="token function">findElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">id</span><span class="token punctuation">(</span><span class="token string">"inputElement"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>element<span class="token punctuation">.</span><span class="token function">isEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        element<span class="token punctuation">.</span><span class="token function">sendKeys</span><span class="token punctuation">(</span><span class="token string">"text"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code>
+                            </pre>
+                        </li>
+                    </ol>
+        
+                </div>
+            </details>
+        </div>
+        <div class="content">
+            <details>
+                <summary>Page Object Model</summary>
+                <div class="contetn">
+                    <h3 id="page-object-model--">Page Object Model -</h3>
+    <p>The Page Object Model (POM) is a design pattern in Selenium for enhancing test maintenance and reducing code duplication. It represents web pages as classes, where each class contains web elements and methods to interact with those elements. When used with TestNG, POM helps organize test cases and manage test execution efficiently.</p>
+    <h3 id="key-components-of-pom">Key Components of POM</h3>
+    <ol>
+    <li><p><strong>Page Class</strong>: Represents a web page and contains web elements and methods to interact with them.</p>
+    </li>
+    <li><p><strong>Test Class</strong>: Contains the actual test methods, utilizing the page classes to perform actions.</p>
+    </li>
+    </ol>
+    <h3 id="advantages-of-pom">Advantages of POM</h3>
+    <ul>
+    <li><p><strong>Improved Readability</strong>: Tests become more readable and understandable.</p>
+    </li>
+    <li><p><strong>Reusability</strong>: Methods in page classes can be reused across multiple tests.</p>
+    </li>
+    <li><p><strong>Maintainability</strong>: Changes in the UI need to be updated only in one place, the page class.</p>
+    </li>
+    </ul>
+    <h3 id="example-structure">Example Structure</h3>
+    <ol>
+    <li><p><strong>Base Class</strong>: Contains common setup and teardown methods.</p>
+    </li>
+    <li><p><strong>Page Classes</strong>: Represent different web pages.</p>
+    </li>
+    <li><p><strong>Test Classes</strong>: Contain test methods.</p>
+    </li>
+    </ol>
+    
+                </div>
+            </details>
+            <details>
+                <summary>Page Factory</summary>
+                <div class="content">
+                    <h2 id="page-factory--">Page Factory -</h2>
+                    <p>Page Factory is a class in Selenium that supports the Page Object
+                        Model (POM) design pattern by
+                        providing a way to initialize web elements defined in Page Objects.
+                        It makes the code more
+                        readable and easier to maintain by automatically initializing web
+                        elements at runtime using the
+                        <code>@FindBy</code> annotation.
+                    </p>
+                    <h3 id="key-components-of-page-factory">Key Components of Page Factory
+                    </h3>
+                    <ol>
+                        <li><strong>Page Class</strong>: Represents a web page and contains
+                            web elements annotated with
+                            <code>@FindBy</code>.
+                        </li>
+                        <li><strong>PageFactory Class</strong>: Contains the
+                            <code>initElements</code> method to
+                            initialize the web elements.
+                        </li>
+                    </ol>
+                    <h3 id="example-structure">Example Structure</h3>
+                    <ol>
+                        <li><strong>Base Class</strong>: Contains common setup and teardown
+                            methods.</li>
+                        <li><strong>Page Classes</strong>: Represent different web pages and
+                            use <code>@FindBy</code>
+                            for web elements.</li>
+                        <li><strong>Test Classes</strong>: Contain test methods that utilize
+                            the page classes</li>
+                    </ol>
+                    <h3 id="methods-in-pagefactory">Methods in PageFactory</h3>
+                    <ol>
+                        <li>
+                            <p><strong>PageFactory.initElements(WebDriver driver, Object
+                                    page)</strong>:</p>
+                            <ul>
+                                <li>Initializes the elements of the given page object.</li>
+                                <li>Automatically locates the elements defined by the
+                                    <code>@FindBy</code> annotation.
+                                </li>
+                            </ul>
+                            <pre class="language-java" tabindex="0"><code class="language-java"><span class="token class-name">PageFactory</span><span class="token punctuation">.</span><span class="token function">initElements</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </code></pre>
+                        </li>
+                    </ol>
+                    <h3 id="annotations-in-pagefactory">Annotations in PageFactory</h3>
+                    <ol>
+                        <li>
+                            <p><strong>@FindBy</strong>:</p>
+                            <ul>
+                                <li>Used to locate elements using different strategies (id,
+                                    name, className, xpath,
+                                    etc.).</li>
+                            </ul>
+                            <pre class="language-java" tabindex="0"><code class="language-java"><span class="token annotation punctuation">@FindBy</span><span class="token punctuation">(</span>id <span class="token operator">=</span> <span class="token string">"username"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">WebElement</span> usernameField<span class="token punctuation">;</span>
+    </code></pre>
+                        </li>
+                        <li>
+                            <p><strong>@FindBys</strong>:</p>
+                            <ul>
+                                <li>Used to locate elements using multiple criteria (AND
+                                    condition).</li>
+                            </ul>
+                            <pre class="language-java" tabindex="0"><code class="language-java"><span class="token annotation punctuation">@FindBys</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@FindBy</span><span class="token punctuation">(</span>className <span class="token operator">=</span> <span class="token string">"class1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@FindBy</span><span class="token punctuation">(</span>className <span class="token operator">=</span> <span class="token string">"class2"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">WebElement</span> element<span class="token punctuation">;</span>
+    </code></pre>
+                        </li>
+                        <li>
+                            <p><strong>@FindAll</strong>:</p>
+                            <ul>
+                                <li>Used to locate elements using multiple criteria (OR
+                                    condition).</li>
+                            </ul>
+                            <pre class="language-java" tabindex="0"><code class="language-java"><span class="token annotation punctuation">@FindAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@FindBy</span><span class="token punctuation">(</span>id <span class="token operator">=</span> <span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@FindBy</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"username"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">WebElement</span> usernameField<span class="token punctuation">;</span>
+    </code></pre>
+                        </li>
+                    </ol>
+    
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

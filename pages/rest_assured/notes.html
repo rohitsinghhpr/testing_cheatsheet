@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - RestAssured</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <p><strong>gerkin keywords</strong></p>
+<pre><code class="language-java">
+ // methods
+ given() // can be ignored.
+  /*
+    sending  a api request.
+    before sending a api request things required. paht, query parameter, body, headers etc
+    all of these things comes under given sections.
+  */
+ when()
+  /*
+   have to specify the request type like get,post,put,delete
+  */
+ then()
+ /*
+  validations like status, headers, cookies etc.
+ */
+</code></pre>
+<pre><code class="language-java">
+ public class HTTPRequests{
+  @Test
+  public void getUser(){
+   given()
+   .when().get(&quot;&lt;https://regres.in/api/users?page=2&gt;&quot;)
+   .then()
+    .statusCode(200)
+    .body(&quot;page&quot;,equalTo(2))
+    .log.all(); // pring on console of api response
+  }
+ }
+</code></pre>
+<h3 id="create-user">create User</h3>
+<pre><code class="language-java">
+ HashMap data = new HashMap();
+ data.put(&quot;name&quot;,&quot;Rohit&quot;);
+ data.put(&quot;job&quot;,&quot;Trainer&quot;);
+
+ given()
+  .contentType(&quot;application/json&quot;)
+  .body(data);
+ .when()
+  .post(&quot;&lt;https://regres.in/api/users&gt;&quot;);
+ .then()
+  .statusCode(201)
+  .log.all();
+</code></pre>
+<h2 id="how-many-way-we-can-create-request-body">how many way we can create request body</h2>
+<ol>
+<li>HashMap</li>
+<li>using org.json</li>
+<li>using POJO (plain old java object) // class,var, getter and setter for each var that is pojo</li>
+<li>using external json file</li>
+</ol>
+<pre><code class="language-java"> HashMap data = new HashMap();
+ data.put(&quot;name&quot;,&quot;Rohit&quot;);
+ String courseArr = {&quot;CN&quot;,&quot;OS&quot;};
+ data.put(&quot;course&quot;,courseArr);
+ given()
+  .contentType(&quot;application/json&quot;)
+  .body(data)
+ .when()
+  .post(&quot;url&quot;)
+ .then()
+  .statusCode(201)
+  .body(&quot;name&quot;,equalTo(&quot;Rohit&quot;))
+  .body(&quot;course[0]&quot;,equalTo(&quot;CN&quot;))
+  .header(&quot;Content-Type&quot;,&quot;application/json; charset=uft-8&quot;)
+  .log.all();
+</code></pre>
+<pre><code class="language-java">  JSONObject data = new JSONObject();
+  data.put(&quot;name&quot;,&quot;Rohit&quot;);
+  String courseArr = {&quot;CN&quot;,&quot;OS&quot;};
+  data.put(&quot;course&quot;,courseArr);
+  // rest of the same, but body(data.toString())
+</code></pre>
+<h3 id="cookies-and-headers-pathquery-parameter">cookies and headers, path/query parameter</h3>
+<pre><code class="language-java"> given()
+  .pathParam(&quot;mypath&quot;,&quot;users&quot;) // key:value
+  .queryParam(&quot;page&quot;,2) // key:value
+  .queryParam(&quot;id&quot;,5)
+ .when()
+  .get(&quot;https:regres.in/api/{mypath}&quot;) // path parameter should be specified in curly braces
+ .then()
+  .statusCode(200)
+  .log().all();
+</code></pre>
+<pre><code class="language-java">
+ .then()
+  .cookie(&quot;name&quot;,&quot;cookie-value&quot;)
+  .log().all();
+</code></pre>
+<p><strong>note</strong> get methods return response object</p>
+<pre><code class="language-jsx">Response res = when().get(&quot;http-url&quot;)
+// get a single cookie
+String cookie = res.getCookie(&quot;cookie-name&quot;);
+// get all cookies
+HashMap allcookies = res.getCookies();
+// get all headers
+Headers headers = res.getHeaders();
+</code></pre>
+<h3 id="parsing-response-body-and-validate-the-response-body">parsing response body and validate the response body</h3>
+<pre><code class="language-java">
+ // approach 1
+    .then()
+     .body(&quot;page&quot;,equalTo(3));
+
+ // approach 2
+    Response res = given().when().get(&quot;url&quot;);
+    // testng assertions ------------------
+    Assert.assertEquals(res.getStatusCode(),200); // validation 1
+    Assert.assertEquals(res.header(&quot;Content-Type&quot;),&quot;application/json; charset=uft-8&quot;);
+    // get particular field from json
+    String bookname = res.jsonPath().get(&quot;book[3].title&quot;).toString();
+    Assert.assertEquals(bookname,&quot;Let&#39;s Free India&quot;);
+
+ // approach 3
+     JSONObject data = JSONObject(res.toString()); // converting response to json object type
+</code></pre>
+<h3 id="parsing-xml-response-body">parsing XML response body</h3>
+<pre><code class="language-java">
+  // approach 1
+    .then()
+     .body(&quot;Books.Book1.title&quot;,equalTo(&quot;Lord Of Rings&quot;));
+
+ // approach 2
+    Response res = given().when().get(&quot;url&quot;);
+    String book = res.xmlPath.get(&quot;Books.Book1.title&quot;);
+    Assert.assertEquals(bookname,&quot;Let&#39;s Free India&quot;);
+
+ // approach 3
+    XmlPath xmlobj = new XmlPath(res.asString());
+    List&lt;String&gt; books = xmlobje.getList(Books.Book);
+    Assert.assertEquals(books.size(),10); // total number of books.
+</code></pre>
+<h3 id="authrizations---basicdigetbeartokenoauth-10-20-api-key">authrizations - basic,diget,beartoken,oauth 1.0, 2.0, api key</h3>
+<pre><code class="language-java">
+ // basic
+
+ given()
+  .auth().basic(&quot;username&quot;,&quot;password&quot;)
+ .when()
+  .get(&quot;url&quot;)
+ .then()
+   .statusCode(200)
+
+ // basic - .auth().digest(&quot;username&quot;,&quot;password&quot;)
+
+ // bear toekn
+
+ String bearer = &quot;beartoken&quot;;
+ given().header(&quot;Authrization&quot;, &quot;Bearer &quot; + bearer);
+ .when().post(&quot;url&quot;)
+ .then().statusCode(200).log().all();
+
+ // oauth
+ given()
+  .auth().oauth(&quot;consumerKey&quot;,&quot;consumerSecrate&quot;,&quot;accessToken&quot;,&quot;tokenSecrate&quot;);
+ .when().get(&quot;url&quot;)
+ .then().statusCode(200).log().all();
+
+ // oauth2
+ given()
+  .auth().oauth2(&quot;token_gojgdgjfj5434jktnerjkgnjngngi&quot;)
+ .when().get(&quot;url&quot;)
+ .then().statusCode(200).log().all();
+
+ // api key - can be in header or param, depends of api doc or dev
+
+ given().pathParam(&quot;apiid&quot;,&quot;api_key_584hjefnd8y5weuhfd&quot;)
+ .when().get(&quot;url&quot;)
+ .then().statusCode(200).log().all();
+</code></pre>
+
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

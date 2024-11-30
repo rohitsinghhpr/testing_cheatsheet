@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headers - RestAssured</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>Basic Header Validation</summary>
+            <div class="content">
+                Validating a specific header and its value in the response:
+                </code></code></pre>
+        import static io.restassured.RestAssured.*;
+        import static org.hamcrest.Matchers.*;
+        
+        public class ApiTest {
+            public static void main(String[] args) {
+                given()
+                    .when()
+                    .get("https://jsonplaceholder.typicode.com/posts/1")
+                    .then()
+                    .header("Content-Type", "application/json; charset=utf-8");
+            }
+        }
+                </code></pre>
+                This example checks that the <code>Content-Type</code> header in the response is <code>application/json; charset=utf-8</code>.
+            </div>
+        </details>
+        
+        <details>
+            <summary>Multiple Header Validation</summary>
+            <div class="content">
+                Validating multiple headers in a single request:
+                <pre><code class="language-java">
+        import static io.restassured.RestAssured.*;
+        import static org.hamcrest.Matchers.*;
+        
+        public class ApiTest {
+            public static void main(String[] args) {
+                given()
+                    .when()
+                    .get("https://jsonplaceholder.typicode.com/posts/1")
+                    .then()
+                    .header("Content-Type", "application/json; charset=utf-8")
+                    .header("Connection", "keep-alive");
+            }
+        }
+                </code></pre>
+                This verifies both the <code>Content-Type</code> and <code>Connection</code> headers in the response.
+            </div>
+        </details>
+        
+        <details>
+            <summary>Validating Header with Partial Match</summary>
+            <div class="content">
+                Using a partial match for headers with dynamic or changing values:
+                <pre><code class="language-java">
+        import static io.restassured.RestAssured.*;
+        import static org.hamcrest.Matchers.*;
+        
+        public class ApiTest {
+            public static void main(String[] args) {
+                given()
+                    .when()
+                    .get("https://jsonplaceholder.typicode.com/posts/1")
+                    .then()
+                    .header("Content-Type", containsString("application/json"));
+            }
+        }
+                </code></pre>
+                This checks that the <code>Content-Type</code> header contains <code>application/json</code>, allowing flexibility for additional charset information.
+            </div>
+        </details>
+        
+        <details>
+            <summary>Checking for Presence of a Header</summary>
+            <div class="content">
+                Verifying if a specific header is present in the response without checking its exact value:
+                <pre><code class="language-java">
+        import static io.restassured.RestAssured.*;
+        import static org.hamcrest.Matchers.*;
+        
+        public class ApiTest {
+            public static void main(String[] args) {
+                given()
+                    .when()
+                    .get("https://jsonplaceholder.typicode.com/posts/1")
+                    .then()
+                    .headers("Content-Type", notNullValue());
+            }
+        }
+                </code></pre>
+                This ensures that the <code>Content-Type</code> header is present in the response.
+            </div>
+        </details>
+        
+        <details>
+            <summary>Validating Header with Multiple Possible Values</summary>
+            <div class="content">
+                Checking for multiple acceptable values for a header:
+                <pre><code class="language-java">
+        import static io.restassured.RestAssured.*;
+        import static org.hamcrest.Matchers.*;
+        
+        public class ApiTest {
+            public static void main(String[] args) {
+                given()
+                    .when()
+                    .get("https://jsonplaceholder.typicode.com/posts/1")
+                    .then()
+                    .header("Connection", anyOf(equalTo("keep-alive"), equalTo("close")));
+            }
+        }
+                </code></pre>
+                This example verifies that the <code>Connection</code> header is either <code>keep-alive</code> or <code>close</code>.
+            </div>
+        </details>
+        
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
+

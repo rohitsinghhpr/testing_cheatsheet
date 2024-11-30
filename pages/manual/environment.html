@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+    <div class="details-container">
+
+        <details>
+            <summary>Development Environment</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Purpose</strong>: The development environment is where developers write, build, and
+                            test
+                            code. It&#39;s the first line of testing for new features, fixes, or updates.</p>
+                    </li>
+                    <li>
+                        <p><strong>Characteristics</strong>:</p>
+                        <ul>
+                            <li>
+                                <p>Generally set up on local machines or a server dedicated to development.</p>
+                            </li>
+                            <li>
+                                <p>Contains partial or dummy data to allow easy testing without affecting real users.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Frequent code changes are common, and stability is less of a priority.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Types of Testing</strong>:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Unit Testing</strong>: Developers often perform unit tests here to check
+                                    individual
+                                    components or functions.</p>
+                            </li>
+                            <li>
+                                <p><strong>Integration Testing</strong>: Testing the interaction between modules, though
+                                    sometimes done in a separate environment.</p>
+                            </li>
+                            <li>
+                                <p><strong>Smoke Testing</strong>: Basic tests ensure that key functions work and the
+                                    application is in a testable state.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Tools</strong>: Developers may use tools specific to coding and debugging, as well as
+                            version
+                            control systems like Git for collaboration.</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
+        <details>
+            <summary>Staging Environment</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Purpose</strong>: The staging environment closely mirrors the production environment
+                            and
+                            serves as the final testing ground before release.</p>
+                    </li>
+                    <li>
+                        <p><strong>Characteristics</strong>:</p>
+                        <ul>
+                            <li>
+                                <p>Contains a setup similar to production in terms of server configuration, software
+                                    versions,
+                                    and databases.</p>
+                            </li>
+                            <li>
+                                <p>Typically includes a copy of the actual production data (or anonymized data) to
+                                    better
+                                    simulate real-world use cases.</p>
+                            </li>
+                            <li>
+                                <p>Changes are fewer and primarily focused on finalizing the release.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Types of Testing</strong>:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Acceptance Testing</strong>: Tests conducted to ensure that the application
+                                    meets
+                                    business requirements and is ready for release.</p>
+                            </li>
+                            <li>
+                                <p><strong>End-to-End Testing</strong>: Tests that simulate real user scenarios,
+                                    covering
+                                    multiple steps from start to finish.</p>
+                            </li>
+                            <li>
+                                <p><strong>Performance Testing</strong>: Checks the application’s performance under
+                                    expected
+                                    load.</p>
+                            </li>
+                            <li>
+                                <p><strong>Regression Testing</strong>: Ensures that new changes do not disrupt existing
+                                    features.</p>
+                            </li>
+                            <li>
+                                <p><strong>User Acceptance Testing (UAT)</strong>: In some cases, users or clients
+                                    validate the
+                                    software to confirm it meets their needs.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Tools</strong>: Monitoring and logging tools similar to those used in production; can
+                            also
+                            include load-testing tools.</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
+        <details>
+            <summary>Production Environment</summary>
+            <div class="content">
+                <ul>
+                    <li>
+                        <p><strong>Purpose</strong>: The production environment is the live environment where the
+                            application is
+                            available to end users.</p>
+                    </li>
+                    <li>
+                        <p><strong>Characteristics</strong>:</p>
+                        <ul>
+                            <li>
+                                <p>Has the actual setup that end-users interact with, using real data.</p>
+                            </li>
+                            <li>
+                                <p>High priority on stability, performance, and security.</p>
+                            </li>
+                            <li>
+                                <p>Changes are tightly controlled, usually through scheduled deployments or hotfixes.
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Types of Testing</strong>:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Smoke Testing (Post-Deployment Testing)</strong>: Ensures that key features
+                                    are
+                                    functioning after deployment.</p>
+                            </li>
+                            <li>
+                                <p><strong>Monitoring</strong>: Real-time monitoring to track performance, availability,
+                                    and
+                                    user issues.</p>
+                            </li>
+                            <li>
+                                <p><strong>A/B Testing (Optional)</strong>: Tests new features or changes with a small
+                                    user
+                                    segment to compare results with existing versions.</p>
+                            </li>
+                            <li>
+                                <p><strong>Incident Testing</strong>: If issues are identified, a hotfix is deployed,
+                                    and
+                                    post-release testing is conducted.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Tools</strong>: Production monitoring tools, error logging systems, and performance
+                            tracking
+                            solutions like New Relic, DataDog, or Splunk.</p>
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

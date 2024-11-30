@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handing Path - RestAssured</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>Handling Path Parameters</summary>
+                <div class="content">
+                    Path parameters are dynamic parts of the URL. In Rest Assured, they can be set using the <code>pathParam</code> method:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .pathParam("postId", 1)
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/{postId}")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This example sets <code>postId</code> as a path parameter, making the URL <code>https://jsonplaceholder.typicode.com/posts/1</code>.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Handling Multiple Path Parameters</summary>
+                <div class="content">
+                    To pass multiple path parameters, use multiple <code>pathParam</code> calls:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .pathParam("userId", 1)
+                        .pathParam("postId", 5)
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/users/{userId}/posts/{postId}")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This sets <code>userId</code> and <code>postId</code> as path parameters in the URL.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Handling Query Parameters</summary>
+                <div class="content">
+                    Query parameters are appended to the URL after a <code>?</code> and are often used for filtering results. Use <code>queryParam</code> to add them in Rest Assured:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .queryParam("userId", 1)
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This example adds <code>userId=1</code> as a query parameter, making the request URL <code>https://jsonplaceholder.typicode.com/posts?userId=1</code>.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Handling Multiple Query Parameters</summary>
+                <div class="content">
+                    You can set multiple query parameters by chaining multiple <code>queryParam</code> methods:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .queryParam("userId", 1)
+                        .queryParam("title", "foo")
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    This example creates a URL with multiple query parameters, like <code>https://jsonplaceholder.typicode.com/posts?userId=1&title=foo</code>.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Passing Parameters Using Maps</summary>
+                <div class="content">
+                    Both path and query parameters can be passed using a <code>Map</code>, making it easier to handle dynamic values:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import java.util.Map;
+            import java.util.HashMap;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    // Path parameter using a Map
+                    Map<String, Object> pathParams = new HashMap<>();
+                    pathParams.put("postId", 1);
+                    
+                    // Query parameters using a Map
+                    Map<String, Object> queryParams = new HashMap<>();
+                    queryParams.put("userId", 1);
+                    queryParams.put("title", "foo");
+            
+                    given()
+                        .pathParams(pathParams)
+                        .queryParams(queryParams)
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/{postId}")
+                        .then()
+                        .statusCode(200);
+                }
+            }
+                    </code></pre>
+                    In this example, both path and query parameters are passed in <code>Map</code> objects.
+                </div>
+            </details>
+            
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

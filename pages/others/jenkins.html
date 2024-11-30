@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenkins</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+<body>
+    <div class="details-container">
+        <details>
+            <summary>What is Jenkins?</summary>
+            <div class="content">
+                <p><strong>Definition:</strong> Jenkins is an open-source automation tool written in Java that helps in automating various stages of software development, including building, testing, and deploying.</p>
+                <p><strong>Primary Use:</strong> Jenkins is primarily used for Continuous Integration (CI), which ensures that code changes are automatically integrated and tested in the development environment.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Automates repetitive tasks like builds and tests.</li>
+                    <li>Facilitates CI/CD pipelines.</li>
+                    <li>Supports distributed workloads across multiple machines.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Jenkins Features for Automation Testing</summary>
+            <div class="content">
+                <p><strong>Integration with Version Control:</strong> Jenkins integrates with Git, SVN, and other version control systems to fetch the latest code for building and testing.</p>
+                <p><strong>Test Automation Integration:</strong> Jenkins can execute automated tests (e.g., Selenium, JUnit, TestNG) and report the results in a detailed manner.</p>
+                <p><strong>Distributed Builds:</strong> Jenkins allows running tests on multiple machines simultaneously, improving performance and reducing execution time.</p>
+                <p><strong>Plugins:</strong> Jenkins has a rich ecosystem of plugins, allowing integration with other tools, such as build tools (Maven, Gradle), test frameworks (JUnit, TestNG), and reporting tools.</p>
+                <p><strong>Continuous Integration/Continuous Deployment (CI/CD):</strong> Jenkins helps automate the entire lifecycle from code commits to deployment, ensuring that the software is always in a deployable state.</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Key Jenkins Components</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Jenkins Master:</strong> The central server that orchestrates all Jenkins jobs and builds.</li>
+                    <li><strong>Jenkins Slave:</strong> A remote machine used to offload tasks (builds, tests) from the master server.</li>
+                    <li><strong>Build Jobs:</strong> A Jenkins job defines the steps to build and test the software. You can configure a job to run tests, compile code, deploy the application, etc.</li>
+                    <li><strong>Pipeline:</strong> A Jenkins pipeline is a suite of automated processes for building, testing, and deploying code. It can be written using a domain-specific language (DSL) called "Pipeline as Code" in Groovy.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Setting Up Jenkins for Automation Testing</summary>
+            <div class="content">
+                <p><strong>Install Jenkins:</strong> Jenkins can be installed using various methods:
+                    <ul>
+                        <li>Using native packages (DEB/RPM)</li>
+                        <li>Using Docker</li>
+                        <li>Using WAR file (Java application)</li>
+                    </ul>
+                </p>
+                <p><strong>Install Plugins:</strong> For automation testing, install plugins such as:
+                    <ul>
+                        <li>JUnit Plugin (to integrate JUnit results with Jenkins)</li>
+                        <li>TestNG Plugin (to display TestNG results in Jenkins)</li>
+                        <li>Maven Plugin (for building and managing dependencies)</li>
+                        <li>Selenium Plugin (for integrating Selenium WebDriver tests)</li>
+                        <li>Allure Plugin (for generating beautiful reports for test results)</li>
+                        <li>Git Plugin (for integrating Jenkins with version control repositories like GitHub, Bitbucket, etc.)</li>
+                    </ul>
+                </p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Creating and Running Jenkins Jobs for Automation Testing</summary>
+            <div class="content">
+                <p><strong>Create a Job:</strong> 
+                    1. Navigate to the Jenkins dashboard.
+                    2. Click on <strong>"New Item"</strong>.
+                    3. Choose <strong>"Freestyle project"</strong> or <strong>"Pipeline"</strong> depending on your need.
+                    4. Configure the job to run the automated tests using commands or scripts.
+                </p>
+                <p><strong>Configure Source Code Management (SCM):</strong> Choose <strong>Git</strong>, <strong>SVN</strong>, or other SCM systems to link your Jenkins job to the repository. Provide the repository URL and any credentials if necessary.</p>
+                <p><strong>Configure Build Triggers:</strong> 
+                    <ul>
+                        <li><strong>Poll SCM:</strong> Jenkins can poll your source control system at regular intervals for new changes and trigger the build automatically.</li>
+                        <li><strong>GitHub Webhooks:</strong> You can configure Jenkins to trigger builds when code is pushed to a repository.</li>
+                    </ul>
+                </p>
+                <p><strong>Configure Build Steps:</strong> 
+                    <ul>
+                        <li><strong>Execute Shell or Windows Batch Commands:</strong> Run your test scripts via command-line instructions (e.g., <code>mvn test</code> for Maven).</li>
+                        <li><strong>Invoke Gradle/Maven:</strong> Use these tools to compile the code and run unit tests.</li>
+                        <li><strong>Run Selenium Tests:</strong> Configure Jenkins to execute Selenium WebDriver tests by invoking your test scripts.</li>
+                    </ul>
+                </p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Pipeline as Code in Jenkins (Jenkinsfile)</summary>
+            <div class="content">
+                <p><strong>Jenkinsfile:</strong> A Jenkinsfile is a text file that defines a Jenkins pipeline using a domain-specific language (DSL). It describes the stages involved in the pipeline, such as building, testing, and deploying the application.</p>
+                <p><strong>Example Jenkinsfile (Declarative Pipeline):</strong></p>
+                <pre>
+        pipeline {
+            agent any
+            stages {
+                stage('Build') {
+                    steps {
+                        sh 'mvn clean install'
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        sh 'mvn test'
+                    }
+                }
+                stage('Deploy') {
+                    steps {
+                        sh 'mvn deploy'
+                    }
+                }
+            }
+        }
+                </pre>
+                <p><strong>Pipeline Types:</strong> 
+                    <ul>
+                        <li><strong>Declarative Pipelines:</strong> Easier to read and manage; most commonly used.</li>
+                        <li><strong>Scripted Pipelines:</strong> More flexible, allows more complex logic but requires more setup.</li>
+                    </ul>
+                </p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Automated Test Execution and Reporting</summary>
+            <div class="content">
+                <p><strong>JUnit/TestNG Results:</strong> Jenkins collects the results of your automated tests and displays them in an organized way. This helps testers track the results of each test run and diagnose failures.</p>
+                <p><strong>Email Notifications:</strong> Jenkins can notify the team via email if a test fails, or even send custom notifications with failure details.</p>
+                <p><strong>Allure Report Plugin:</strong> To generate beautiful, detailed, and customizable test reports. Allure integrates with JUnit, TestNG, and other testing frameworks.</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Common Jenkins Commands for Automation Testers</summary>
+            <div class="content">
+                <p><strong>Trigger Jenkins job via command line:</strong></p>
+                <pre>
+        curl -X POST http://<Jenkins-URL>/job/<Job-Name>/build
+                </pre>
+                <p><strong>Trigger Jenkins job with parameters:</strong></p>
+                <pre>
+        curl -X POST http://<Jenkins-URL>/job/<Job-Name>/buildWithParameters?PARAM1=value1&PARAM2=value2
+                </pre>
+                <p><strong>Check build status:</strong></p>
+                <pre>
+        curl http://<Jenkins-URL>/job/<Job-Name>/lastBuild/api/json
+                </pre>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Best Practices for Jenkins Automation Testers</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Use Version Control for Jenkinsfiles:</strong> Store your Jenkinsfile in the same Git repository as your application code.</li>
+                    <li><strong>Parallel Test Execution:</strong> To speed up test execution, use parallel pipelines or run tests on different machines (distributed builds).</li>
+                    <li><strong>Use Virtual Machines or Docker Containers:</strong> Set up Jenkins agents on virtual machines or Docker containers to isolate environments and prevent issues with different test environments.</li>
+                    <li><strong>Monitor and Archive Test Results:</strong> Archive test reports, logs, and artifacts (like screenshots) for later reference and debugging.</li>
+                    <li><strong>Build Fast Feedback Loops:</strong> Configure Jenkins jobs to run unit tests, integration tests, and other checks quickly so that testers get immediate feedback on code changes.</li>
+                </ul>
+            </div>
+        </details>
+        
+        <details>
+            <summary>Conclusion</summary>
+            <div class="content">
+                <p>Jenkins is a powerful tool that can significantly enhance the efficiency of an automation tester by automating the integration and testing processes. By utilizing Jenkins' capabilities such as continuous integration, automated test execution, and integration with various testing frameworks, testers can ensure faster feedback, more reliable testing, and better collaboration across the development team.</p>
+            </div>
+        </details>
+        
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+</html>

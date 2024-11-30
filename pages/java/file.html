@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <p>Sure! Here’s a breakdown of Java&#39;s file handling classes with descriptions and example code.</p>
+            <hr>
+            <h3 id="1-file-class">1. <code>File</code> Class</h3>
+            <p>The <code>File</code> class in Java is used to represent files and directories. It provides methods to
+                create, delete, and obtain file information.</p>
+            <pre><code class="language-java">import java.io.File;
+
+public class FileExample {
+    public static void main(String[] args) {
+        // Create a File object for a specific file path
+        File file = new File(&quot;example.txt&quot;);
+
+        // Check if the file exists
+        if (file.exists()) {
+            System.out.println(&quot;File exists.&quot;);
+        } else {
+            System.out.println(&quot;File does not exist.&quot;);
+        }
+
+        // Get file information
+        System.out.println(&quot;File name: &quot; + file.getName());        // Get file name
+        System.out.println(&quot;Path: &quot; + file.getPath());             // Get file path
+        System.out.println(&quot;Absolute path: &quot; + file.getAbsolutePath());  // Get absolute path
+        System.out.println(&quot;Writable: &quot; + file.canWrite());        // Check if writable
+        System.out.println(&quot;Readable: &quot; + file.canRead());         // Check if readable
+        System.out.println(&quot;File size in bytes: &quot; + file.length()); // Get file size
+
+        // Create a new file
+        try {
+            boolean isCreated = file.createNewFile();              // Create the file
+            if (isCreated) {
+                System.out.println(&quot;File created.&quot;);
+            }
+        } catch (Exception e) {
+            System.out.println(&quot;An error occurred while creating the file.&quot;);
+        }
+
+        // Delete the file
+        boolean isDeleted = file.delete();
+        if (isDeleted) {
+            System.out.println(&quot;File deleted.&quot;);
+        }
+    }
+}
+</code></pre>
+            <hr>
+            <h3 id="2-filewriter-class">2. <code>FileWriter</code> Class</h3>
+            <p>The <code>FileWriter</code> class is used to write character-based data to a file. It allows writing
+                strings or characters and is often used with a <code>BufferedWriter</code> for efficiency.</p>
+            <pre><code class="language-java">import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriterExample {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter(&quot;output.txt&quot;); // Create FileWriter object to write to &quot;output.txt&quot;
+            writer.write(&quot;Hello, World!\n&quot;);                  // Write a string
+            writer.write(&quot;Welcome to FileWriter in Java.&quot;);   // Write another string
+            writer.close();                                   // Close the writer to free resources
+            System.out.println(&quot;Successfully written to file.&quot;);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+            <hr>
+            <h3 id="3-filereader-class">3. <code>FileReader</code> Class</h3>
+            <p>The <code>FileReader</code> class is used to read character-based data from a file. This is ideal for
+                text files and allows reading character by character or in bulk.</p>
+            <pre><code class="language-java">import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderExample {
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader(&quot;output.txt&quot;);  // Create FileReader to read &quot;output.txt&quot;
+            int character;
+
+            // Read characters until the end of the file
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);           // Convert integer to character and print
+            }
+            reader.close();                                   // Close the reader
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+            <hr>
+            <h3 id="4-fileinputstream-class">4. <code>FileInputStream</code> Class</h3>
+            <p>The <code>FileInputStream</code> class is used to read binary data from a file, making it suitable for
+                reading files like images, audio, and video. It reads data byte by byte.</p>
+            <pre><code class="language-java">import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileInputStreamExample {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream(&quot;example.bin&quot;);  // Create FileInputStream for binary file
+            int byteData;
+
+            // Read bytes until the end of the file
+            while ((byteData = fis.read()) != -1) {
+                System.out.print(byteData + &quot; &quot;);                      // Print each byte as an integer
+            }
+            fis.close();                                               // Close the stream
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+            <hr>
+            <h3 id="5-fileoutputstream-class">5. <code>FileOutputStream</code> Class</h3>
+            <p>The <code>FileOutputStream</code> class is used to write binary data to a file. It writes data byte by
+                byte and is commonly used for files like images, audio, and videos.</p>
+            <pre><code class="language-java">import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileOutputStreamExample {
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fos = new FileOutputStream(&quot;output.bin&quot;); // Create FileOutputStream to write binary data
+            fos.write(65);   // Write the byte (65 corresponds to &#39;A&#39;)
+            fos.write(66);   // Write the byte (66 corresponds to &#39;B&#39;)
+            fos.write(67);   // Write the byte (67 corresponds to &#39;C&#39;)
+            fos.close();     // Close the stream to save resources
+            System.out.println(&quot;Binary data written to file.&quot;);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+            <hr>
+            <h3 id="summary-of-key-methods">Summary of Key Methods</h3>
+            <ol>
+                <li>
+                    <p><strong>File</strong>:</p>
+                    <ul>
+                        <li><code>exists()</code>: Checks if the file exists.</li>
+                        <li><code>createNewFile()</code>: Creates a new file.</li>
+                        <li><code>delete()</code>: Deletes the file.</li>
+                        <li><code>canRead()</code>, <code>canWrite()</code>: Checks read/write permissions.</li>
+                        <li><code>getName()</code>, <code>getPath()</code>, <code>getAbsolutePath()</code>: Retrieves
+                            file information.</li>
+                        <li><code>length()</code>: Gets the file size in bytes.</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong>FileWriter</strong>:</p>
+                    <ul>
+                        <li><code>write(String s)</code>: Writes a string to a file.</li>
+                        <li><code>close()</code>: Closes the writer.</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong>FileReader</strong>:</p>
+                    <ul>
+                        <li><code>read()</code>: Reads a single character as an integer.</li>
+                        <li><code>close()</code>: Closes the reader.</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong>FileInputStream</strong>:</p>
+                    <ul>
+                        <li><code>read()</code>: Reads a single byte as an integer.</li>
+                        <li><code>close()</code>: Closes the input stream.</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong>FileOutputStream</strong>:</p>
+                    <ul>
+                        <li><code>write(int b)</code>: Writes a single byte to the file.</li>
+                        <li><code>close()</code>: Closes the output stream.</li>
+                    </ul>
+                </li>
+            </ol>
+            <hr>
+            <p>Each class in Java&#39;s file handling API provides a way to work with files and data for specific needs
+                (text vs. binary). These examples cover the basic usage of each, and they can be extended or combined
+                depending on application requirements.</p>
+
+        </div>
+    </div>
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

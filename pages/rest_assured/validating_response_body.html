@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body - RestAssured</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <div class="content">
+            <details>
+                <summary>Validating a Specific Field in the Response Body</summary>
+                <div class="content">
+                    Checking if a particular field in the JSON response body matches an expected value:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .body("userId", equalTo(1))
+                        .body("id", equalTo(1))
+                        .body("title", equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
+                }
+            }
+                    </code></pre>
+                    This example validates that <code>userId</code>, <code>id</code>, and <code>title</code> fields in the JSON response match specific values.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Validating Multiple Fields with Logical Conditions</summary>
+                <div class="content">
+                    Using logical conditions to verify multiple fields in the response body:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .body("userId", greaterThan(0))
+                        .body("id", lessThanOrEqualTo(100));
+                }
+            }
+                    </code></pre>
+                    This checks that <code>userId</code> is greater than 0 and <code>id</code> is less than or equal to 100.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Validating JSON Array Elements</summary>
+                <div class="content">
+                    Validating specific elements in a JSON array within the response body:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts")
+                        .then()
+                        .body("userId", hasItems(1, 2, 3));
+                }
+            }
+                    </code></pre>
+                    This example checks if the <code>userId</code> array in the response body contains the values <code>1</code>, <code>2</code>, and <code>3</code>.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Validating Nested JSON Fields</summary>
+                <div class="content">
+                    Validating nested fields in a JSON response:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/comments/1")
+                        .then()
+                        .body("postId", equalTo(1))
+                        .body("name", containsString("id labore ex et quam laborum"));
+                }
+            }
+                    </code></pre>
+                    This example verifies the <code>postId</code> and a specific <code>name</code> field in a nested JSON response.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Validating JSON Body with Regular Expressions</summary>
+                <div class="content">
+                    Using regular expressions to validate fields in the response body:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/comments/1")
+                        .then()
+                        .body("email", matchesPattern("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"));
+                }
+            }
+                    </code></pre>
+                    This validates that the <code>email</code> field in the response matches a valid email format using a regular expression.
+                </div>
+            </details>
+            
+            <details>
+                <summary>Validating Full Response Body with JSONPath</summary>
+                <div class="content">
+                    Verifying the entire structure of a response using JSONPath:
+                    <pre><code class="language-java">
+            import static io.restassured.RestAssured.*;
+            import static org.hamcrest.Matchers.*;
+            
+            public class ApiTest {
+                public static void main(String[] args) {
+                    given()
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/posts/1")
+                        .then()
+                        .body("$", hasKey("userId"))
+                        .body("$", hasKey("id"))
+                        .body("$", hasKey("title"))
+                        .body("$", hasKey("body"));
+                }
+            }
+                    </code></pre>
+                    This example checks that the JSON response contains the keys <code>userId</code>, <code>id</code>, <code>title</code>, and <code>body</code>.
+                </div>
+            </details>
+            
+        </div>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
