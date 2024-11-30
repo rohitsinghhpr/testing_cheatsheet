@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,56 +9,117 @@
     <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
     <link rel="stylesheet" href="../../assests/css/style.css">
 </head>
+
 <body>
-    
+
     <div class="details-container">
-        <div class="content">
-            <h3 id="generics-in-java"><strong>Generics in Java</strong></h3>
-            <p><strong>Generics</strong> allow you to write classes, interfaces, and methods with
-                type parameters. They enable the creation of reusable and type-safe code. With
-                generics, you can work with different data types without sacrificing type safety.
-            </p>
-            <h4 id="key-points">Key Points:</h4>
-            <ul>
-                <li><strong>Type Safety</strong>: Generics ensure that you use the correct data type
-                    at compile time, reducing the risk of <code>ClassCastException</code> at
-                    runtime.</li>
-                <li><strong>Code Reusability</strong>: You can write code that works with any object
-                    type.</li>
-                <li><strong>Syntax</strong>: <ul>
-                        <li>For a class: <code>Class&lt;T&gt;</code> where <code>T</code> is a
-                            placeholder for a data type.</li>
-                        <li>For methods: <code>public &lt;T&gt; void method(T value)</code></li>
-                        <li>For collections: <code>List&lt;String&gt;</code> or
-                            <code>List&lt;Integer&gt;</code> instead of <code>List</code>.
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <h4 id="example">Example:</h4>
-            <pre class="language-java" tabindex="0"><code class="language-java"><span class="token comment">// Generic class</span>
-<span class="token keyword">class</span> <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
-<span class="token keyword">private</span> <span class="token class-name">T</span> value<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setValue</span><span class="token punctuation">(</span><span class="token class-name">T</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">public</span> <span class="token class-name">T</span> <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token keyword">return</span> value<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Using the generic class</span>
-<span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> intBox <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-intBox<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>intBox<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Outputs: 10</span>
-
-<span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> strBox <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-strBox<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strBox<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Outputs: Hello</span>
-</code></pre>
-        </div>
+        <details>
+            <summary>Generic</summary>
+            <div class="content">
+                <h3 id="generics-in-java"><strong>Generics in Java</strong></h3>
+                <p><strong>Generics</strong> allow you to write classes, interfaces, and methods with
+                    type parameters. They enable the creation of reusable and type-safe code. With
+                    generics, you can work with different data types without sacrificing type safety.
+                </p>
+                <h4 id="key-points">Key Points:</h4>
+                <ul>
+                    <li><strong>Type Safety</strong>: Generics ensure that you use the correct data type
+                        at compile time, reducing the risk of <code>ClassCastException</code> at
+                        runtime.</li>
+                    <li><strong>Code Reusability</strong>: You can write code that works with any object
+                        type.</li>
+                    <li><strong>Syntax</strong>: <ul>
+                            <li>For a class: <code>Class&lt;T&gt;</code> where <code>T</code> is a
+                                placeholder for a data type.</li>
+                            <li>For methods: <code>public &lt;T&gt; void method(T value)</code></li>
+                            <li>For collections: <code>List&lt;String&gt;</code> or
+                                <code>List&lt;Integer&gt;</code> instead of <code>List</code>.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4 id="example">Example:</h4>
+                <pre class="language-java" tabindex="0"><code class="language-java"><span class="token comment">// Generic class</span>
+    <span class="token keyword">class</span> <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">T</span> value<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setValue</span><span class="token punctuation">(</span><span class="token class-name">T</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">T</span> <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Using the generic class</span>
+    <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> intBox <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    intBox<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>intBox<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Outputs: 10</span>
+    
+    <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> strBox <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    strBox<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strBox<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Outputs: Hello</span>
+    </code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>Generic</summary>
+            <div class="content">
+                <h3 id="iterators-in-java"><strong>Iterators in Java</strong></h3>
+                <p>An <strong>Iterator</strong> is an object that enables you to traverse through a
+                    collection (such as a <code>List</code>, <code>Set</code>, or <code>Map</code>) and
+                    access its elements. The <code>Iterator</code> interface provides methods for
+                    iterating over the collection.</p>
+                <h4 id="key-points-1">Key Points:</h4>
+                <ul>
+                    <li>
+                        <p><strong>Iterator Methods</strong>:</p>
+                        <ul>
+                            <li><code>hasNext()</code>: Checks if there are more elements to iterate
+                                over.</li>
+                            <li><code>next()</code>: Returns the next element in the iteration.</li>
+                            <li><code>remove()</code>: Removes the current element from the collection
+                                (optional).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Iterator vs. Enhanced for loop</strong>: The iterator is more
+                            flexible and allows modifying the collection while iterating, while the
+                            enhanced for loop (<code>foreach</code>) does not.</p>
+                    </li>
+                </ul>
+                <h4 id="example-1">Example:</h4>
+                <pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IteratorExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Apple"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Banana"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Cherry"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> iterator <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Outputs each fruit</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// Example of remove() method</span>
+    iterator <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> fruit <span class="token operator">=</span> iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fruit<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"Banana"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    iterator<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Removes "Banana"</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Outputs: [Apple, Cherry]</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    </code></pre>
+            </div>
+        </details>
     </div>
     <div class="home-link">
         <a class="btn btn-primary" href="../../index.html">Home</a>
@@ -67,4 +129,5 @@ strBox<span class="token punctuation">.</span><span class="token function">setVa
     <script src="../../assests/js/prism-java.min.js"></script>
     <script src="../../assests/js/script.js"></script>
 </body>
+
 </html>
