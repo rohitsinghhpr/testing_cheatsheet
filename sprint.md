@@ -1,14 +1,18 @@
+# feature -
+- reremner previous open offcanvas, use session........done
+
 # database tesing 
 - sql questions
-- sql howto
+- sql howto..............donde
 
 # api tesing  
-- api testing concepts
+- api testing concepts........done
 
 # java
-- array
-- collection
+- array ..................done
+- collection .............done 
 - questions 
+- tricky programs 
 
 # selenium
 - questions
@@ -20,6 +24,3 @@
 # packages 
 - log4j
 - allure report
-
-# feature -
-- reremner previous open offcanvas, use session

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Questions</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>What is SQL?</summary>
+            <div class="content">
+                SQL (Structured Query Language) is a standard programming language used to manage and manipulate
+                relational databases. It allows users to create, retrieve, update, and delete data from database tables.
+            </div>
+        </details>
+
+        <details>
+            <summary>What are the different types of SQL commands?</summary>
+            <div class="content">
+                SQL commands are categorized into:
+                <ul>
+                    <li><strong>DDL (Data Definition Language):</strong> CREATE, ALTER, DROP, TRUNCATE</li>
+                    <li><strong>DML (Data Manipulation Language):</strong> SELECT, INSERT, UPDATE, DELETE</li>
+                    <li><strong>DCL (Data Control Language):</strong> GRANT, REVOKE</li>
+                    <li><strong>TCL (Transaction Control Language):</strong> COMMIT, ROLLBACK, SAVEPOINT</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a primary key?</summary>
+            <div class="content">
+                A primary key is a column (or set of columns) in a table that uniquely identifies each row in that
+                table. Primary keys must contain unique values, and null values are not allowed.
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between WHERE and HAVING clauses?</summary>
+            <div class="content">
+                The <strong>WHERE</strong> clause is used to filter rows before grouping, while the
+                <strong>HAVING</strong> clause is used to filter groups after the <code>GROUP BY</code> operation. For
+                example:
+                <pre><code class="language-sql">
+                    SELECT department, COUNT(*)
+                    FROM employees
+                    WHERE salary > 50000
+                    GROUP BY department
+                    HAVING COUNT(*) > 5;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is normalization?</summary>
+            <div class="content">
+                Normalization is the process of organizing database tables to reduce redundancy and improve data
+                integrity. It involves dividing large tables into smaller ones and defining relationships between them.
+                Common forms of normalization include 1NF, 2NF, 3NF, and BCNF.
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a JOIN in SQL?</summary>
+            <div class="content">
+                A JOIN is used to combine rows from two or more tables based on a related column between them. Types of
+                JOINs include:
+                <ul>
+                    <li><strong>INNER JOIN:</strong> Returns records with matching values in both tables.</li>
+                    <li><strong>LEFT JOIN:</strong> Returns all records from the left table and matching records from
+                        the right table.</li>
+                    <li><strong>RIGHT JOIN:</strong> Returns all records from the right table and matching records from
+                        the left table.</li>
+                    <li><strong>FULL OUTER JOIN:</strong> Returns all records when there is a match in either table.
+                    </li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is an index in SQL?</summary>
+            <div class="content">
+                An index is a database object that improves the speed of data retrieval operations on a table. It
+                creates an entry for each value, enabling faster searches. However, indexes can slow down insert and
+                update operations.
+            </div>
+        </details>
+
+        <details>
+            <summary>What are constraints in SQL?</summary>
+            <div class="content">
+                Constraints are rules enforced on data in tables to ensure accuracy and integrity. Common constraints
+                include:
+                <ul>
+                    <li><strong>NOT NULL:</strong> Ensures a column cannot have a NULL value.</li>
+                    <li><strong>UNIQUE:</strong> Ensures all values in a column are unique.</li>
+                    <li><strong>PRIMARY KEY:</strong> Combines NOT NULL and UNIQUE constraints.</li>
+                    <li><strong>FOREIGN KEY:</strong> Ensures data consistency between related tables.</li>
+                    <li><strong>CHECK:</strong> Ensures values meet a specific condition.</li>
+                    <li><strong>DEFAULT:</strong> Assigns a default value to a column.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between DELETE and TRUNCATE?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>DELETE:</strong> Removes specific rows from a table based on a condition. It is a DML
+                        command and can be rolled back.</li>
+                    <li><strong>TRUNCATE:</strong> Removes all rows from a table without logging individual row
+                        deletions. It is a DDL command and cannot be rolled back.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a subquery?</summary>
+            <div class="content">
+                A subquery is a query nested within another query. It is used to perform operations that depend on the
+                result of the outer query. Example:
+                <pre><code class="language-sql">
+                    SELECT name
+                    FROM employees
+                    WHERE department_id = (SELECT id FROM departments WHERE name = 'Sales');
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a FOREIGN KEY?</summary>
+            <div class="content">
+                A FOREIGN KEY is a column (or set of columns) in a table that establishes a link between data in two
+                tables. It ensures referential integrity by enforcing that a value in the column must match a value in
+                the referenced column of another table.
+                <pre><code class="language-sql">
+                CREATE TABLE orders (
+                    order_id INT PRIMARY KEY,
+                    customer_id INT,
+                    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What are aggregate functions in SQL?</summary>
+            <div class="content">
+                Aggregate functions perform calculations on multiple rows of data and return a single value. Common
+                aggregate functions include:
+                <ul>
+                    <li><strong>COUNT():</strong> Counts the number of rows.</li>
+                    <li><strong>SUM():</strong> Calculates the total of a numeric column.</li>
+                    <li><strong>AVG():</strong> Calculates the average of a numeric column.</li>
+                    <li><strong>MAX():</strong> Returns the maximum value in a column.</li>
+                    <li><strong>MIN():</strong> Returns the minimum value in a column.</li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                SELECT department_id, COUNT(*), AVG(salary)
+                FROM employees
+                GROUP BY department_id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a view in SQL?</summary>
+            <div class="content">
+                A view is a virtual table based on the result of an SQL query. It allows users to simplify complex
+                queries and provide security by restricting access to specific data. Views do not store data themselves.
+                <pre><code class="language-sql">
+                CREATE VIEW high_salary_employees AS
+                SELECT name, department, salary
+                FROM employees
+                WHERE salary > 100000;
+                
+                SELECT * FROM high_salary_employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between UNION and UNION ALL?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>UNION:</strong> Combines the results of two queries and removes duplicate rows.</li>
+                    <li><strong>UNION ALL:</strong> Combines the results of two queries and includes duplicate rows.
+                    </li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                SELECT name FROM employees_department1
+                UNION
+                SELECT name FROM employees_department2;
+        
+                SELECT name FROM employees_department1
+                UNION ALL
+                SELECT name FROM employees_department2;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a stored procedure?</summary>
+            <div class="content">
+                A stored procedure is a precompiled set of one or more SQL statements that can be executed as a single
+                unit. Stored procedures help improve performance and maintain code reusability.
+                <pre><code class="language-sql">
+                CREATE PROCEDURE GetEmployeeCount()
+                BEGIN
+                    SELECT COUNT(*) AS employee_count FROM employees;
+                END;
+        
+                CALL GetEmployeeCount();
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between a clustered and a non-clustered index?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Clustered Index:</strong> Determines the physical order of data in a table. Each table
+                        can have only one clustered index.</li>
+                    <li><strong>Non-Clustered Index:</strong> Creates a separate structure for the index, allowing
+                        multiple non-clustered indexes per table.</li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                -- Clustered index
+                CREATE TABLE employees (
+                    id INT PRIMARY KEY CLUSTERED,
+                    name VARCHAR(100)
+                );
+        
+                -- Non-clustered index
+                CREATE NONCLUSTERED INDEX idx_employee_name ON employees(name);
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a trigger in SQL?</summary>
+            <div class="content">
+                A trigger is a special type of stored procedure that automatically executes in response to certain
+                events on a table, such as INSERT, UPDATE, or DELETE.
+                <pre><code class="language-sql">
+                CREATE TRIGGER trg_after_insert
+                AFTER INSERT ON employees
+                FOR EACH ROW
+                BEGIN
+                    INSERT INTO audit_log(action, log_date)
+                    VALUES ('New employee added', NOW());
+                END;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between CHAR and VARCHAR?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>CHAR:</strong> Fixed-length string data type. It always reserves the specified space,
+                        padding with spaces if necessary.</li>
+                    <li><strong>VARCHAR:</strong> Variable-length string data type. It uses only the space required to
+                        store the actual data.</li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                CREATE TABLE example (
+                    fixed_length CHAR(10),
+                    variable_length VARCHAR(10)
+                );
+        
+                INSERT INTO example VALUES ('abc', 'abc');
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a CTE (Common Table Expression)?</summary>
+            <div class="content">
+                A Common Table Expression (CTE) is a temporary result set defined within the execution scope of a single
+                SELECT, INSERT, UPDATE, or DELETE statement. It improves readability and simplifies complex queries.
+                <pre><code class="language-sql">
+                WITH SalesCTE AS (
+                    SELECT employee_id, SUM(sales) AS total_sales
+                    FROM sales
+                    GROUP BY employee_id
+                )
+                SELECT employee_id, total_sales
+                FROM SalesCTE
+                WHERE total_sales > 5000;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a transaction in SQL?</summary>
+            <div class="content">
+                A transaction is a sequence of one or more SQL statements executed as a single unit of work.
+                Transactions follow the ACID properties (Atomicity, Consistency, Isolation, Durability) to ensure
+                reliable processing.
+                <pre><code class="language-sql">
+                BEGIN TRANSACTION;
+        
+                UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
+                UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
+        
+                COMMIT;
+                -- Use ROLLBACK instead of COMMIT to undo changes if necessary
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between RANK(), DENSE_RANK(), and ROW_NUMBER()?</summary>
+            <div class="content">
+                These are window functions used to rank rows within a partition:
+                <ul>
+                    <li><strong>RANK():</strong> Assigns a rank to each row with gaps for ties.</li>
+                    <li><strong>DENSE_RANK():</strong> Assigns a rank without gaps for ties.</li>
+                    <li><strong>ROW_NUMBER():</strong> Assigns a unique number to each row, even for ties.</li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                SELECT name, department, salary,
+                       RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank,
+                       DENSE_RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dense_rank,
+                       ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS row_number
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between INNER JOIN and OUTER JOIN?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>INNER JOIN:</strong> Returns rows where there is a match in both tables.</li>
+                    <li><strong>OUTER JOIN:</strong> Returns all rows from one or both tables, even if there is no
+                        match. Types include LEFT, RIGHT, and FULL OUTER JOIN.</li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                -- INNER JOIN
+                SELECT e.name, d.department_name
+                FROM employees e
+                INNER JOIN departments d ON e.department_id = d.department_id;
+        
+                -- LEFT OUTER JOIN
+                SELECT e.name, d.department_name
+                FROM employees e
+                LEFT JOIN departments d ON e.department_id = d.department_id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the purpose of the GROUP BY clause?</summary>
+            <div class="content">
+                The GROUP BY clause groups rows with the same values into summary rows. It is commonly used with
+                aggregate functions like COUNT(), SUM(), AVG(), MAX(), and MIN().
+                <pre><code class="language-sql">
+                SELECT department, COUNT(*) AS employee_count, AVG(salary) AS avg_salary
+                FROM employees
+                GROUP BY department;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is a self join?</summary>
+            <div class="content">
+                A self join is a regular join where a table is joined with itself. It is useful for comparing rows
+                within the same table.
+                <pre><code class="language-sql">
+                SELECT a.employee_id AS emp1, b.employee_id AS emp2, a.manager_id
+                FROM employees a
+                INNER JOIN employees b ON a.manager_id = b.employee_id;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between COALESCE() and ISNULL()?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>COALESCE():</strong> Returns the first non-NULL value from a list of expressions. It
+                        supports multiple arguments.</li>
+                    <li><strong>ISNULL():</strong> Replaces NULL with a specified replacement value. It supports only
+                        two arguments and is specific to some databases like SQL Server.</li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                SELECT COALESCE(NULL, NULL, 'Fallback Value') AS result;
+                SELECT ISNULL(NULL, 'Fallback Value') AS result; -- SQL Server specific
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the purpose of the CASE statement in SQL?</summary>
+            <div class="content">
+                The CASE statement provides conditional logic within a query. It allows you to implement IF-THEN-ELSE
+                logic.
+                <pre><code class="language-sql">
+                SELECT name, salary,
+                       CASE
+                           WHEN salary > 100000 THEN 'High'
+                           WHEN salary BETWEEN 50000 AND 100000 THEN 'Medium'
+                           ELSE 'Low'
+                       END AS salary_category
+                FROM employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the purpose of the EXISTS clause?</summary>
+            <div class="content">
+                The EXISTS clause is used to test for the existence of rows in a subquery. It returns TRUE if the
+                subquery returns one or more rows.
+                <pre><code class="language-sql">
+                SELECT name
+                FROM employees e
+                WHERE EXISTS (
+                    SELECT 1
+                    FROM departments d
+                    WHERE e.department_id = d.department_id AND d.department_name = 'Sales'
+                );
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the difference between DELETE and DROP?</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>DELETE:</strong> Removes specific rows from a table. It is a DML command and can be
+                        rolled back.</li>
+                    <li><strong>DROP:</strong> Deletes an entire table, including its structure. It is a DDL command and
+                        cannot be rolled back.</li>
+                </ul>
+                Example:
+                <pre><code class="language-sql">
+                -- DELETE
+                DELETE FROM employees WHERE department_id = 10;
+        
+                -- DROP
+                DROP TABLE employees;
+                </code></pre>
+            </div>
+        </details>
+
+        <details>
+            <summary>What is the purpose of indexing in SQL?</summary>
+            <div class="content">
+                Indexing is used to speed up data retrieval by creating a data structure that allows quick lookups.
+                However, it may slow down write operations like INSERT, UPDATE, and DELETE due to additional
+                maintenance.
+                <pre><code class="language-sql">
+                CREATE INDEX idx_employee_name ON employees(name);
+                </code></pre>
+            </div>
+        </details>
+
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-sql.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
