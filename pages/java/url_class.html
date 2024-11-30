@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Class - Java</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+<h2>Overview</h2>
+<p>The <code>java.net.URL</code> class represents a Uniform Resource Locator (URL), which is a pointer to a "resource" on the World Wide Web. A resource can be a file, a directory, or a reference to a more complicated object, such as a query to a database or a search engine.</p>
+
+<h2>Constructors</h2>
+<ul>
+  <li>
+    <strong><code>URL(String spec)</code></strong>: 
+    <p>Creates a URL object from a specified string representation.</p>
+  </li>
+  <li>
+    <strong><code>URL(String protocol, String host, String file)</code></strong>: 
+    <p>Creates a URL with a specified protocol, host, and file path.</p>
+  </li>
+  <li>
+    <strong><code>URL(String protocol, String host, int port, String file)</code></strong>: 
+    <p>Allows you to specify a port number along with the protocol, host, and file.</p>
+  </li>
+  <li>
+    <strong><code>URL(URL context, String spec)</code></strong>: 
+    <p>Creates a URL by resolving a relative URL against a specified context.</p>
+  </li>
+</ul>
+
+<h2>Important Methods</h2>
+<ul>
+  <li>
+    <strong><code>getProtocol()</code></strong>:
+    <p>Returns the protocol used by the URL (e.g., <code>http</code>, <code>https</code>, <code>ftp</code>).</p>
+  </li>
+  <li>
+    <strong><code>getHost()</code></strong>:
+    <p>Returns the host name of the URL.</p>
+  </li>
+  <li>
+    <strong><code>getPort()</code></strong>:
+    <p>Returns the port number associated with the URL. If no port is specified, it returns <code>-1</code>.</p>
+  </li>
+  <li>
+    <strong><code>getFile()</code></strong>:
+    <p>Returns the file name or path of the URL.</p>
+  </li>
+  <li>
+    <strong><code>getPath()</code></strong>:
+    <p>Returns the path part of the URL.</p>
+  </li>
+  <li>
+    <strong><code>getQuery()</code></strong>:
+    <p>Returns the query part of the URL (the part after the <code>?</code>).</p>
+  </li>
+  <li>
+    <strong><code>getRef()</code></strong>:
+    <p>Returns the reference (anchor) part of the URL (the part after the <code>#</code>).</p>
+  </li>
+  <li>
+    <strong><code>toURI()</code></strong>:
+    <p>Converts the URL to a <code>java.net.URI</code> object.</p>
+  </li>
+</ul>
+
+<h2>Example Code</h2>
+<pre><code class="language-java">import java.net.URL;
+
+public class URLExample {
+    public static void main(String[] args) {
+        try {
+            URL url = new URL("https://www.example.com:8080/path/to/resource?query=java#section");
+            System.out.println("Protocol: " + url.getProtocol());
+            System.out.println("Host: " + url.getHost());
+            System.out.println("Port: " + url.getPort());
+            System.out.println("Path: " + url.getPath());
+            System.out.println("Query: " + url.getQuery());
+            System.out.println("Ref: " + url.getRef());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>Key Points</h2>
+<ul>
+  <li>The <code>URL</code> class is used to create and manipulate URL objects.</li>
+  <li>It is part of the <code>java.net</code> package.</li>
+  <li>The methods allow you to parse and retrieve different parts of a URL.</li>
+</ul>
+
+    </div>
+    
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
