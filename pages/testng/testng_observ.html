@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestNG</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>BeforeTest vs BeforeMethod</summary>
+            <div class="content">
+                <p>In TestNG, <code>@BeforeTest</code> and <code>@BeforeMethod</code> are annotations used to define
+                    setup methods that execute before certain scopes of test cases. Here&#39;s a detailed comparison of
+                    their functionality and usage:</p>
+                <h3 id="1-beforetest"><strong>1. <code>@BeforeTest</code></strong></h3>
+                <ul>
+                    <li><strong>Scope</strong>: Runs <strong>once</strong> before the execution of all the test methods
+                        in a <code>&lt;test&gt;</code> tag in the TestNG XML configuration file.</li>
+                    <li><strong>Execution Timing</strong>: Runs before any test method within the specific
+                        <code>&lt;test&gt;</code> tag is executed.
+                    </li>
+                    <li><strong>Use Case</strong>: Useful for setting up configurations or prerequisites that are common
+                        across all test methods within the same test tag.</li>
+                    <li><strong>Execution Level</strong>: Class-level or test-level.</li>
+                </ul>
+                <p><strong>Example</strong>:</p>
+                <pre><code class="language-java">@BeforeTest
+public void beforeTestSetup() {
+    System.out.println(&quot;This runs once before the test tag in the TestNG XML file.&quot;);
+}
+@Test
+public void testMethod1() {
+    System.out.println(&quot;Executing Test Method 1&quot;);
+}
+@Test
+public void testMethod2() {
+    System.out.println(&quot;Executing Test Method 2&quot;);
+}
+</code></pre>
+                <p><strong>Output</strong>:</p>
+                <pre><code>This runs once before the test tag in the TestNG XML file.
+Executing Test Method 1
+Executing Test Method 2
+</code></pre>
+                <hr>
+                <h3 id="2-beforemethod"><strong>2. <code>@BeforeMethod</code></strong></h3>
+                <ul>
+                    <li><strong>Scope</strong>: Runs <strong>before each test method</strong> in the current test class.
+                    </li>
+                    <li><strong>Execution Timing</strong>: Executes immediately before each <code>@Test</code> method is
+                        invoked.</li>
+                    <li><strong>Use Case</strong>: Ideal for setting up prerequisites specific to individual test
+                        methods, like initializing objects or resetting variables.</li>
+                    <li><strong>Execution Level</strong>: Method-level.</li>
+                </ul>
+                <p><strong>Example</strong>:</p>
+                <pre><code class="language-java">@BeforeMethod
+public void beforeMethodSetup() {
+    System.out.println(&quot;This runs before each test method.&quot;);
+}
+@Test
+public void testMethod1() {
+    System.out.println(&quot;Executing Test Method 1&quot;);
+}
+@Test
+public void testMethod2() {
+    System.out.println(&quot;Executing Test Method 2&quot;);
+}
+</code></pre>
+                <p><strong>Output</strong>:</p>
+                <pre><code>This runs before each test method.
+Executing Test Method 1
+This runs before each test method.
+Executing Test Method 2
+</code></pre>
+                <hr>
+                <h3 id="key-differences"><strong>Key Differences</strong></h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th><code>@BeforeTest</code></th>
+                            <th><code>@BeforeMethod</code></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Scope</strong></td>
+                            <td>Executes once before all test methods in a <code>&lt;test&gt;</code> tag.</td>
+                            <td>Executes before each individual test method.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Frequency</strong></td>
+                            <td>Runs only once per <code>&lt;test&gt;</code> tag.</td>
+                            <td>Runs repeatedly, once per test method.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Use Case</strong></td>
+                            <td>Common setup for a group of tests, like reading configs or setting up shared resources.
+                            </td>
+                            <td>Test-specific setup, like initializing preconditions for each test.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Execution Timing</strong></td>
+                            <td>Before the first test method in the <code>&lt;test&gt;</code> tag.</td>
+                            <td>Immediately before each <code>@Test</code> method.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level</strong></td>
+                            <td>Class/Test Level</td>
+                            <td>Method Level</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h3 id="when-to-use-which"><strong>When to Use Which?</strong></h3>
+                <ul>
+                    <li>Use <strong><code>@BeforeTest</code></strong> for configurations or initializations shared by
+                        multiple test methods across the same <code>&lt;test&gt;</code> tag (e.g., database connections
+                        or browser setup for a suite).</li>
+                    <li>Use <strong><code>@BeforeMethod</code></strong> for setup tasks that need to be repeated for
+                        each individual test method (e.g., resetting test data or initializing specific objects).</li>
+                </ul>
+
+            </div>
+        </details>
+        <details>
+            <summary>ok, suppose there are 2 class one class contains the @BeforeTest and both class have the multiple
+                test method then @BeforeTest will execute for both class's test method or not </summary>
+            <div class="content">
+                <p>No, the <code>@BeforeTest</code> annotated method will <strong>not</strong> execute for both classes
+                    unless they are part of the same <code>&lt;test&gt;</code> tag in the TestNG XML configuration file.
+                </p>
+                <h3 id="explanation">Explanation:</h3>
+                <ul>
+                    <li><strong><code>@BeforeTest</code> Scope</strong>: It is scoped to the <code>&lt;test&gt;</code>
+                        tag in the TestNG XML file. All the classes included within the same <code>&lt;test&gt;</code>
+                        tag share the <code>@BeforeTest</code> setup.</li>
+                    <li>If the classes are part of <strong>different <code>&lt;test&gt;</code> tags</strong>, then the
+                        <code>@BeforeTest</code> method in one class will not affect the other class.
+                    </li>
+                </ul>
+                <h3 id="scenario-1-classes-in-the-same-test-tag"><strong>Scenario 1: Classes in the Same
+                        <code>&lt;test&gt;</code> Tag</strong></h3>
+                <p>If both classes are included under the same <code>&lt;test&gt;</code> tag, the
+                    <code>@BeforeTest</code> method will execute once before any test methods in <strong>either
+                        class</strong>.
+                </p>
+                <p><strong>XML Configuration</strong>:</p>
+                <pre><code class="language-xml">&lt;suite name=&quot;Suite&quot;&gt;
+    &lt;test name=&quot;TestTag&quot;&gt;
+        &lt;classes&gt;
+            &lt;class name=&quot;com.example.Class1&quot;/&gt;
+            &lt;class name=&quot;com.example.Class2&quot;/&gt;
+        &lt;/classes&gt;
+    &lt;/test&gt;
+&lt;/suite&gt;
+</code></pre>
+                <p><strong>Class1</strong>:</p>
+                <pre><code class="language-java">public class Class1 {
+    @BeforeTest
+    public void beforeTestSetup() {
+        System.out.println(&quot;BeforeTest in Class1&quot;);
+    }
+
+    @Test
+    public void testMethod1() {
+        System.out.println(&quot;Class1: Test Method 1&quot;);
+    }
+}
+</code></pre>
+                <p><strong>Class2</strong>:</p>
+                <pre><code class="language-java">public class Class2 {
+    @Test
+    public void testMethod2() {
+        System.out.println(&quot;Class2: Test Method 2&quot;);
+    }
+}
+</code></pre>
+                <p><strong>Execution Output</strong>:</p>
+                <pre><code>BeforeTest in Class1
+Class1: Test Method 1
+Class2: Test Method 2
+</code></pre>
+                <hr>
+                <h3 id="scenario-2-classes-in-different-test-tags"><strong>Scenario 2: Classes in Different
+                        <code>&lt;test&gt;</code> Tags</strong></h3>
+                <p>If each class is in a separate <code>&lt;test&gt;</code> tag, the <code>@BeforeTest</code> method in
+                    one class will not affect the test methods in another class.</p>
+                <p><strong>XML Configuration</strong>:</p>
+                <pre><code class="language-xml">&lt;suite name=&quot;Suite&quot;&gt;
+    &lt;test name=&quot;TestTag1&quot;&gt;
+        &lt;classes&gt;
+            &lt;class name=&quot;com.example.Class1&quot;/&gt;
+        &lt;/classes&gt;
+    &lt;/test&gt;
+    &lt;test name=&quot;TestTag2&quot;&gt;
+        &lt;classes&gt;
+            &lt;class name=&quot;com.example.Class2&quot;/&gt;
+        &lt;/classes&gt;
+    &lt;/test&gt;
+&lt;/suite&gt;
+</code></pre>
+                <p><strong>Execution Output</strong>:</p>
+                <pre><code>BeforeTest in Class1
+Class1: Test Method 1
+Class2: Test Method 2
+</code></pre>
+                <hr>
+                <h3 id="summary">Summary:</h3>
+                <ul>
+                    <li><strong>Same <code>&lt;test&gt;</code> Tag</strong>: <code>@BeforeTest</code> executes once and
+                        applies to all test methods in all classes within that tag.</li>
+                    <li><strong>Different <code>&lt;test&gt;</code> Tags</strong>: <code>@BeforeTest</code> in one class
+                        does not execute for test methods in another class.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details>
+            <summary>what if i declared SoftAssert softassert = new SoftAssert(); in class at global and use softassert
+                in all test method,</summary>
+            <div class="content">
+                <p>Declaring <code>SoftAssert softassert = new SoftAssert();</code> at the class level and reusing it in
+                    all test methods can lead to <strong>unexpected behavior</strong> because <code>SoftAssert</code> is
+                    not designed to be shared across multiple tests. Here’s a breakdown of what would happen:</p>
+                <hr>
+                <h3 id="key-issues-with-global-softassert"><strong>Key Issues with Global
+                        <code>SoftAssert</code></strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>State Retention</strong>:</p>
+                        <ul>
+                            <li>A <code>SoftAssert</code> object retains its state (i.e., collected assertions and
+                                results) until <code>assertAll()</code> is called.</li>
+                            <li>If the same <code>softassert</code> object is used across multiple test methods without
+                                calling <code>assertAll()</code> in each method, assertions from all previous tests will
+                                carry over and may cause cascading failures.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Misleading Test Results</strong>:</p>
+                        <ul>
+                            <li>If <code>assertAll()</code> is called in one test method, it validates all assertions
+                                made up to that point, including assertions from previous tests (if not cleared).</li>
+                            <li>This can cause test results to appear inaccurate, as failures from earlier tests may
+                                show up in unrelated tests.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="example-of-behavior"><strong>Example of Behavior</strong></h3>
+                <p>Here’s how your original code behaves with a global <code>SoftAssert</code>:</p>
+                <h4 id="code">Code:</h4>
+                <pre><code class="language-java">public class Softassert {
+
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+    SoftAssert softassert = new SoftAssert(); // Global declaration
+
+    @Test(priority = 1)
+    public void test1() {
+        softassert.assertEquals(sum(3, 2), 5);
+        softassert.assertAll(); // Clears all assertions, but issues from previous tests might still appear here
+    }
+
+    @Test(priority = 2)
+    public void test2() {
+        softassert.assertEquals(sum(3, 3), 5); // Fails
+        softassert.assertAll(); // Validates previous assertions along with this one
+    }
+
+    @Test(priority = 3)
+    public void test3() {
+        softassert.assertEquals(sum(50, 5), 55); // Passes
+        softassert.assertAll(); // May validate assertions from test1 and test2 again
+    }
+
+    @Test(priority = 4)
+    public void test4() {
+        softassert.assertEquals(sum(3, 1), 5); // Fails
+        softassert.assertAll(); // Same issue
+    }
+}
+</code></pre>
+                <h4 id="expected-output">Expected Output:</h4>
+                <ul>
+                    <li>TestNG might report <strong>unexpected results</strong> due to the shared state of the
+                        <code>SoftAssert</code> object:<ul>
+                            <li><strong>Cascading Failures</strong>: Failures in earlier tests could spill into later
+                                tests, making it hard to pinpoint where the issue occurred.</li>
+                            <li><strong>Duplicate Reporting</strong>: Failures from prior assertions might be reported
+                                repeatedly in later <code>assertAll()</code> calls.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <h3 id="proper-approach-use-separate-softassert-instances"><strong>Proper Approach: Use Separate
+                        <code>SoftAssert</code> Instances</strong></h3>
+                <p>To avoid these problems, always create a <strong>new instance of <code>SoftAssert</code> in each test
+                        method</strong>. This ensures isolation of assertions for each test. Updated code:</p>
+                <pre><code class="language-java">import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+public class Softassert {
+
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+    @Test(priority = 1)
+    public void test1() {
+        SoftAssert softassert = new SoftAssert(); // Local declaration
+        softassert.assertEquals(sum(3, 2), 5);
+        softassert.assertAll();
+    }
+
+    @Test(priority = 2)
+    public void test2() {
+        SoftAssert softassert = new SoftAssert(); // New instance
+        softassert.assertEquals(sum(3, 3), 5);
+        softassert.assertAll();
+    }
+
+    @Test(priority = 3)
+    public void test3() {
+        SoftAssert softassert = new SoftAssert(); // New instance
+        softassert.assertEquals(sum(50, 5), 55);
+        softassert.assertAll();
+    }
+
+    @Test(priority = 4)
+    public void test4() {
+        SoftAssert softassert = new SoftAssert(); // New instance
+        softassert.assertEquals(sum(3, 1), 5);
+        softassert.assertAll();
+    }
+}
+</code></pre>
+                <hr>
+                <h3 id="benefits-of-using-local-softassert-instances"><strong>Benefits of Using Local
+                        <code>SoftAssert</code> Instances</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Isolation</strong>:</p>
+                        <ul>
+                            <li>Each test works independently, avoiding unintended sharing of state.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Accurate Results</strong>:</p>
+                        <ul>
+                            <li>Failures are correctly attributed to the test in which they occur.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Debugging Simplicity</strong>:</p>
+                        <ul>
+                            <li>TestNG reports are easier to read and understand because the assertions and results are
+                                scoped to each test.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="conclusion"><strong>Conclusion</strong></h3>
+                <p>Using a global <code>SoftAssert</code> instance is discouraged because it leads to shared state,
+                    which violates the independence of test cases. Always use a separate <code>SoftAssert</code>
+                    instance for each test method to maintain test isolation and ensure accurate reporting.</p>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>

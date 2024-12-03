@@ -112,6 +112,129 @@ timeOut <span class="token operator">=</span> <span class="token number">0</span
             </div>
         </details>
         <details>
+            <summary>Types of Assertions</summary>
+            <div class="content">
+                <p>In <strong>TestNG</strong>, assertions are used to validate that the expected results match the
+                    actual results during testing. Assertions help identify issues and ensure the stability of the code.
+                    TestNG provides two types of assertions:</p>
+                <hr>
+                <h3 id="1-hard-assertions-assert-class"><strong>1. Hard Assertions (Assert Class)</strong></h3>
+                <p>Hard assertions halt the execution of the test immediately if the assertion fails. Common methods in
+                    the <code>org.testng.Assert</code> class include:</p>
+                <ul>
+                    <li>
+                        <p><strong><code>assertEquals(actual, expected)</code></strong></p>
+                        <ul>
+                            <li>Validates if two values are equal.</li>
+                            <li>Example: <code>Assert.assertEquals(actual, expected);</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><code>assertNotEquals(actual, expected)</code></strong></p>
+                        <ul>
+                            <li>Validates if two values are not equal.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><code>assertTrue(condition)</code></strong></p>
+                        <ul>
+                            <li>Checks if the given condition is <code>true</code>.</li>
+                            <li>Example: <code>Assert.assertTrue(isElementVisible);</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><code>assertFalse(condition)</code></strong></p>
+                        <ul>
+                            <li>Checks if the given condition is <code>false</code>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><code>assertNull(object)</code></strong></p>
+                        <ul>
+                            <li>Validates if the given object is <code>null</code>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><code>assertNotNull(object)</code></strong></p>
+                        <ul>
+                            <li>Validates if the given object is not <code>null</code>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><code>assertSame(actual, expected)</code></strong></p>
+                        <ul>
+                            <li>Validates if two references point to the same object.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><code>assertNotSame(actual, expected)</code></strong></p>
+                        <ul>
+                            <li>Validates if two references do not point to the same object.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <h3 id="2-soft-assertions-softassert-class"><strong>2. Soft Assertions (SoftAssert Class)</strong></h3>
+                <p>Soft assertions allow the test to continue executing even if an assertion fails. Results are
+                    collected and reported at the end of the test. The
+                    <strong><code>org.testng.asserts.SoftAssert</code></strong> class is used for soft assertions.</p>
+                <p><strong>Steps to use SoftAssert:</strong></p>
+                <ol>
+                    <li>Instantiate the <code>SoftAssert</code> class.</li>
+                    <li>Use assertion methods (<code>assertEquals</code>, <code>assertTrue</code>, etc.).</li>
+                    <li>Call the <code>assertAll()</code> method at the end to collate results and mark the test as
+                        passed or failed based on all assertions.</li>
+                </ol>
+                <p>Example:</p>
+                <pre><code class="language-java">import org.testng.asserts.SoftAssert;
+
+public class SoftAssertExample {
+    @Test
+    public void testSoftAssertions() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(1, 2, &quot;First assertion failed&quot;);
+        softAssert.assertTrue(false, &quot;Second assertion failed&quot;);
+        // More assertions can go here.
+        
+        softAssert.assertAll(); // Must be called at the end
+    }
+}
+</code></pre>
+                <hr>
+                <h3 id="differences-between-hard-and-soft-assertions"><strong>Differences Between Hard and Soft
+                        Assertions</strong></h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Hard Assertion</th>
+                            <th>Soft Assertion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Behavior on Failure</strong></td>
+                            <td>Stops test execution.</td>
+                            <td>Continues test execution.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Use Case</strong></td>
+                            <td>Critical validations.</td>
+                            <td>Multiple validations in a single test.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Class</strong></td>
+                            <td><code>Assert</code></td>
+                            <td><code>SoftAssert</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>These assertions help ensure comprehensive test coverage and better debugging during test automation.
+                </p>
+
+            </div>
+        </details>
+        <details>
             <summary>Data Provider</summary>
             <div class="content">
                 <pre class="language-java"><code class="language-java"><span class="token comment">/*
@@ -213,7 +336,8 @@ timeOut <span class="token operator">=</span> <span class="token number">0</span
                         to configuration methods (e.g., <code>beforeConfiguration</code>).</li>
                 </ul>
 
-                <pre style="white-space:pre !important;" class="language-java" tabindex="0"><code class="language-java" style="white-space:pre !important"><span class="token operator">&lt;</span>suite name<span class="token operator">=</span><span class="token string">"SuiteName"</span><span class="token operator">&gt;</span>
+                <pre style="white-space:pre !important;" class="language-java"
+                    tabindex="0"><code class="language-java" style="white-space:pre !important"><span class="token operator">&lt;</span>suite name<span class="token operator">=</span><span class="token string">"SuiteName"</span><span class="token operator">&gt;</span>
 <span class="token generics"><span class="token punctuation">&lt;</span>listeners<span class="token punctuation">&gt;</span></span>
 <span class="token operator">&lt;</span>listener <span class="token keyword">class</span><span class="token operator">-</span>name<span class="token operator">=</span><span class="token string">"com.example.CustomTestListener"</span><span class="token operator">/</span><span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token class-name">Add</span> multiple listeners <span class="token keyword">if</span> needed <span class="token operator">--</span><span class="token operator">&gt;</span>
@@ -335,7 +459,8 @@ timeOut <span class="token operator">=</span> <span class="token number">0</span
                         </ul>
                     </li>
                 </ul>
-                <pre class="language-java" tabindex="0"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>
+                <pre class="language-java"
+                    tabindex="0"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>
 <span class="token operator">*</span> <span class="token class-name">TestNG</span> <span class="token constant">XML</span> <span class="token class-name">Configuration</span> <span class="token class-name">Tags</span> and <span class="token class-name">Their</span> <span class="token class-name">Attributes</span>
 <span class="token operator">*</span> <span class="token class-name">TestNG</span>'s <span class="token constant">XML</span> configuration file <span class="token punctuation">(</span>usually named testng<span class="token punctuation">.</span>xml<span class="token punctuation">)</span> defines the structure of tests<span class="token punctuation">,</span> suites<span class="token punctuation">,</span> and parallel execution<span class="token punctuation">.</span>
 <span class="token operator">*</span> <span class="token class-name">Each</span> tag has specific attributes <span class="token keyword">to</span> <span class="token namespace">control</span> execution behavior<span class="token punctuation">.</span>
@@ -423,7 +548,7 @@ timeOut <span class="token operator">=</span> <span class="token number">0</span
         <details>
             <summary>Hierarchy of Tags in XML file</summary>
             <div class="content">
-<pre style="white-space:pre-line;"><b>&lt;suite&gt;</b>&lt;!-- Root element: defines a test suite --&gt;
+                <pre style="white-space:pre-line;"><b>&lt;suite&gt;</b>&lt;!-- Root element: defines a test suite --&gt;
                     ├── <b>&lt;listeners&gt;</b>        &lt;!-- Optional: defines custom listeners for events --&gt;
                     │   └── <b>&lt;listener&gt;</b>     &lt;!-- Defines a specific listener class --&gt;
                     │
