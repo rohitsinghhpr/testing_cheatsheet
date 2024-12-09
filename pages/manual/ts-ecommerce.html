@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS Ecommerce</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+
+        <details>
+            <summary>search functionality test cases</summary>
+            <div class="content">
+                <ol>
+                    <li>Verify search with valid keywords.</li>
+                    <li>Verify search with invalid keywords.</li>
+                    <li>Verify search with partial keywords.</li>
+                    <li>Verify case-insensitive search results.</li>
+                    <li>Verify auto-suggestions while typing in the search bar.</li>
+                    <li>Verify the display of the most relevant results at the top.</li>
+                    <li>Verify search with special characters.</li>
+                    <li>Verify the display of &quot;No results found&quot; message for invalid searches.</li>
+                    <li>Verify search functionality when the search term matches multiple categories or products.</li>
+                    <li>Verify that clicking on an auto-suggestion displays relevant search results.</li>
+                    <li>Verify search with numerical values (e.g., product IDs or model numbers).</li>
+                    <li>Verify the responsiveness of the search bar across devices (desktop, tablet, mobile).</li>
+                    <li>Verify the search bar functionality on different browsers.</li>
+                    <li>Verify the speed of displaying search results.</li>
+                    <li>Verify the search result pagination for large datasets.</li>
+                    <li>Verify if filtering options work correctly with the search results.</li>
+                    <li>Verify the search bar&#39;s placeholder text (e.g., &quot;Search products, brands, or
+                        categories&quot;).</li>
+                    <li>Verify that irrelevant products are not displayed in search results.</li>
+                    <li>Verify search results are updated dynamically for live searches (if applicable).</li>
+                    <li>Verify the ability to clear the search bar and perform a new search.</li>
+                    <li>Verify the functionality when searching without entering any keywords.</li>
+                    <li>Verify search results for recently added products.</li>
+                    <li>Verify behavior when performing a search while the website is under high traffic.</li>
+                </ol>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>cart functinality test cases</summary>
+            <div class="content">
+                <h3 id="1-adding-items-to-cart"><strong>1. Adding Items to Cart</strong></h3>
+                <ol>
+                    <li>Verify adding a single item to the cart.</li>
+                    <li>Verify adding multiple items to the cart.</li>
+                    <li>Verify adding the same item multiple times updates the quantity.</li>
+                    <li>Verify adding out-of-stock items to the cart (should not be allowed).</li>
+                    <li>Verify adding items with special discounts or offers to the cart.</li>
+                    <li>Verify adding items with variations (e.g., size, color) to the cart.</li>
+                    <li>Verify the maximum quantity limit for adding items to the cart.</li>
+                    <li>Verify adding digital/downloadable products to the cart.</li>
+                </ol>
+                <hr>
+                <h3 id="2-removing-items-from-cart"><strong>2. Removing Items from Cart</strong></h3>
+                <ol start="9">
+                    <li>Verify removing a single item from the cart.</li>
+                    <li>Verify removing all items from the cart using a &quot;Clear Cart&quot; option.</li>
+                    <li>Verify the cart is empty after removing all items.</li>
+                    <li>Verify undo functionality (if available) after removing an item.</li>
+                </ol>
+                <hr>
+                <h3 id="3-updating-cart-quantity"><strong>3. Updating Cart Quantity</strong></h3>
+                <ol start="13">
+                    <li>Verify increasing the quantity of an item in the cart.</li>
+                    <li>Verify decreasing the quantity of an item in the cart.</li>
+                    <li>Verify quantity update reflects accurately in the total price.</li>
+                    <li>Verify setting the quantity to zero removes the item from the cart.</li>
+                    <li>Verify error message when exceeding available stock during quantity update.</li>
+                </ol>
+                <hr>
+                <h3 id="4-cart-calculations"><strong>4. Cart Calculations</strong></h3>
+                <ol start="18">
+                    <li>Verify the cart displays the correct subtotal for each item (price × quantity).</li>
+                    <li>Verify the cart calculates and displays the total price accurately.</li>
+                    <li>Verify the cart calculates discounts or offers correctly.</li>
+                    <li>Verify tax calculations are accurate based on the location.</li>
+                    <li>Verify shipping charges are added to the total price (if applicable).</li>
+                </ol>
+                <hr>
+                <h3 id="5-cart-persistence"><strong>5. Cart Persistence</strong></h3>
+                <ol start="23">
+                    <li>Verify that items remain in the cart after the user logs out and logs back in.</li>
+                    <li>Verify cart persistence across different devices (e.g., mobile and desktop).</li>
+                    <li>Verify the cart is cleared after a successful checkout.</li>
+                    <li>Verify session-based cart behavior for guest users (cart data should not persist after the
+                        session ends).</li>
+                </ol>
+                <hr>
+                <h3 id="6-cart-usability"><strong>6. Cart Usability</strong></h3>
+                <ol start="27">
+                    <li>Verify cart icon displays the correct item count.</li>
+                    <li>Verify cart displays an appropriate message when empty (e.g., &quot;Your cart is empty&quot;).
+                    </li>
+                    <li>Verify the product details in the cart (e.g., name, image, price, and quantity) match the
+                        selected items.</li>
+                    <li>Verify users can navigate to the product details page from the cart.</li>
+                    <li>Verify the cart summary page displays correctly on different screen sizes.</li>
+                </ol>
+                <hr>
+                <h3 id="7-coupon-and-discount-codes"><strong>7. Coupon and Discount Codes</strong></h3>
+                <ol start="32">
+                    <li>Verify applying valid coupon codes updates the total price.</li>
+                    <li>Verify invalid or expired coupon codes display appropriate error messages.</li>
+                    <li>Verify applying multiple coupons simultaneously (if allowed).</li>
+                    <li>Verify removing applied coupon codes updates the total price.</li>
+                </ol>
+                <hr>
+                <h3 id="8-checkout-flow-integration"><strong>8. Checkout Flow Integration</strong></h3>
+                <ol start="36">
+                    <li>Verify the &quot;Proceed to Checkout&quot; button navigates to the checkout page.</li>
+                    <li>Verify users cannot proceed to checkout with an empty cart.</li>
+                    <li>Verify items in the cart reflect correctly on the checkout page.</li>
+                </ol>
+                <hr>
+                <h3 id="9-performance-and-security"><strong>9. Performance and Security</strong></h3>
+                <ol start="39">
+                    <li>Verify cart functionality under high traffic conditions.</li>
+                    <li>Verify cart items are secure and cannot be tampered with using external tools.</li>
+                    <li>Verify session timeouts do not result in unauthorized access to the cart.</li>
+                </ol>
+                <hr>
+                <h3 id="10-edge-cases"><strong>10. Edge Cases</strong></h3>
+                <ol start="42">
+                    <li>Verify adding an item to the cart after its price changes.</li>
+                    <li>Verify the cart handles rapid add/remove operations without errors.</li>
+                    <li>Verify cart functionality when the network connection is lost and restored.</li>
+                    <li>Verify behavior when an item in the cart goes out of stock before checkout.</li>
+                </ol>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>checkout processes</summary>
+            <div class="content">
+                <h3 id="1-general-checkout-flow"><strong>1. General Checkout Flow</strong></h3>
+                <ol>
+                    <li>Verify that users can proceed to the checkout page from the cart with items in the cart.</li>
+                    <li>Verify users cannot proceed to checkout with an empty cart.</li>
+                    <li>Verify the checkout page is accessible only after user authentication (if applicable).</li>
+                    <li>Verify guest users can access the checkout page (if guest checkout is allowed).</li>
+                </ol>
+                <hr>
+                <h3 id="2-address-management"><strong>2. Address Management</strong></h3>
+                <ol start="5">
+                    <li>Verify the user can add a new shipping address during checkout.</li>
+                    <li>Verify selecting a previously saved address for the order.</li>
+                    <li>Verify the ability to edit an existing address during checkout.</li>
+                    <li>Verify mandatory fields in the address form display appropriate validation errors if left blank.
+                    </li>
+                    <li>Verify different billing and shipping addresses can be selected (if allowed).</li>
+                    <li>Verify the checkout flow when no address is saved.</li>
+                </ol>
+                <hr>
+                <h3 id="3-payment-options"><strong>3. Payment Options</strong></h3>
+                <ol start="11">
+                    <li>Verify all available payment methods (e.g., credit card, PayPal, COD) are displayed on the
+                        payment page.</li>
+                    <li>Verify successful payment with valid credit/debit card details.</li>
+                    <li>Verify error message for invalid card details (e.g., incorrect CVV, expired card).</li>
+                    <li>Verify that applying a payment method like PayPal redirects to its respective page.</li>
+                    <li>Verify functionality of &quot;Cash on Delivery&quot; (COD) payment option (if available).</li>
+                    <li>Verify saving a card for future payments (if supported).</li>
+                    <li>Verify the payment method selection persists on the review page.</li>
+                </ol>
+                <hr>
+                <h3 id="4-order-summary"><strong>4. Order Summary</strong></h3>
+                <ol start="18">
+                    <li>Verify the order summary displays all products with correct quantities, prices, and applied
+                        discounts.</li>
+                    <li>Verify shipping charges and taxes are calculated correctly.</li>
+                    <li>Verify the final total price matches the item prices, taxes, shipping charges, and discounts.
+                    </li>
+                    <li>Verify users can modify the cart from the checkout page.</li>
+                    <li>Verify order summary updates dynamically when cart items or quantities are changed.</li>
+                </ol>
+                <hr>
+                <h3 id="5-discounts-and-coupons"><strong>5. Discounts and Coupons</strong></h3>
+                <ol start="23">
+                    <li>Verify the application of valid discount or coupon codes.</li>
+                    <li>Verify error messages for invalid, expired, or inapplicable coupon codes.</li>
+                    <li>Verify removing an applied coupon code reflects updated prices.</li>
+                    <li>Verify combining multiple discounts, if supported (e.g., coupon + store discount).</li>
+                </ol>
+                <hr>
+                <h3 id="6-shipping-options"><strong>6. Shipping Options</strong></h3>
+                <ol start="27">
+                    <li>Verify available shipping methods and their costs display based on the address entered.</li>
+                    <li>Verify estimated delivery dates are displayed correctly.</li>
+                    <li>Verify the user can select a preferred shipping method.</li>
+                    <li>Verify free shipping is applied when conditions (e.g., order amount) are met.</li>
+                </ol>
+                <hr>
+                <h3 id="7-confirmation-page"><strong>7. Confirmation Page</strong></h3>
+                <ol start="31">
+                    <li>Verify the order confirmation page displays after successful checkout.</li>
+                    <li>Verify order confirmation email or SMS is sent to the user.</li>
+                    <li>Verify the order confirmation page shows a unique order ID.</li>
+                    <li>Verify the order status is updated in the &quot;My Orders&quot; section after successful
+                        payment.</li>
+                </ol>
+                <hr>
+                <h3 id="8-error-handling"><strong>8. Error Handling</strong></h3>
+                <ol start="35">
+                    <li>Verify the user cannot proceed to checkout with out-of-stock items in the cart.</li>
+                    <li>Verify appropriate error messages if the payment gateway is down.</li>
+                    <li>Verify handling of failed payments (e.g., timeout, insufficient funds).</li>
+                    <li>Verify the checkout page does not crash when large data sets (e.g., many items) are processed.
+                    </li>
+                    <li>Verify users are redirected back to the checkout page after a failed payment attempt.</li>
+                </ol>
+                <hr>
+                <h3 id="9-edge-cases"><strong>9. Edge Cases</strong></h3>
+                <ol start="40">
+                    <li>Verify behavior when the product price changes after it is added to the cart but before
+                        checkout.</li>
+                    <li>Verify checkout behavior when an item in the cart becomes unavailable before placing the order.
+                    </li>
+                    <li>Verify network disconnection during the checkout process and the ability to resume later.</li>
+                    <li>Verify checkout performance under high traffic conditions.</li>
+                    <li>Verify checkout flow for digital/downloadable products without requiring shipping information.
+                    </li>
+                    <li>Verify checkout flow for mixed carts (digital + physical products).</li>
+                </ol>
+                <hr>
+                <h3 id="10-security"><strong>10. Security</strong></h3>
+                <ol start="46">
+                    <li>Verify the checkout process is secured using HTTPS.</li>
+                    <li>Verify sensitive information (e.g., card details) is masked and not stored without user consent.
+                    </li>
+                    <li>Verify session expiration logs out the user and clears sensitive data from the checkout page.
+                    </li>
+                    <li>Verify protection against duplicate order submissions (e.g., refreshing the confirmation page).
+                    </li>
+                </ol>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>order management</summary>
+            <div class="content">
+
+                <h3 id="1-viewing-order-history"><strong>1. Viewing Order History</strong></h3>
+                <ol>
+                    <li>Verify that users can access their order history from their account/profile page.</li>
+                    <li>Verify that users can view all past orders with order ID, date, status, and total amount.</li>
+                    <li>Verify that users can click on an individual order to see detailed information (items, prices,
+                        shipping, etc.).</li>
+                    <li>Verify that users can filter orders by status (e.g., pending, shipped, completed, canceled).
+                    </li>
+                    <li>Verify that users can search for past orders using filters (e.g., by order ID, date range, or
+                        product name).</li>
+                </ol>
+                <hr>
+                <h3 id="2-order-details"><strong>2. Order Details</strong></h3>
+                <ol start="6">
+                    <li>Verify that the order details page displays correct product names, quantities, prices, and
+                        shipping address.</li>
+                    <li>Verify that the shipping method, taxes, and any applied discounts are shown clearly on the order
+                        details page.</li>
+                    <li>Verify the correct status (e.g., &quot;Pending&quot;, &quot;Shipped&quot;,
+                        &quot;Delivered&quot;, &quot;Canceled&quot;) is displayed for each order.</li>
+                    <li>Verify that the estimated delivery date is displayed (if applicable).</li>
+                    <li>Verify that the &quot;Track Order&quot; or &quot;Tracking Number&quot; link (if available)
+                        directs to the correct external tracking page.</li>
+                </ol>
+                <hr>
+                <h3 id="3-order-status-updates"><strong>3. Order Status Updates</strong></h3>
+                <ol start="11">
+                    <li>Verify that the order status changes correctly from &quot;Pending&quot; to &quot;Shipped&quot;
+                        when the item is dispatched.</li>
+                    <li>Verify that the status updates to &quot;Delivered&quot; when the order is successfully
+                        delivered.</li>
+                    <li>Verify that the order status updates correctly to &quot;Canceled&quot; when the order is
+                        canceled by the customer or admin.</li>
+                    <li>Verify that order statuses are updated on the order details page in real-time.</li>
+                </ol>
+                <hr>
+                <h3 id="4-cancelling-orders"><strong>4. Cancelling Orders</strong></h3>
+                <ol start="15">
+                    <li>Verify that users can cancel orders before shipment if the option is available.</li>
+                    <li>Verify that a confirmation prompt appears when the user attempts to cancel an order.</li>
+                    <li>Verify that canceled orders are moved to the &quot;Canceled&quot; status and are removed from
+                        the &quot;Active Orders&quot; section.</li>
+                    <li>Verify that any applicable refunds are processed and updated in the &quot;Payment History&quot;
+                        or &quot;Refunds&quot; section.</li>
+                    <li>Verify that users receive a cancellation email/SMS confirmation after canceling an order.</li>
+                    <li>Verify that users are unable to cancel orders after they have been marked as shipped or
+                        delivered (if business rules prevent it).</li>
+                </ol>
+                <hr>
+                <h3 id="5-modifying-orders"><strong>5. Modifying Orders</strong></h3>
+                <ol start="21">
+                    <li>Verify that users can modify orders (e.g., changing quantity, adding/removing products) before
+                        the order is shipped.</li>
+                    <li>Verify that changes to the order update the total price accordingly.</li>
+                    <li>Verify that the user receives a confirmation notification after modifying the order.</li>
+                    <li>Verify that users are not able to modify orders once they are in &quot;Shipped&quot; or
+                        &quot;Delivered&quot; status.</li>
+                </ol>
+                <hr>
+                <h3 id="6-return-and-refund-process"><strong>6. Return and Refund Process</strong></h3>
+                <ol start="25">
+                    <li>Verify that users can request a return for an item after delivery (within the return policy
+                        window).</li>
+                    <li>Verify that the return process includes selecting the reason for return (e.g.,
+                        &quot;Defective,&quot; &quot;Wrong item,&quot; &quot;Changed mind&quot;).</li>
+                    <li>Verify that users can track the return status (e.g., &quot;Return Requested,&quot; &quot;Return
+                        Approved,&quot; &quot;Return Completed&quot;).</li>
+                    <li>Verify that the refund is processed after a return is approved and the item is received back
+                        (refund method and timeline).</li>
+                    <li>Verify that the refunded amount is reflected correctly in the payment history and user account.
+                    </li>
+                    <li>Verify that users can track the status of their refund (if supported by the system).</li>
+                </ol>
+                <hr>
+                <h3 id="7-order-invoices-and-receipts"><strong>7. Order Invoices and Receipts</strong></h3>
+                <ol start="31">
+                    <li>Verify that users can view and download an invoice for any past order.</li>
+                    <li>Verify that the invoice includes itemized details such as product names, quantities, prices,
+                        shipping charges, taxes, and total amount.</li>
+                    <li>Verify that the invoice contains order number, date, customer information, and payment method.
+                    </li>
+                    <li>Verify that users receive an invoice via email upon order completion.</li>
+                </ol>
+                <hr>
+                <h3 id="8-order-tracking"><strong>8. Order Tracking</strong></h3>
+                <ol start="35">
+                    <li>Verify that users can track their order status from the order history page.</li>
+                    <li>Verify that a tracking number is provided for shipped orders, linking to the courier&#39;s
+                        tracking page.</li>
+                    <li>Verify that tracking information is updated when the status changes (e.g., &quot;Out for
+                        Delivery&quot;).</li>
+                    <li>Verify that users are notified when the status of their order changes (e.g., order dispatched,
+                        out for delivery).</li>
+                    <li>Verify that the system correctly displays &quot;Delivered&quot; once the item has been
+                        delivered.</li>
+                </ol>
+                <hr>
+                <h3 id="9-order-notifications"><strong>9. Order Notifications</strong></h3>
+                <ol start="40">
+                    <li>Verify that the user receives an order confirmation email/SMS after placing an order.</li>
+                    <li>Verify that users receive a shipment notification with tracking details after the order is
+                        dispatched.</li>
+                    <li>Verify that users receive delivery notifications once their order is delivered.</li>
+                    <li>Verify that users receive cancellation or refund emails when applicable.</li>
+                </ol>
+                <hr>
+                <h3 id="10-multi-item-orders"><strong>10. Multi-Item Orders</strong></h3>
+                <ol start="44">
+                    <li>Verify that users can view individual statuses of each item in a multi-item order (e.g.,
+                        shipped, pending, out of stock).</li>
+                    <li>Verify that users are able to track the status of each item in the order separately if one item
+                        is delayed.</li>
+                    <li>Verify that users can cancel or return individual items from a multi-item order (if allowed).
+                    </li>
+                    <li>Verify that partial refunds are processed correctly when only part of the order is returned.
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="11-order-history-search-and-filter"><strong>11. Order History Search and Filter</strong></h3>
+                <ol start="48">
+                    <li>Verify that users can search their order history by various criteria (e.g., order ID, product
+                        name, date range, order status).</li>
+                    <li>Verify that users can filter their order history by status (e.g., &quot;Pending,&quot;
+                        &quot;Shipped,&quot; &quot;Delivered,&quot; &quot;Canceled&quot;).</li>
+                    <li>Verify that users can view detailed information for orders within the search results.</li>
+                </ol>
+                <hr>
+                <h3 id="12-security"><strong>12. Security</strong></h3>
+                <ol start="51">
+                    <li>Verify that order information is displayed securely (HTTPS) and cannot be tampered with.</li>
+                    <li>Verify that users cannot view orders that do not belong to them (through authorization checks).
+                    </li>
+                    <li>Verify that sensitive order details (e.g., payment method) are masked or hidden for security.
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="13-edge-cases"><strong>13. Edge Cases</strong></h3>
+                <ol start="54">
+                    <li>Verify that orders with special conditions (e.g., pre-order, backorder) are handled correctly.
+                    </li>
+                    <li>Verify the system can handle multiple simultaneous updates to order status (e.g., bulk order
+                        processing).</li>
+                    <li>Verify the handling of orders with multiple currencies (if applicable).</li>
+                    <li>Verify the handling of orders placed during a system outage or under heavy load conditions.</li>
+                </ol>
+                <hr>
+                <h3 id="14-integration-testing"><strong>14. Integration Testing</strong></h3>
+                <ol start="58">
+                    <li>Verify that the order management system integrates correctly with inventory management to
+                        reflect stock levels after order placement.</li>
+                    <li>Verify that order information correctly updates in the payment gateway or processor.</li>
+                    <li>Verify that returns and refunds are synchronized across the order management and payment
+                        systems.</li>
+                </ol>
+
+
+            </div>
+        </details>
+
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
