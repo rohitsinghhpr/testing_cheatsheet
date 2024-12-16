@@ -261,5 +261,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initRightSideBarNavigation();
     initDetailsNavigation();
     initOffcanvasNavigation();
-    initializeOffcanvasMemory();
+    // initializeOffcanvasMemory();
 });

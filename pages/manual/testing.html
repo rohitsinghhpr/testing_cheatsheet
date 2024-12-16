@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,48 +8,152 @@
     <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assests/css/style.css">
 </head>
+
 <body>
     <div class="details-container">
+        <details>
+            <summary>White Box Testing</summary>
+            <div class="content">
+                <p><strong>White Box Testing</strong> and <strong>Black Box Testing</strong> are two distinct types of
+                    software testing methodologies used to evaluate the functionality, security, and behavior of
+                    software. Here&#39;s a breakdown of each:</p>
+                <h3 id="1-white-box-testing">1. <strong>White Box Testing</strong></h3>
+                <ul>
+                    <li>
+                        <p><strong>Definition</strong>: White Box Testing, also known as <strong>Structural
+                                Testing</strong> or <strong>Glass Box Testing</strong>, involves testing the internal
+                            structure, design, and coding of an application. The tester has access to the source code
+                            and uses this knowledge to design test cases. It focuses on the logic, paths, and branches
+                            in the program code.</p>
+                    </li>
+                    <li>
+                        <p><strong>Key Characteristics</strong>:</p>
+                        <ul>
+                            <li>Tests internal workings and code structure.</li>
+                            <li>Requires knowledge of programming languages and the application’s internal architecture.
+                            </li>
+                            <li>Tests individual functions, branches, paths, and conditions in the software.</li>
+                            <li>Aims to find hidden errors and optimize the code.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>When it&#39;s performed</strong>:</p>
+                        <ul>
+                            <li>It is typically performed <strong>during development</strong> or <strong>unit
+                                    testing</strong>.</li>
+                            <li>It is also used <strong>after changes or updates</strong> to ensure the internal logic
+                                is still correct and no new issues have been introduced.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Examples of White Box Testing</strong>:</p>
+                        <ul>
+                            <li>Unit Testing (testing individual components or functions of the software).</li>
+                            <li>Path Testing (testing different execution paths in the code).</li>
+                            <li>Branch Testing (testing each branch or decision point in the code).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </details>
+        <details>
+            <summary>Black Box Testing</summary>
+            <div class="content">
+                <h3 id="2-black-box-testing">2. <strong>Black Box Testing</strong></h3>
+                <ul>
+                    <li>
+                        <p><strong>Definition</strong>: Black Box Testing is a testing methodology where the tester does
+                            <strong>not</strong> have access to the internal workings of the application. The focus is
+                            solely on the software’s <strong>inputs and outputs</strong> to ensure the system behaves as
+                            expected. The tester examines how the system reacts to various inputs, without knowing its
+                            internal code or structure.
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Key Characteristics</strong>:</p>
+                        <ul>
+                            <li>Focuses on testing the software’s functionality from an external perspective.</li>
+                            <li>No knowledge of the source code is required.</li>
+                            <li>Tests how well the system meets its requirements and handles different use cases.</li>
+                            <li>Aims to detect functional, usability, and user interface issues.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>When it&#39;s performed</strong>:</p>
+                        <ul>
+                            <li>It is usually performed <strong>during the later stages of development</strong>,
+                                particularly during <strong>system testing</strong>, <strong>integration
+                                    testing</strong>, and <strong>acceptance testing</strong>.</li>
+                            <li>It can also be part of <strong>regression testing</strong> to ensure that new features
+                                do not break existing functionality.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Examples of Black Box Testing</strong>:</p>
+                        <ul>
+                            <li>Functional Testing (testing specific features or functions).</li>
+                            <li>Usability Testing (evaluating the user experience and interface).</li>
+                            <li>Performance Testing (checking how the system behaves under load).</li>
+                            <li>Acceptance Testing (verifying the software meets user requirements).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </details>
         <details>
             <summary>Static and Dynamic Testing</summary>
             <div class="content">
                 <p><strong>Static Testing</strong></p>
-<p>Testing the project related documents is called as static testing.</p>
-<p><strong>Static testing techniques:-</strong></p>
-<ol>
-<li><strong>Review -</strong> Conducts on documents to ensure correctness and completeness.</li>
-</ol>
-<ul>
-<li><p>Requirement review</p>
-</li>
-<li><p>Design review</p>
-</li>
-<li><p>Code review</p>
-</li>
-<li><p>Test Plan review</p>
-</li>
-<li><p>Test cases review</p>
-</li>
-</ul>
-<ol>
-<li><p><strong>Walk through -</strong> It is a informal review. Author reads the documents or code and discuss with peers. It’s not pre-planned and can be done whenever required.</p>
-</li>
-<li><p><strong>Inspection -</strong> Its a most formal review type. In which at least 3-8 people will sit in the meeting 1 reader 2 writer 3 moderator plus concerned. Inspection will have a proper schedule which will be intimated via email to the concerned developer/testers.</p>
-</li>
-</ol>
-<p><strong>Dynamic Testing</strong></p>
-<p>Testing the actual software is called dynamic testing</p>
-<p><strong>Dynamic testing techniques:-</strong></p>
-<ul>
-<li><p>Unit testing</p>
-</li>
-<li><p>Integration testing</p>
-</li>
-<li><p>System testing</p>
-</li>
-<li><p>UAT user assurances testing</p>
-</li>
-</ul>
+                <p>Testing the project related documents is called as static testing.</p>
+                <p><strong>Static testing techniques:-</strong></p>
+                <ol>
+                    <li><strong>Review -</strong> Conducts on documents to ensure correctness and completeness.</li>
+                </ol>
+                <ul>
+                    <li>
+                        <p>Requirement review</p>
+                    </li>
+                    <li>
+                        <p>Design review</p>
+                    </li>
+                    <li>
+                        <p>Code review</p>
+                    </li>
+                    <li>
+                        <p>Test Plan review</p>
+                    </li>
+                    <li>
+                        <p>Test cases review</p>
+                    </li>
+                </ul>
+                <ol>
+                    <li>
+                        <p><strong>Walk through -</strong> It is a informal review. Author reads the documents or code
+                            and discuss with peers. It’s not pre-planned and can be done whenever required.</p>
+                    </li>
+                    <li>
+                        <p><strong>Inspection -</strong> Its a most formal review type. In which at least 3-8 people
+                            will sit in the meeting 1 reader 2 writer 3 moderator plus concerned. Inspection will have a
+                            proper schedule which will be intimated via email to the concerned developer/testers.</p>
+                    </li>
+                </ol>
+                <p><strong>Dynamic Testing</strong></p>
+                <p>Testing the actual software is called dynamic testing</p>
+                <p><strong>Dynamic testing techniques:-</strong></p>
+                <ul>
+                    <li>
+                        <p>Unit testing</p>
+                    </li>
+                    <li>
+                        <p>Integration testing</p>
+                    </li>
+                    <li>
+                        <p>System testing</p>
+                    </li>
+                    <li>
+                        <p>UAT user assurances testing</p>
+                    </li>
+                </ul>
 
             </div>
         </details>
@@ -56,20 +161,21 @@
             <summary>Unit Testing</summary>
             <div class="content">
                 <p><strong>Unit Testing -</strong></p>
-<ul>
-<li>Comes under white box testing.</li>
-<li>A unit is a single module of software.</li>
-<li>Unit testing conducts on a single program or single module.</li>
-<li>Unit testing is conducted by the developers.</li>
-</ul>
-<p><strong>Example</strong>: Testing a single function that calculates the sum of two numbers to ensure it returns the correct result.</p>
-<p><strong>Unit testing techniques:-</strong></p>
-<ul>
-<li>Basic path testing</li>
-<li>Control structure testing</li>
-<li>Loops testing</li>
-<li>Mutation testing</li>
-</ul>
+                <ul>
+                    <li>Comes under white box testing.</li>
+                    <li>A unit is a single module of software.</li>
+                    <li>Unit testing conducts on a single program or single module.</li>
+                    <li>Unit testing is conducted by the developers.</li>
+                </ul>
+                <p><strong>Example</strong>: Testing a single function that calculates the sum of two numbers to ensure
+                    it returns the correct result.</p>
+                <p><strong>Unit testing techniques:-</strong></p>
+                <ul>
+                    <li>Basic path testing</li>
+                    <li>Control structure testing</li>
+                    <li>Loops testing</li>
+                    <li>Mutation testing</li>
+                </ul>
 
             </div>
         </details>
@@ -77,139 +183,685 @@
             <summary>Integration Testing</summary>
             <div class="content">
                 <p><strong>Integration testing -</strong></p>
-<ul>
-<li>integration testing performed over 2 or more modules.</li>
-<li>Integration testing focuses on checking data communication between multiple modules.</li>
-<li>Integration testing is a white box testing technique</li>
-</ul>
-<p><strong>Types of integration testing :-</strong></p>
-<ol>
-<li><p><strong>Incremental integration testing:</strong> incrementally adding the modules and testing the data flow between the modules.</p>
-<p> <strong>Top down incremental integration testing approach -</strong> incrementally adding the modules and testing data fow between the modules. And ensure the module added is the child of previous module.</p>
-<p> <strong>Bottom up incremental integration testing approach -</strong> incrementally adding the modules and testing data flow b/w the moudles. And ecsure the module added is the parent of the previous module.</p>
-</li>
-<li><p><strong>Non-Incremental integration testing:</strong> adding the all modules in one single shot and test the data flow between modules.
-<strong>Drawbacks:-</strong></p>
-<ul>
-<li>We might miss data flow between some of the modules.</li>
-<li>If you find any defect we can’t understand the root cause of defect.</li>
-</ul>
-</li>
-</ol>
-<p><strong>Example</strong>: Testing the interaction between a login module and a user profile module to ensure data is correctly passed and handled.</p>
+                <ul>
+                    <li>integration testing performed over 2 or more modules.</li>
+                    <li>Integration testing focuses on checking data communication between multiple modules.</li>
+                    <li>Integration testing is a white box testing technique</li>
+                </ul>
+                <p><strong>Types of integration testing :-</strong></p>
+                <ol>
+                    <li>
+                        <p><strong>Incremental integration testing:</strong> incrementally adding the modules and
+                            testing the data flow between the modules.</p>
+                        <p> <strong>Top down incremental integration testing approach -</strong> incrementally adding
+                            the modules and testing data fow between the modules. And ensure the module added is the
+                            child of previous module.</p>
+                        <p> <strong>Bottom up incremental integration testing approach -</strong> incrementally adding
+                            the modules and testing data flow b/w the moudles. And ecsure the module added is the parent
+                            of the previous module.</p>
+                    </li>
+                    <li>
+                        <p><strong>Non-Incremental integration testing:</strong> adding the all modules in one single
+                            shot and test the data flow between modules.
+                            <strong>Drawbacks:-</strong>
+                        </p>
+                        <ul>
+                            <li>We might miss data flow between some of the modules.</li>
+                            <li>If you find any defect we can’t understand the root cause of defect.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><strong>Example</strong>: Testing the interaction between a login module and a user profile module to
+                    ensure data is correctly passed and handled.</p>
 
             </div>
-        </details>   
+        </details>
         <details>
             <summary>Systen Testing (end to end testing)</summary>
             <div class="content">
                 <p><strong>System Testing:- Yes, end-to-end testing (E2E) is also known as system testing:</strong></p>
-<ul>
-<li>Testing over all functionality of the application with respective client requirements.</li>
-<li>It is a black box testing technique.</li>
-<li>This is conducted by testers.</li>
-<li>After the completion of component and integration level testing we start system testing.</li>
-<li>Before conducting system testing we should know the customer requirements.</li>
-</ul>
-<p><strong>Example</strong>: Conducting end-to-end testing of an e-commerce application to ensure that users can search for products, add them to the cart, and complete the purchase process.</p>
-<p><strong>System testing focuses on:-</strong></p>
-<p><strong>1. Graphical user interface testing -</strong> It is a process of testing the user interface of an application. A graphical user interface includes all the elements such as menus,checkbox, buttons, colors, fonts, icons, content and images.</p>
-<p><strong>2. Usability testing -</strong> During this testing validates application context sensitive help or not to the user. Checks how easily the end user are able to understand and operate the application is called usability testing.</p>
-<p><strong>3. Functional Testing -</strong> Functionality is nothing but behaviour of application.Functional testing talks about how your feature should work.</p>
-<p><strong>Types of functional testing:-</strong></p>
-<ol>
-<li><strong>Object properties testing:</strong> Checks the properties of objects present on the application. Ex: enable, disable, visible, focus etc.</li>
-<li><strong>Database testing/ Back end testing:</strong> DML operations</li>
-<li><strong>Error Handing testing :</strong> Tester verify the error message while performing incorrect actions on the application. Error message should be readable. User understandable / simple language.</li>
-<li><strong>Calculations and Manipulations Testing :</strong></li>
-<li><strong>Links Existence and Links Execution :</strong></li>
-<li><strong>Cookies and Sessions :</strong></li>
-</ol>
-<p><strong>4. Non-Functional Testing -</strong> Once the application functionality is stable then we do non-functional testing. Focus on performance, load it can take and security etc. It is focus on customer expectations.</p>
-<p><strong>Types of Non-function testing:-</strong></p>
-<ol>
-<li><p><strong>Performance Testing :</strong> Speed of application</p>
-<ul>
-<li><p><strong>Load testing:</strong> Gradually Increasing the load on app then check the speed of the app. <strong>Example</strong>: An online retail website handling 10,000 concurrent users.</p>
-</li>
-<li><p><strong>Stress testing:</strong> Suddenly increase or decrease the load on the app and check speed of the app.</p>
-</li>
-<li><p><strong>Volume testing:</strong> Checks how much data is able to handle by the application.</p>
-<p>  <strong>Example</strong>: A CRM system managing 10 million customer records.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Security Testing:</strong> How secure are our application.</p>
-<ul>
-<li><strong>Authentication:</strong> verify the user are valid or not. Ex login</li>
-<li><strong>Authorization/Access Control:</strong> Permissions of valid user.</li>
-</ul>
-</li>
-<li><p><strong>Recovery Testing:</strong> Checks the system change to abnormal to normal. It is used to define how well an app can recover from crashes, hardware failure and other problems.</p>
-</li>
-<li><p><strong>Compatibility Testing:</strong></p>
-<ul>
-<li>Forward Compatibility</li>
-<li>Backward Compatibility</li>
-<li>Hardware Compatibility (Configuration Testing)</li>
-</ul>
-</li>
-<li><p><strong>Installation Testing:</strong></p>
-<ul>
-<li>Check screens are clear to understand.</li>
-<li>Simple or not</li>
-<li>UN-installation</li>
-</ul>
-</li>
-<li><p><strong>Sanitation/ Garbage Testing:</strong> If any app provides extra features/ functionality then we consider them as bug.</p>
-</li>
-</ol>
+                <ul>
+                    <li>Testing over all functionality of the application with respective client requirements.</li>
+                    <li>It is a black box testing technique.</li>
+                    <li>This is conducted by testers.</li>
+                    <li>After the completion of component and integration level testing we start system testing.</li>
+                    <li>Before conducting system testing we should know the customer requirements.</li>
+                </ul>
+                <p><strong>Example</strong>: Conducting end-to-end testing of an e-commerce application to ensure that
+                    users can search for products, add them to the cart, and complete the purchase process.</p>
+                <p><strong>System testing focuses on:-</strong></p>
+                <p><strong>1. Graphical user interface testing -</strong> It is a process of testing the user interface
+                    of an application. A graphical user interface includes all the elements such as menus,checkbox,
+                    buttons, colors, fonts, icons, content and images.</p>
+                <p><strong>2. Usability testing -</strong> During this testing validates application context sensitive
+                    help or not to the user. Checks how easily the end user are able to understand and operate the
+                    application is called usability testing.</p>
+                <p><strong>3. Functional Testing -</strong> Functionality is nothing but behaviour of
+                    application.Functional testing talks about how your feature should work.</p>
+                <p><strong>Types of functional testing:-</strong></p>
+                <ol>
+                    <li><strong>Object properties testing:</strong> Checks the properties of objects present on the
+                        application. Ex: enable, disable, visible, focus etc.</li>
+                    <li><strong>Database testing/ Back end testing:</strong> DML operations</li>
+                    <li><strong>Error Handing testing :</strong> Tester verify the error message while performing
+                        incorrect actions on the application. Error message should be readable. User understandable /
+                        simple language.</li>
+                    <li><strong>Calculations and Manipulations Testing :</strong></li>
+                    <li><strong>Links Existence and Links Execution :</strong></li>
+                    <li><strong>Cookies and Sessions :</strong></li>
+                </ol>
+                <p><strong>4. Non-Functional Testing -</strong> Once the application functionality is stable then we do
+                    non-functional testing. Focus on performance, load it can take and security etc. It is focus on
+                    customer expectations.</p>
+                <p><strong>Types of Non-function testing:-</strong></p>
+                <ol>
+                    <li>
+                        <p><strong>Performance Testing :</strong> Speed of application</p>
+                        <ul>
+                            <li>
+                                <p><strong>Load testing:</strong> Gradually Increasing the load on app then check the
+                                    speed of the app. <strong>Example</strong>: An online retail website handling 10,000
+                                    concurrent users.</p>
+                            </li>
+                            <li>
+                                <p><strong>Stress testing:</strong> Suddenly increase or decrease the load on the app
+                                    and check speed of the app.</p>
+                            </li>
+                            <li>
+                                <p><strong>Volume testing:</strong> Checks how much data is able to handle by the
+                                    application.</p>
+                                <p> <strong>Example</strong>: A CRM system managing 10 million customer records.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Security Testing:</strong> How secure are our application.</p>
+                        <ul>
+                            <li><strong>Authentication:</strong> verify the user are valid or not. Ex login</li>
+                            <li><strong>Authorization/Access Control:</strong> Permissions of valid user.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Recovery Testing:</strong> Checks the system change to abnormal to normal. It is used
+                            to define how well an app can recover from crashes, hardware failure and other problems.</p>
+                    </li>
+                    <li>
+                        <p><strong>Compatibility Testing:</strong></p>
+                        <ul>
+                            <li>Forward Compatibility</li>
+                            <li>Backward Compatibility</li>
+                            <li>Hardware Compatibility (Configuration Testing)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Installation Testing:</strong></p>
+                        <ul>
+                            <li>Check screens are clear to understand.</li>
+                            <li>Simple or not</li>
+                            <li>UN-installation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Sanitation/ Garbage Testing:</strong> If any app provides extra features/
+                            functionality then we consider them as bug.</p>
+                    </li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>Functional Testing</summary>
+            <div class="content">
+                <p><strong>Functional Testing</strong> - Functionality is nothing but behaviour of
+                    application.Functional testing talks about how your feature should work.</p>
+                <ol>
+                    <li><strong>Object properties testing:</strong> Checks the properties of objects present on the
+                        application. Ex: enable, disable, visible, focus etc.</li>
+                    <li><strong>Database testing/ Back end testing:</strong> DML operations</li>
+                    <li><strong>Error Handing testing :</strong> Tester verify the error message while performing
+                        incorrect actions on the application. Error message should be readable. User understandable /
+                        simple language.</li>
+                    <li><strong>Calculations and Manipulations Testing :</strong></li>
+                    <li><strong>Links Existence and Links Execution :</strong></li>
+                    <li><strong>Cookies and Sessions :</strong></li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>Non-Functional Testing</summary>
+            <div class="content">
+                <p><strong>Non-Functional Testing</strong> - Once the application functionality is stable then we do
+                    non-functional testing. Focus on performance, load it can take and security etc. It is focus on
+                    customer expectations.</p>
+                <p><strong>Types of Non-function testing:-</strong></p>
+                <ol>
+                    <li>
+                        <p><strong>Performance Testing :</strong> Speed of application</p>
+                        <ul>
+                            <li>
+                                <p><strong>Load testing:</strong> Gradually Increasing the load on app then check the
+                                    speed of the app. <strong>Example</strong>: An online retail website handling 10,000
+                                    concurrent users.</p>
+                            </li>
+                            <li>
+                                <p><strong>Stress testing:</strong> Suddenly increase or decrease the load on the app
+                                    and check speed of the app.</p>
+                            </li>
+                            <li>
+                                <p><strong>Volume testing:</strong> Checks how much data is able to handle by the
+                                    application.</p>
+                                <p> <strong>Example</strong>: A CRM system managing 10 million customer records.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Security Testing:</strong> How secure are our application.</p>
+                        <ul>
+                            <li><strong>Authentication:</strong> verify the user are valid or not. Ex login</li>
+                            <li><strong>Authorization/Access Control:</strong> Permissions of valid user.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Recovery Testing:</strong> Checks the system change to abnormal to normal. It is used
+                            to define how well an app can recover from crashes, hardware failure and other problems.</p>
+                    </li>
+                    <li>
+                        <p><strong>Compatibility Testing:</strong></p>
+                        <ul>
+                            <li>Forward Compatibility</li>
+                            <li>Backward Compatibility</li>
+                            <li>Hardware Compatibility (Configuration Testing)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Installation Testing:</strong></p>
+                        <ul>
+                            <li>Check screens are clear to understand.</li>
+                            <li>Simple or not</li>
+                            <li>UN-installation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Sanitation/ Garbage Testing:</strong> If any app provides extra features/
+                            functionality then we consider them as bug.</p>
+                    </li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>User Acceptance Testing</summary>
+            <div class="content">
+                <h3 id="user-acceptance-testing-uat"><strong>User Acceptance Testing (UAT)</strong></h3>
+                <p><strong>User Acceptance Testing (UAT)</strong> is the final phase of the software testing process in
+                    which <strong>end users or stakeholders validate the functionality, usability, and performance of a
+                        system</strong> to ensure it meets their requirements and expectations before it is deployed
+                    into production. It is often referred to as <strong>&quot;beta testing&quot;</strong> or
+                    <strong>&quot;end-user testing&quot;</strong>.
+                </p>
+                <hr>
+                <h3 id="purpose-of-uat"><strong>Purpose of UAT</strong></h3>
+                <ul>
+                    <li><strong>Ensure Business Goals Are Met</strong>: Validate that the software aligns with business
+                        objectives and solves the intended problems.</li>
+                    <li><strong>Identify Gaps</strong>: Detect any remaining issues, including functionality gaps,
+                        usability concerns, or errors that might have been missed in earlier testing phases.</li>
+                    <li><strong>Gain Confidence</strong>: Build confidence among stakeholders that the system is ready
+                        for deployment.</li>
+                </ul>
+                <hr>
+                <h3 id="characteristics-of-uat"><strong>Characteristics of UAT</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Conducted by End Users</strong>:</p>
+                        <ul>
+                            <li>Typically involves users from the target audience or stakeholders, rather than
+                                developers or QA testers.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Environment</strong>:</p>
+                        <ul>
+                            <li>Performed in a staging or UAT environment that replicates the production setup but does
+                                not impact live data.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Focused on Business Scenarios</strong>:</p>
+                        <ul>
+                            <li>Validates real-world use cases rather than technical functionality.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Sign-off for Deployment</strong>:</p>
+                        <ul>
+                            <li>Marks the official &quot;go/no-go&quot; decision for releasing the software into the
+                                production environment.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="steps-in-uat"><strong>Steps in UAT</strong></h3>
+                <ol>
+                    <li><strong>Planning</strong>: Define UAT objectives, scope, roles, responsibilities, and criteria
+                        for acceptance.</li>
+                    <li><strong>Preparation</strong>: Set up the UAT environment, prepare test data, and develop UAT
+                        test cases or scripts.</li>
+                    <li><strong>Execution</strong>: End users perform tests based on predefined test cases and
+                        scenarios.</li>
+                    <li><strong>Defect Logging</strong>: Report and track any issues or bugs found during testing.</li>
+                    <li><strong>Evaluation and Sign-off</strong>: Assess the test results and confirm whether the
+                        software meets the acceptance criteria.</li>
+                </ol>
+                <hr>
+                <h3 id="common-uat-techniques"><strong>Common UAT Techniques</strong></h3>
+                <ul>
+                    <li><strong>Alpha and Beta Testing</strong>: Early and late-stage testing by users.</li>
+                    <li><strong>Contract and Regulation Testing</strong>: Ensures compliance with contractual and legal
+                        requirements.</li>
+                    <li><strong>Operational Readiness Testing</strong>: Validates workflows, documentation, and support
+                        processes.</li>
+                </ul>
+                <hr>
+                <h3 id="benefits-of-uat"><strong>Benefits of UAT</strong></h3>
+                <ul>
+                    <li>Prevents costly errors by identifying issues before deployment.</li>
+                    <li>Ensures a smooth transition from development to live operation.</li>
+                    <li>Enhances user satisfaction and adoption by delivering a validated product.</li>
+                </ul>
+                <p>UAT serves as the final checkpoint to ensure the software is ready for real-world use.</p>
+
+            </div>
+        </details>
+        <details>
+            <summary>Retesting</summary>
+            <div class="content">
+                <h3 id="retesting"><strong>Retesting</strong></h3>
+                <p><strong>Retesting</strong> is the process of executing previously failed test cases on a software
+                    application
+                    <strong>after defects have been fixed</strong>, to verify that the issues have been resolved and
+                    that the
+                    functionality works as expected. It focuses specifically on the <strong>same scenarios and
+                        conditions</strong> under
+                    which the defects were originally identified.
+                </p>
+                <hr>
+                <h3 id="key-features-of-retesting"><strong>Key Features of Retesting</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Purpose</strong>:</p>
+                        <ul>
+                            <li>Validate that the specific defect is fixed and no longer occurs.</li>
+                            <li>Ensure the functionality meets the expected behavior after the fix.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Scope</strong>:</p>
+                        <ul>
+                            <li>Only failed test cases from the earlier test cycle are re-executed.</li>
+                            <li>It does not involve testing other parts of the application unless explicitly required.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Environment</strong>:</p>
+                        <ul>
+                            <li>Performed in the same environment or setup as the initial testing, to maintain
+                                consistency in results.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Focus</strong>:</p>
+                        <ul>
+                            <li>Targets the specific defect or issue that was identified and fixed.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="retesting-process"><strong>Retesting Process</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Identify Failed Test Cases</strong>:</p>
+                        <ul>
+                            <li>Select test cases that failed during the previous test execution.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Fix Verification</strong>:</p>
+                        <ul>
+                            <li>Confirm that the defect is addressed by developers and is marked as resolved.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare Test Data</strong>:</p>
+                        <ul>
+                            <li>Use the same test data or a closely related dataset used during the initial testing
+                                phase.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Re-execute Test Cases</strong>:</p>
+                        <ul>
+                            <li>Execute the same test cases under identical conditions.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Log Results</strong>:</p>
+                        <ul>
+                            <li>Record the results to confirm whether the issue is resolved or persists.</li>
+                        </ul>
+                    </li>
+                </ol>
             </div>
         </details>
         <details>
             <summary>Regression Testing</summary>
             <div class="content">
-                <p><strong>Regression Testing-</strong> Testing conducts on modified build to make sure that there will not be impact on exiting functionality because of changes like adding/deleting/modify feature.</p>
-<ul>
-<li><strong>Unit regression testing:</strong> Testing only the changes/ modifications done by the developer.</li>
-<li><strong>Regional regression testing:</strong> Testing the modified module along with the impact modules.</li>
-<li><strong>Full regression testing:</strong> Testing the main feature and remaining part of the application.</li>
-</ul>
+                <h3 id="regression-testing"><strong>Regression Testing</strong></h3>
+                <p><strong>Regression Testing</strong> is a type of software testing performed to ensure that
+                    <strong>new code changes or updates do not adversely affect the existing functionality of the
+                        application.</strong> It involves re-running previously executed test cases to verify that the
+                    software continues to perform as expected after modifications, such as bug fixes, feature
+                    enhancements, or code optimizations.</p>
+                <hr>
+                <h3 id="key-characteristics-of-regression-testing"><strong>Key Characteristics of Regression
+                        Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Objective</strong>:</p>
+                        <ul>
+                            <li>Ensure that the existing features remain stable and unaffected by new changes.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Test Scope</strong>:</p>
+                        <ul>
+                            <li>Covers areas related to the code changes and their potential impact on other modules or
+                                functionalities.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Reusability</strong>:</p>
+                        <ul>
+                            <li>Reuses test cases from earlier testing cycles to save time and ensure consistency.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automation</strong>:</p>
+                        <ul>
+                            <li>Frequently automated due to its repetitive nature, especially in large applications.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="when-is-regression-testing-performed"><strong>When is Regression Testing Performed?</strong>
+                </h3>
+                <ol>
+                    <li>
+                        <p><strong>After Bug Fixes</strong>:</p>
+                        <ul>
+                            <li>To verify that the resolved defect does not reappear and has not introduced new issues
+                                in other areas.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>After Feature Enhancements</strong>:</p>
+                        <ul>
+                            <li>To confirm that adding or modifying a feature hasn’t caused unintended disruptions to
+                                existing functionality.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>After Code Refactoring</strong>:</p>
+                        <ul>
+                            <li>To ensure that optimization or restructuring of the codebase doesn’t break any existing
+                                workflows.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>During Integration Testing</strong>:</p>
+                        <ul>
+                            <li>To check that integrating new modules or components doesn’t negatively affect the
+                                system.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>In Continuous Integration/Deployment Pipelines</strong>:</p>
+                        <ul>
+                            <li>Performed regularly to validate software stability during frequent updates.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="types-of-regression-testing"><strong>Types of Regression Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Unit Regression Testing</strong>:</p>
+                        <ul>
+                            <li>Focuses on individual units or components affected by code changes.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Partial Regression Testing</strong>:</p>
+                        <ul>
+                            <li>Verifies the areas related to the code changes without testing the entire application.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Complete Regression Testing</strong>:</p>
+                        <ul>
+                            <li>Conducted when the code changes are extensive and may impact the entire system.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="steps-in-regression-testing"><strong>Steps in Regression Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Identify Areas Affected by Change</strong>:</p>
+                        <ul>
+                            <li>Analyze the code changes and their potential impact on existing features.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Select Test Cases</strong>:</p>
+                        <ul>
+                            <li>Choose relevant test cases, including those that directly and indirectly interact with
+                                the modified code.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Update Test Cases</strong> (if needed):</p>
+                        <ul>
+                            <li>Adjust test cases to align with the updated functionality.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute Tests</strong>:</p>
+                        <ul>
+                            <li>Run the selected test cases in the testing environment.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Analyze Results</strong>:</p>
+                        <ul>
+                            <li>Compare outcomes to expected results and log any issues.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Repeat Testing</strong>:</p>
+                        <ul>
+                            <li>Continue until all identified defects are resolved and no regression issues remain.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="benefits-of-regression-testing"><strong>Benefits of Regression Testing</strong></h3>
+                <ul>
+                    <li>Ensures the application’s stability and reliability after changes.</li>
+                    <li>Prevents the introduction of new bugs while fixing existing ones.</li>
+                    <li>Builds confidence that the application functions as intended.</li>
+                    <li>Supports faster delivery cycles in agile and DevOps workflows.</li>
+                </ul>
+                <p>Regression testing is critical in software maintenance and continuous development, ensuring that
+                    updates enhance the application without breaking existing functionality.</p>
 
             </div>
         </details>
         <details>
             <summary>Smoke Testing</summary>
             <div class="content">
-                <p><strong>Smoke Testing</strong> </p>
-<ul>
-<li>Smoke testing is done to make sure the build we received from the development is testable/stable or not.</li>
-<li>Smoke testing is performed by both developer or tester.</li>
-<li>It is done on initial build</li>
-<li>It is part of basic testing</li>
-<li>Usually it is done every time there is a new build release.</li>
-</ul>
-
+                <h3 id="smoke-testing"><strong>Smoke Testing</strong></h3>
+                <p><strong>Smoke Testing</strong> is a type of software testing performed to ensure that the
+                    <strong>basic and critical functionalities of an application are working correctly</strong> after a
+                    new build is deployed. It serves as a preliminary test to validate the stability of the build before
+                    more in-depth testing is performed.
+                </p>
+                <p>The term &quot;smoke testing&quot; originates from hardware testing, where powering up a device and
+                    checking for smoke indicated a fundamental problem. In software, it metaphorically means checking
+                    for &quot;smoking&quot; or critical issues in the build.</p>
+                <hr>
+                <h3 id="key-characteristics-of-smoke-testing"><strong>Key Characteristics of Smoke Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Purpose</strong>:</p>
+                        <ul>
+                            <li>Ensure that the application is stable enough for further testing.</li>
+                            <li>Quickly identify major flaws in the build.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Scope</strong>:</p>
+                        <ul>
+                            <li>Focused on critical and high-priority features.</li>
+                            <li>Does not perform exhaustive testing; only essential workflows are tested.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Speed</strong>:</p>
+                        <ul>
+                            <li>Typically quick and executed with a limited number of test cases.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Automation</strong>:</p>
+                        <ul>
+                            <li>Can be automated or performed manually, depending on the test cases and testing process.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="when-is-smoke-testing-performed"><strong>When is Smoke Testing Performed?</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>After a New Build</strong>:</p>
+                        <ul>
+                            <li>Performed immediately after a new build is deployed in the testing environment to check
+                                its stability.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Before Regression Testing</strong>:</p>
+                        <ul>
+                            <li>Conducted to ensure that the build is stable enough to proceed with regression testing
+                                or other detailed testing phases.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>In Continuous Integration/Continuous Deployment (CI/CD)</strong>:</p>
+                        <ul>
+                            <li>Used in automated pipelines to validate builds after code merges or updates.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>During Critical Bug Fixes</strong>:</p>
+                        <ul>
+                            <li>Executed to verify that the core application is functional after applying fixes for
+                                major defects.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="steps-in-smoke-testing"><strong>Steps in Smoke Testing</strong></h3>
+                <ol>
+                    <li>
+                        <p><strong>Identify Critical Functionality</strong>:</p>
+                        <ul>
+                            <li>Select the core features or modules to be tested (e.g., login, navigation, data
+                                submission).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Prepare Test Cases</strong>:</p>
+                        <ul>
+                            <li>Develop a minimal set of test cases covering critical workflows.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Execute Test Cases</strong>:</p>
+                        <ul>
+                            <li>Perform the tests on the newly deployed build.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Analyze Results</strong>:</p>
+                        <ul>
+                            <li>Confirm whether the build passes the critical tests.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Decision</strong>:</p>
+                        <ul>
+                            <li>If smoke testing is successful, proceed with more detailed testing (e.g., regression,
+                                functional testing).</li>
+                            <li>If it fails, report the issues, and request a new build.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <hr>
+                <h3 id="examples-of-smoke-tests"><strong>Examples of Smoke Tests</strong></h3>
+                <ul>
+                    <li>Verifying that the application launches successfully.</li>
+                    <li>Checking login functionality.</li>
+                    <li>Validating navigation between major modules.</li>
+                    <li>Ensuring forms can be submitted without errors.</li>
+                </ul>
+                <hr>
+                <h3 id="benefits-of-smoke-testing"><strong>Benefits of Smoke Testing</strong></h3>
+                <ul>
+                    <li>Detects critical issues early in the build.</li>
+                    <li>Saves time and effort by avoiding deeper testing on unstable builds.</li>
+                    <li>Improves development and testing efficiency.</li>
+                    <li>Ensures smooth testing workflows in CI/CD environments.</li>
+                </ul>
+                <p>Smoke testing acts as the first line of defense in the software testing process to confirm the
+                    readiness of a build for further analysis.</p>
             </div>
         </details>
         <details>
             <summary>Sanity Testing</summary>
             <div class="content">
                 <p><strong>Sanity Testing</strong></p>
-<ul>
-<li>Sanity testing is done during the release phase to check for the main functionalities of the app without going deeper.</li>
-<li>Sanity testing is performed by testers alone.</li>
-<li>It is done on stale build.</li>
-<li>It is part of regression testing.</li>
-<li>It is planned when there is no enough time to do in-depth testing.</li>
-</ul>
+                <ul>
+                    <li>Sanity testing is done during the release phase to check for the main functionalities of the app
+                        without going deeper.</li>
+                    <li>Sanity testing is performed by testers alone.</li>
+                    <li>It is done on stale build.</li>
+                    <li>It is part of regression testing.</li>
+                    <li>It is planned when there is no enough time to do in-depth testing.</li>
+                </ul>
 
             </div>
         </details>
         <details>
             <summary>Exploratory Testing</summary>
             <div class="content">
-                <p>Exploratory Testing - We have to explore the app, understand completely and test it. Understand the app, identify all possible scenarios, document it then use it for testing. We do exploratory testing when the app ready but there is no requirement. Test engineer will do exploratory testing when there is no requirement.</p>
+                <p>Exploratory Testing - We have to explore the app, understand completely and test it. Understand the
+                    app, identify all possible scenarios, document it then use it for testing. We do exploratory testing
+                    when the app ready but there is no requirement. Test engineer will do exploratory testing when there
+                    is no requirement.</p>
 
             </div>
         </details>
@@ -217,59 +869,106 @@
             <summary>Adhoc Testing</summary>
             <div class="content">
                 <p>Adhoc Testing - Testing app randomly without any test cases or any requirements document.
-                    Adhoc testing is an informal testing type with an aim to break the system. Tester should have knowledge of application even thou he dose not have requirements/ test cases. This testing is unplanned activity.</p>
-                    
+                    Adhoc testing is an informal testing type with an aim to break the system. Tester should have
+                    knowledge of application even thou he dose not have requirements/ test cases. This testing is
+                    unplanned activity.</p>
+
             </div>
         </details>
         <details>
             <summary>Fuzz Testing</summary>
             <div class="content">
-                <p>Fuzz testing, or <em>fuzzing</em>, is a software testing technique that involves providing invalid, unexpected, or random data as inputs to a program. The goal is to uncover bugs, crashes, or vulnerabilities that could cause the software to behave unexpectedly, potentially exposing security weaknesses. Fuzzing is especially useful for identifying issues related to input handling, such as buffer overflows, memory leaks, and unhandled exceptions, which could lead to critical security vulnerabilities.</p>
-<h3 id="how-fuzz-testing-works">How Fuzz Testing Works</h3>
-<ol>
-<li><p><strong>Input Generation</strong>: The fuzzer generates a large volume of random, malformed, or unexpected data inputs. The inputs may vary based on the specific type of fuzzing and could include strings, numbers, files, or network requests.</p>
-</li>
-<li><p><strong>Execution</strong>: Each generated input is fed into the target program. The fuzzer observes the program&#39;s behavior for signs of abnormal or undesirable reactions, such as crashes, memory corruption, or unexpected outputs.</p>
-</li>
-<li><p><strong>Monitoring</strong>: The fuzzer monitors the target program for exceptions, segmentation faults, hangs, or crashes. Modern fuzzers also collect more granular data by monitoring code coverage, which helps ensure that different parts of the code are exercised by the inputs.</p>
-</li>
-<li><p><strong>Error Analysis</strong>: If the program fails or behaves unexpectedly, the fuzzer logs the input and behavior for later analysis. This helps developers understand and reproduce the issue so they can fix it.</p>
-</li>
-</ol>
-<h3 id="types-of-fuzz-testing">Types of Fuzz Testing</h3>
-<ol>
-<li><p><strong>Mutation-Based Fuzzing</strong>: This technique takes valid inputs and modifies them by changing, removing, or adding elements. For example, it might take a well-formed JSON object and alter parts of it to create malformed versions. Mutation-based fuzzing is often faster because it does not require knowledge of the input structure.</p>
-</li>
-<li><p><strong>Generation-Based Fuzzing</strong>: Here, the fuzzer generates inputs from scratch based on predefined input models or specifications. This method is more targeted and effective for structured input data, such as protocols or file formats, because it can create a wider variety of valid and invalid inputs.</p>
-</li>
-<li><p><strong>Coverage-Guided Fuzzing</strong>: In this approach, the fuzzer uses code coverage information to generate inputs that increase the code&#39;s tested paths. By aiming to reach new, untested paths in the code, this technique increases the likelihood of finding unique bugs.</p>
-</li>
-</ol>
-<h3 id="advantages-of-fuzz-testing">Advantages of Fuzz Testing</h3>
-<ul>
-<li><strong>Automated Bug Detection</strong>: Fuzzing automates the input generation and testing process, making it easier to detect issues across a large codebase.</li>
-<li><strong>Security Improvement</strong>: Fuzzing often exposes security vulnerabilities, helping teams patch them before attackers exploit them.</li>
-<li><strong>Increased Code Coverage</strong>: Coverage-guided fuzzing helps exercise hard-to-reach code paths that traditional testing might miss.</li>
-</ul>
-<h3 id="tools-for-fuzz-testing">Tools for Fuzz Testing</h3>
-<p>Some popular fuzzing tools include:</p>
-<ul>
-<li><strong>AFL (American Fuzzy Lop)</strong>: Known for its efficiency and coverage-guided fuzzing capabilities, AFL mutates inputs and uses code coverage to discover unique crashes.</li>
-<li><strong>LibFuzzer</strong>: A fuzzing engine for individual functions in C/C++ programs, often used with Clang’s sanitizers to detect memory and undefined behavior issues.</li>
-<li><strong>Google’s OSS-Fuzz</strong>: Designed to find vulnerabilities in open-source software, OSS-Fuzz combines different fuzzing engines and integrates with continuous integration systems.</li>
-<li><strong>Peach Fuzzer</strong>: A commercial fuzzer that supports both mutation- and generation-based fuzzing for a variety of formats and protocols.</li>
-</ul>
-<h3 id="limitations-of-fuzz-testing">Limitations of Fuzz Testing</h3>
-<ul>
-<li><strong>Limited by Input Space</strong>: Fuzzers may miss certain paths if they don’t explore every possible input, particularly in complex programs.</li>
-<li><strong>False Positives</strong>: Some fuzzers may trigger false alarms if they mistakenly flag valid program behavior as a problem.</li>
-<li><strong>Need for Expertise</strong>: Setting up an effective fuzzing environment and interpreting results requires experience, especially for complex software.</li>
-</ul>
-<h3 id="fuzz-testing-in-practice">Fuzz Testing in Practice</h3>
-<p>Fuzz testing is widely used in areas that are vulnerable to input-related bugs, such as software handling untrusted inputs (web servers, parsers, file processors) and systems with security requirements (operating systems, cryptographic libraries). Given its automation and effectiveness, fuzzing has become a standard practice in software security testing, especially in environments that demand reliability and resistance to exploitation.</p>
+                <p>Fuzz testing, or <em>fuzzing</em>, is a software testing technique that involves providing invalid,
+                    unexpected, or random data as inputs to a program. The goal is to uncover bugs, crashes, or
+                    vulnerabilities that could cause the software to behave unexpectedly, potentially exposing security
+                    weaknesses. Fuzzing is especially useful for identifying issues related to input handling, such as
+                    buffer overflows, memory leaks, and unhandled exceptions, which could lead to critical security
+                    vulnerabilities.</p>
+                <h3 id="how-fuzz-testing-works">How Fuzz Testing Works</h3>
+                <ol>
+                    <li>
+                        <p><strong>Input Generation</strong>: The fuzzer generates a large volume of random, malformed,
+                            or unexpected data inputs. The inputs may vary based on the specific type of fuzzing and
+                            could include strings, numbers, files, or network requests.</p>
+                    </li>
+                    <li>
+                        <p><strong>Execution</strong>: Each generated input is fed into the target program. The fuzzer
+                            observes the program&#39;s behavior for signs of abnormal or undesirable reactions, such as
+                            crashes, memory corruption, or unexpected outputs.</p>
+                    </li>
+                    <li>
+                        <p><strong>Monitoring</strong>: The fuzzer monitors the target program for exceptions,
+                            segmentation faults, hangs, or crashes. Modern fuzzers also collect more granular data by
+                            monitoring code coverage, which helps ensure that different parts of the code are exercised
+                            by the inputs.</p>
+                    </li>
+                    <li>
+                        <p><strong>Error Analysis</strong>: If the program fails or behaves unexpectedly, the fuzzer
+                            logs the input and behavior for later analysis. This helps developers understand and
+                            reproduce the issue so they can fix it.</p>
+                    </li>
+                </ol>
+                <h3 id="types-of-fuzz-testing">Types of Fuzz Testing</h3>
+                <ol>
+                    <li>
+                        <p><strong>Mutation-Based Fuzzing</strong>: This technique takes valid inputs and modifies them
+                            by changing, removing, or adding elements. For example, it might take a well-formed JSON
+                            object and alter parts of it to create malformed versions. Mutation-based fuzzing is often
+                            faster because it does not require knowledge of the input structure.</p>
+                    </li>
+                    <li>
+                        <p><strong>Generation-Based Fuzzing</strong>: Here, the fuzzer generates inputs from scratch
+                            based on predefined input models or specifications. This method is more targeted and
+                            effective for structured input data, such as protocols or file formats, because it can
+                            create a wider variety of valid and invalid inputs.</p>
+                    </li>
+                    <li>
+                        <p><strong>Coverage-Guided Fuzzing</strong>: In this approach, the fuzzer uses code coverage
+                            information to generate inputs that increase the code&#39;s tested paths. By aiming to reach
+                            new, untested paths in the code, this technique increases the likelihood of finding unique
+                            bugs.</p>
+                    </li>
+                </ol>
+                <h3 id="advantages-of-fuzz-testing">Advantages of Fuzz Testing</h3>
+                <ul>
+                    <li><strong>Automated Bug Detection</strong>: Fuzzing automates the input generation and testing
+                        process, making it easier to detect issues across a large codebase.</li>
+                    <li><strong>Security Improvement</strong>: Fuzzing often exposes security vulnerabilities, helping
+                        teams patch them before attackers exploit them.</li>
+                    <li><strong>Increased Code Coverage</strong>: Coverage-guided fuzzing helps exercise hard-to-reach
+                        code paths that traditional testing might miss.</li>
+                </ul>
+                <h3 id="tools-for-fuzz-testing">Tools for Fuzz Testing</h3>
+                <p>Some popular fuzzing tools include:</p>
+                <ul>
+                    <li><strong>AFL (American Fuzzy Lop)</strong>: Known for its efficiency and coverage-guided fuzzing
+                        capabilities, AFL mutates inputs and uses code coverage to discover unique crashes.</li>
+                    <li><strong>LibFuzzer</strong>: A fuzzing engine for individual functions in C/C++ programs, often
+                        used with Clang’s sanitizers to detect memory and undefined behavior issues.</li>
+                    <li><strong>Google’s OSS-Fuzz</strong>: Designed to find vulnerabilities in open-source software,
+                        OSS-Fuzz combines different fuzzing engines and integrates with continuous integration systems.
+                    </li>
+                    <li><strong>Peach Fuzzer</strong>: A commercial fuzzer that supports both mutation- and
+                        generation-based fuzzing for a variety of formats and protocols.</li>
+                </ul>
+                <h3 id="limitations-of-fuzz-testing">Limitations of Fuzz Testing</h3>
+                <ul>
+                    <li><strong>Limited by Input Space</strong>: Fuzzers may miss certain paths if they don’t explore
+                        every possible input, particularly in complex programs.</li>
+                    <li><strong>False Positives</strong>: Some fuzzers may trigger false alarms if they mistakenly flag
+                        valid program behavior as a problem.</li>
+                    <li><strong>Need for Expertise</strong>: Setting up an effective fuzzing environment and
+                        interpreting results requires experience, especially for complex software.</li>
+                </ul>
+                <h3 id="fuzz-testing-in-practice">Fuzz Testing in Practice</h3>
+                <p>Fuzz testing is widely used in areas that are vulnerable to input-related bugs, such as software
+                    handling untrusted inputs (web servers, parsers, file processors) and systems with security
+                    requirements (operating systems, cryptographic libraries). Given its automation and effectiveness,
+                    fuzzing has become a standard practice in software security testing, especially in environments that
+                    demand reliability and resistance to exploitation.</p>
 
             </div>
-        </details>     
+        </details>
     </div>
     <div class="home-link">
         <a class="btn btn-primary" href="../../index.html">Home</a>
@@ -277,4 +976,5 @@
     <script src="../../assests/js/bootstrap.bundle.min.js"></script>
     <script src="../../assests/js/script.js"></script>
 </body>
+
 </html>
