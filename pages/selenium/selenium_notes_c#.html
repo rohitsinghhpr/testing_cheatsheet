@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locators - Selenium</title>
+    <link rel="stylesheet" href="../../assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assests/css/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../assests/css/style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <details>
+            <summary>WebDriver Methods</summary>
+            <div class="content">
+                <h3 id="webdriver-methods">WebDriver Methods</h3>
+                <p>These methods are used to control the browser and manage the WebDriver instance:</p>
+                <ol>
+                    <li><strong><code>Navigate().GoToUrl(string url)</code></strong>: Opens the specified URL in the
+                        browser.</li>
+                    <li><strong><code>Url</code></strong>: Returns the current URL of the browser.</li>
+                    <li><strong><code>Title</code></strong>: Returns the title of the current page.</li>
+                    <li><strong><code>FindElement(By by)</code></strong>: Finds the first WebElement using the given
+                        method.</li>
+                    <li><strong><code>FindElements(By by)</code></strong>: Finds all WebElements using the given method.
+                    </li>
+                    <li><strong><code>PageSource</code></strong>: Returns the source code of the current page.</li>
+                    <li><strong><code>Close()</code></strong>: Closes the current browser window.</li>
+                    <li><strong><code>Quit()</code></strong>: Closes all browser windows and ends the WebDriver session.
+                    </li>
+                    <li><strong><code>WindowHandles</code></strong>: Returns a list of window handles for all open
+                        browser windows.</li>
+                    <li><strong><code>CurrentWindowHandle</code></strong>: Returns the window handle of the current
+                        window.</li>
+                    <li><strong><code>SwitchTo()</code></strong>: Switches to a different frame, window, or alert. <ul>
+                            <li><code>SwitchTo().Frame()</code></li>
+                            <li><code>SwitchTo().Window()</code></li>
+                            <li><code>SwitchTo().Alert()</code></li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Navigate()</code></strong>: Allows navigation to and from web pages. <ul>
+                            <li><code>Navigate().GoToUrl(string url)</code></li>
+                            <li><code>Navigate().Back()</code></li>
+                            <li><code>Navigate().Forward()</code></li>
+                            <li><code>Navigate().Refresh()</code></li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Manage()</code></strong>: Provides various options to manage the browser. <ul>
+                            <li>
+                                <p><code>Manage().Timeouts()</code></p>
+                                <ul>
+                                    <li><strong><code>ImplicitWait = TimeSpan duration</code></strong>: Sets the amount
+                                        of time the driver should wait when searching for an element if it is not
+                                        immediately present; use this to handle situations where elements take time to
+                                        appear. <ul>
+                                            <li><strong>Scenario</strong>: When elements on a page load asynchronously
+                                                and you want to ensure that WebDriver waits long enough to find all
+                                                elements without throwing an exception immediately.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><code>PageLoad = TimeSpan duration</code></strong>: Sets the maximum
+                                        amount of time to wait for a page to load before throwing an error; use this to
+                                        handle slow-loading pages. <ul>
+                                            <li><strong>Scenario</strong>: When navigating to a webpage that might take
+                                                a longer time to load due to heavy content or slow server response.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong><code>AsynchronousJavaScript = TimeSpan duration</code></strong>: Sets
+                                        the amount of time to wait for an asynchronous script to finish execution before
+                                        throwing an error; use this for operations that involve executing JavaScript
+                                        with a delay. <ul>
+                                            <li><strong>Scenario</strong>: When executing JavaScript code via
+                                                <code>ExecuteAsyncScript</code> that involves asynchronous operations,
+                                                such as AJAX calls, which might take some time to complete.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><code>Manage().Window()</code></p>
+                                <p>Here are concise explanations of each sub-method of <code>Manage().Window()</code>:
+                                </p>
+                                <ul>
+                                    <li><strong><code>Maximize()</code></strong>: Maximizes the browser window to fill
+                                        the screen.</li>
+                                    <li><strong><code>Minimize()</code></strong>: Minimizes the browser window to the
+                                        taskbar.</li>
+                                    <li><strong><code>FullScreen()</code></strong>: Switches the browser window to
+                                        full-screen mode.</li>
+                                    <li><strong><code>Position = Point targetPosition</code></strong>: Sets the browser
+                                        window's position to specified <code>x</code> and <code>y</code> coordinates.
+                                    </li>
+                                    <li><strong><code>Size = Size targetSize</code></strong>: Sets the browser window's
+                                        size to the specified width and height.</li>
+                                    <li><strong><code>Position</code></strong>: Returns the current position of the
+                                        browser window as a <code>Point</code> object.</li>
+                                    <li><strong><code>Size</code></strong>: Returns the current size of the browser
+                                        window as a <code>Size</code> object.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><code>Manage().Cookies()</code></p>
+                                <p>Here are concise explanations of each sub-method of <code>Manage().Cookies()</code>:
+                                </p>
+                                <ul>
+                                    <li><strong><code>AddCookie(Cookie cookie)</code></strong>: Adds a specified cookie
+                                        to the current domain.</li>
+                                    <li><strong><code>DeleteCookie(Cookie cookie)</code></strong>: Deletes a specified
+                                        cookie from the current domain.</li>
+                                    <li><strong><code>DeleteCookieNamed(string name)</code></strong>: Deletes a cookie
+                                        by its name.</li>
+                                    <li><strong><code>DeleteAllCookies()</code></strong>: Deletes all cookies from the
+                                        current domain.</li>
+                                    <li><strong><code>GetCookieNamed(string name)</code></strong>: Returns the cookie
+                                        with the specified name.</li>
+                                    <li><strong><code>AllCookies</code></strong>: Returns a set of all cookies for the
+                                        current domain.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong><code>ExecuteScript(string script, params object[] args)</code></strong>: Executes
+                        JavaScript in the context of the current window or frame.</li>
+                    <li><strong><code>ExecuteAsyncScript(string script, params object[] args)</code></strong>: Executes
+                        asynchronous JavaScript in the context of the current window or frame.</li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>WebElement Methods</summary>
+            <div class="content">
+                <ol>
+                    <li><strong><code>Click()</code></strong>: Clicks on the element.</li>
+                    <li><strong><code>Submit()</code></strong>: Submits a form.</li>
+                    <li><strong><code>SendKeys(string keys)</code></strong>: Sends a sequence of keystrokes to the
+                        element.</li>
+                    <li><strong><code>Clear()</code></strong>: Clears the content of a text field or text area.</li>
+                    <li><strong><code>Selected</code></strong>: Checks if the element is selected. <ul>
+                            <li>Returns a <code>bool</code> indicating whether the element is selected.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Enabled</code></strong>: Checks if the element is enabled. <ul>
+                            <li>Returns a <code>bool</code> indicating whether the element is enabled.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Displayed</code></strong>: Checks if the element is displayed. <ul>
+                            <li>Returns a <code>bool</code> indicating whether the element is displayed.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Text</code></strong>: Gets the visible text of the element. <ul>
+                            <li>Returns a <code>string</code> containing the visible text.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>TagName</code></strong>: Returns the tag name of the element. <ul>
+                            <li>Returns a <code>string</code> representing the tag name (e.g., <code>div</code>,
+                                <code>input</code>).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong><code>GetAttribute(string attributeName)</code></strong>: Gets the value of the
+                        specified attribute. <ul>
+                            <li>Returns a <code>string</code> containing the value of the specified attribute.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>GetCssValue(string propertyName)</code></strong>: Gets the value of a CSS
+                        property. <ul>
+                            <li>Returns a <code>string</code> containing the value of the specified CSS property.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Location</code></strong>: Gets the location of the element. <ul>
+                            <li>Returns a <code>Point</code> object representing the <code>x</code> and <code>y</code>
+                                coordinates of the element.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Size</code></strong>: Gets the size of the element. <ul>
+                            <li>Returns a <code>Size</code> object representing the width and height of the element.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Rect</code></strong>: Gets the location and size of the element as a rectangle.
+                        <ul>
+                            <li>Returns a <code>Rectangle</code> object containing the location and size.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>FindElement(By by)</code></strong>: Finds the first child element using the given
+                        method. <ul>
+                            <li>Returns an <code>IWebElement</code> representing the found element.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>FindElements(By by)</code></strong>: Finds all child elements using the given
+                        method. <ul>
+                            <li>Returns an <code>IList<IWebElement></code> containing all matching child elements.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>Locators</summary>
+            <div class="content">
+                <pre class="language-java" tabindex="0"> <code class="language-java"> // Locate element by ID IWebElement element = driver.FindElement(By.Id("element_id"));
+            // Locate element by Name
+            IWebElement element = driver.FindElement(By.Name("element_name"));
+            // Example: <input type="test" name="email"/>
+            
+            // Locate element by Class Name
+            IWebElement element = driver.FindElement(By.ClassName("class_name"));
+            
+            // Locate element by Tag Name
+            IWebElement element = driver.FindElement(By.TagName("tag_name"));
+            
+            // Locate element by Link Text
+            IWebElement element = driver.FindElement(By.LinkText("link_text"));
+            
+            // Locate element by Partial Link Text
+            IWebElement element = driver.FindElement(By.PartialLinkText("partial_link_text"));
+            
+            // Locate element by CSS Selector
+            IWebElement element = driver.FindElement(By.CssSelector("css_selector"));
+            
+            // Locate element by XPath
+            IWebElement element = driver.FindElement(By.XPath("xpath_expression"));</code></pre>
+            </div>
+        </details>
+        <details>
+            <summary>CSS Locators</summary>
+            <div class="content">
+                <pre class="language-java" tabindex="0"> <code class="language-java"> // Locate element by ID By.CssSelector("#elementId");
+            // Locate element by Class Name
+            By.CssSelector(".className");
+            
+            // Locate element by Tag Name
+            By.CssSelector("tagName");
+            
+            // Locate element by Attribute
+            By.CssSelector("[attribute='value']");
+            
+            // Locate element by Multiple Attributes
+            By.CssSelector("[attribute1='value1'][attribute2='value2']");
+            
+            // Locate element by Attribute Starts With
+            By.CssSelector("[attribute^='prefix']");
+            
+            // Locate element by Attribute Ends With
+            By.CssSelector("[attribute$='suffix']");
+            
+            // Locate child element (descendant)
+            By.CssSelector("parentTag childTag");
+            
+            // Locate direct child element
+            By.CssSelector("parentTag > childTag");
+            
+            // Locate sibling elements
+            By.CssSelector("siblingTag ~ siblingTag");
+            
+            // Locate adjacent sibling element
+            By.CssSelector("siblingTag + siblingTag");
+            
+            // Locate nth child element
+            By.CssSelector("parentTag:nth-child(n)");
+            
+            // Locate first child element
+            By.CssSelector("parentTag:first-child");
+            
+            // Locate last child element
+            By.CssSelector("parentTag:last-child");
+            
+            // Locate nth of type element
+            By.CssSelector("parentTag:nth-of-type(n)");
+            
+            // Locate first of type element
+            By.CssSelector("parentTag:first-of-type");
+            
+            // Locate last of type element
+            By.CssSelector("parentTag:last-of-type");
+            
+            // Locate element not having a specific class
+            By.CssSelector("tagName:not(.excludedClass)");
+            </code>
+            </pre>
+
+            </div>
+        </details>
+        <details>
+            <summary>Implicit Wait</summary>
+            <div class="content">
+                <p>Implicit wait instructs WebDriver to wait for a certain amount of time
+                    when trying to find an element if it is not immediately available. It
+                    sets a default wait time for the entire duration of the WebDriver
+                    session.</p>
+                <pre class="language-java" tabindex="0">
+                    <code class="language-java">
+                        <span class="token comment">// Set implicit wait</span>
+                        driver<span class="token punctuation">.</span><span class="token function">Manage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Timeouts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ImplicitWait</span><span class="token punctuation">(</span><span class="token number">TimeSpan</span><span class="token punctuation">.</span><span class="token function">FromSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">);</span>
+                        <span class="token comment">// Open a website</span>
+                        driver<span class="token punctuation">.</span><span class="token function">Navigate</span><span class="token punctuation">(</span><span class="token function">GoToUrl</span><span class="token punctuation">(</span><span class="token string">"http://example.com"</span><span class="token punctuation">)</span><span class="token punctuation">);</span>
+                        <span class="token comment">// Interact with elements</span>
+                        <span class="token comment">// WebDriver will wait up to 10 seconds for elements to be found</span>
+                        driver<span class="token punctuation">.</span><span class="token function">FindElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">Id</span><span class="token punctuation">(</span><span class="token string">"someElementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    </code>
+                </pre>
+            </div>
+        </details>
+        <details>
+            <summary>Explicit Wait</summary>
+            <div class="content">
+                <p>Explicit wait allows you to specify a certain condition to wait for
+                    before proceeding further in the code. It provides more flexibility
+                    compared to implicit wait as you can target specific elements and
+                    conditions.</p>
+                <pre class="language-java" tabindex="0">
+                    <code class="language-java">
+                        <span class="token comment">// Define explicit wait</span>
+                        WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                        <span class="token comment">// Wait for element to be visible and interact with it</span>
+                        IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.Id("someElementId"))).FirstOrDefault();
+                        element.Click();
+                    </code>
+                </pre>
+                <ul>
+                    <li><code>VisibilityOfElementLocated(By locator)</code>: Waits for an element to be visible</li>
+                    <li><code>ElementToBeClickable(By locator)</code>: Waits for an element to be clickable</li>
+                    <li><code>PresenceOfElementLocated(By locator)</code>: Waits for an element to be present in the DOM
+                    </li>
+                    <li><code>TextToBePresentInElement(By locator, string text)</code>: Waits for specific text to be
+                        present in an element</li>
+                </ul>
+                <pre class="language-java" tabindex="0">
+                    <code class="language-java">
+                        <span class="token keyword">try</span> 
+                        {
+                            <span class="token comment">// 1. Element to be visible</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.Id("elementId")));
+        
+                            <span class="token comment">// 2. Element to be clickable</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("buttonId")));
+        
+                            <span class="token comment">// 3. Element to be present in the DOM</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("someId")));
+        
+                            <span class="token comment">// 4. Element to be selected (Checkbox or radio button)</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeSelected(By.Id("checkboxId")));
+        
+                            <span class="token comment">// 5. Element to be selected (for any condition)</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeSelected(By.Id("checkboxId")));
+        
+                            <span class="token comment">// 6. Alert to be present</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.AlertIsPresent());
+        
+                            <span class="token comment">// 7. Title to be</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleIs("Expected Page Title"));
+        
+                            <span class="token comment">// 8. Title contains</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("Expected"));
+        
+                            <span class="token comment">// 9. Text to be present in the element</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementLocated(By.Id("someElementId"), "Expected Text"));
+        
+                            <span class="token comment">// 10. Text to be present in an element's value</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementValue(By.Id("someElementId"), "Expected Text"));
+        
+                            <span class="token comment">// 11. Stale Element Reference Exception</span>
+                            IWebElement staleElement = driver.FindElement(By.Id("someId"));
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.StalenessOf(staleElement));
+        
+                            <span class="token comment">// 12. URL contains</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlContains("expected"));
+        
+                            <span class="token comment">// 13. URL to be</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlToBe("https://example.com/somepage"));
+        
+                            <span class="token comment">// 14. Presence of multiple elements</span>
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.ClassName("multipleElements")));
+                        }
+                        <span class="token keyword">catch</span> (TimeoutException e) 
+                        {
+                            <span class="token class-name">Console</span>.WriteLine("Timed out waiting for conditions to be met.");
+                        }
+                        <span class="token keyword">finally</span> 
+                        {
+                            driver.Quit();
+                        }
+                    </code>
+                </pre>
+            </div>
+        </details>
+        <details>
+            <summary>Fluent Wait</summary>
+            <div class="content">
+                <p>Fluent wait is a more advanced type of explicit wait that allows you to
+                    set the maximum amount of time to wait for a condition, as well as the
+                    frequency with which to check the condition. Additionally, you can
+                    ignore specific types of exceptions while waiting.</p>
+                <p>Use fluent wait when you need more control over the waiting behavior,
+                    such as polling intervals and exception handling.</p>
+                <pre class="language-java" tabindex="0">
+                    <code class="language-java">
+            <span class="token comment">// Define fluent wait</span>
+            <span class="token class-name">FluentWait</span>&lt;<span class="token punctuation">&gt;</span> wait <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FluentWait</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">WithTimeout</span><span class="token punctuation">(</span><span class="token class-name">TimeSpan</span><span class="token punctuation">.</span><span class="token function">FromSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">PollingEvery</span><span class="token punctuation">(</span><span class="token class-name">TimeSpan</span><span class="token punctuation">.</span><span class="token function">FromSeconds</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">Ignoring</span><span class="token punctuation">(</span><span class="token class-name">Exception</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token comment">// Wait for element to be present and interact with it</span>
+            <span class="token class-name">IWebElement</span> element <span class="token operator">=</span> wait<span class="token punctuation">.</span><span class="token function">Until</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Func</span>&lt;<span class="token class-name">IWebDriver</span>, <span class="token class-name">IWebElement</span>&gt; <span class="token punctuation">(</span>driver<span class="token punctuation">)</span> <span class="token punctuation">=&gt;</span>
+            <span class="token keyword">return</span> driver<span class="token punctuation">.</span><span class="token function">FindElement</span><span class="token punctuation">(</span><span class="token class-name">By</span><span class="token punctuation">.</span><span class="token function">Id</span><span class="token punctuation">(</span><span class="token string">"someElementId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            element<span class="token punctuation">.</span><span class="token function">Click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    </code>
+                </pre>
+            </div>
+        </details>
+        <details>
+            <Summary>Action API</Summary>
+            <div class="content">
+                <pre class="language-java" tabindex="0">
+<code class="language-java">
+    <span class="token comment">// Click() - Clicks on a web element.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Click</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// ClickAndHold() - Clicks (without releasing) at the current mouse location or on a given element.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ClickAndHold</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// ContextClick() - Performs a right-click at the current mouse location or on a given element.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ContextClick</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// DoubleClick() - Performs a double-click at the current mouse location or on a given element.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DoubleClick</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// DragAndDrop() - Drags an element from a source location and drops it at a target location.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DragAndDrop</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// DragAndDropBy() - Drags an element from its current location and drops it at an offset.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DragAndDropBy</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// MoveByOffset() - Moves the mouse from the current position by the given offset.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MoveByOffset</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// MoveToElement() - Moves the mouse to the middle of the given element.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MoveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Release() - Releases the pressed mouse button at the current mouse location or on a given element.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// SendKeys() - Sends a sequence of keys to the currently focused element.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">SendKeys</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> <span class="token class-name">Keys</span><span class="token punctuation">.</span><span class="token constant">Enter</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// KeyDown() - Performs a key press without releasing it.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">KeyDown</span><span class="token punctuation">(</span><span class="token class-name">Keys</span><span class="token punctuation">.</span><span class="token constant">Control</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// KeyUp() - Releases a pressed key.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">KeyUp</span><span class="token punctuation">(</span><span class="token class-name">Keys</span><span class="token punctuation">.</span><span class="token constant">Control</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Build() - Generates a composite action containing all actions so far.</span>
+    <span class="token class-name">Action</span> action <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MoveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    action<span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Perform() - A convenience method for performing the actions built so far.</span>
+    <span class="token keyword">new</span> <span class="token class-name">Actions</span><span class="token punctuation">(</span>driver<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MoveToElement</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Perform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+            </div>
+        </details>
+        <details>
+            <summary>Selenium Exception</summary>
+            <div class="content">
+                <p>Selenium WebDriver can throw various exceptions during the execution of automation scripts.
+                    Understanding these exceptions and their solutions is crucial for writing robust and reliable test
+                    scripts. Here are some common Selenium C# exceptions and their solutions:</p>
+                <ol>
+                    <li>
+                        <p><strong>NoSuchElementException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when an element could not be found on the web
+                                    page.</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Ensure the locator used to find the element is correct and
+                                    wait for the element to be present.</p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        WebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.Id("elementId")));</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>StaleElementReferenceException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when a reference to an element is no longer
+                                    valid (e.g., the element has been refreshed or removed from the DOM).</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Re-acquire the element reference after the page updates or
+                                    use explicit waits.</p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">WebElement element = driver.FindElement(By.Id("elementId"));
+        element.Click(); // Re-locate the element if necessary
+        element = driver.FindElement(By.Id("elementId"));</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>TimeoutException</strong></p>
+                        <ul>
+                            <li><strong>Description</strong>: Thrown when a command does not complete in the specified
+                                timeout period.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>ElementNotVisibleException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when an element is present in the DOM but not
+                                    visible.</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Ensure the element is visible before interacting with it
+                                    or use waits to handle visibility.</p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        WebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.Id("elementId")));</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>ElementNotInteractableException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when an element is not interactable (e.g., it is
+                                    disabled or not visible).</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Wait for the element to become interactable or ensure it
+                                    is in the correct state.</p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        WebElement element = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("elementId")));</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>NoAlertPresentException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when switching to an alert but no alert is
+                                    present.</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Ensure an alert is present before switching to it.</p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait.Until(ExpectedConditions.AlertIsPresent());
+        IAlert alert = driver.SwitchTo().Alert();
+        alert.Accept();</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>InvalidSelectorException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when an invalid selector is used.</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Verify the correctness of the selector syntax.</p>
+                                <pre class="language-java"
+                                    tabindex="0"><code class="language-java">WebElement element = driver.FindElement(By.CssSelector("valid-css-selector"));</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>WebDriverException</strong></p>
+                        <ul>
+                            <li><strong>Description</strong>: Generic exception thrown when something goes wrong with
+                                the WebDriver.</li>
+                            <li><strong>Solution</strong>: Investigate the root cause by checking the error message and
+                                stack trace. Ensure WebDriver and browser versions are compatible.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>MoveTargetOutOfBoundsException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when the target for a mouse action is outside
+                                    the view.</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Scroll the element into view before performing the action.
+                                </p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">WebElement element = driver.FindElement(By.Id("elementId"));
+        ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>SessionNotFoundException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when the session ID is not found (e.g., when the
+                                    session is terminated).</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Ensure the WebDriver session is properly initialized and
+                                    not terminated prematurely.</p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">IWebDriver driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("https://www.example.com");
+        driver.Quit();</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>UnhandledAlertException</strong></p>
+                        <ul>
+                            <li>
+                                <p><strong>Description</strong>: Thrown when there is an unhandled alert on the web
+                                    page.</p>
+                            </li>
+                            <li>
+                                <p><strong>Solution</strong>: Handle the alert before performing further actions.</p>
+                                <pre class="language-java" tabindex="0"><code class="language-java">try
+        {
+            IAlert alert = driver.SwitchTo().Alert();
+            alert.Accept();
+        }
+        catch (NoAlertPresentException e)
+        {
+            // No alert found, proceed with the test
+        }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>InvalidElementStateException</strong></p>
+                        <ul>
+                            <li><strong>Description</strong>: Thrown when an element is in an invalid state for the
+                                action being performed (e.g., trying to send keys to a non-input element).</li>
+                            <li><strong>Solution</strong>: Ensure the element is in the correct state before performing
+                                the action.</li>
+                        </ul>
+                        <pre class="language-java" tabindex="0"><code class="language-java">WebElement element = driver.FindElement(By.Id("inputElement"));
+        if (element.Enabled)
+        {
+            element.SendKeys("text");
+        }</code></pre>
+                    </li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>Page Factory</summary>
+            <div class="content">
+                <h2 id="page-factory--">Page Factory -</h2>
+                <p>Page Factory is a class in Selenium that supports the Page Object
+                    Model (POM) design pattern by
+                    providing a way to initialize web elements defined in Page Objects.
+                    It makes the code more
+                    readable and easier to maintain by automatically initializing web
+                    elements at runtime using the
+                    <code>[FindsBy]</code> attribute.
+                </p>
+                <h3 id="key-components-of-page-factory">Key Components of Page Factory</h3>
+                <ol>
+                    <li><strong>Page Class</strong>: Represents a web page and contains
+                        web elements annotated with
+                        <code>[FindsBy]</code>.
+                    </li>
+                    <li><strong>PageFactory Class</strong>: Contains the
+                        <code>InitElements</code> method to
+                        initialize the web elements.
+                    </li>
+                </ol>
+                <h3 id="example-structure">Example Structure</h3>
+                <ol>
+                    <li><strong>Base Class</strong>: Contains common setup and teardown
+                        methods.</li>
+                    <li><strong>Page Classes</strong>: Represent different web pages and
+                        use <code>[FindsBy]</code>
+                        for web elements.</li>
+                    <li><strong>Test Classes</strong>: Contain test methods that utilize
+                        the page classes</li>
+                </ol>
+                <h3 id="methods-in-pagefactory">Methods in PageFactory</h3>
+                <ol>
+                    <li>
+                        <p><strong>PageFactory.InitElements(IWebDriver driver, object page)</strong>:</p>
+                        <ul>
+                            <li>Initializes the elements of the given page object.</li>
+                            <li>Automatically locates the elements defined by the
+                                <code>[FindsBy]</code> attribute.
+                            </li>
+                        </ul>
+                        <pre class="language-java"
+                            tabindex="0"><code class="language-java">PageFactory.InitElements(driver, this);</code></pre>
+                    </li>
+                </ol>
+                <h3 id="annotations-in-pagefactory">Annotations in PageFactory</h3>
+                <ol>
+                    <li>
+                        <p><strong>[FindsBy]</strong>:</p>
+                        <ul>
+                            <li>Used to locate elements using different strategies (id,
+                                name, className, xpath,
+                                etc.).</li>
+                        </ul>
+                        <pre class="language-java" tabindex="0"><code class="language-java">[FindsBy(Id = "username")]
+        private IWebElement usernameField;</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>[FindsBys]</strong>:</p>
+                        <ul>
+                            <li>Used to locate elements using multiple criteria (AND
+                                condition).</li>
+                        </ul>
+                        <pre class="language-java" tabindex="0"><code class="language-java">[FindsBys(FindsBy(How = How.ClassName, Using = "class1"), FindsBy(How = How.ClassName, Using = "class2"))]
+        private IWebElement element;</code></pre>
+                    </li>
+                    <li>
+                        <p><strong>[FindsAll]</strong>:</p>
+                        <ul>
+                            <li>Used to locate elements using multiple criteria (OR
+                                condition).</li>
+                        </ul>
+                        <pre class="language-java" tabindex="0"><code class="language-java">[FindsAll(FindsBy(Id = "username"), FindsBy(Name = "username"))]
+        private IWebElement usernameField;</code></pre>
+                    </li>
+                </ol>
+            </div>
+        </details>
+    </div>
+
+    <div class="home-link">
+        <a class="btn btn-primary" href="../../index.html">Home</a>
+    </div>
+    <script src="../../assests/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assests/js/prism.min.js"></script>
+    <script src="../../assests/js/prism-java.min.js"></script>
+    <script src="../../assests/js/script.js"></script>
+</body>
+
+</html>
