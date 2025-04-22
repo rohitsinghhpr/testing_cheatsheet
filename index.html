@@ -2,390 +2,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2nd Cheatsheet</title>
-    <link rel="stylesheet" href="./assests/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assests/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testing Cheatsheet</title>
+  <link rel="stylesheet" href="./assests/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assests/css/style.css" />
 </head>
 
 <body>
-
-    <div class="main_navbar container-fluid p-0">
-        <div class="container my-2 px-0">
-            <div class="row">
-                <div class="col-3 bg-primary-subtle">
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-questions">
-                            Questions
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-manual">
-                            Manual Testing
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-databasetesing">
-                            Database Testing
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-apitesing">
-                            API Testing
-                        </button>
-                    </div>
-                </div>
-                <div class="col-3 bg-warning-subtle">
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-java">
-                            Java
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-testng">
-                            Testng
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-selenium">
-                            Selenium Java
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/selenium/selenium_notes_csharp.html">Selenium C#</a>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-restassured">
-                            Rest Assured
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-packages">
-                            Packages
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        <button class="btn-sm btn btn-success" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas-configs">
-                            Config/Tools
-                        </button>
-                    </div>
-                </div>
-                <div class="col-3 bg-success-subtle">
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/others/agile_scrum.html">Agile and Scrum</a>
-                    </div>
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/manual/cyle.html">Life Cycle</a>
-                    </div>
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/manual/docs.html">Documents</a>
-                    </div>
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/manual/environment.html">Environment</a>
-                    </div>
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/others/jira.html">Jira</a>
-                    </div>
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/others/driven.html">Driven Testing</a>
-                    </div>
-                    <div class="my-2">
-                        <a class="btn-sm btn btn-dark" href="./pages/others/cicd.html">CI/CD</a>
-                    </div>
-                </div>
-            </div>
+  <div class="main_navbar container-fluid p-0">
+    <div class="container my-3 px-0">
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <!-- First Column -->
+        <div class="col bg-primary-subtle p-3 rounded">
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-questions">Questions</button>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-manual">Manual Testing</button>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-databasetesing">Database Testing</button>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-apitesing">API Testing</button>
         </div>
+
+        <!-- Second Column -->
+        <div class="col bg-warning-subtle p-3 rounded">
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-java">Java</button>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-testng">Testng</button>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-selenium">Selenium Java</button>
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/selenium/selenium_notes_csharp.html">Selenium C#</a>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-restassured">Rest Assured</button>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-packages">Packages</button>
+          <button class="btn btn-success btn-sm w-100 mb-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-configs">Config/Tools</button>
+        </div>
+
+        <!-- Third Column -->
+        <div class="col bg-success-subtle p-3 rounded">
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/others/agile_scrum.html">Agile and Scrum</a>
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/manual/cyle.html">Life Cycle</a>
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/manual/docs.html">Documents</a>
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/manual/environment.html">Environment</a>
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/others/jira.html">Jira</a>
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/others/driven.html">Driven Testing</a>
+          <a class="btn btn-dark btn-sm w-100 mb-2" href="./pages/others/cicd.html">CI/CD</a>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="offcanvas-container">
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-questions">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/questions/manual-intro.html">Manual Intro</a></li>
-                                    <li><a class="h5" href="./pages/questions/auto-intro.html">Automation Intro</a></li>
-                                    <li><a class="h5" href="./pages/questions/scenario_questions.html">Scenario</a></li>
-                                    <li><a class="h5" href="./pages/questions/porject_questins.html">Project</a></li>
-                                    <li><a class="h5" href="./pages/questions/common_questions.html">Common</a></li>
-                                    <li><a class="h5" href="./pages/questions/hr_questions.html">HR Questions</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-manual">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/manual/manual.html">Manual Testing</a></li>
-                                    <li><a class="h5" href="./pages/manual/vv.html">V.V</a></li>
-                                    <li><a class="h5" href="./pages/manual/auth.html">Auth</a></li>
-                                    <li><a class="h5" href="./pages/manual/sevrity.html">Sevrity & Priority</a></li>
-                                    <li><a class="h5" href="./pages/manual/modesl.html">Models</a></li>
-                                    <li><a class="h5" href="./pages/manual/principle.html">7 Principle</a></li>
-                                    <li><a class="h5" href="./pages/manual/techniques.html">Techniques</a></li>
-                                    <li><a class="h5" href="./pages/manual/testing.html">Testing Types</a></li>
-                                    <li><a class="h5" href="./pages/manual/terms.html">Terms</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <ul class="text-primary">
-                                <li><a class="h5" href="./pages/manual/ts-object.html">Object TS</a></li>
-                                <li><a class="h5" href="./pages/manual/ts-functionality.html">Function TS</a></li>
-                                <li><a class="h5" href="./pages/manual/ts-apps.html">App TS</a></li>
-                                <li><a class="h5" href="./pages/manual/ts-ecommerce.html">Ecommerce TS</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-databasetesing">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h3 active" href="./pages/db_testing/database_testing.html">Database Testing</a></li>
-                                    <li><a class="h5" href="./pages/db_testing/sql_notes.html">SQL Notes</a></li>
-                                    <li><a class="h5" href="./pages/db_testing/sql_syntax.html">SQL Syntax</a></li>
-                                    <li><a class="h5" href="./pages/db_testing/sql_questions.html">SQL Questions</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-apitesing">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/api_testing/api_concepts.html">API Testing</a></li>
-                                    <li><a class="h5" href="./pages/api_testing/postman.html">Postman Notes</a></li>
-                                    <li><a class="h5" href="./pages/api_testing/postman-scripts.html">Postman Script</a></li>
-                                    <li><a class="h5" href="./pages/api_testing/postman_questions.html">Postman Questions</a></li>
-                                    <li><a class="h5" href="./pages/api_testing/https_methods.html">Methods</a></li>
-                                    <li><a class="h5" href="./pages/api_testing/https_status_code.html">HTTPS</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-java">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/java/array.html">Array</a></li>
-                                    <li><a class="h5" href="./pages/java/string.html">String</a></li>
-                                    <li><a class="h5" href="./pages/java/oops.html">Oops</a></li>
-                                    <li><a class="h5" href="./pages/java/file.html">File Handling</a></li>
-                                    <li><a class="h5" href="./pages/java/exception.html">Exception Handling</a></li>
-                                    <li><a class="h5" href="./pages/java/keywords.html">Keyword</a></li>
-                                    <li><a class="h5" href="./pages/java/methods.html">Methods/Collections</a></li>
-                                    <li><a class="h5" href="./pages/java/usecase_ds.html">Usecase DS</a></li>
-                                    <li><a class="h5" href="./pages/java/generic.html">Generic/Iterator</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/java/number_programs.html">Number</a></li>
-                                    <li><a class="h5" href="./pages/java/pattern_programs.html">Pattern</a></li>
-                                    <li><a class="h5" href="./pages/java/array_programs.html">Array</a></li>
-                                    <li><a class="h5" href="./pages/java/string_programs.html">String</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/java/jdbc.html">JDBC</a></li>
-                                    <li><a class="h5" href="./pages/java/url_class.html">URL Class</a></li>
-                                    <li><a class="h5" href="./pages/java/httpurlconnection_class.html">HttpURLConnection Class</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-testng">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/testng/testng.html">Testng Notes</a></li>
-                                    <li><a class="h5" href="./pages/testng/testng_observ.html">Observation</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-selenium">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/selenium/selenium_notes.html">Selenium Notes</a></li>
-                                    <li><a class="h5" href="./pages/selenium/howto.html">How To</a></li>
-                                    <li><a class="h5" href="#">Questions</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-restassured">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/rest_assured/notes.html">Rest Assured Notes</a></li>
-                                    <li><a class="h5" href="./pages/rest_assured/res_methods.html">Rest Methods</a></li>
-                                    <li><a class="h5" href="./pages/rest_assured/rest_assured.html">Rest</a></li>
-                                    <li><a class="h5" href="./pages/rest_assured/hading_data.html">Handling Data</a></li>
-                                    <li><a class="h5" href="./pages/rest_assured/handing_path_query.html">Handling Path and Query</a></li>
-                                    <li><a class="h5" href="./pages/rest_assured/validating_response_header.html">Response Headers</a></li>
-                                    <li><a class="h5" href="./pages/rest_assured/validating_response_body.html">Response Body</a></li>
-                                    <li><a class="h5" href="#">How To</a></li>
-                                    <li><a class="h5" href="#">Questions</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-packages">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/packages/poi.html">Apache POI</a></li>
-                                    <li><a class="h5" href="#">Log4j</a></li>
-                                    <li><a class="h5" href="#">Allure Report</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-configs">
-            <div class="offcanvas-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="content">
-                                <ul class="text-primary">
-                                    <li><a class="h5" href="./pages/configs/maven.html">Maven</a></li>
-                                    <li><a class="h5" href="./pages/configs/jenkins.html">Jenkins</a></li>
-                                    <li><a class="h5" href="./pages/configs/git.html">Git</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>    
+  <!-- Include the rest of your offcanvas components below as-is -->
+  <!-- Example: -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-questions">
+    <div class="offcanvas-body">
+      <ul class="text-primary">
+        <li><a class="h5" href="./pages/questions/manual-intro.html">Manual Intro</a></li>
+        <li><a class="h5" href="./pages/questions/auto-intro.html">Automation Intro</a></li>
+        <li><a class="h5" href="./pages/questions/scenario_questions.html">Scenario</a></li>
+        <li><a class="h5" href="./pages/questions/porject_questins.html">Project</a></li>
+        <li><a class="h5" href="./pages/questions/common_questions.html">Common</a></li>
+        <li><a class="h5" href="./pages/questions/hr_questions.html">HR Questions</a></li>
+      </ul>
+    </div>
+    <div class="offcanvas-footer text-center">
+      <button class="btn btn-danger" data-bs-dismiss="offcanvas">Close</button>
+    </div>
+  </div>
 
-    <script src="./assests/js/bootstrap.bundle.min.js"></script>
-    <script src="./assests/js/script.js"></script>    
+  <!-- Repeat for all other offcanvas sections you've listed in your original code -->
 
+  <script src="./assests/js/bootstrap.bundle.min.js"></script>
+  <script src="./assests/js/script.js"></script>
 </body>
 
 </html>
-
